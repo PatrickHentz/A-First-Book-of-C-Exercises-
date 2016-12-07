@@ -1,6 +1,6 @@
-# A-First-Book-of-C-Exercises-
+# A First Book of C++ Exercises
 
-All Exercies Completed 
+All Exercies (Soon to be Completed) 
 
 This repertory is an active development record of my programming skills. 
 All answers are my own and represent my work to the best of my ablity.  
