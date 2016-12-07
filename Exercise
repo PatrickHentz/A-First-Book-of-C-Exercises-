@@ -1,0 +1,102 @@
+Exercise #1.1
+
+1. Define the following terms:
+a. computer program: A structured combination of data and instructions used to operate a
+computer; another term for software.
+b. programming language: The set of instructions, data, and rules used to construct a program.
+c. programming: The process of writing a computer program in a language that the computer
+can respond to and other programmers can understand.
+d. algorithm: A step-by-step sequence of instructions describing how to perform a computation.
+e. pseudocode: A means of describing an algorithm with English-like phrases.
+f. flowchart: A diagram that uses symbols to depict an algorithm.
+g. procedure: A logically consistent set of instructions that produce a specific result.
+h. object: A specific case, or instance, of a class. An object consists of data and methods.
+i. method: An operation or a procedure that can be applied to the data in a class; a member
+function.
+j. message: The means of activating a particular method in an object.
+k. response: The predictable result of sending a message.
+l. class: A broad category that defines the characteristics of the data an object can contain and
+the methods that can be applied to the data; also a programmer-defined data type.
+m. source program: A file consisting of a program’s statements in C++ or another programming
+language.
+n. compiler: The program that translates source code into machine language all at once, before
+any code is executed.
+o. object program: The result of compiling a source program. It’s created by the compiler and
+is assigned the extension .obj.
+p. executable program: A program that’s ready to be run.
+q. interpreter: The program that translates source code into machine language, one line at a
+time, as the source code is executed.
+
+2. (Practice) Determine a step-by-step procedure (list the steps) for each of the following tasks:
+a. Fix a flat tire.
+Stop vehicle in a safe, level location
+Set the parking brake
+Get jack, lug wrench, and spare tire
+Check air pressure in spare tire
+Use jack to raise vehicle so that damaged tire is clear of ground
+Remove hubcap
+Use lug wrench to loosen each lug nut
+Use lug wrench to remove each lug nut
+Place lug nuts into hubcap
+Remove tire from axle
+Place spare tire on axle
+Restore each lug nut, and tighten by hand
+Tighten all lug nuts securely with lug wrench
+Replace hubcap
+Release jack
+Return jack, lug wrench, and damaged tire to trunk of vehicle
+
+b. Make a phone call.
+Lift phone receiver
+Dial a number
+Wait for answer
+Speak to person, or respond to electronic instructions
+
+c. Go to the store and purchase a loaf of bread.
+Transport yourself to the store
+Find bakery department
+Select a loaf of bread
+Proceed to checkout area
+Exchange money for the loaf of bread
+
+d. Roast a turkey.
+
+3. (Practice) Determine and write an algorithm (list the steps) to interchange the contents of
+two cups of liquid. Assume that a third cup is available to hold the contents of either cup temporarily.
+Each cup should be rinsed before any new liquid is poured into it.
+
+Label cups #1, #2, and #3, with #3 being the empty cup
+Rinse #3
+Pour contents of #1 into #3
+Rinse #1
+Pour contents of #2 into #1
+Rinse #2
+Pour contents of #3 into #2
+Rinse #3
+
+4. (Practice) Write a detailed set of instructions in English to calculate the dollar amount of
+money in a piggybank that contains h half-dollars, q quarters, n nickels, d dimes, and p pennies.
+5. (Practice) Write a set of detailed, step-by-step instructions in English to find the smallest
+number in a group of three integer numbers.
+6. (Practice) a. Write detailed, step-by-step instructions in English to calculate the fewest number
+of dollar bills needed to pay a bill of amount TOTAL. For example, if TOTAL were $98,
+the bills would consist of one $50 bill, two $20 bills, one $5 bill, and three $1 bills. For this
+exercise, assume that only $100, $50, $20, $10, $5, and $1 bills are available.
+b. Repeat Exercise 6a, but assume the bill is to be paid only in $1 bills.
+7. (Practice) a. Write an algorithm to locate the first occurrence of the name JEAN in a list of
+names arranged in random order.
+b. Discuss how you could improve your algorithm for Exercise 7a if the list of names were
+arranged in alphabetical order.
+8. (Practice) Determine and write an algorithm to sort three numbers in ascending (from lowest
+to highest) order. How would you solve this problem heuristically?
+9. (Practice) Define an appropriate class for each of the following specific objects:
+a. The number 5
+b. A square measuring 4 inches by 4 inches
+c. This C++ book
+d. A 1955 Ford Thunderbird car
+e. The last ballpoint pen you used
+10. (Practice) a. What operations should the following objects be capable of doing?
+i. A 1955 Ford Thunderbird car
+ii. The last ballpoint pen you used
+b. Do the operations determined for Exercise 10a apply only to the particular object listed, or
+are they more general and applicable to all objects of the type listed?
