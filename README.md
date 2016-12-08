@@ -15,10 +15,6 @@ Exercise 1.3
 
 Exercise 1.4
 
-Exercise 1.5
-
-Exercise 1.6
-
 Exercise 1.7
 
 Data Types, Declarations, and Displays
