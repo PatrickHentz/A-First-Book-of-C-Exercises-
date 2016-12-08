@@ -66,7 +66,6 @@ Exercise 6.1
 Exercise 6.2
 
 Exercise 6.3
-
 Exercise 6.4
 
 Exercise 6.5
@@ -80,7 +79,7 @@ Exercise 7.3
 
 Exercise 7.4
 
-rArrays and Pointers
+Arrays and Pointers
 
 Exercise 8.1
 
