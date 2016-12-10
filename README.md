@@ -25,8 +25,6 @@ Exercise 2.2
 
 Exercise 2.3
 
-Exercise 2.4
-
 Assignment and Interactive Input 
 
 Exercise 3.1
