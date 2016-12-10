@@ -1,0 +1,144 @@
+1. (Practice) State whether the following variable names are valid. If they’re invalid, state the
+reason.
+prod_a c1234 abcd _c3 12345
+newbal while $total newƒbal a1b2c3d4
+9ab6 sum.of average grade1 finGrade
+2. (Practice) State whether the following variable names are valid. If they’re invalid, state the
+reason. Also, indicate which of the valid variable names shouldn’t be used because they convey
+no information about the variable.
+salestax a243 r2d2 firstNum cc_a1
+harry sue c3p0 average sum
+maximum okay a awesome goforit
+3sum for tot.a1 c$five netpay
+3. (Practice) a. Write a declaration statement to declare that the variable count will be used to
+store an integer.
+b. Write a declaration statement to declare that the variable grade will be used to store a
+floating-point number.
+c. Write a declaration statement to declare that the variable yield will be used to store a
+double-precision number.
+d. Write a declaration statement to declare that the variable initial will be used to store a
+character.
+4. (Practice) Write a single declaration statement for each set of variables:
+a. num1, num2, and num3 used to store integer numbers
+b. grade1, grade2, grade3, and grade4 used to store double-precision numbers
+c. temp1, temp2, and temp3 used to store double-precision numbers
+d. let1, let2, let3, and let4 used to store characters
+5. (Practice) Write a single declaration statement for each set of variables:
+a. firstnum and secnum used to store integers
+b. price, yield, and coupon used to store double-precision numbers
+c. average used to store a double-precision number
+6. (Modify) Rewrite each of these declaration statements as three separate declarations:
+a. int month, day = 30, year;
+b. double hours, volt, power = 15.62;
+c. double price, amount, taxes;
+d. char inKey, ch, choice = 'f';
+7. (Desk check) a. Determine what each statement causes to happen in the following program:
+#include <iostream>
+using namespace std;
+int main()
+{
+  int num1, num2, total;
+  num1 = 25;
+  num2 = 30;
+  total = num1 + num2;
+  cout << “The total of ” << num1 << “ and “
+       << num2 << “ is “ << total << endl;
+  return 0;
+}
+b. What output will be displayed when the program in Exercise 7a runs?
+8. (Program) Write a C++ program that stores the sum of the integer numbers 12 and 33 in a
+variable named sum. Have your program display the value stored in sum.
+9. (Program) Write a C++ program that stores the integer value 16 in the variable length and
+the integer value 18 in the variable width. Have your program calculate the value assigned to
+the perimeter variable, using this formula:
+perimeter = 2 × (length + width)
+Your program should then display the value stored in perimeter. Be sure to declare all variables
+as integers at the beginning of the main() function.
+10. (Program) Write a C++ program that stores the integer value 16 in the variable num1 and the
+integer value 18 in the variable num2. (Be sure to declare the variables as integers.) Have your
+program calculate the total of these numbers and their average. Store the total in an integer
+variable named total and the average in an integer variable named average. (Use the statement
+average = total/2.0; to calculate the average.) Use a cout statement to display the
+total and average.
+11. (Debug) Enter, compile, and run the following program. Determine why an incorrect average
+is displayed and correct the error.
+#include <iostream>
+using namespace std;
+int main()
+{
+  int num1 = 15;
+  int num2 = 18;
+  int total, average;
+  total = num1 + num2;
+  average = total / 2.0;
+  cout << “The average of “ << num1
+       << “ and “ << num2 << “ is “ 
+       << average << endl;
+  return 0;
+}
+12. (Debug) The following program was written to correct the error produced by the program in
+Exercise 11. Determine why this program also doesn’t provide the correct result and correct
+the error.
+#include <iostream>
+using namespace std;
+int main()
+{
+  int num1 = 15;
+  int num2 = 18;
+  int total;
+  double average;
+  total = num1 + num2;
+  average = total / 2;
+  cout << “The average of “ << num1
+       << “ and “ << num2 << “ is “ 
+       << average << endl;
+  return 0;
+}
+13. (Program) Write a C++ program that stores the number 105.62 in the variable firstnum,
+89.352 in the variable secnum, and 98.67 in the variable thirdnum. (Be sure to declare the
+variables first as float or double.) Have your program calculate the total of the three numbers
+and their average. The total should be stored in the variable total and the average in the
+variable average. (Use the statement averageƒ=ƒtotalƒ/3.0; to calculate the average.)
+Use a cout statement to display the total and average.
+14. (For thought) a. A statement used to clarify the relationship between squares and rectangles
+is “All squares are rectangles but not all rectangles are squares.” Write a similar statement that
+describes the relationship between definition and declaration statements.
+b. Why must a variable be defined before any other C++ statement that uses the variable?
+Note for Exercises 15 to 17: Assume that a character requires 1 byte of storage, an integer requires
+4 bytes, a single-precision number requires 4 bytes, and a double-precision number requires 8 bytes.
+Variables are assigned storage in the order they’re declared. (Review Section 2.6 if you’re unfamiliar
+with the concept of a byte.) Refer to Figure 2.7 for these exercises.
+Addresses
+159 160 161 162 163 164 165 166
+167 168 169 170 171 172 173 174
+175 176 177 178 179 180 181 182
+183 184 185 186 187 188 189 190
+Figure 2.7 Memory bytes for Exercises 15 to 17
+15. (Practice) a. Using Figure 2.7 and assuming the variable name rate is assigned to the byte
+at memory address 159, determine the addresses corresponding to each variable declared in
+the following statements. Also, fill in the correct number of bytes with the initialization data
+included in the declaration statements. (Use letters for the characters, not the computer codes
+that would actually be stored.)
+float rate;
+16. (Practice) a. Using Figure 2.7 and assuming the variable named cn1 is assigned to the byte
+at memory address 159, determine the addresses corresponding to each variable declared in
+the following statements. Also, fill in the correct number of bytes with the initialization data
+included in the declaration statements. (Use letters for the characters, not the computer codes
+that would actually be stored.)
+char cn1 = 'P', cn2 = 'E', cn3 = 'R', cn4 = 'F', cn5 = 'E';
+char cn6 = 'C', cn7 = 'T', key = '\\', sch = '\'', inc = 'A';
+char inc1 = 'T';
+b. Repeat Exercise 16a, but substitute the actual byte patterns a computer using the ASCII
+code would use to store characters in each declared variable. (Hint: Use Tables 2.2 and 2.3.)
+17. (Practice) Using Figure 2.7 and assuming the variable name miles is assigned to the byte at
+memory address 159, determine the addresses corresponding to each variable declared in the
+following statements:
+float miles;
+int count, num;
+double dist, temp;
+char ch1='M',ch2='E',ch3='L',ch4='T';
+double taxes;
+int num,count=0;
+b. Repeat Exercise 15a, but substitute the actual byte patterns that a computer using the
+ASCII code would use to store characters in the variables ch1, ch2, ch3, and ch4. (Hint : Use
+Table 2.2.)
