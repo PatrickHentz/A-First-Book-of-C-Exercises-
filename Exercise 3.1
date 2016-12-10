@@ -1,0 +1,101 @@
+1. (Practice) Write an assignment statement to calculate the circumference of a circle having a
+radius of 3.3 inches. The formula for determining the circumference, c, of a circle is c = 2πr,
+where r is the radius and π equals 3.1416.
+2. (Practice) Write an assignment statement to calculate the area of a circle. The formula for
+determining the area, a, of a circle is a = πr2, where r is the radius and π = 3.1416.
+3. (Practice) Write an assignment statement to convert temperature in degrees Fahrenheit to
+degrees Celsius. The formula for this conversion is Celsius = 5.0 / 9.0 (Fahrenheit - 32).
+4. (Practice) Write an assignment statement to calculate the round-trip distance, d, in feet, of a
+trip that’s s miles long one way.
+5. (Practice) Write an assignment statement to calculate the elapsed time, in minutes, it takes
+to make a trip. The formula for computing elapsed time is elapsed time = total distance / average
+speed. Assume the distance is in miles and the average speed is in miles per hour (mph).
+6. (Practice) Write an assignment statement to calculate the value, v, of the nth term in an arithmetic
+sequence. The formula for calculating this value is as follows:
+v = a + (n - 1)d
+a is the first number in the sequence.
+d is the difference between any two numbers in the sequence.
+7. (Practice) Write an assignment statement to determine the maximum bending moment, M,
+of a beam, given this formula:
+M = X W (L - X) / L
+X is the distance from the end of the beam that a weight, W, is placed.
+L is the length of the beam.
+8. (Debug) Determine and correct the errors in the following programs.
+a. #include <iostream>
+  using namespace std;
+  int main()
+  {
+    width = 15
+    area = length * width;
+    cout << “The area is “ << area
+  }
+b. #include <iostream>
+  using namespace std;
+  int main()
+  {
+    int length, width, area;
+    area = length * width;
+    length = 20;
+    width = 15;
+    cout << “The area is “ << area;
+    return 0;
+c. #include <iostream>
+   int main()
+   {
+     int length = 20; width = 15, area;
+     length * width = area;
+     cout << “The area is “ , area;
+     return 0;
+   }
+9. (Debug) By mistake, a student reordered the statements in Program 3.3 as follows:
+#include <iostream>
+using namespace std;
+int main()
+{
+  int sum;
+  sum = 0;
+  sum = sum + 96;
+  sum = sum + 70;
+  sum = sum + 85;
+  sum = sum + 60;
+  cout << “The value of sum is initially set to “ 
+       << sum << endl;
+  cout << “  sum is now “ << sum << endl;
+  cout << “  sum is now “ << sum << endl;
+  cout << “  sum is now “ << sum << endl;
+  cout << “  The final sum is “ << sum << endl;
+  return 0;
+}
+Determine the output this program produces.
+10. (Practice) Using Program 3.1, complete the following chart by determining the area of a rectangle
+having these lengths and widths:
+Length (in.) Width (in.) Area
+1.62 6.23
+2.86 7.52
+4.26 8.95
+8.52 10.86
+12.29 15.35
+11. (Program) The area of an ellipse (see Figure 3.4) is given by this formula:
+Area = π a b
+Using this formula, write a C++ program to calculate the area of an ellipse having a minor axis,
+a, of 2.5 inches and a major axis, b, of 6.4 inches.
+a
+b
+Figure 3.4 The minor axis, a, and the major axis, b, of an ellipse
+12. (Program) a. Write a C++ program to calculate the dollar amount contained in a piggybank.
+The bank currently contains 12 half-dollars, 20 quarters, 32 dimes, 45 nickels, and 27 pennies.
+b. Run the program written for Exercise 12a on a computer.
+13. (Program) a. Write a C++ program to calculate the distance, in feet, of a trip that’s 2.36 miles
+long. One mile is equal to 5280 feet.
+b. Run the program written for Exercise 13a on a computer.
+14. (Program) a. Write a C++ program to calculate the elapsed time it takes to make a 183.67-mile
+trip. The equation for computing elapsed time is elapsed time = total distance / average speed.
+Assume that the average speed during the trip is 58 miles per hour.
+b. Run the program written for Exercise 14a on a computer.
+15. (Program) a. Write a C++ program to calculate the sum of the numbers from 1 to 100. The
+formula for calculating this sum is sum = (n / 2) × (2 × a + (n - 1) × d), where n = number of
+terms to be added, a = the first number, and d = the difference between each number and the
+next number (d = 1).
+b. Run the program written for Exercise 15a on a computer.
+16. (For thought) Determine why the expression a-b=25 is invalid but the expression
+a - (b=25) is valid.
