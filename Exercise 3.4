@@ -1,0 +1,188 @@
+1. (Practice) For the following declaration statements, write one or more statements using the
+cin object that causes the computer to pause while the user enters the appropriate data:
+a. int firstnum;
+b. double grade;
+c. double secnum;
+d. char keyval;
+e. int month, years;
+double average;
+f. char ch;
+int num1,num2;
+double grade1,grade2;
+g. double interest, principal, capital;
+double price, yield;
+h. char ch,letter1,letter2;
+int num1,num2,num3;
+i. double temp1,temp2,temp3;
+double volts1,volts2;
+2. (Program) a. Write, compile, and run a C++ program that displays the following prompts:
+Enter the length of the room:
+Enter the width of the room:
+After each prompt is displayed, your program should use a cin object call to accept data from
+the keyboard for the displayed prompt. After the width of the room is entered, your program
+should calculate and display the area of the room. The area displayed should be calculated by
+using the formula area = length × width and should be included in an appropriate message.
+b. Check the area displayed by the program written for Exercise 2a by calculating the result
+manually.
+3. (Program) a. Write, compile, and run a C++ program that displays the following prompts:
+Enter the length of the swimming pool:
+Enter the width of the swimming pool:
+Enter the average depth of the swimming pool:
+After each prompt is displayed, your program should use a cin statement to accept data from
+the keyboard for the displayed prompt. After the depth of the swimming pool is entered, your
+program should calculate and display the volume of the pool. The volume should be calculated
+with the formula volume = length × width × average depth and be displayed in an output
+message.
+b. Check the volume displayed by the program written for Exercise 3a by calculating the
+result manually.
+4. (Program) Write, compile, and run a C++ program that displays the following prompt:
+Enter the radius of a circle:
+After accepting a value for the radius, your program should calculate and display the area of
+the circle. (Hint : Area = 3.1416 × radius2.) For testing purposes, verify your program by using
+an input radius of 3 inches. After manually determining that your program’s result is correct,
+use your program to complete the following chart:
+Radius (in) Area (sq. in)
+1.0
+1.5
+2.0
+2.5
+3.0
+3.5
+5. (Program) a. Write a C++ program that first displays the following prompt:
+Enter the temperature in degrees Celsius:
+Have your program accept a value entered from the keyboard and convert the temperature
+entered to degrees Fahrenheit, using this formula:
+Fahrenheit = (9.0 / 5.0) × Celsius + 32.0
+Your program should then display the temperature in degrees Fahrenheit with an output
+message.
+b. Compile and run the program written for Exercise 5a. To verify your program, use the following
+test data and calculate the Fahrenheit equivalents by hand, and then use your program
+to see whether you get the same results:
+Test data set 1: 0 degrees Celsius
+Test data set 2: 50 degrees Celsius
+Test data set 3: 100 degrees Celsius
+When you’re sure your program is working correctly, use it to complete the following chart:
+Celsius Fahrenheit
+45
+50
+55
+60
+65
+70
+6. (Program) a. Write, compile, and run a C++ program that displays the following prompts:
+Enter the miles driven:
+Enter the gallons of gas used:
+After each prompt is displayed, your program should use a cin statement to accept data from
+the keyboard for the displayed prompt. After the number for gallons of gas used has been
+entered, your program should calculate and display the miles per gallon (mpg). This value
+should be calculated with the formula miles per gallon = miles / gallons used and displayed in an
+output message. Verify your program by using the following test data:
+Test data set 1: miles = 276, gas = 10 gallons
+Test data set 2: miles = 200, gas = 15.5 gallons
+After finishing your verification, use your program to complete the following chart. (Make sure to
+convert the miles driven to kilometers driven, convert gallons used to liters used, and then compute
+the kilometers per liter. There are 1.61 kilometers per mile and 4.54609 liters per gallon.)
+Miles Driven Gallons Used Mpg Km Driven Liters Used Km/L
+250 16.00
+275 18.00
+312 19.54
+296 17.39
+b. For the program written for Exercise 6a, determine how many verification runs are required
+to make sure the program is working correctly, and give a reason to support your answer.
+7. (Program) a. Write, compile, and run a C++ program that displays the following prompts:
+Enter a number:
+Enter a second number:
+Enter a third number:
+Enter a fourth number:
+After each prompt is displayed, your program should use a cin statement to accept a number
+from the keyboard for the displayed prompt. After the fourth number has been entered, your
+program should calculate and display the average of the numbers. The average should be
+displayed in an output message. Check the average your program calculates by using the following
+test data:
+Test data set 1: 100, 100, 100, 100
+Test data set 2: 100, 0, 100, 0
+After finishing your verification, use your program to complete the following chart:
+Numbers Average
+92, 98, 79, 85
+86, 84, 75, 86
+63, 85, 74, 82
+b. Repeat Exercise 7a, making sure you use the same variable name, number, for each number
+input. Also, use the variable sum for the sum of the numbers. (Hint: To do this, you can use
+the statement sumƒ=ƒsumƒ+ƒnumber; after each number is accepted. Review the material
+on accumulating in Section 3.1.)
+8. (Program) The perimeter, approximate surface area, and approximate volume of an in-ground
+pool are given by the following formulas:
+perimeter = 2 × (length + width)
+volume = length × width × average depth
+underground surface area = 2 × (length + width) × average depth + length × width
+Using these formulas as a basis, write a C++ program that accepts the length, width, and average
+depth measurements, and then calculates the pool’s perimeter, volume, and underground surface
+area. In writing your program, make these two calculations immediately after entering the
+input data: length × width and length + width. The results of these two calculations should be used,
+as needed, in the assignment statements for determining the perimeter, volume, and underground
+surface area without recalculating them for each equation. Verify your program’s results
+by doing a hand calculation, using the following test data: length = 25 feet, width = 15 feet, and
+average depth = 5.5 feet. After verifying that your program is working, use it to complete the following
+chart:
+Length Width Average
+Depth
+Perimeter Volume Underground
+Surface Area
+25 10 5.0
+25 10 5.5
+25 10 6.0
+25 10 6.5
+30 12 5.0
+30 12 5.5
+30 12 6.0
+30 12 6.5
+9. (Program) a. Write, compile, and run a C++ program to compute and display the value of the
+second-order polynomial ax2 + bx + c for any user-entered values of the coefficients a, b, and c
+and the variable x. Have your program display a message first to inform users what the program
+does, and then display suitable prompts to alert users to enter data. (Hint: Use a prompt such
+as Enterƒtheƒcoefficientƒofƒtheƒx-squaredƒterm:.)
+b. Check the result of your program written for Exercise 9a by using the following test data:
+Test data set 1: a = 0, b = 0, c = 22, x = 56
+Test data set 2: a = 0, b = 22, c = 0, x = 2
+Test data set 3: a = 22, b = 0, c = 0, x = 2
+Test data set 4: a = 2, b = 4, c = 5, x = 2
+After finishing your verification, use your program to complete the following chart:
+a b c x Polynomial Value (ax2 + bx + c)
+2.0 17.0 -12.0 1.3
+3.2 2.0 15.0 2.5
+3.2 2.0 15.0 -2.5
+-2.0 10.0 0.0 2.0
+-2.0 10.0 0.0 4.0
+-2.0 10.0 0.0 5.0
+-2.0 10.0 0.0 6.0
+5.0 22.0 18.0 8.3
+4.2 -16 -20 -5.2
+10. (Program) Write, compile, and run a program that calculates and displays the square root
+value of a user-entered real number. Verify your program by calculating the square roots of this
+test data: 25, 16, 0, and 2. After finishing your verification, use your program to determine the
+square roots of 32.25, 42, 48, 55, 63, and 79.
+11. (Program) Write, compile, and run a program to calculate and display the fourth root of a
+user-entered number. Recall from elementary algebra that you find the fourth root of a number
+by raising the number to the 1⁄4 power. (Hint : Don’t use integer division—can you see
+why?) Verify your program by calculating the fourth root of this test data: 81, 16, 1, and 0. When
+you’re finished, use your program to determine the fourth root of 42, 121, 256, 587, 1240, and
+16,256.
+12. (Program) Program 3.12 prompts users to input two numbers; the first value entered is stored
+in num1, and the second value is stored in num2. Using this program as a starting point, write
+a program that swaps the values stored in the two variables.
+13. (Program) Write a C++ program that prompts users to enter a number. Have your program
+accept the number as an integer and display the integer immediately by using a cout statement.
+Run your program three times. The first time, enter a valid integer number; the second
+time, enter a double-precision number; and the third time, enter a character. Using the output
+display, see what number your program actually accepted from the data you entered.
+14. (Program) Repeat Exercise 13, but have your program declare the variable used to store the
+number as a double-precision variable. Run the program three times. The first time, enter an
+integer; the second time, enter a double-precision number; and the third time, enter a character.
+Using the output display, keep track of what number your program actually accepted from
+the data you entered. What happened, if anything, and why?
+15. (For thought) a. Why do you think successful programs contain extensive data-input validity
+checks? (Hint: Review Exercises 13 and 14.)
+b. What do you think is the difference between a data-type check and a data-reasonableness
+check?
+c. Assume that a program requests users to enter a month, day, and year. What are some checks
+that could be made on the data entered?
