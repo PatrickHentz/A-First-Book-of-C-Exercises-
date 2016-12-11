@@ -1,0 +1,126 @@
+1. (Debug) Determine the errors in the following statements:
+a. cout << “\n << “ 15)
+b. cout << “setw(4)” <<  33;
+c. cout << “setprecision(5)” <<  526.768;
+d. “Hello World!” >> cout;
+e. cout << 47 << setw(6);
+f. cout << set(10) << 526.768 << setprecision(2);
+2. (Desk check) Determine and write out the display produced by the following statements:
+a. cout << “|” << 5 <<”|”;
+b. cout << “|” << setw(4) << 5 << “|”;
+c. cout << “|” << setw(4) << 56829 << “|”;
+d. cout << “|” << setw(5)  << setiosflags(ios::fixed)
+        << setprecision(2) << 5.26 << “|”;
+e. cout << “|” << setw(5)  << setiosflags(ios::fixed)
+        << setprecision(2) << 5.267 << “|”;
+f. cout << “|” << setw(5)  << setiosflags(ios::fixed)
+        << setprecision(2) << 53.264 << “|”;
+g. cout << “|” << setw(5)  << setiosflags(ios::fixed)
+        << setprecision(2) << 534.264 << “|”;
+h. cout << “|” << setw(5)  << setiosflags(ios::fixed)
+        << setprecision(2) << 534. << “|”;
+3. (Desk check) Write out the display produced by the following statements:
+a. cout << “The number is “ << setw(6) << setiosflags(ios::fixed)
+        << setprecision(2)  << 26.27 << endl;
+  cout << “The number is “ << setw(6) << setiosflags(ios::fixed)
+        << setprecision(2)  << 682.3 << endl;
+  cout << “The number is “ << setw(6) << setiosflags(ios::fixed)
+        << setprecision(2)  << 1.968 << endl;
+b. cout << setw(6) << setiosflags(ios::fixed)
+        << setprecision(2) << 26.27 << endl;
+  cout << setw(6) << setiosflags(ios::fixed)
+        << setprecision(2) << 682.3 << endl;
+  cout << setw(6) << setiosflags(ios::fixed)
+        << setprecision(2) << 1.968 << endl;
+  cout << “------\n”;
+  cout << setw(6) << setiosflags(ios::fixed)
+        << setprecision(2)
+        << 26.27 + 682.3 + 1.968 << endl;
+c. cout << setw(5) << setiosflags(ios::fixed)
+        << setprecision(2) << 26.27 << endl;
+  cout << setw(5) << setiosflags(ios::fixed)
+        << setprecision(2) << 682.3 << endl;
+  cout << setw(5) << setiosflags(ios::fixed)
+        << setprecision(2) << 1.968 << endl;
+  cout << “-----\n”;
+  cout << setw(5) << setiosflags(ios::fixed)
+        << setprecision(2)
+        << 26.27 + 682.3 + 1.968 << endl;
+d. cout << setw(5) << setiosflags(ios::fixed)
+        << setprecision(2) << 36.164 << endl;
+  cout << setw(5) << setiosflags(ios::fixed)
+        << setprecision(2) << 10.003 << endl;
+  cout << “-----” << endl;
+4. (Desk check) The following chart lists the equivalent octal and hexadecimal representations
+for the decimal numbers 1 through 15:
+    Decimal: 1  2  3  4  5  6  7   8   9  10  11  12  13  14  15
+      Octal: 1  2  3  4  5  6  7  10  11  12  13  14  15  16  17
+Hexadecimal: 1  2  3  4  5  6  7   8   9   a   b   c   d   e   f
+Using this chart, determine the output of the following program:
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+  cout << “\nThe value of 14 in octal is “ << oct << 14
+       << “\nThe value of 14 in hexadecimal is “ << hex << 14
+       << “\nThe value of 0xA in decimal is “ << dec << 0xA
+       << “\nThe value of 0xA in octal is “ << oct << 0xA
+       << endl;
+  return 0;
+}
+5. (Program) Write a C++ program to calculate and display the value of the slope of the line
+connecting two points with the coordinates (3,7) and (8,12). Use the fact that the slope
+between two points at the coordinates (x1,y1) and (x2,y2) is slope = (y2 - y1) / (x2 - x1). Your
+program should produce this display:
+The value of the slope is xxx.xx
+The xxx.xx denotes placing the calculated value in a field wide enough for three places to
+the left of the decimal point and two places to the right of it.
+6. (Program) Write a C++ program to calculate and display the midpoint coordinates of the line
+connecting the two points with coordinates of (3,7) and (8,12). Use the fact that the midpoint
+coordinates between two points with the coordinates (x1,y1) and (x2,y2) are ((x2 + x1) / 2,
+(y2 + y1) / 2). Your program should produce this display:
+The x coordinate of the midpoint is xxx.xx
+The y coordinate of the midpoint is xxx.xx
+The xxx.xx denotes placing the calculated value in a field wide enough for three places to
+the left of the decimal point and two places to the right of it.
+Verify your program using the following test data:
+Test data set 1: Point 1 = (0,0) and Point 2 = (16,0)
+Test data set 2: Point 1 = (0,0) and Point 2 = (0,16)
+Test data set 3: Point 1 = (0,0) and Point 2 = (-16,0)
+Test data set 4: Point 1 = (0,0) and Point 2 = (0,-16)
+Test data set 5: Point 1 = (-5,-5) and Point 2 = (5,5)
+When you have completed your verification, use your program to complete the following table.
+Point 1      Point 2      Midpoint
+-------      -------      --------
+(4,6)        (16,18)
+(22,3)       (8,12)
+(-10,8)      (14,4)
+(-12,2)      (14,3.1)
+(3.1,-6)     (20,16)
+(3.1,-6)     (-16,-18)
+7. (Program) The change remaining after an amount is used to pay a restaurant bill of amount
+check can be calculated by using the following C++ statements:
+// determine the number of pennies in the change
+    change = (paid - check) * 100;
+// determine the number of dollars in the change
+    dollars = (int) (change/100);
+a. Using the previous statements as a starting point, write a C++ program that calculates the
+number of dollar bills, quarters, dimes, nickels, and pennies in the change when $10 is used
+to pay a bill of $6.07.
+b. Without compiling or running your program, check the effect, by hand, of each statement in
+the program and determine what’s stored in each variable as each statement is encountered.
+c. When you have verified that your algorithm works correctly, compile and run your program.
+Verify that the result produced by your program is correct, and then use your program to
+determine the change when a check of $12.36 is paid with a 20-dollar bill.
+8. (Program) Write a C++ program to calculate and display the maximum bending moment, M,
+of a beam that’s supported on both ends (see Figure 3.6). The formula is M = XW (L - X) / L,
+where X is the distance from the end of the beam that a weight, W, is placed, and L is the
+length of the beam. Your program should produce this display:
+The maximum bending moment is xxxx.xxxx
+The xxxx.xxxx denotes placing the calculated value in a field wide enough for four places to
+both the right and left of the decimal point.
+W
+L
+X
+Figure 3.6 Calculating the maximum bending moment
