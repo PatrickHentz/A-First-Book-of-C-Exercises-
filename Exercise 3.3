@@ -1,0 +1,144 @@
+1. (Practice) Write function calls to determine the following:
+a. The square root of 6.37
+b. The square root of x - y
+c. The sine of 30 degrees
+d. The sine of 60 degrees
+e. The absolute value of a2 - b2
+f. The value of e raised to the third power
+2. (Practice) For a = 10.6, b = 13.9, and c = -3.42, determine the following values:
+a. int (a)
+b. int (b)
+c. int (c)
+d. int (a + b)
+e. int (a) + b + c
+f. int (a + b) + c
+g. int (a + b + c)
+h. double (int (a)) + b
+i. double (int (a + b))
+j. abs(a) + abs(b)
+k. sqrt(abs(a - b))
+3. (Practice) Write C++ statements for the following:
+a. area = (c × b × sin a) / 2
+b.
+c.
+d.
+e. b = sin2 x - cos2 x
+4. (Program) Write, compile, and run a C++ program that calculates and returns the fourth root
+of the number 81.0, which is 3. After verifying that your program works correctly, use it to
+determine the fourth root of 1,728.896400. Your program should make use of the sqrt()
+function or use the fact that the fourth root of a value can be obtained by raising the value to
+the 1/4 power.
+5. (Program) The volume of oil stored in an underground 200-foot deep cylindrical tank is
+determined by measuring the distance from the top of the tank to the surface of the oil.
+Knowing this distance and the radius of the tank, the volume of oil in the tank can be determined
+by using this formula:
+volume = π radius2 (200 - distance)
+Using this information, write, compile, and run a C++ program that determines the volume of
+oil in a 200-foot tank that has a radius of 10 feet and measures 12 feet from the top of the tank
+to the top of the oil. Your program should display the radius, distance from the top of the tank
+to the oil, and the calculated volume.
+6. (Program) The circumference of an ellipse (review Figure 3.4) is given by this formula:
+Circumference
+Using this formula, write a C++ program to calculate the circumference of an ellipse with a
+minor radius, a, of 2.5 inches and a major radius, b, of 6.4 inches.
+7. (Program) Write, compile, and run a C++ program to calculate the distance between two
+points with the coordinates (7, 12) and (3, 9). Use the fact that the distance between two points
+with the coordinates (x1, y1) and (x2, y2) is given by this formula:
+distance =
+After verifying that your program works correctly by calculating the distance between the
+two points manually, use your program to determine the distance between the points
+(-12, -15) and (22, 5).
+8. (Program) If a 20-foot ladder is placed on the side of a building at a 85-degree angle, as
+shown in Figure 3.9, the height at which the ladder touches the building can be calculated as
+height = 20 × sin 85°. Calculate this height by hand, and then write, compile, and run a C++
+program that determines and displays the value of the height. After verifying that your program
+works correctly, use it to determine the height of a 25-foot ladder placed at an angle of
+85 degrees.
+20'
+85°
+Figure 3.9 Calculating the height of a ladder against a building
+9. (Program) The maximum height reached by a ball thrown with an initial velocity, v, in
+meters/sec, at an angle of u is given by this formula:
+height = (.5 × v2 × sin2 u) / 9.8
+Using this formula, write, compile, and run a C++ program that determines and displays the
+maximum height reached when the ball is thrown at 5 mph at an angle of 60 degrees. (Hint:
+Make sure to convert the initial velocity into the correct units. There are 1609 meters in a
+mile.) Calculate the maximum height manually, and verify the result your program produces.
+After verifying the result, use your program to determine the height reached by a ball thrown
+at 7 mph at an angle of 45 degrees.
+10. (Program) A model of worldwide population growth, in billions of people, since 2000 is given
+by this formula:
+Population = 7.5 e0.02[Year - 2010]
+Using this formula, write, compile, and run a C++ program to estimate the worldwide population
+in the year 2012. Verify the result your program produces by calculating the answer manually,
+and then use your program to estimate the world’s population in the year 2020.
+11. (Program) The roads of Kansas are laid out in a rectangular grid at exactly one-mile intervals,
+as shown in Figure 3.10. Farmer Pete drives his 1939 Ford pickup x miles east and y miles
+north to get to farmer Joe’s farm. Both x and y are integer numbers. Using this information,
+write, test, and run a C++ program that prompts the user for the values of x and y, and then
+uses this formula to find the shortest driving distance across the fields to Joe’s farm:
+distance = sqrt(x2 + y2);
+Round the answer to the nearest integer value before it’s displayed.
+12. (Program) A model to estimate the number of grams of a radioactive isotope left after t years
+is given by this formula:
+remaining material = (original material) e-0.00012t
+Using this formula, write, compile, and run a C++ program to determine the amount of
+radioactive material remaining after 1000 years, assuming an initial amount of 100 grams.
+Verify the display your program produces by using a hand calculation. After verifying that
+your program is working correctly, use it to determine the amount of radioactive material
+remaining after 275 years, assuming an initial amount of 250 grams.
+13. (Program) The number of years it takes for an isotope of uranium to decay to one-half an
+original amount is given by this formula, where λ, the decay constant (which is equal to the
+inverse of the mean lifetime), equals 0.00012:
+half-life - ln(2) / λ
+Using this formula, write, compile, and run a C++ program that calculates and displays the
+half-life of this uranium isotope. Verify the result your program produces by using a hand calculation.
+After verifying that your program is working correctly, use it to determine the half-life
+of a uranium isotope with λ = 0.00026.
+14. (Program) a. Appendix B lists the integer values corresponding to each letter stored with
+the ASCII code. Note that uppercase letters consist of contiguous codes, starting with an
+integer value of 65 for the letter A and ending with 90 for the letter Z. Similarly, lowercase
+letters begin with the integer value of 97 for the letter a and end with 122 for the letter z.
+With this information as background, determine the character value of the expressions
+char ('A' + 32) and char ('Z' + 32).
+b. Using Appendix B, determine the integer value of the expression 'a' - 'A'.
+c. Using the results of Exercises 14a and 14b, determine the character value of the following
+expression, where uppercase letter can be any uppercase letter from A to Z:
+char (uppercase letter + 'a' - 'A').
+15. (Desk check and program) a. For display purposes, the setprecision() manipulator
+allows rounding all outputs to the specified number of decimal places. Doing so can, however,
+yield seemingly incorrect results when used in financial programs that require displaying all
+monetary values to the nearest penny. For example, examine this program:
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+  double a, b, c;
+  a = 1.674;
+  b = 1.322;
+  cout << setiosflags(ios::fixed) << setprecision(2);
+  cout << a << endl;
+  cout << b << endl;
+  cout << “----\n”;
+  c = a + b;
+  cout << c << endl;
+  return 0;
+}
+It produces the following display:
+1.67
+1.32
+----
+3.00
+Clearly, the sum of the displayed numbers should be 2.99, not 3.00. The problem is that
+although the values in a and b have been displayed with two decimal digits, they were added
+internally in the program as three-digit numbers. The solution is to round the values in a and
+b before they’re added with the statement c = a + b;. Using the int cast, devise a method
+to round the values in the variables a and b to the nearest hundredth (penny value) before
+they’re added.
+b. Include the method you devised for Exercise 15a in a working program that produces the
+following display:
+1.67
+1.32
+----
+2.99
