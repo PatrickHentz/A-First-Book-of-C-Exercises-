@@ -1,0 +1,34 @@
+1. (Practice) Enter and run Program 13.1.
+2. (Practice) Enter and run Program 13.2.
+3. (Modify) Modify Program 13.2 to prompt the user for a name. Have the program search the
+existing list for the entered name. If the name is in the list, display the corresponding phone
+number; otherwise, display this message: Theƒnameƒisƒnotƒinƒtheƒcurrentƒphone list.
+4. (Practice) Write a C++ program containing a linked list of 10 integer numbers. Have the program
+display the numbers in the list.
+5. (Practice) Using the linked list of objects shown in Figure 13.3, write the sequence of steps
+for deleting the object for John Lanfrank from the list.
+6. (Practice) Generalize the description in Exercise 5 to describe the sequence of steps for
+removing the nth object from a list of linked objects. The nth object is preceded by the (n - 1)st
+object and followed by the (n + 1)st object. Make sure to store all pointer values correctly.
+7. (Desk check) Determine the output of this program:
+#include <iostream>
+#include <list>
+using namespace std;
+int main()
+{
+  int intValue;
+  double sum = 0.0;
+  double average;
+   int nums[] = {1, 2, 3, 4, 5 };  // create array of integer values
+   list<int> x(nums, nums + 4); // instantiate a list of ints using
+                                // a constructor that initializes
+                                // the list with values from array
+   cout <<”\nThe list x initially has a size of “ << x.size()
+        << “,\n and contains the objects: “;
+   while (!x.empty())
+   {
+     cout << x.front() << “  “;
+     x.pop_front();
+   }
+   cout << endl;
+}
