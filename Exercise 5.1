@@ -1,0 +1,58 @@
+1. (Modify) Rewrite Program 5.1 to print the numbers 2 to 10 in increments of 2. The output
+of your program should be the following:
+2  4  6  8  10
+2. (Modify) Rewrite Program 5.4 to produce a table starting at a Celsius value of -10 and ending
+with a Celsius value of 60, in increments of 10 degrees.
+3. (Desk check) a. For the following program, determine the total number of items displayed
+as well as the first and last numbers printed:
+#include <iostream>
+using namespace std;
+int main()
+{
+  int num = 0;
+  while (num <= 20)
+  {
+    num++;
+    cout << num << “ “;
+  }
+  return 0;
+}
+b. Enter and run the program from Exercise 3a on a computer to verify your answers to the
+exercise.
+c. How would the output be affected if the two statements in the compound statement were
+reversed (that is, if the cout statement were placed before the num++ statement)?
+4. (Program) Write, compile, and run a C++ program that converts gallons to liters. The program
+should display gallons from 10 to 20 in 1-gallon increments and the corresponding liter equivalents.
+Use the relationship that 1 gallon = 3.785 liters.
+5. (Program) Write, compile, and run a C++ program that converts feet to meters. The program
+should display feet from 3 to 30 in 3-foot increments and the corresponding meter equivalents.
+Use the relationship that 3.28 feet = 1 meter.
+6. (Program) A machine purchased for $28,000 is depreciated at a rate of $4000 a year for 7 years.
+Write, compile, and run a C++ program that computes and displays a depreciation table for
+7 years. The table should have this form:
+                       END-OF-YEAR    ACCUMULATED
+YEAR   DEPRECIATION      VALUE        DEPRECIATION
+----   ------------    -----------    ------------
+1        4000            24000            4000
+2        4000            20000            8000
+3        4000            16000           12000
+4        4000            12000           16000
+5        4000             8000           20000
+6        4000             4000           24000
+7        4000                0           28000
+7. (Program) An automobile travels at an average speed of 55 mph for 4 hours. Write, compile,
+and run a C++ program that displays the distance, in miles, the car has traveled after 0.5, 1.0,
+1.5, and so on hours until the end of the trip.
+8. (Program) a. The following is an approximate conversion formula for converting Fahrenheit
+to Celsius temperatures:
+Celsius = (Fahrenheit - 30) / 2
+Using this formula, and starting with a Fahrenheit temperature of 0 degrees, write a C++ program
+that determines when the approximate equivalent Celsius temperature differs from the
+exact equivalent value by more than 4 degrees. (Hint: Use a while loop that terminates when
+the difference between approximate and exact Celsius equivalents exceeds 4 degrees.)
+b. Using the approximate Celsius conversion formula given in Exercise 8a, write a C++ program
+that produces a table of Fahrenheit temperatures, exact Celsius equivalent temperatures,
+approximate Celsius equivalent temperatures, and the difference between the exact
+and approximate equivalent Celsius values. The table should begin at 0 degrees Fahrenheit,
+use 2-degree Fahrenheit increments, and terminate when the difference between exact and
+approximate values is more than 4 degrees.
