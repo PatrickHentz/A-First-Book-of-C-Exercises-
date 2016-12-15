@@ -1,0 +1,37 @@
+1. (Modify) a. Rewrite Program 10.8 to include an integer static variable named numemps. This
+variable should act as a counter that’s initialized to 0 and incremented by the class constructor
+each time a new object is declared. Rewrite the static method dispRate() to display this
+counter’s value.
+b. Test the program written for Exercise 1a. Have the main() function call dispRate() after
+each Employee object is created.
+2. (Program) a. Construct a class named Circle containing two integer variables named
+xCenter and yCenter and a double-precision variable named radius. Additionally, the class
+should contain a static data member named scaleFactor. The xCenter and yCenter values
+represent a circle’s center point, radius represents the circle’s actual radius, and scaleFactor
+represents a scale factor used to scale the circle to fit on a variety of display devices.
+b. Include the class written for Exercise 2a in a working C++ program.
+3. (Debug) a. State whether the following three statements in Program 10.9
+re = addreal(a,b);
+im = addimag(a,b);
+Complex c(re,im);  // create a new Complex object
+could be replaced by this single statement:
+Complex c(addreal(a,b), addimag(a,b));
+b. Verify your answer to Exercise 3a by running Program 10.9 with the suggested replacement
+statement.
+4. (Modify) a. Rewrite the program written for Exercise 2a, but include a friend function that
+multiples an object’s radius by a static scaleFactor and then displays the actual radius value
+and the scaled value.
+b. Test the program written for Exercise 4a.
+5. (Modify) Rewrite Program 10.9 to have only one friend function named addComplex(). This
+function should accept two Complex objects and return a Complex object. The real and
+imaginary parts of the returned object should be the sum of the real and imaginary parts of the
+two objects passed to addComplex().
+6. (Program) a. Construct a class named Coord containing two double-precision variables
+named xval and yval, used to store the x and y values of a point in rectangular coordinates.
+The class methods should include constructor and display methods and a friend function
+named convPol(). The convPol() function should accept two double-precision numbers, r
+and theta, representing a point in polar coordinates and convert them into rectangular coordinates.
+For conversion from polar to rectangular coordinates, use these formulas:
+x = r cos(theta)
+y = r sin(theta)
+b. Include the class written for Exercise 6a in a working C++ program.
