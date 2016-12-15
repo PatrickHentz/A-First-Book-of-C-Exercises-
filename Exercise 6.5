@@ -1,0 +1,78 @@
+1. (Practice) a. List the storage categories available to local variables.
+b. List the storage categories available to global variables.
+2. (Practice) Describe the difference between a local auto variable and a local static variable.
+3. (Practice) What’s the difference between the following functions?
+void init1()
+{
+  static int yrs = 1;
+  cout << “The value of yrs is “ << yrs << endl;
+  yrs = yrs + 2;
+  return;
+}
+void init2()
+{
+  static int yrs;
+  yrs = 1;
+  cout << “The value of yrs is “ << yrs << endl;
+  yrs = yrs + 2;
+  return;
+}
+4. (Practice) a. Describe the difference between a global static variable and a global extern
+variable.
+b. If a variable is declared with an externƒstorage category, what other declaration statement
+must be present somewhere in the program?
+5. (Practice) The declaration statement staticƒdoubleƒyears; can be used to create a local
+or global static variable. What determines the scope of the variable years?
+6. (Practice) For the function and variable declarations shown in Figure 6.15, place an extern
+declaration to accomplish each of the following:
+a. Extend the scope of the global variable choice into file2.
+b. Extend the scope of the global variable flag into the average() function only.
+c. Extend the scope of the global variable date into average() and variance().
+d. Extend the scope of the global variable date into roi() only.
+e. Extend the scope of the global variable coupon into roi() only.
+f. Extend the scope of the global variable bondtype into file1.
+g. Extend the scope of the global variable maturity into both watts() and thrust().
+char choice;
+int flag;
+long date, time;
+int main()
+{
+.
+.
+.
+}
+double factor;
+double watts()
+{
+.
+.
+.
+}
+double thrust()
+{
+.
+.
+.
+}
+file1 file2
+char bondtype;
+double resistance;
+double roi()
+{
+.
+.
+.
+}
+double average()
+{
+.
+.
+.
+}
+double variance()
+{
+.
+.
+.
+}
+Figure 6.15 Files for Exercise 6
