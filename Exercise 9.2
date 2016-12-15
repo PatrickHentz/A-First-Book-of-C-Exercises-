@@ -1,0 +1,146 @@
+1. (Practice and Modify) a. Enter and run Program 9.5.
+b. Modify Program 9.5 to use the expression !inFile.eof() in place of the expression
+inFile.good(), and run the program to see whether it operates correctly.
+2. (Practice and Modify) a. Enter and run Program 9.6.
+b. Modify Program 9.6 by replacing cout with cerr, and verify that the output for the standard
+error file stream is the screen.
+c. Modify Program 9.6 by replacing cout with clog, and verify that the output for the standard
+log stream is the screen.
+3. (Practice and Modify) a. Write a C++ program that accepts lines of text from the keyboard
+and writes each line to a file named text.dat until an empty line is entered. An empty line
+is a line with no text that’s created by pressing the Enter (or Return) key.
+b. Modify Program 9.6 to read and display the data stored in the text.dat file created in
+Exercise 3a.
+4. (Practice) Determine the OS command or procedure your computer provides to display the
+contents of a saved file.
+5. (Program) a. Create a text file named employee.dat containing the following data:
+Anthony A 10031 11.82 12/18/2010
+Burrows W 10067 12.14 6/9/2011
+Fain B 10083 10.79 5/18/2011
+Janney P 10095 12.57 9/28/2008
+Smith G 10105 9.50 12/20/2006
+b. Write a C++ program to read the employee.dat file created in Exercise 5a and produce a
+duplicate copy of the file named employee.bak.
+c. Modify the program written in Exercise 5b to accept the names of the original and duplicate
+files as user input.
+d. The program written for Exercise 5c always copies data from an original file to a duplicate
+file. What’s a better method of accepting the original and duplicate filenames, other than
+prompting the user for them each time the program runs?
+6. (Program) a. Write a C++ program that opens a file and displays its contents with line numbers.
+That is, the program should print the number 1 before displaying the first line, print the
+number 2 before displaying the second line, and so on for each line in the file.
+b. Modify the program written in Exercise 6a to list the file’s contents on the printer assigned
+to your computer.
+7. (Program) a. Create a text file named info.dat containing the following data (without the
+headings):
+Name Social Security
+Number
+Hourly Rate Hours Worked
+B Caldwell 555-88-2222 10.50 37
+D Memcheck 555-77-4444 12.80 40
+R Potter 555-77-6666 16.54 40
+W Rosen 555-99-8888 11.80 35
+b. Write a C++ program that reads the data file created in Exercise 7a and computes and displays
+a payroll schedule. The output should list the Social Security number, name, and gross
+pay for each person, calculating gross pay as Hourly Rate × Hours Worked.
+8. (Program) a. Create a text file named car.dat containing the following data (without the
+headings):
+Car Number Miles Driven Gallons of Gas Used
+54 250 19
+62 525 38
+71 123 6
+85 1322 86
+97 235 14
+b. Write a C++ program that reads the data in the file created in Exercise 8a and displays the
+car number, miles driven, gallons of gas used, and miles per gallon (mpg) for each car. The
+output should contain the total miles driven, total gallons of gas used, and average mpg for
+all cars. These totals should be displayed at the end of the output report.
+9. (Program) a. Create a text file named parts.dat with the following data (without the
+headings):
+Part Number Initial Amount Quantity Sold Minimum
+Amount
+QA310 95 47 50
+CM145 320 162 200
+MS514 34 20 25
+EN212 163 150 160
+b. Write a C++ program to create an inventory report based on the data in the file created in
+Exercise 9a. The display should consist of the part number, current balance, and the amount
+needed to bring the inventory to the minimum level. The current balance is the initial
+amount minus the quantity sold.
+10. (Program) a. Create a text file named pay.dat containing the following data (without the
+headings):
+Name Rate Hours
+Callaway, G. 16.00 40
+Hanson, P. 15.00 48
+Lasard, D. 16.50 35
+Stillman, W. 12.00 50
+b. Write a C++ program that uses the information in the file created in Exercise 10a to produce
+the following pay report for each employee:
+Name   Pay Rate   Hours   Regular Pay   Overtime Pay   Gross Pay
+Compute regular pay as any hours worked up to and including 40 hours multiplied by the pay
+rate. Compute overtime pay as any hours worked above 40 hours at a pay rate of 1.5 multiplied
+by the regular rate. The gross pay is the sum of regular and overtime pay. At the end of the
+report, the program should display the totals of the regular, overtime, and gross pay columns.
+11. (Program) a. Store the following data in a file named numbers.dat:
+5  96  87  78  93  21  4  92  82  85  87  6  72  69  85  75  81  73
+b. Write a C++ program to calculate and display the average of each group of numbers in the
+file created in Exercise 11a. The data is arranged in the file so that each group of numbers
+is preceded by the number of data items in the group. Therefore, the first number in the
+file, 5, indicates that the next five numbers should be grouped together. The number 4
+indicates that the following four numbers are a group, and the 6 indicates that the last six
+numbers are a group. (Hint: Use a nested loop. The outer loop should terminate when the
+end of file has been encountered.)
+12. (Program) Write a C++ program that allows users to enter the following information from the
+keyboard for each student in a class (up to 20 students) and stores the data in a text file named
+grade.dat:
+NameƒƒƒExamƒ1ƒGradeƒƒƒExamƒ2ƒGradeƒƒƒHomeworkƒGradeƒƒƒƒFinalƒExamƒGrade
+For each student, your program should first calculate a final grade, using this formula:
+Final Grade = 0.20 × Exam 1 + 0.20 × Exam 2 + 0.35 × Homework + 0.25 × Final Exam
+Then assign a letter grade on the basis of 90–100 = A, 80–89 = B, 70–79 = C, 60–69 = D, and
+less than 60 = F. All the information, including the final grade and the letter grade, should then
+be displayed and written to a file.
+13. (Program) A bank’s customer records are to be stored in a file and read into a set of arrays so
+that a customer’s record can be accessed randomly by account number. Create the file by
+entering five customer records, with each record consisting of an integer account number
+(starting with account number 1000), a first name (maximum of 10 characters), a last name
+(maximum of 15 characters), and a double-precision number for the account balance.
+After the file is created, write a C++ program that requests a user-input account number and
+displays the corresponding name and account balance from the file. (Hint: Read the data in the
+file into an array, and then search the array for the account number.)
+14. (Program) Create a text file with the following data or use the shipped.dat file provided on
+this book’s Web site. The headings aren’t part of the file; they simply indicate what the data
+represents.
+Shipped
+Date
+Tracking
+Number
+Part
+Number
+First
+Name
+Last
+Name
+Company
+04/12/11 D50625 74444 James Lehoff Rotech
+04/12/11 D60752 75255 Janet Lezar Rotech
+04/12/11 D40295 74477 Bill McHenry Rotech
+04/12/11 D23745 74470 Diane Kaiser Rotech
+04/12/11 D50892 75155 Helen Richardson NapTime
+The format of each line in the file is identical, with fixed-length fields defined as follows:
+Field
+Position
+Field Name Starting
+Col. No.
+Ending
+Col. No.
+Field Length
+1 Shipped Date 1 8 8
+2 Tracking
+Number
+12 17 6
+3 Part Number 22 26 5
+4 First Name 31 35 5
+5 Last Name 39 48 10
+6 Company 51 64 14
+Using this data file, write a C++ program that reads the file and produces a report listing the
+shipped date, part number, first name, last name, and company name.
