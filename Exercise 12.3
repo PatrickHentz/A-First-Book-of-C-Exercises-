@@ -1,0 +1,126 @@
+1. (Review) a. Explain how dynamic allocation of memory works.
+b. Describe the process of creating a dynamically allocated object. Specifically, discuss the
+roles of a pointer variable and the new operator in creating a dynamically allocated object.
+c. Discuss the importance of deleting dynamically allocated objects, and explain what can
+happen if these objects aren’t deleted.
+2. (Review) a. Explain what a pointer is.
+b. For each of the following pointer declarations, identify the pointer variable’s name and
+the data type of the object to be accessed when the address in the pointer variable is
+dereferenced:
+i. Checkout *a;
+ii. Pump *pointer1;
+iii. Pump *addr_of_aPump;
+iv. int *addr_of_int;
+v. double *b;
+c. If the asterisks were removed from the declarations in Exercise 2b, what would the names
+before the semicolon represent?
+3. (Practice) a. Enter and run Program 12.4, but specify the number of objects to be created as
+four. Explain why your program outputs the same memory addresses.
+b. Remove the statement delete anotherTrans; or convert it to a comment (called “commenting
+out”), and rerun Program 12.4. Again, make sure to have the program create four
+new objects. Explain why the memory addresses now differ for each new object.
+c. Using the results of Exercise 3b, why is it no longer possible to access any of the first three
+created objects after the fourth object has been dynamically created? What does this imply
+about the previously allocated memory, and why is it a serious flaw in the program?
+4. (Practice) Enter and run Program 12.5.
+5. (Desk check) For the following class, determine what the two member methods accomplish:
+#include <iostream>
+#include <ctime>
+#include <cmath>
+using namespace std;
+// Coin class
+// precondition:
+//     srand() must be called once before the flip()method is called
+// class declaration section
+class Coin
+{
+  private:
+    static int totalHeads;
+    static int totalTails;
+  public:
+    Coin() {cout << “\n**** A new Coin object has been created ****”;};
+    ~Coin() {cout << “\n!!!! This Coin object has been deleted !!!!\n”;};
+    void flip();
+    static void percentages();
+};
+// static member definition
+int Coin::totalHeads = 0;
+int Coin::totalTails = 0;
+// class implementation section
+void Coin::flip()
+{
+  if( double(rand())/RAND_MAX < 0.5)
+  {
+    ++totalTails;
+    cout << “\nThe coin flip came up tails”;
+  }
+   else
+  {
+    ++totalHeads;
+    cout << “\nThe coin flip came up heads”;
+  }
+  return;
+}
+void Coin::percentages() // this calculates the percentages of
+{                        // heads and tails and displays the result
+  int tosses = totalHeads + totalTails;
+  cout << “\nNumber of coin tosses: “ << tosses;
+  cout << “\n   “ << totalHeads << “ Heads      “
+       << totalTails << “ Tails\n”;
+  cout << “\nHeads came up “ << 100.0 * double(totalHeads)/tosses
+       << “ percent of the time.”;
+  cout << “\nTails came up “ << 100.0 * double(totalTails)/tosses
+       << “ percent of the time.”;
+  return;
+}  
+6. (Program) a. Compile a program that uses the following main() function with the Coin class
+given in Exercise 5:
+int main()
+{
+  Coin *anewCoin;  // declare a pointer to a Coin object
+  int i, howMany;
+    
+  cout << “Enter the number of flips: “;
+  cin >> howMany;
+  srand(time(NULL));
+  for(i = 1; i <= howMany; i++)
+  {
+    anewCoin = new Coin; // create a new Coin object
+    anewCoin->flip();    // flip the coin
+    delete anewCoin;     // delete the object
+  }
+  Coin::percentages();   // call the static member method
+  return 0;
+}
+b. Run the program written for Exercise 6a so that it produces four flips of the coin.
+7. (Modify) a. Remove all the cout statements from the constructor, destructor, and flip()
+methods in the Coin class given in Exercise 5. Then combine the modified class with the
+main() function given in Exercise 6a to produce an executable program.
+b. Run the program written for Exercise 7a three times. On the first run, have your program
+simulate flipping the coin 10 times; the second run, 100 times; and the third run, 1000 times.
+Make sure each created object is deleted in the while loop.
+c. What problem can occur if each created object isn’t deleted in your program? Do you think
+this problem is serious?
+8. (Modify) a. Modify the program written for Exercise 6a or 7a to contain a single dynamically
+allocated Coin object. It should be created before the for loop is entered and deleted after
+the loop completes its execution.
+b. Discuss the advantages and disadvantages of using multiple Coin objects compared with
+creating a single Coin object.
+c. Is using a dynamically created object for the program written for Exercise 7a necessary?
+9. (Program) a. Write a program that simulates a customer’s arrival at a gas station and the
+amount of gas requested. Each customer should arrive randomly between 1 and 15 minutes
+and request between 3 and 15 gallons of gas. The name of your class should be Customer.
+b. Include the class written for Exercise 9a in a program that simulates the arrival of 10 customers
+(using a while loop). The arrival time and number of gallons of gas each customer
+requests should be displayed. After the last customer, your program should display the total
+number of gallons requested.
+10. (Modify) a. Modify the class written for Exercise 9a to include the grade of gas. Assume there
+are three grades of gas: 87 octane, 93 octane, and 97 octane.
+b. Include the class written for Exercise 10a in a program that simulates the arrival of 10 customers
+(using a while loop). The arrival time, number of gallons of gas each customer
+requests, and octane rating of the gas should be displayed. After the last customer, your
+program should display the total number of gallons requested for each grade of gas.
+c. What does your simulation assume about the comparative desirability of each grade of gas?
+Is this assumption realistic?
+d. Based on your answer to Exercise 10c, what are the implications of using the simulation to
+determine how much of each grade of gas to supply to a gas station?
