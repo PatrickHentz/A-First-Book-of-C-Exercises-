@@ -1,0 +1,104 @@
+1. (Practice) Write specification statements for the following:
+a. An array of integers with 6 rows and 10 columns
+b. An array of integers with 2 rows and 5 columns
+c. An array of characters with 7 rows and 12 columns
+d. An array of characters with 15 rows and 7 columns
+e. An array of double-precision numbers with 10 rows and 25 columns
+f. An array of double-precision numbers with 16 rows and 8 columns
+2. (Desk check) Determine the output produced by the following program:
+#include <iostream>
+using namespace std;
+int main()
+{
+  int i, j, val[3][4] = {8,16,9,52,3,15,27,6,14,25,2,10};
+  for (i = 0; i < 3; i++)
+    for (j = 0; j < 4; j++)
+      cout << val[i][j] << “ “;
+  return 0;
+}
+3. (Program) a. Write, compile, and run a C++ program that adds the values of all elements in
+the val array used in Exercise 2 and displays the total.
+b. Modify the program written for Exercise 3a to display the total of each row separately.
+4. (Program) Write, compile, and run a C++ program that adds equivalent elements of the twodimensional
+arrays named first and second. Both arrays should have two rows and three columns.
+For example, element [1][2] of the resulting array should be the sum of first[1][2]
+and second[1][2]. The first and second arrays should be initialized as follows:
+    first             second
+16   18   23        24   52   77
+54   91   11        16   19   59
+5. (Program) a. Write, compile, and run a C++ program that finds and displays the maximum value
+in a two-dimensional array of integers. The array should be declared as a 4-by-5 array of integers
+and initialized with the data 16, 22, 99, 4, 18, -258, 4, 101, 5, 98, 105, 6, 15, 2, 45, 33, 88, 72, 16, and 3.
+b. Modify the program written in Exercise 5a so that it also displays the maximum value’s row
+and column subscript values.
+6. (Program) Write, compile, and run a C++ program that selects the values in a 4-by-5 array of
+positive integers in increasing order and stores the selected values in a one-dimensional array
+named sort. Use the data given in Exercise 5a to initialize the two-dimensional array.
+7. (Program) a. A professor has constructed a 3-by-5 two-dimensional array of grades. This array
+contains the test grades of students in the professor’s advanced compiler design class. Write,
+compile, and run a C++ program that reads 15 array values and then determines the total number
+of grades in these ranges: less than 60, greater than or equal to 60 and less than 70, greater
+than or equal to 70 and less than 80, greater than or equal to 80 and less than 90, and greater
+than or equal to 90.
+b. Entering 15 grades each time you run the program written for Exercise 7a is cumbersome.
+What method can be used for initializing the array during the testing phase?
+c. How might the program you wrote for Exercise 7a be modified to include the case of no
+grade being input? That is, what grade could be used to indicate an invalid grade, and how
+would your program have to be modified to exclude counting an invalid grade?
+8. (Program) a. Create a two-dimensional list of integer part numbers and quantities of each
+part in stock, and write a function that displays data in the array in decreasing quantity order.
+No more than 100 different parts are being tracked. Test your program with the following data:
+Part No. Quantity
+1001 62
+949 85
+1050 33
+867 125
+346 59
+1025 105
+b. Modify the function written in Exercise 8a to display the data in part number order.
+9. (Program) a. Your professor has asked you to write a C++ program that determines grades for
+five students at the end of the semester. For each student, identified by an integer number, four
+exam grades must be kept, and two final grade averages must be computed. The first grade
+average is simply the average of all four grades. The second grade average is computed by
+weighting the four grades as follows: The first grade gets a weight of 0.2, the second grade gets
+a weight of 0.3, the third grade gets a weight of 0.3, and the fourth grade gets a weight of 0.2.
+That is, the final grade is computed as follows:
+0.2 * grade1 0.3 * grade2 0.3 * grade3 0.2 * grade4
+Using this information, construct a 5-by-6 two-dimensional array, in which the first column is
+used for the student number, the next four columns for the grades, and the last two columns
+for the computed final grades. The program’s output should be a display of the data in the
+completed array. For testing purposes, the professor has provided the following data:
+Student Grade 1 Grade2 Grade 3 Grade 4
+1 100 100 100 100
+2 100 0 100 0
+3 82 94 73 86
+4 64 74 84 94
+5 94 84 74 64
+b. What modifications would you need to make to your program so that it can handle 60 students
+rather than 5?
+c. Modify the program written for Exercise 9a by adding an eighth column to the array. The
+grade in the eighth column should be calculated by computing the average of the top three
+grades only.
+10. (Program) The answers to a true-false test are as follows: T T F F T. Given a two-dimensional
+answer array, in which each row corresponds to the answers provided on one test, write a function
+that accepts the two-dimensional array and number of tests as parameters and returns a
+one-dimensional array containing the grades for each test. (Each question is worth 5 points so
+that the maximum possible grade is 25.) Test your function with the following data:
+Test 1: T F T T T
+Test 2: T T T T T
+Test 3: T T F F T
+Test 4: F T F F F
+Test 5: F F F F F
+Test 6: T T F T F
+11. (Modify) Modify the function you wrote for Exercise 10 so that each test is stored in column
+order rather than row order.
+12. (Program) A three-dimensional weather array for the months July and August 2011 has columns
+labeled by the month numbers 7 and 8. In each column, there are rows numbered 1
+through 31, representing the days, and for each day, there are two ranks labeled H and L,
+representing the day’s high and low temperatures. Use this information to write a C++ program
+that assigns the high and low temperatures for each element of the arrays. Then allow
+the user to request the following:
+• Any day’s high and low temperatures
+• Average high and low temperatures for a given month
+• Month and day with the highest temperature
+• Month and day with the lowest temperature
