@@ -1,0 +1,35 @@
+1. (Modify) a. Replace the operator[] function in Program 11.9 with the operator() function.
+b. Include the operator() function written for Exercise 1a in a working C++ program and
+verify its operation.
+2. (Modify) a. Replace the operator[] function in Program 11.9 with a member operator()
+function that accepts an integer month, day, and year count. Have the function add the input
+days, months, and years to the object’s date and return the resulting date. For example, if the
+input is 3, 2, 1 and the object’s date is 7/16/2011, the function should return the date 10/18/2012.
+Make sure your function correctly handles an input such as 37 days and 15 months and adjusts
+the calculated day to be within the range 1 to 30 and the month to be within the range 1 to 12.
+Therefore, if the input is 37, 15, 1 and the object’s date is 7/16/2011, the function should return
+the date 9/1/2015.
+b. Include the operator() function written for Exercise 2a in a working C++ program and
+verify its operation.
+3. (Program) a. Construct a class named Student consisting of these private data members: an
+integer ID number, an integer count, and an array of four double-precision grades. The constructor
+for this class should set all data member values to 0. The class should also include a
+member function that displays all valid member grades, as determined by the grade count, and
+calculates and displays the average of the grades. Include the class in a working C++ program
+that declares three class objects named a, b, and c.
+b. Modify the class constructed for Exercise 3a to include a member operator[] function
+that has a double-precision grade count argument. The function should check the grade
+count data member and, if fewer than four grades have been entered, store its argument in
+the grade array, using the count as an index value. If four grades have already been entered,
+the function should return an error message indicating that the new grade can’t be accepted.
+Additionally, a new grade should force an increment to the count data member.
+c. Modify the class constructed for Exercise 3a to include a member operator() function
+that has a grade index and grade value as arguments. The function should force a change to
+the grade corresponding to the index value and update the count, if necessary. For example,
+an argument list of 4, 98.5 should change the fourth test grade value to 98.5.
+4. (Modify) a. Modify Program 10.9 to include a member operator[] function that multiplies
+an object’s complex number (both the real and the imaginary parts) by a real number and
+returns a complex number. For example, if the real number is 2 and the complex number is
+3 + 4i, the result is 6 + 8i.
+b. Verify the operation of the operator[] function written for Exercise 4a by including it in
+a working C++ program.
