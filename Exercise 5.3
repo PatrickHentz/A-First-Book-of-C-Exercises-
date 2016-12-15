@@ -1,0 +1,162 @@
+
+1. (Practice) Write a for statement for each of the following cases:
+a. Use a counter named i that has an initial value of 1, a final value of 20, and an increment
+of 1.
+b. Use a counter named icount that has an initial value of 1, a final value of 20, and an increment
+of 2.
+c. Use a counter named j that has an initial value of 1, a final value of 100, and an increment
+of 5.
+d. Use a counter named icount that has an initial value of 20, a final value of 1, and an increment
+of -1.
+e. Use a counter named icount that has an initial value of 20, a final value of 1, and an increment
+of -2.
+f. Use a counter named count that has an initial value of 1.0, a final value of 16.2, and an
+increment of 0.2.
+g. Use a counter named xcnt that has an initial value of 20.0, a final value of 10.0, and an
+increment of -0.5.
+2. (Desk check) Determine the number of times each for loop is executed for the for statements
+written in Exercise 1.
+3. (Desk check) Determine the value in total after each of the following loops is executed:
+a. total = 0;
+for (i = 1; i <= 10; i = i + 1)
+  total = total + 1;
+b. total = 1;
+for (count = 1; count <= 10; count = count + 1)
+  total = total * 2;
+c. total = 0;
+for (i = 10; i <= 15; i = i + 1)
+  total = total + i;
+d. total = 50;
+for (i = 1; i <=10; i = i + 1)
+  total = total - i;
+e. total = 1;
+for (icnt = 1; icnt <= 8; ++icnt)
+  total = total * icnt;
+f. total = 1.0;
+for (j = 1; j <= 5; ++j)
+  total = total / 2.0;
+4. (Desk check) Determine the output of the following program:
+#include <iostream>
+using namespace std;
+int main()
+{
+  int i;
+  for (i = 20; i >= 0; i -= 4)
+  cout << i;
+  return 0;
+}
+5. (Modify) Modify Program 5.10 to produce a table of the numbers 0 through 20 in increments
+of 2, with their squares and cubes.
+6. (Modify) Modify Program 5.10 to produce a table of numbers from 10 to 1, instead of 1 to 10,
+as it currently does.
+7. (Program) a. Write, compile, and run a C++ program that displays a table of 20 temperature
+conversions from Fahrenheit to Celsius. The table should start with a Fahrenheit value of
+20 degrees and be incremented in values of 4 degrees. Recall that Celsius = (5.0/9.0) ×
+(Fahrenheit - 32.0).
+b. Modify the program written for Exercise 7a to request the number of conversions to be made.
+8. (Program) Write, compile, and run a C++ program that converts Fahrenheit to Celsius temperature
+in increments of 5 degrees. The initial value of Fahrenheit temperature and the total
+conversions to be made should be requested as user input during program execution. Recall
+that Celsius = (5.0/9.0) × (Fahrenheit - 32.0).
+9. (Program) a. Write, compile, and run a C++ program that accepts five values of gallons, one
+at a time, and converts each value entered to its liter equivalent before the next value is
+requested. Use a for loop in your program. There are 3.785 liters in 1 gallon of liquid.
+b. Modify the program written for Exercise 9a to request the number of data items to be
+entered and converted first.
+10. (Program) a. An old Arabian legend has it that a fabulously wealthy but unthinking king
+agreed to give a beggar 1 cent and double the amount for 64 days. Using this information,
+write, compile, and run a C++ program that displays how much the king must pay the beggar
+on each day. The output of your program should appear as follows:
+       Day      Amount Owed
+       ---      -----------
+        1          0.01
+        2          0.02
+        3          0.04
+        .           .
+        .           .
+        .           .
+       64           .
+b. Modify the program you wrote for Exercise 10a to determine on which day the king will
+have paid the beggar a total of one million dollars.
+11. (Debug) Is the following program correct? If it is, determine its output. If it’s not, determine
+the error and correct it so that the program will run.
+#include <iostream>
+using namespace std;
+int main()
+{
+  for(int i = 1; i < 10; i++)
+    cout << i << ‘\n’;
+  for (j = 1; i < 5; i++)
+    cout << i << endl;
+  return 0;
+}
+12. (Program) a. Write, compile, and run a C++ program that calculates and displays the amount
+of money available in a bank account that initially has $1000 deposited and earns interest at
+the rate of 3% a year. Your program should display the amount available at the end of each year
+for a period of 10 years. Use the relationship that the money available at the end of each year
+= the amount of money in the account at the start of the year + .03 × the amount available at
+the start of the year.
+b. Modify the program written for Exercise 12a to prompt the user for the amount of money
+initially deposited in the account.
+c. Modify the program written for Exercise 12a to prompt the user for both the amount of
+money initially deposited and the number of years to be displayed.
+d. Modify the program written for Exercise 12a to prompt the user for the amount of money
+initially deposited, the interest rate to be used, and the number of years to be displayed.
+13. (Program) According to legend, the island of Manhattan was purchased from the native
+Indian population in 1626 for $24. Assuming this money was invested in a Dutch bank paying
+4% simple interest per year, construct a table showing how much money the native population
+would have at the end of each 50-year period, starting in 1626 and ending 400 years later. Use
+the relationship that the money available at the end of each 50-year period = the amount of
+money in the account at the start of period × the quantity (1 + .04)50.
+14. (Program) A well-regarded manufacturer of widgets has been losing 4% of its sales each year.
+The company’s annual profit is 10% of sales. This year, the company has had $10 million in
+sales and a profit of $1 million. Determine the expected sales and profit for the next 10 years.
+Your program should produce a display in the following form:
+            SALES AND PROFIT PROJECTION
+            ---------------------------
+YEAR        EXPECTED SALES        PROJECTED PROFIT
+----        --------------        ----------------
+ 1           $10000000.00           $1000000.00
+ 2           $ 9600000.00           $ 960000.00
+ 3                 .                     .
+ .                 .                     .
+ .                 .                     .
+ .                 .                     .
+10                 .                     .
+--------------------------------------------------
+Totals:      $     .                $    .
+
+15. (Program) Four experiments are performed, and each experiment has six test results. The
+results for each experiment are given in the following list. Write, compile, and run a C++ program
+using a nested loop to compute and display the average of the test results for each
+experiment.
+1st experiment results: 23.2 31 16.9 27.5 25.4 28.6
+2nd experiment results: 34.8 45.2 27.9 36.8 33.4 39.4
+3rd experiment results: 19.4 16.8 10.2 20.8 18.9 13.4
+4th experiment results: 36.9 39.5 49.2 45.1 42.7 50.6
+16. (Modify) Modify the program written for Exercise 15 so that the number of test results for
+each experiment is entered by the user. Write your program so that a different number of test
+results can be entered for each experiment.
+17. (Program) a. A bowling team consists of five players, and each player bowls three games.
+Write, compile, and run a C++ program that uses a nested loop to enter each player’s scores
+and then computes and displays the average score for each bowler. Assume each bowler has
+the following scores:
+1st bowler: 286 252 265
+2nd bowler: 212 186 215
+3rd bowler: 252 232 216
+4th bowler: 192 201 235
+5th bowler: 186 236 272
+b. (Modify) Modify the program written for Exercise 17a to calculate and display the average
+team score. (Hint: Use a second variable to store the total of all players’ scores.)
+c. (Modify) Rewrite the program written for Exercise 17a to eliminate the inner loop. To do
+this, you have to input three scores for each bowler rather than enter one at a time. Each
+score must be stored in its own variable name before the average is calculated.
+18. (Program) Write, compile, and run a C++ program that calculates and displays the yearly
+amount available if $1000 is invested in a bank account for 10 years. Your program should
+display the amounts available for interest rates from 6% to 12%, inclusive, in 1% increments.
+Use a nested loop, with the outer loop having a fixed count of 7 and the inner loop having a
+fixed count of 10. The first iteration of the outer loop should use an interest rate of 6% and
+display the amount of money available at the end of the first 10 years. In each subsequent pass
+through the outer loop, the interest rate should be increased by 1%. Use this relationship:
+money available at end of each year = amount of money in account at start of the year + interest
+rate × amount available at start of the year.
