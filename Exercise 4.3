@@ -1,0 +1,174 @@
+1. (Practice) An acute angle is less than 90 degrees, an obtuse angle is greater than 90 degrees,
+and a right angle is equal to 90 degrees. Using this information, write a C++ program that
+accepts an angle, in degrees, and displays the type of angle corresponding to the degrees
+entered.
+
+2. (Program) The grade level of undergraduate college students is typically determined according
+to the following schedule:
+Number of Credits Completed Grade Level
+Less than 32 Freshman
+32 to 63 Sophomore
+64 to 95 Junior
+96 or more Senior
+Using this information, write a C++ program that accepts the number of credits a student has
+completed, determines the student’s grade level, and displays the grade level.
+
+3. (Program) A student’s letter grade is calculated according to the following schedule:
+Numerical Grade Letter Grade
+Greater than or equal to 90 A
+Less than 90 but greater than or equal to 80 B
+Less than 80 but greater than or equal to 70 C
+Less than 70 but greater than or equal to 60 D
+Less than 60 F
+Using this information, write, compile, and run a C++ program that accepts a student’s numerical
+grade, converts the numerical grade to an equivalent letter grade, and displays the letter grade.
+
+4. (Program) The interest rate paid on funds deposited in a bank is determined by the amount
+of time the money is left on deposit. For a particular bank, the following schedule is used:
+Time on Deposit Interest Rate
+Greater than or equal to 5 years .040
+Less than 5 years but greater than or equal to 4 years .035
+Less than 4 years but greater than or equal to 3 years .030
+Less than 3 years but greater than or equal to 2 years .025
+Less than 2 years but greater than or equal to 1 year .020
+Less than 1 year .015
+Write, compile, and run a C++ program that accepts the time funds are left on deposit and
+displays the interest rate corresponding with the time entered.
+
+5. (Program) Fluid flowing through a pipe can flow in a smooth, constant manner, called laminar
+flow; in a chaotic manner, called turbulent flow; or in an intermediate stage between smooth
+and turbulent flow, which is called transitional flow. In practice, a value known as the Reynolds
+number can be used to determine the type of flow. For a Reynolds number below 2000, the
+flow is laminar, and for a Reynolds number above 3000, the flow is turbulent. For a Reynolds
+number between 2000 and 3000, the flow is transitional.
+Using this information, write, compile, and run a C++ program that accepts a Reynolds number
+as user input and displays a message indicating whether the flow is laminar, turbulent,
+or transitional.
+
+6. (Program) The tolerance of critical components in a system is determined according to the
+following schedule:
+Specification Status Tolerance
+Space exploration Less than 0.1%
+Military grade Greater than or equal to 0.1% and less than 1%
+Commercial grade Greater than or equal to 1% and less than 10%
+Toy grade Greater than or equal to 10%
+Using this information, write, compile, and run a C++ program that accepts a component’s
+tolerance reading and determines the specification that should be assigned to it.
+
+7. (Program) a. Write, compile, and run a program that accepts two real numbers and a select
+code from a user. If the entered select code is 1, have the program add the two previously
+entered numbers and display the result; if the select code is 2, the numbers should be multiplied;
+and if the select code is 3, the first number should be divided by the second number.
+b. Determine what the program written in Exercise 7a does when the entered numbers are
+3 and 0 and the select code is 3.
+c. Modify the program written in Exercise 7a so that division by 0 isn’t allowed, and a message
+is displayed when this division is attempted.
+
+8. (Program) The quadrant in which a line starting from the origin is located is determined by
+the angle the line makes with the positive x axis, as follows:
+Angle from the Positive x Axis Quadrant
+Between 0 and 90 degrees I
+Between 90 and 180 degrees II
+Between 180 and 270 degrees III
+Between 270 and 360 degrees IV
+a. Using this information, write, compile, and run a C++ program that accepts the angle of the
+line as user input and determines and displays the correct quadrant for the input data. (Note:
+If the angle is exactly 0, 90, 180, or 270 degrees, the corresponding line doesn’t reside in any
+quadrant but lies on an axis.)
+b. Modify the program written for Exercise 8a to display a message that identifies an angle of
+0 degrees as the positive x axis, an angle of 90 degrees as the positive y axis, an angle of
+180 degrees as the negative x axis, and an angle of 270 degrees as the negative y axis.
+
+9. (Program) Write, compile, and run a C++ program that accepts a number followed by one
+space and then a letter. If the letter following the number is f, the program is to treat the
+number entered as a temperature in degrees Fahrenheit, convert the number to the equivalent
+degrees Celsius, and display a suitable message. If the letter following the number is c,
+the program is to treat the number entered as a temperature in degrees Celsius, convert the
+number to the equivalent degrees Fahrenheit, and display a suitable message. If the letter is
+neither f nor c, the program is to display a message that the data entered is incorrect and then
+terminate. Use an if-else chain in your program and make use of these conversion formulas:
+Celsius = (5.0 / 9.0) × (Fahrenheit - 32.0)
+Fahrenheit = (9.0 / 5.0) × Celsius + 32.0
+
+10. (Program) Many states base yearly car registration fees on an automobile’s model year and
+weight, using a schedule similar to the following:
+Model Year Weight Weight Class Registration Fee
+1990 or earlier Less than 2700 lbs 1 26.50
+2700 to 3800 lbs 2 35.50
+More than 3800 lbs 3 56.50
+1991 to 1999 Less than 2700 lbs 4 35.00
+2700 to 3800 lbs 5 45.50
+More than 3800 lbs 6 62.50
+2000 or later Less than 3500 lbs 7 49.50
+3500 or more lbs 8 62.50
+Using this information, write, compile, and run a C++ program that accepts an automobile’s
+year and weight and determines and displays its weight class and registration fee.
+
+11. (Debug) Using the commission schedule from Program 4.5, the following program calculates
+monthly income:
+ #include <iostream>
+ #include <iomanip>
+ using namespace std;
+ 
+ int main()
+ {
+   double monthlySales, income;
+ 
+   cout << “Enter the value of monthly sales: “;
+   cin  >> monthlySales;
+   if (monthlySales >= 50000.00)
+     income = 375.00 + .16 * monthlySales;
+   if (monthlySales >= 40000.00 && monthlySales < 50000.00)
+     income = 350.00 + .14 * monthlySales;
+   if (monthlySales >= 30000.00 && monthlySales < 40000.00)
+     income = 325.00 + .12 * monthlySales;
+        if (monthlySales >= 20000.00 && monthlySales < 30000.00)
+     income = 300.00 + .09 * monthlySales;
+   if (monthlySales >= 10000.00 && monthlySales < 20000.00)
+     income = 250.00 + .05 * monthlySales;
+   if (monthlySales < 10000.00)
+     income = 200.00 + .03 * monthlySales;
+ 
+   cout << setiosflags(ios::showpoint)
+        << setiosflags(ios:: fixed)
+        << setprecision(2)
+        << “\n\nThe income is $” << income << endl;
+ 
+   return 0;
+ }
+a. Will this program produce the same output as Program 4.5?
+b. Which program is better? Why?
+
+12. (Debug) The following program was written to produce the same result as Program 4.5:
+ #include <iostream>
+ #include <iomanip>
+ using namespace std;
+ 
+ int main()
+ {
+   double monthlySales, income;
+ 
+   cout << “Enter the value of monthly sales: “;
+   cin  >> monthlySales;
+ 
+   if (monthlySales < 10000.00)
+     income = 200.00 + .03 * monthlySales;
+   else if (monthlySales >= 10000.00)
+     income = 250.00 + .05 * monthlySales;
+   else if (monthlySales >= 20000.00)
+     income = 300.00 + .09 * monthlySales;
+   else if (monthlySales >= 30000.00)
+     income = 325.00 + .12 * monthlySales;
+   else if (monthlySales >= 40000.00)
+     income = 350.00 + .14 * monthlySales;
+   else if (monthlySales >= 50000.00)
+     income = 375.00 + .16 * monthlySales;
+   cout << setiosflags(ios::showpoint)
+        << setiosflags(ios:: fixed)
+                << setprecision(2)
+        << “The income is $” << income << endl;
+ 
+   return 0;
+ }
+a. What does this program do?
+b. For what values of monthly sales does this program calculate the correct income?
