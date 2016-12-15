@@ -1,0 +1,122 @@
+1. (Review) What are the three items associated with the variable named total?
+2. (Review) If average is a variable, what does &average mean?
+3. (Practice) For the variables and addresses in Figure 8.9, determine the addresses corresponding
+to the expressions &temp, &dist, &date, and &miles.
+Addresses: 16892 16893 16894 16895 16896 16897 16898 16899
+Addresses: 16900 16901 16902 16903 16904 16905 16906 16907
+Addresses: 16908 16909 16910 16911 16912 16913 16914 16915
+temp dist
+date
+miles
+Figure 8.9 Memory bytes for Exercise 3
+4. (Practice) a. Write a C++ program that includes the following declaration statements. Have
+the program use the address operator and a cout statement to display the addresses corresponding
+to each variable.
+intƒnum,ƒcount;
+longƒdate;
+floatƒslope;
+doubleƒyield;
+b. After running the program written for Exercise 4a, draw a diagram of how your computer
+has set aside storage for the variables in the program. On your diagram, fill in the addresses
+the program displays.
+c. Modify the program written in Exercise 4a (using the sizeof() operator discussed in
+Section 2.1) to display the amount of storage your computer reserves for each data type.
+With this information and the address information provided in Exercise 4b, determine
+whether your computer set aside storage for the variables in the order in which they were
+declared.
+5. (Review) If a variable is declared as a pointer, what must be stored in the variable?
+6. (Practice) Using the indirection operator, write expressions for the following:
+a. The variable pointed to by xAddr
+b. The variable whose address is in yAddr
+c. The variable pointed to by ptYld
+d. The variable pointed to by ptMiles
+e. The variable pointed to by mptr
+f. The variable whose address is in pdate
+g. The variable pointed to by distPtr
+h. The variable pointed to by tabPt
+i. The variable whose address is in hoursPt
+7. (Practice) Write declaration statements for the following:
+a. The variable pointed to by yAddr is an integer.
+b. The variable pointed to by chAddr is a character.
+c. The variable pointed to by ptYr is a long integer.
+d. The variable pointed to by amt is a double-precision variable.
+e. The variable pointed to by z is an integer.
+f. The variable pointed to by qp is a single-precision variable.
+g. datePt is a pointer to an integer.
+h. yldAddr is a pointer to a double-precision variable.
+i. amtPt is a pointer to a single-precision variable.
+j. ptChr is a pointer to a character variable.
+8. (Review) a. What are the variables yAddr, chAddr, ptYr, amt, z, qp, datePt, yldAddr,
+amtPt, and ptChr used in Exercise 7 called?
+b. Why are the variable names amt, z, and qp used in Exercise 7 not good choices for
+pointer names?
+9. (Practice) Write English sentences that describe what’s contained in the following declared
+variables:
+a. char *keyAddr;
+b. int *m;
+c. double *yldAddr;
+d. long *yPtr;
+e. double *pCou;
+f. int *ptDate;
+10. (Practice) Which of the following is a declaration for a pointer?
+a. long a;
+b. char b;
+c. char *c;
+d. int x;
+e. int *p;
+f. double w;
+g. float *k;
+h. float l;
+i. double *z;
+11. (Practice) For the following declarations,
+int *xPt, *yAddr;
+long *dtAddr, *ptAddr;
+double *ptZ;
+int a;
+long b;
+double c;
+determine which of the following statements is valid:
+a. yAddr = &a; b. yAddr = &b; c. yAddr = &c;
+d. yAddr = a; e. yAddr = b; f. yAddr = c;
+g. dtAddr = &a; h. dtAddr = &b; i. dtAddr = &c;
+j. dtAddr = a; k. dtAddr = b; l. dtAddr = c;
+m. ptZ = &a; n. ptAddr = &b; o. ptAddr = &c;
+p. ptAddr = a; q. ptAddr = b; r. ptAddr = c;
+s. yAddr = xPt; t. yAddr = dtAddr; u. yAddr = ptAddr;
+12. (Practice) For the variables and addresses in Figure 8.10, fill in the data determined by the
+following statements:
+a. ptNum = &m;
+b. amtAddr = &amt;
+c. *zAddr = 25;
+d. k = *numAddr;
+e. ptDay = zAddr;
+f. *ptYr = 2011;
+g. *amtAddr = *numAddr;
+Variable: ptNum
+Address: 500
+Variable: amtAddr
+Address: 564
+Variable: zAddr
+Address: 8024
+Variable: numAddr
+Address: 10132
+Variable: ptDay
+Address: 14862
+Variable: ptYr
+Address: 15010
+Variable: amt
+Address: 16256
+Variable: firstnum
+Address: 18938
+Variable: years
+Address: 694
+Variable: m
+Address: 8096
+Variable: slope
+Address: 20492
+Variable: k
+Address: 24608
+20492 18938
+694
+154
+Figure 8.10 Memory locations for Exercise 12
