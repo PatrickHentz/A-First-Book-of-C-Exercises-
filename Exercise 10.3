@@ -1,0 +1,59 @@
+1. (Review) Determine whether the following statements are true or false:
+a. A constructor method must have the same name as its class.
+b. A class can have only one constructor method.
+c. A class can have only one default constructor method.
+d. A default constructor can be supplied only by the compiler.
+e. A default constructor can have no parameters or all parameters must have default values.
+f. A constructor must be declared for each class.
+g. A constructor must be declared with a return type.
+h. A constructor is called automatically each time an object is created.
+i. A class can have only one destructor method.
+j. A destructor must have the same name as its class, preceded by a tilde (~).
+k. A destructor can have default arguments.
+l. A destructor must be declared for each class.
+m. A destructor must be declared with a return type.
+n. A destructor is called automatically each time an object goes out of existence.
+o. Destructors aren’t useful when the class contains a pointer data member.
+2. (Desk check) For Program 10.3, what date is initialized for object c if the declaration
+Date c(15); is used instead of the declaration Date c(20090515L);?
+3. (Modify) Modify Program 10.3 so that the only data member of the class is a long integer
+named yyyymmdd. Do this by substituting the declaration long yyyymmdd; for these existing
+declarations:
+int month;
+int day;
+int year;
+Using the same constructor prototypes currently declared in the class declaration section,
+rewrite them so that the Date(long) method becomes the default constructor, and the
+Date(int, int, int) method converts a month, day, and year into the correct form for the
+class data members.
+4. (Program) a. Construct a Time class containing integer data members seconds, minutes,
+and hours. Have the class contain two constructors: The first should be a default constructor
+having the prototype Time(int, int, int), which uses default values of 0 for each data
+member. The second constructor should accept a long integer representing a total number of
+seconds and disassemble the long integer into hours, minutes, and seconds. The final member
+method should display the class data members.
+b. Include the class written for Exercise 4a in the context of a complete program.
+5. (Program) a. Construct a class named Student consisting of an integer student ID number,
+an array of five double-precision grades, and an integer representing the total number of grades
+entered. The constructor for this class should initialize all Student data members to 0.
+Included in the class should be member methods to 1) enter a student ID number, 2) enter a
+single test grade and update the total number of grades entered, and 3) compute an average
+grade and display the student ID followed by the average grade.
+b. Include the class constructed in Exercise 5a in the context of a complete program. Your
+program should declare two objects of type Student and accept and display data for the two
+objects to verify operation of the member methods.
+6. (Modify) a. In Exercise 4, you were asked to construct a Time class. For this class, include a
+tick() method that increments the time by one second. Test your method to ensure that it
+increments time into a new minute and a new hour correctly.
+b. Modify the Time class written for Exercise 6a to include a detick() method that decrements
+the time by one second. Test your method to ensure that it decrements time into a
+prior hour and into a prior minute correctly.
+7. (Program) a. Construct a class named Coord containing two double-precision data members
+named xval and yval, used to store a point’s x and y values in Cartesian coordinates. The
+member methods should include constructor and display methods and a method named
+convToCartesian(). The convToCartesian() method should accept two double-precision
+numbers named r and theta representing a point in polar coordinates and convert them into
+Cartesian coordinates. For conversion from polar to Cartesian coordinates, use these formulas:
+x = r cos (theta)
+y = r sin (theta)
+b. Include the program written for Exercise 7a in a working C++ program.
