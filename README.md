@@ -70,6 +70,7 @@ Exercise 6.4
 Exercise 6.5
 
 Arrays
+
 Exercise 7.1
 
 Exercise 7.2
@@ -89,6 +90,7 @@ Exercise 8.3
 Exercise 8.4
 
 I/O Steams and Data Files
+
 Exercise 9.1
 
 Exercise 9.2
