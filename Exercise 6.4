@@ -1,0 +1,128 @@
+1. (Practice) a. For the following section of code, determine the data type and scope of all
+declared variables and symbolic constants on a separate sheet of paper, using the column headings
+shown in the following chart. (The entries for the first variable have been filled in.)
+Variable or Constant Name Data Type Scope
+PRICE int global to main(), roi(), and step()
+#include <iostream>
+using namespace std;
+const int PRICE;
+const long YEARS;
+const double YIELD;
+int main()
+{
+  int bondtype;
+  double interest, coupon;
+    .
+    .
+    .
+  return 0;
+}
+double roi(int mat1, int mat2)
+{
+  int count;
+  double effectiveRate;
+      .
+      .
+      .
+  return effectiveRate;
+}
+int step(double first, double last)
+{
+  int numofyrs;
+  double fracpart;
+      .
+      .
+      .
+  return(10*numofyrs);
+}
+b. Draw a box around the appropriate section of the preceding code to enclose the scope of
+each variable or constant.
+c. Determine the data type of the arguments that the roi() and step() functions expect and
+the data type of the value these functions return.
+2. (Practice) a. For the following section of code, determine the data type and scope of all
+declared variables on a separate sheet of paper, using the column headings shown in the following
+chart. (The entries for the first variable have been filled in.)
+Variable Name Data Type Scope
+key char global to main(), func1(), and func2()
+#include <iostream>
+using namespace std;
+const char KEY;
+const long NUMBER;
+int main()
+{
+  int a,b,c;
+  double x,y;
+     .
+     .
+  return 0;
+}
+double secnum;
+int func1(int num1, int num2)
+{
+  int o,p;
+  float q;
+     .
+     .
+  return p;
+}
+double func2(double first, double last)
+{
+  int a,b,c,o,p;
+  double r;
+  double s,t,x;
+     .
+     .
+  return s * t;
+}
+b. Draw a box around the appropriate section of the preceding code to enclose the scope of
+each variable or constant.
+c. Determine the data type of the arguments that the func1() and func2() functions expect
+and the data type of the value these functions return.
+3. (Practice) The term “scope” can also apply to a function’s parameters. What do you think is
+the scope of all function parameters?
+4. (Practice) Define the scope of the parameter p2 and the variables a, b, c, d, e, f, m, n, p, d, q,
+and r in the following program structure:
+#include <iostream>
+using namespace std;
+int a, b;
+double One(float);
+void Two(void);
+int main()
+{
+  int c, d;
+  double e, f;
+    .
+    .
+  return 0;
+}
+double One(double p2)
+{
+  char m, n;
+    .
+    .
+}
+void Two(void)
+{
+  int p, d;
+  double q, r;
+    .
+    .
+}
+5. (Desk check) Determine the values displayed by each cout statement in the following
+program:
+#include <iostream>
+using namespace std;
+int firstnum = 10;    // declare and initialize a global variable
+void display();       // function prototype
+int main()
+{
+  int firstnum = 20;  // declare and initialize a local variable
+    cout << “\nThe value of firstnum is “ << firstnum << endl;
+  display();
+  return 0;
+}
+void display(void)
+{
+  cout << “The value of firstnum is now “ << firstnum << endl;
+  return;
+}
