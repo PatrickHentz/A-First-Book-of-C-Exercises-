@@ -1,0 +1,149 @@
+1. (Modify) Rewrite Program 6.4 so that the findMax() function accepts two double-precision
+arguments and returns a double-precision value to main(). Make sure to modify main() to
+pass two double-precision values to findMax() and to accept and store the double-precision
+value returned by findMax().
+2. (Practice) Write function headers for the following functions:
+a. A function named check(), which has three parameters. The first parameter should accept
+an integer number, the second parameter a floating-point number, and the third parameter
+a double-precision number. The function returns no value.
+b. A function named findAbs() that accepts a double-precision number passed to it and
+returns that number’s absolute value.
+c. A function named mult() that accepts two floating-point numbers as parameters, multiplies
+these two numbers, and returns the result.
+d. A function named square() that computes and returns the square of the integer value
+passed to it.
+e. A function named powfun() that raises an integer number passed to it to a positive integer
+power (also passed as an argument) and returns the result as an integer.
+f. A function named table() that produces a table of numbers from 1 to 10, their squares, and
+their cubes. No arguments are to be passed to the function, and the function returns no value.
+3. (Program) a. Write a function named rightTriangle() that accepts the lengths of two sides
+of a right triangle as the arguments a and b. The subroutine should determine and return the
+hypotenuse, c, of the triangle. (Hint: Use Pythagoras’ theorem, c2 = a2 + b2.)
+b. Include the function written for Exercise 3a in a working program. The main() function
+should call rightTriangle() correctly and display the value the function returns. Test the
+function by passing various data to it and verifying the returned value.
+4. (Program) a. Write a C++ function named findAbs() that accepts a double-precision number
+passed to it, computes its absolute value, and returns the absolute value to the calling
+function. A number’s absolute value is the number itself if the number is positive and the
+negative of the number if the number is negative.
+b. Include the function written in Exercise 4a in a working program. Make sure your function
+is called from main() and returns a value to main() correctly. Have main() use a cout
+statement to display the returned value. Test the function by passing various data to it and
+verifying the returned value.
+5. (Program) a. The volume, V, of a cylinder is given by the formula
+V = π r 2 L
+where r is the cylinder’s radius and L is its length. Using this formula, write a C++ function
+named cylvol() that accepts a cylinder’s radius and length and returns its volume.
+b. Include the function written in Exercise 5a in a working program. Make sure your function
+is called from main() and returns a value to main() correctly. Have main() use a cout
+statement to display the returned value. Test the function by passing various data to it and
+verifying the returned value.
+
+6. (Program) a. The surface area, S, of a cylinder is given by the formula
+S = 2 π r l
+where r is the cylinder’s radius, and l is the length of the cylinder. Using this formula, write a
+C++ function named surfarea() that accepts a cylinder’s radius and length and returns its
+surface area.
+b. Include the function written in Exercise 6a in a working program. Make sure your function
+is called from main() and returns a value to main() correctly. Have main() use a cout
+statement to display the returned value. Test the function by passing various data to it and
+verifying the returned value.
+7. (Program) a. Write a function named totamt() that uses four parameters named quarters,
+dimes, nickels, and pennies, which represent the number of each of these coins in a piggybank.
+The function should determine the dollar value of the number of quarters, dimes,
+nickels, and pennies passed to it and return the calculated value.
+b. Include the function written in Exercise 7a in a working program. Make sure your function
+is called from main() and returns a value to main() correctly. Have main() use a cout
+statement to display the returned value. Test the function by passing various data to it and
+verifying the returned value.
+8. (Program) a. Write a function named daycount() that accepts a month, day, and year as its
+input arguments; calculates an integer representing the total number of days from the turn of
+the century to the date that’s passed; and returns the calculated integer to the calling function.
+For this problem, assume each year has 365 days and each month has 30 days. Test your function
+by verifying that the date 1/1/00 returns a day count of 1.
+b. Include the daycount() function written for Exercise 8a in a working program. The
+main() function should correctly call daycount() and display the integer returned by the
+function. Test the function by passing various data to it and verifying the returned value.
+9. (Program) a. A clever and simple method of preparing to sort dates into ascending (increasing)
+or descending (decreasing) order is to convert a date in the form month/day/year into an
+integer number with the formula date = year × 10000 + month × 100 + day. For example, using
+this formula, the date 12/6/1999 converts to the integer 19991206, and the date 2/28/2011 converts
+to the integer 20110228. Sorting the resulting integer numbers puts dates into the correct
+order automatically. Using this formula, write a function named convertdays() that accepts
+a month, day, and year; converts the passed data into a single date integer; and returns the
+integer to the calling function.
+b. Include the convertdays() function written for Exercise 9a in a working program. The
+main() function should call convertdays() correctly and display the integer the function
+returns. Test the function by passing various data to it and verifying the returned value.
+10. (Program) a. Write a function named ReadOneChar() that reads a key pressed on the keyboard
+and displays the integer code of the entered character.
+b. Include the ReadOneChar() function written for Exercise 10a in a working program. The
+main() function should correctly call ReadOneChar() and display the integer the function
+returns. Test the function by passing various data to it and verifying the returned value.
+11. (Program) Heron’s formula for the area, A, of a triangle with sides of length a, b, and c is
+A s s a s b s c = ( )( )( ) ⎡⎣
+⎤⎦
+- - -
+where
+s
+a b c
+=
+( + + )
+2
+
+Write, test, and execute a function that accepts the values of a, b, and c as parameters from a
+calling function, and then calculates the values of s and [s(s - a)(s - b)(s - c)]. If this quantity is
+positive, the function calculates A. If the quantity is negative, a, b, and c do not form a triangle,
+and the function should set A = -1. The value of A should be returned by the function. Test
+the function by passing various data to it and verifying the returned value.
+12. (Program) a. Write a function named whole() that returns the integer part of any number
+passed to the function. (Hint: Assign the passed argument to an integer variable.)
+b. Include the function written in Exercise 12a in a working program. Make sure your function
+is called from main() and returns a value to main() correctly. Have main() use a cout
+statement to display the returned value. Test the function by passing various data to it and
+verifying the returned value.
+13. (Program) a. Write a C++ function named fracpart() that returns the fractional part of any
+number passed to it. For example, if the number 256.879 is passed to fracpart(), the number
+0.879 should be returned. Have fracpart() call the whole() function you wrote in
+Exercise 12. The number returned can then be determined as the number passed to
+fracpart() less the returned value when the same argument is passed to whole(). The
+completed program should consist of main() followed by fracpart() followed by whole().
+b. Include the function written in Exercise 13a in a working program. Make sure your function
+is called from main() and returns a value to main() correctly. Have main() use a cout
+statement to display the returned value. Test the function by passing various data to it and
+verifying the returned value.
+14. (Program) a. Years that are evenly divisible by 400 or are evenly divisible by 4 but not by 100
+are leap years. For example, because 1600 is evenly divisible by 400, 1600 was a leap year.
+Similarly, because 1988 is evenly divisible by 4 but not by 100, it was also a leap year. Using
+this information, write a C++ function that accepts the year as user input and returns a 1 if the
+passed year is a leap year or a 0 if it isn’t.
+b. Include the function written in Exercise 14a in a working program. Make sure your function
+is called from main() and returns a value to main() correctly. Have main() use a cout
+statement to display the returned value. Test the function by passing various data to it and
+verifying the returned value.
+15. (Program) a. A second-degree polynomial in x is given by the expression ax2 + bx + c, where a,
+b, and c are known numbers and a is not equal to 0. Write a C++ function named polyTwo
+(a,b,c,x) that computes and returns the value of a second-degree polynomial for any passed
+values of a, b, c, and x.
+b. Include the function written in Exercise 15a in a working program. Make sure your function
+is called from main() and returns a value to main() correctly. Have main() use a cout
+statement to display the returned value. Test the function by passing various data to it and
+verifying the returned value.
+16. (Program) a. The following is a useful programming algorithm for rounding a real number to
+n decimal places:
+Step 1: Multiply the number by 10n.
+Step 2: Add 0.5.
+Step 3: Delete the fractional part of the result.
+Step 4: Divide by 10n.
+For example, using this algorithm to round the number 78.374625 to three decimal places
+yields:
+Step 1: 78.374625 × 103 = 78374.625
+Step 2: 78374.625 + 0.5 = 78375.125
+Step 3: Retaining the integer part = 78375
+Step 4: 78375 divided by 103 = 78.375
+Using this algorithm, write a C++ function that accepts a user-entered value and returns the
+result rounded to two decimal places.
+b. Include the function written in Exercise 16a in a working program. Make sure your function
+is called from main() and returns a value to main() correctly. Have main() use a cout
+statement to display the returned value. Test the function by passing various data to it and
+verifying the returned value.
