@@ -1,0 +1,101 @@
+1. (Modify) Rewrite Program 5.6 to compute the total of eight numbers.
+2. (Modify) Rewrite Program 5.6 to display this prompt:
+Please type in the total number of data values to be added:
+In response to this prompt, the program should accept a user-entered number, and then use it
+to control the number of times the while loop is executed. So if the user enters 5 in response
+to the prompt, the program should request the input of five numbers and display the total after
+five numbers have been entered.
+3. (Modify) Rewrite Program 5.7 to compute the average of 10 numbers.
+4. (Modify) Rewrite Program 5.7 to display the following prompt:
+Please type in the total number of data values to be averaged:
+In response to this prompt, the program should accept a user-entered number, and then use it
+to control the number of times the while loop is executed. So if the user enters 6 in response
+to the prompt, the program should request an input of six numbers and display the average of
+the next six numbers entered.
+5. (Debug) By mistake, a programmer puts the statement average = total / count; in the
+while loop immediately after the statement total = total + num; in Program 5.7. As a
+result, the while loop becomes the following:
+while (count <= MAXNUMS)
+{
+  cout << “Enter a number: “;
+  cin  >> num;
+  total = total + num;
+  average = total / count;
+  count++;
+}
+a. Will the program yield the correct result with this while loop?
+b. From a programming perspective, which while loop is better to use, and why?
+6. (Program) a. Write a C++ program to convert meters to feet. The program should request the
+starting meter value, the number of conversions to be made, and the increment between metric
+values. The display should have appropriate headings and list the meters and corresponding
+feet value. If the number of iterations is greater than 10, have your program substitute a
+default increment of 10. Use the relationship that 1 meter = 3.281 feet.
+b. Run the program written in Exercise 6a on a computer. Verify that your program begins at
+the correct starting meter value and contains the exact number of conversions specified in
+your input data.
+7. (Modify) a. Modify the program written in Exercise 6a to request the starting meter value,
+the ending meter value, and the increment. Instead of the condition checking for a fixed
+count, it checks for the ending meter value. If the number of iterations is greater than 20, have
+your program substitute a default increment of (ending value - starting value) / 19.
+b. Run the program written in Exercise 7a on a computer. Verify that your output starts at the
+correct beginning value and ends at the correct ending value.
+8. (Program) a. Write a C++ program to convert Celsius degrees to Fahrenheit. The program
+should request the starting Celsius value, the number of conversions to be made, and the
+increment between Celsius values. The display should have appropriate headings and list the
+Celsius value and the corresponding Fahrenheit value. Use the relationship that Fahrenheit =
+(9.0 / 5.0) * Celsius + 32.0.
+b. Compile and run the program written in Exercise 8a on a computer. Verify that your program
+begins at the correct starting Celsius value and contains the exact number of conversions
+specified in your input data.
+9. (Program) An arithmetic series is defined by the following:
+a + (a + d ) + (a + 2d ) + (a + 3d ) + ˙˙˙ + [(a + (n - 1)d )]
+a is the first term.
+d is the “common difference.”
+n is the number of terms to be added.
+Using this information, write a C++ program that uses a while loop to display each term and
+determine the sum of the arithmetic series having a = 1, d = 3, and n = 100. Make sure your
+program displays the value it has calculated.
+10. (Program) A geometric series is defined by the following:
+a + ar + ar 2 + ar 3 + ˙˙˙ + ar n - 1
+a is the first term.
+r is the “common ratio.”
+n is the number of terms in the series.
+Using this information, write a C++ program that uses a while loop to display each term and
+determine the sum of a geometric series having a = 1, r = .5, and n = 10. Make sure your program
+displays the value it has calculated.
+11. (Program) a. The data in the following chart was collected on a recent automobile trip:
+Mileage Gallons
+22,495 Full tank
+22,841 12.2
+23,185 11.3
+23,400 10.5
+23,772 11.0
+24,055 12.2
+24,434 14.7
+24,804 14.3
+25,276 15.2
+Write, compile, and run a C++ program that accepts a mileage and gallons value and calculates
+the miles per gallon (mpg) for that segment of the trip. The mpg is calculated as the difference
+in mileage between fill-ups divided by the number of gallons of gasoline used in the fill-up.
+b. Modify the program written for Exercise 11a to also compute and display the cumulative
+mpg after each fill-up. The cumulative mpg is calculated as the difference between mileage
+at each fill-up and mileage at the start of the trip divided by the sum of gallons used to that
+point in the trip.
+12. (Program) a. A bookstore summarizes its monthly transactions by keeping the following
+information for each book in stock:
+Book identification number
+Inventory balance at the beginning of the month
+Number of copies received during the month
+Number of copies sold during the month
+Write a C++ program that accepts this data for each book and then displays the book identification
+number and an updated book inventory balance, using this relationship:
+New balance = Inventory balance at the beginning of the month
++ Number of copies received during the month
+- Number of copies sold during the month
+Your program should use a while statement with a fixed-count condition so that information
+on only three books is requested.
+b. Compile and run the program written in Exercise 12a. Review the display your program
+produces and verify that the output is correct.
+13. (Modify) Modify the program you wrote for Exercise 12 to keep requesting and displaying
+results until a sentinel value of 999 is entered. Compile and run your program. Review the
+display your program produces and verify that the output is correct.
