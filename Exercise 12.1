@@ -1,0 +1,42 @@
+1. (Review) Define the following terms:
+a. inheritance d. simple inheritance
+b. base class e. multiple inheritance
+c. derived class f. class hierarchy
+2. (Review) Describe the difference between private and protected class members.
+3. (Review) What three features must a programming language include to be classified as an
+object-oriented language?
+4. (Modify) a. Modify Program 12.1 to include a derived class named Sphere from the base
+Circle class. The only additional class members of Sphere should be a constructor and a
+calcval() function that returns the sphere’s volume. (Note: Volume = 4 / 3 πr3.)
+b. Include the class constructed for Exercise 4a in a working C++ program. Have your program
+call all the member functions in the Sphere class.
+5. (Program) a. Create a base class named Point consisting of x and y data members representing
+point coordinates. From this class, derive a class named Circle with another data member
+named radius. For this derived class, the x and y data members represent a circle’s center
+coordinates. The member functions of the Point class should consist of a constructor, an
+area() function that returns 0, and a distance() function that returns the distance between
+two points, (x1, y1) and (x2, y2), where
+distance = (x - x ) + (y - y ) 2 1
+2
+2 1
+2
+Additionally, the derived class should have a constructor and an override function named
+area() that returns a circle’s area.
+b. Include the classes constructed for Exercise 5a in a working C++ program. Have your program
+call all the member functions in each class. In addition, call the base class’s
+distance() function with two Circle objects and explain the result this function returns.
+6. (Modify) a. Using the classes constructed for Exercise 5a, derive a class named Cylinder
+from the Circle class. The Cylinder class should have a constructor and a member function
+named area() that determines a cylinder’s surface area. For this function, use the algorithm
+surface area = 2 π r (l + r), where r is the radius of the cylinder and l is the length.
+b. Include the classes constructed for Exercise 6a in a working C++ program. Have your program
+call all the member functions in the Cylinder class.
+c. What do you think the result might be if the Point (base) class’s distance() function is
+called with two Cylinder objects?
+7. (Program) a. Create a base class named Rectangle containing length and width data members.
+From this class, derive a class named Box with another data member named depth. The
+member functions of the base Rectangle class should consist of a constructor and an area()
+function. The derived Box class should have a constructor, a volume() function, and an override
+function named area() that returns the surface area of the box.
+b. Include the classes constructed for Exercise 7a in a working C++ program. Have your program
+call all the member functions in each class, and verify the results manually.
