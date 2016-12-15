@@ -1,0 +1,101 @@
+1. (Review) Define the following terms:
+a. Class b. Object
+c. Declaration section d. Implementation section
+e. Instance variable f. Member method
+g. Data member h. Constructor
+i. Class instance j. Services
+k. Methods l. Interface
+2. (Practice) Write a class declaration section for each of the following specifications. In each
+case, include a prototype for a constructor and a member method named showData() that can
+be used to display data member values.
+a. A class named Time that has integer data members named secs, mins, and hours
+b. A class named Complex that has double-precision data members named real and
+imaginary
+c. A class named Circle that has integer data members named xcenter and ycenter and a
+double-precision data member named radius
+d. A class named System that has character data members named computer, printer, and
+screen, each capable of holding 30 characters (including the end-of-string NULL), and
+double-precision data members named compPrice, printPrice, and scrnPrice
+3. (Practice) a. Construct a class implementation section for the constructor and showData()
+member methods corresponding to the class declaration created for Exercise 2a.
+b. Construct a class implementation section for the constructor and showData() methods corresponding
+to the class declaration created for Exercise 2b.
+c. Construct a class implementation section for the constructor and showData() methods
+corresponding to the class declaration created for Exercise 2c.
+d. Construct a class implementation section for the constructor and showData() methods corresponding
+to the class declaration created for Exercise 2d.
+4. (Program) a. Include the class declaration and implementation sections prepared for
+Exercises 2a and 3a in a complete working program.
+b. Include the class declaration and implementation sections prepared for Exercises 2b and 3b
+in a complete working program.
+c. Include the class declaration and implementation sections prepared for Exercises 2c and 3c
+in a complete working program.
+d. Include the class declaration and implementation sections prepared for Exercises 2d and 3d
+in a complete working program.
+5. (Desk check) Determine the errors in the following class declaration section:
+class Employee
+{
+public:
+  int empnum;
+  char code;
+private:
+  class(int = 0);
+  void showemp(int, char);
+};
+6. (Modify) a. Add another member method named convert() to Program 10.1 that does the
+following: The method should access the month, year, and day data members and display and
+then return an integer calculated as year × 10000 + month × 100 + day. For example, if the date
+is 4/1/2014, the returned value is 20140401. (Dates in this form are useful when performing
+sorts because placing the numbers in numerical order automatically places the corresponding
+dates in chronological order.)
+b. Include the modified Date class constructed for Exercise 6a in a complete C++ program.
+7. (Modify) a. Add to Program 10.1’s class definition an additional member method named
+leapyr() that returns a true if the year is a leap year and a false if it’s not a leap year. A leap
+year is any year that’s evenly divisible by 4 but not by 100, with the exception that all years
+evenly divisible by 400 are leap years. For example, the year 1996 is a leap year because it’s
+evenly divisible by 4 and not evenly divisible by 100. The year 2000 is a leap year because
+it’s evenly divisible by 400.
+b. Include the class definition constructed for Exercise 7a in a complete C++ program. The
+main() function should display the message The year is a leap year or the message
+The year is not a leap year (depending on the Date object’s year value).
+8. (Modify) a. Add a member method named dayOfWeek() to Program 10.1’s class definition
+that determines the day of the week for any Date object. An algorithm for determining the day
+of the week, known as Zeller’s algorithm, is the following:
+If mm is less than 3
+mm = mm + 12 and yyyy = yyyy - 1
+Endif
+Set century = int(yyyy/100)
+Set year = yyyy % 100
+Set T = dd + int(26 * (mm + 1)/10) + year + int(year / 4)
+int(century / 4) - 2 * century
+Set DayOfWeek = T % 7
+If DayOfWeek is less than 0
+DayOfWeek = DayOfWeek + 7
+Endif
+Using this algorithm, the variable DayOfWeek has a value of 0 if the date is a Saturday, 1 if a
+Sunday, and so forth.
+b. Include the class definition constructed for Exercise 8a in a complete C++ program. The
+main() function should display the name of the day (Sun, Mon, Tue, and so on) for the
+Date object being tested.
+9. (Program) a. Construct a class named Rectangle that has double-precision data members
+named length and width. The class should have member methods named perimeter() and
+area() to calculate a rectangle’s perimeter and area, a member method named setData() to
+set a rectangle’s length and width, and a member method named showData() that displays a
+rectangle’s length, width, perimeter, and area.
+b. Include the Rectangle class constructed in Exercise 9a in a working C++ program.
+10. (Modify) a. Modify the Date class defined in Program 10.1 to include a nextDay() method
+that increments a date by one day. Test your method to ensure that it increments days into a
+new month and into a new year correctly.
+b. Modify the Date class defined in Program 10.1 to include a priorDay() method that decrements
+a date by one day. Test your method to ensure that it decrements days into a prior
+month and into a prior year correctly.
+11. (Modify) Modify the Date class in Program 10.1 to contain a method that compares two Date
+objects and returns the larger of the two. The method should be written according to the following
+algorithm:
+Accept two Date values as parameters
+Determine the later date by using the following procedure:
+Convert each date into an integer value having the form yyyymmdd
+(This can be accomplished with the formula year * 10000 + month * 100 + day)
+Compare the corresponding integers for each date
+The larger integer corresponds to the later date
+Return the later date
