@@ -201,15 +201,29 @@ From lowest to highest.
 
 9. (Practice) Define an appropriate class for each of the following specific objects:
 a. The number 5
+class Five{ int 5;}
 b. A square measuring 4 inches by 4 inches
+class Squar{}
 c. This C++ book
+class Book{}
 d. A 1955 Ford Thunderbird car
+class Car{}
 e. The last ballpoint pen you used
-
+class Pen{}
 10. (Practice) a. What operations should the following objects be capable of doing?
 i. A 1955 Ford Thunderbird car
 
+Calculating the current MPH.
+Calculating the current gas tank content.
+Calculating the current engine revolutions per minute.
+
 ii. The last ballpoint pen you used
+
+Measuring the current ink flow.
+Calcuating the amount of ink left in the tube.
+Calcuating the age of the the pin since its last use.
 
 b. Do the operations determined for Exercise 10a apply only to the particular object listed, or
 are they more general and applicable to all objects of the type listed?
+
+They only apply to the object listed in 10a.
