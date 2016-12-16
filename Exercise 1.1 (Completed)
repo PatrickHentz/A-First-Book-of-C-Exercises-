@@ -1,29 +1,46 @@
+
 Exercise #1.1
 
 1. Define the following terms:
 a. computer program: A structured combination of data and instructions used to operate a
 computer; another term for software.
+
 b. programming language: The set of instructions, data, and rules used to construct a program.
+
 c. programming: The process of writing a computer program in a language that the computer
 can respond to and other programmers can understand.
+
 d. algorithm: A step-by-step sequence of instructions describing how to perform a computation.
+
 e. pseudocode: A means of describing an algorithm with English-like phrases.
+
 f. flowchart: A diagram that uses symbols to depict an algorithm.
+
 g. procedure: A logically consistent set of instructions that produce a specific result.
+
 h. object: A specific case, or instance, of a class. An object consists of data and methods.
+
 i. method: An operation or a procedure that can be applied to the data in a class; a member
 function.
+
 j. message: The means of activating a particular method in an object.
+
 k. response: The predictable result of sending a message.
+
 l. class: A broad category that defines the characteristics of the data an object can contain and
 the methods that can be applied to the data; also a programmer-defined data type.
+
 m. source program: A file consisting of a program’s statements in C++ or another programming
 language.
+
 n. compiler: The program that translates source code into machine language all at once, before
 any code is executed.
+
 o. object program: The result of compiling a source program. It’s created by the compiler and
 is assigned the extension .obj.
+
 p. executable program: A program that’s ready to be run.
+
 q. interpreter: The program that translates source code into machine language, one line at a
 time, as the source code is executed.
 
