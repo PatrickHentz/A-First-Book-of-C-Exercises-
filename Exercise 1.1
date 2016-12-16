@@ -111,16 +111,59 @@ of dollar bills needed to pay a bill of amount TOTAL. For example, if TOTAL were
 the bills would consist of one $50 bill, two $20 bills, one $5 bill, and three $1 bills. For this
 exercise, assume that only $100, $50, $20, $10, $5, and $1 bills are available.
 
+For each value in the collection of values 
+Subtract the largest value from TOTAL that can be calucated without resulting in a negative value.
+So 98-50 = 48 and the result is now equal to the current value.
+48-20 = 18 and now 18 is equal to the current value.
+18-10 = 8 etc...
+8-5 = 3
+3-1-1-1 = 0
+Calucate the Total Number of bills equal to the number increments til zero is reached.
+Once the total equal zero the number of bills used should be seven.
+
 b. Repeat Exercise 6a, but assume the bill is to be paid only in $1 bills.
+
+If you only used one dollar bills than the Total value is equal the the total number of bills.
 
 7. (Practice) a. Write an algorithm to locate the first occurrence of the name JEAN in a list of
 names arranged in random order.
 
+//Boyer–Moore string search algorithm is the best algorithm to use in the case.
+void search( char *txt,  char *pat)
+{
+    int m = strlen(pat);
+    int n = strlen(txt);
+ 
+    int badchar[NO_OF_CHARS];
+    badCharHeuristic(pat, m, badchar);
+ 
+    int s = 0;  
+    while(s <= (n - m))
+    {
+        int j = m-1;
+
+        while(j >= 0 && pat[j] == txt[s+j])
+            j--;
+        if (j < 0)
+        {
+            printf("\n pattern occurs at shift = %d", s);
+ 
+            s += (s+m < n)? m-badchar[txt[s+m]] : 1;
+        }
+        else
+            s += max(1, j - badchar[txt[s+j]]);
+    }
+}
 b. Discuss how you could improve your algorithm for Exercise 7a if the list of names were
 arranged in alphabetical order.
 
+If the text was in alphabetical order than the algorithm can be run faster
+by jumping the the first letter of the word JEAN. 
+
 8. (Practice) Determine and write an algorithm to sort three numbers in ascending (from lowest
 to highest) order. How would you solve this problem heuristically?
+
+
 
 9. (Practice) Define an appropriate class for each of the following specific objects:
 a. The number 5
