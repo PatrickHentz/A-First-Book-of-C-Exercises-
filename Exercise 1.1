@@ -109,6 +109,7 @@ Print the current value as the lowest integer.
 6. (Practice) a. Write detailed, step-by-step instructions in English to calculate the fewest number
 of dollar bills needed to pay a bill of amount TOTAL. For example, if TOTAL were $98,
 the bills would consist of one $50 bill, two $20 bills, one $5 bill, and three $1 bills. For this
+
 exercise, assume that only $100, $50, $20, $10, $5, and $1 bills are available.
 
 For each value in the collection of values 
@@ -154,6 +155,13 @@ void search( char *txt,  char *pat)
             s += max(1, j - badchar[txt[s+j]]);
     }
 }
+int main()
+{
+    char txt[] = "ABAAABCJEAN";
+    char pat[] = "JEAN";
+    search(txt, pat);
+    return 0;
+}
 b. Discuss how you could improve your algorithm for Exercise 7a if the list of names were
 arranged in alphabetical order.
 
@@ -163,7 +171,33 @@ by jumping the the first letter of the word JEAN.
 8. (Practice) Determine and write an algorithm to sort three numbers in ascending (from lowest
 to highest) order. How would you solve this problem heuristically?
 
+void BubbleSort(apvector <int> &num)
+{
+      int i, j, flag = 1;    // set flag to 1 to start first pass
+      int temp;             // holding variable
+      int numLength = num.length( ); 
+      for(i = 1; (i <= numLength) && flag; i++)
+     {
+          flag = 0;
+          for (j=0; j < (numLength -1); j++)
+         {
+               if (num[j+1] < num[j])      // ascending order 
+              { 
+                    temp = num[j];             // swap elements
+                    num[j] = num[j+1];
+                    num[j+1] = temp;
+                    flag = 1;               // indicates that a swap occurred.
+               }
+          }
+     }
+     return;   //arrays are passed to functions by address; nothing is returned
+}
 
+* To solve this problem heuristically 
+locate the lowest value.
+Begin to sort each value starting from the lowest.
+Select the next highest value until the array of values are all organized.
+From lowest to highest.
 
 9. (Practice) Define an appropriate class for each of the following specific objects:
 a. The number 5
