@@ -71,10 +71,26 @@ value, a character, a floating-point number, and a double-precision number, resp
 this information, write header lines for a function named abs() that receives no arguments but
 returns the following:
 a. No value
+void abs()
+{
+return 0;
+}
 
 b. A character
+char abs()
+{
+return "cat";
+}
 
 c. A floating-point number
+float abs()
+{
+return 5.23;
+}
 
 d. A double-precision number
+double abs()
+{
+return 50030;
+}
 
