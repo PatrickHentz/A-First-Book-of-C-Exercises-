@@ -1,37 +1,86 @@
+
 1. (Program) Enter and run Program 1.1 on a computer. (Note: You must understand the procedures
 for entering and running a C++ program on the particular computer installation
 you’re using.)
+--------------------------------------------------
+#include "stdafx.h"
+#include<iostream>
+using namespace std;
+int main()
+{
+	cout << "Hello there world!"<<endl;
+	system ("PAUSE");
+	return 0;
+}
 
 2. (Program) a. Using cout, write a C++ program that prints your name on one line, your street
 address on a second line, and your city, state, and zip code on the third line.
+-----------------------------------------------------
+#include "stdafx.h"
+#include<iostream>
+using namespace std;
+int main()
+{
+	cout << "Patrick Hentz"<<endl<<"7381 Eureka Road" <<endl<< "Batesville " << "Mississippi " << 38606 << endl;
+	system ("PAUSE");
+	return 0;
+}
 b. Run the program you wrote for Exercise 2a on a computer.
-
+Done!!
 3. (Program) a. Write a C++ program to display the following verse:
 Computers,computers everywhere
 as far as I can see.
 I really,really like these things,
 Oh joy, Oh joy for me!
+-------------------------------------------------------
+#include "stdafx.h"
+#include<iostream>
+using namespace std;
+int main()
+{
+	cout << "Computers, computers everywhere";
+		cout << "\n as far as I can see.";
+		cout << "\n I really, really like these things, ";
+		cout <<"\n Oh joy, Oh joy for me!"<< endl;
+	system ("PAUSE");
+	return 0;
+}
 b. Run the program you wrote for Exercise 3a on a computer.
+Done!!
 4. (Practice) a. How many cout statements would you use to display the following?
+---------------------------------------------------------
+Five (not including the lines under the column headings)
 
-5 (not including the lines under the column headings)
-
-PARTƒNO.      PRICE
+PART NO.      PRICE
 T1267         $6.34
 T1300         $8.92
 T2401         $65.40
 T4482         $36.99
+
 b. What’s the minimum number of cout statements that could be used to print the table in
 Exercise 4a?
-
+------------------------------------------------------
 Only one is needed to print the table in Exercise 4a. 
 
 c. Write a complete C++ program to produce the output shown in Exercise 4a.
+#include "stdafx.h"
+#include<iostream>
+using namespace std;
+int main()
+{
+	cout << "PART NO.    PRICE";
+	cout << "\n T1267       $6.34";
+	cout << "\n T1300       $8.92";
+	cout << "\n T2401       $65.40";
+	cout << "\n T4482       $36.99 "<< endl;
+	system ("PAUSE");
+	return 0;
+}
 
 d. Run the program you wrote for Exercise 4c on a computer.
-
+Done!!
 5. (For thought) In response to a newline escape sequence, cout positions the next displayed
 character at the beginning of a new line. This positioning of the next character actually represents
 two distinct operations. What are they?
-
+---------------------------------------
 Carriage return and line feed
