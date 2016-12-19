@@ -54,6 +54,19 @@ c. #include <iostream>
      <<”and each statement is written\n”;cout
      <<           “on a line by itself\n”)
      ; return 0;}
+----------------------------------------------------------
+#include <iostream>
+using namespace std;
+int main() 
+{
+cout << "Reading a program\n";
+cout << "is much easier\n";
+cout << "if a standard form for main() is used \n";
+cout << "and each statment is written\n";
+cout << "on a line by itself\n";
+return 0;
+}
+
 d. #include <iostream.h>
     using namespace std;
      int main
@@ -70,6 +83,19 @@ d. #include <iostream.h>
      ; cout
      <<”\n within the message passed to cout”
      ; return 0;}
+-----------------------------------------------------
+#include <iostream.h>
+using namespace std;
+int main()
+{
+cout << "Every C++ program";
+cout << "\n must have one and only one";
+cout << "main() function";
+cout << "\n the escape sequence of characters";
+cout << "\n for a newline can be placed anywhere";
+cout << \n within the message passed to cout";
+return 0;
+}
 3. (For thought) a. When used in a message, the backslash character alters the meaning of the
 character immediately following it. If you want to print the backslash character, you have to
 tell cout to escape from the way it normally interprets the backslash. What character do you
@@ -86,7 +112,15 @@ that has a unique meaning to the compiler. Separating characters with intervenin
 or white space results in a compiler error. Using this definition of a token, determine whether
 escape sequences, function names, and keywords listed in Table 1.1 are tokens of the C++
 language.
+escape sequences - Are tokens
+function names - Are tokens
+keywords - Are tokens
 b. Discuss whether adding white space to a message alters the message and whether messages
 can be considered tokens of C++.
+
+Adding white space to a message doesn't alter the message contents and therefore a message is not considered a token.
+
 c. Using the definition of a token in Exercise 4a, determine whether the following statement
 is true: “Except for tokens of the language, C++ ignores all white space.”
+
+The following statement is true.
