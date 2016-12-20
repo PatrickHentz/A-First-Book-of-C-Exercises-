@@ -19,7 +19,7 @@ three inputs are required (average, speed and time)
 c. Write an algorithm for converting the input items into output items.
  rate x time = distance
 d. Test the algorithm written for Exercise 2c using the following sample data: speed is 55 miles
-per hour and time is 2.5 hours.
+sper hour and time is 2.5 hours.
 (55 x 2.5) = distance
 e. How must the algorithm you wrote in Exercise 2c be modified if the elapsed time is given
 in minutes instead of hours?
@@ -29,7 +29,7 @@ Ergies = Fergies × Lergies
 a. For this programming problem, how many outputs are required?
 one output is required.
 b. How many inputs does this problem have?
-two inputs are used.
+itwo inputs are used.
 c. Determine an algorithm for converting the input items into output items.
 Fergies x Lergies = Ergies
 d. Test the algorithm written for Exercise 3c using the following sample data: Fergies = 14.65
@@ -39,7 +39,7 @@ and Lergies = 4.
 Mr. S. Hazlet
 63 Seminole Way
 Dumont, NJ 07030
-a. For this programming problem, how many lines of output are required?
+ha. For this programming problem, how many lines of output are required?
 three lines of output are required
 b. How many inputs does this problem have?
 none
@@ -49,7 +49,7 @@ use the cout function.
 assuming the car is initially traveling at 60 mph and the driver applies the brakes to decelerate
 at a uniform rate of 12 miles/sec2. Use the following formula:
 distance = st - (1/2)dt2
-s is the initial speed of the car.
+ts is the initial speed of the car.
 d is the deceleration.
 t is the elapsed time.
 a. For this programming problem, how many outputs are required?
@@ -91,24 +91,25 @@ applications:
 z = (X - μ)/σ
 X is a single value.
 μ refers to a mean value.
-s refers to a standard deviation.
+σ refers to a standard deviation.
 Using this formula, write a program that calculates and displays the value of the standard
-normal deviate when X = 85.3, μ = 80, and s = 4.
+normal deviate when X = 85.3, μ = 80, and σ = 4.
 a. For this programming problem, how many outputs are required?
-
+There is only one output that is required
 b. How many inputs does this problem have?
-
+There are three inputs to this problem
 c. Write an algorithm for converting the input items into output items.
-
+z = (single value - mean value)/ standard deviation
 d. Test the algorithm written for Exercise 8c, using the data given in the problem.
-
+(85.3-80)/4 = 1.325
 9. (Practice) The equation describing exponential growth is as follows:
-y = ex
+y = e^x
 Using this equation, a C++ program is required to calculate the value of y.
 a. For this programming problem, how many outputs are required?
-
+One output is required
 b. How many inputs does this problem have?
-
+Two input is required
 c. Write an algorithm for converting the input items into output items.
-
+status = (exponential)^growth
 d. Test the algorithm written for Exercise 9c, assuming e is 2.718 and x is 10.
+2.718^10 = 22003.6396
