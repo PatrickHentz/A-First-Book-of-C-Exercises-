@@ -1,30 +1,96 @@
 1. (Practice) Determine data types suitable for the following data:
 a. The average of four grades
+float or double
 b. The number of days in a month
+int
 c. The length of the Golden Gate Bridge
+float or double
 d. The numbers in a state lottery
+int
 e. The distance from Brooklyn, N.Y. to Newark, N.J.
+float or double
 f. The single-character prefix that specifies a component type
+char
 2. (Practice) Compile and run Program 2.1.
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+int main()
+{
+	cout << "\nData Type  Bytes";
+	cout << "\n-------- - ---- - ";
+	cout << "\nint          " << sizeof(int);
+	cout << "\nchar         " << sizeof(char);
+	cout << "\nbool         " << sizeof(bool);
+
+cout << '\n';
+	system("PAUSE");
+	return 0;
+}
 3. (Modify) Modify Program 2.1 to determine the storage your compiler uses for all the C++
 integer data types.
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+int main()
+{
+	cout << "\nData Type  Bytes";
+	cout << "\n-------- - ---- - ";
+	cout << "\nint          " << sizeof(int);
+	cout << "\nchar         " << sizeof(char);
+	cout << "\nbool         " << sizeof(bool);
+	cout << "\nshort int                 " << sizeof(short int);
+	cout << "\nlong int                  " << sizeof(long int);
+	cout << "\nunsigned char             " << sizeof(unsigned char);
+	cout << "\nunsigned short int        " << sizeof(unsigned short int);
+	cout << "\nunsigned int              " << sizeof(unsigned int);
+	cout << "\nunsigned long int         " << sizeof(unsigned long int);
+	cout << '\n';
+	system("PAUSE");
+	return 0;
+}
+
 4. (Practice) Show how the name KINGSLEY is stored in a computer that uses the ASCII code
 by drawing a diagram similar to Figure 2.3, shown previously.
+8 bytes of storage
+01001011 01001001 01001110 01000111 01010011 01001100 01000101 01011001
+-------- -------- -------- -------- -------- -------- -------- --------
+  K         I        N        G        S        L        E        Y
 5. (Practice) Repeat Exercise 4, using the letters of your own last name.
+01010000 01000001 01010100 01010010 01001001 01000011 01001011
+-------- -------- -------- -------- -------- -------- --------
+   P        A        T        R        I         C        K
 6. (Modify) Modify Program 2.1 to determine how many bytes your compiler assigns to the
-float, double, and longƒdouble data types.
+float, double, and long double data types.
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+int main()
+{
+	cout << "\nData Type  Bytes";
+	cout << "\n-------- - ---- - ";
+	cout << "\nfloat          " << sizeof(float);  //4
+	cout << "\ndouble         " << sizeof(double); //8
+	cout << "\nlong double    " << sizeof(long double); //8
+
+	cout << '\n';
+	system("PAUSE");
+	return 0;
+}
 7. (Practice) Convert the following numbers from exponential form to standard decimal form:
 a. 6.34e5
 b. 1.95162e2
 c. 8.395e1
 d. 2.95e-3
 e. 4.623e-4
+
 8. (Practice) Convert the following numbers from scientific notation to standard decimal form:
 a. 2.67 X 103
 b. 2.67 X 10-3
 c. 1.872 X 109
 d. 1.872 X 10-9
 e. 6.6256 X 10-34
+
 9. (Practice) Write the following decimal numbers in scientific notation:
 a. 126.
 b. 656.23
@@ -37,6 +103,7 @@ g. .006789
 10. (For thought) Because computers use different representations for storing integer, floatingpoint,
 double-precision, and character values, discuss how a program might alert the computer
 to the data types of different values it will be using.
+
 11. (For thought) Although you have concentrated on operations involving integer and floatingpoint
 numbers, C++ allows adding and subtracting characters and integers. (These operations
 are possible with characters because they’re integer data types and are stored by using integer
