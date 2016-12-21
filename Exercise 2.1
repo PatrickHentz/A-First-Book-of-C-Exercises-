@@ -76,7 +76,7 @@ int main()
 
 	cout << '\n';
 	system("PAUSE");
-	return 0;
+ 	return 0;
 }
 7. (Practice) Convert the following numbers from exponential form to standard decimal form:
 a. 6.34e5
@@ -86,7 +86,7 @@ b. 1.95162e2
 c. 8.395e1
 83.95
 d. 2.95e-3
-.00295
+f.00295
 e. 4.623e-4
 .0004623
 8. (Practice) Convert the following numbers from scientific notation to standard decimal form:
@@ -96,11 +96,12 @@ b. 2.67 X 10^-3
 .00267
 c. 1.872 X 10^9
 1872000000
-d. 1.872 X 10^-9
+Id. 1.872 X 10^-9
+
 .000000001872
 e. 6.6256 X 10^-34
 .0000000000000000000000000000000066256
-9. (Practice) Write the following decimal numbers in scientific notation:
+59. (Practice) Write the following decimal numbers in scientific notation:
 a. 126.
 1.26 x 10^2
 b. 656.23
@@ -119,22 +120,24 @@ g. .006789
 double-precision, and character values, discuss how a program might alert the computer
 to the data types of different values it will be using.
 
+A program's complier may alert the developer to a data type differents by the the current data type for compatablity.
+The resulting conflict would than flagged as an error and a suggested data type by the complier could be tested.
 11. (For thought) Although you have concentrated on operations involving integer and floatingpoint
 numbers, C++ allows adding and subtracting characters and integers. (These operations
 are possible with characters because they’re integer data types and are stored by using integer
 codes.) Therefore, characters and integers can be mixed in arithmetic expressions. For example,
-if your computer uses the ASCII code, the expression 'a'ƒ+ƒ1 equals 'b' and 'z' - 1
-equals 'y'. Similarly, 'A'+1 is 'B' and 'Z'-1 is 'Y'. With this information as background,
+if your computer uses the ASCII code, the expression 'a' + 1 equals 'b' and 'z' - 1
+equals 'y'. Similarly, 'A'+ 1 is 'B' and 'Z'- 1 is 'Y'. With this information as background,
 determine the character results of the following expressions. (Assume all characters
 are stored by using ASCII codes.)
-a. 'm'- ƒ
-b. 'm'+ 5
-c. 'G'+ 6
-d. 'G'- 6
-e. 'b'+ 7
-f. 'g'- 1
-g. 'G'- 1
-
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+a. 'm'- 5 = 'h'
+b. 'm'+ 5 = 'r'
+c. 'G'+ 6 = 'M'
+d. 'G'- 6 = 'A'
+e. 'b'+ 7 = 'i'
+f. 'g'- 1 = 'f'
+g. 'G'- 1 ='F'
 12. (Practice) Although the total number of bytes varies from computer to computer, memory
 sizes of 65,536 to more than several million bytes are common. In computer language, the
 letter K represents the number 1024, which is 2 raised to the 10th power, and M represents the
@@ -142,8 +145,14 @@ number 1,048,576, which is 2 raised to the 20th power. Therefore, a memory size 
 really 640 times 1024 (655,360 bytes), and a memory size of 4 MB is really 4 times 1,048,576
 (4,194,304 bytes). Using this information, calculate the actual number of bytes in the following:
 a. A memory containing 512 MB
+512 x 1,048,576 = 536,870,912 bytes
 b. A memory consisting of 256 MB words, with each word consisting of 2 bytes
+(256 x 1,048,576) x 2 = 536,870,912 bytes
 c. A memory consisting of 256 MB words, with each word consisting of 4 bytes
+(256 x 1,048,576) x 4 = 1,073,741,824 bytes 
 d. A thumb drive that specifies 2 MB
+2 x 1,048,576 = 2,097,152 bytes
 e. A disk that specifies 250 MB
+250 x 1,048,576 = 262,144,000 bytes
 f. A disk that specifies 8 GB (Hint: See Table 2.6.)
+8 x 1,073,741,824 = 8,589,934,592 bytes
