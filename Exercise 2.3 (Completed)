@@ -238,7 +238,12 @@ return 0;
 is “All squares are rectangles but not all rectangles are squares.” Write a similar statement that
 describes the relationship between definition and declaration statements.
 
+"All definitions are declarations but not all declarations are definitions."
+
 b. Why must a variable be defined before any other C++ statement that uses the variable?
+
+A variable must be defined in order to have a value to act upon. 
+
 Note for Exercises 15 to 17: Assume that a character requires 1 byte of storage, an integer requires
 4 bytes, a single-precision number requires 4 bytes, and a double-precision number requires 8 bytes.
 Variables are assigned storage in the order they’re declared. (Review Section 2.6 if you’re unfamiliar
@@ -260,9 +265,22 @@ char ch1 = 'M', ch2 = 'E', ch3 = 'L', ch4 = 'T';
 double taxes;
 int num, count = 0;
 
+rate = 159,160,161,162
+ch1 = 163
+ch2 = 164
+ch3 = 165
+ch4 = 166
+taxes =167,168,169,170,171,172,173,174
+num = 175,176,177,178
+count = 179,180,181,182
+
 b. Repeat Exercise 15a, but substitute the actual byte patterns that a computer using the
 ASCII code would use to store characters in the variables ch1, ch2, ch3, and ch4. (Hint : Use
 Table 2.2.)
+ch1 = 01001101
+ch2 = 01000101
+ch3 = 01001100
+ch4 = 01010100
 
 16. (Practice) a. Using Figure 2.7 and assuming the variable named cn1 is assigned to the byte
 at memory address 159, determine the addresses corresponding to each variable declared in
@@ -273,8 +291,32 @@ char cn1 = 'P', cn2 = 'E', cn3 = 'R', cn4 = 'F', cn5 = 'E';
 char cn6 = 'C', cn7 = 'T', key = '\\', sch = '\'', inc = 'A';
 char inc1 = 'T';
 
+cn1 = 159
+cn2 = 160
+cn3 = 161
+cn4 = 162
+cn5 = 163
+cn6 = 164
+cn7 = 165
+key = 166
+sch = 167
+inc = 168
+inc1 = 169
+
 b. Repeat Exercise 16a, but substitute the actual byte patterns a computer using the ASCII
 code would use to store characters in each declared variable. (Hint: Use Tables 2.2 and 2.3.)
+
+cn1 = 01010000
+cn2 = 01000101
+cn3 = 01010010
+cn4 = 01000110 
+cn5 = 01000101
+cn6 = 01000011
+cn7 = 01010100
+key = 01011100
+sch = 00100111
+inc = 01000001
+inc1 = 01010100
 
 17. (Practice) Using Figure 2.7 and assuming the variable name miles is assigned to the byte at
 memory address 159, determine the addresses corresponding to each variable declared in the
@@ -282,7 +324,9 @@ following statements:
 float miles;
 int count, num;
 double dist, temp;
-char ch1='M',ch2='E',ch3='L',ch4='T';
-double taxes;
-int num,count=0;
 
+miles = 159,160,161,162
+count = 163,164,165,166
+num = 167,168,169,170
+dist = 171,172,173,174,175,176,177,178
+temp = 179,180,181,182,183,184,185,186
