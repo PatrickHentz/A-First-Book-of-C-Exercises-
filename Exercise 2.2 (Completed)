@@ -55,7 +55,18 @@ g.-2.5
 h. 10.0
 i. 53.0
 7. (Practice) Enter, compile, and run Program 2.2.
-
+#include "stdafx.h" 
+#include <iostream> 
+using namespace std;
+int main()
+{
+	cout << "15.0 plus 2.0 equals " << (15.0 + 2.0) << endl
+		<< "15.0 minus 2.0 equals " << (15.0 - 2.0) << endl
+		<< "15.0 times 2.0 equals " << (15.0 * 2.0) << endl
+		<< "15.0 divided by 2.0 equals " << (15.0 / 2.0) << endl;
+	system("PAUSE");
+	return 0;
+}
 8. (Desk check) Determine the output of the following program:
 #include <iostream>
 using namespace std;
@@ -65,6 +76,8 @@ int main()  // a program illustrating integer truncation
   cout << “\nanswer2 is the integer “ << 17/3;
   return 0;
 }
+answer1 is the integer 2
+answer2 is the integer 5
 9. (Desk check) Determine the output of the following program:
 #include <iostream>
 using namespace std;
@@ -74,9 +87,30 @@ int main()  // a program illustrating the % operator
   cout << “\nThe remainder of 17 divided by 3 is “ << 17 % 3;
   return 0;
 }
+The remainder of 9 divided by 4 is 1
+The remainder of 17 divided by 3 is 2
 10. (Program) Write a C++ program that displays the results of the expressions 3.0 * 5.0,
 7.1 * 8.3 - 2.2, and 3.2 / (6.1 * 5). Calculate the value of these expressions manually
 to verify that the displayed values are correct.
+-------------------------------------------------------------
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+int main()
+{
+	cout << "The results of the hidden code " << 3.0 * 5.0<<", "<< 7.1 * 8.3 - 2.2<<" and "<< 3.2/(6.1*5)<< endl;
+	system("PAUSE");
+	return 0;
+}
 11. (Program) Write a C++ program that displays the results of the expressions 15 / 4, 15 % 4,
 and 5 * 3 - (6 * 4). Calculate the value of these expressions manually to verify that the
 displayed values are correct.
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+int main()
+{
+	cout << "The results of the hidden code " << 15/4<<", "<<15%4<<" and "<< 5*3 - (6*4)<< endl;
+	system("PAUSE");
+	return 0;
+
