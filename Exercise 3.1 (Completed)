@@ -126,42 +126,101 @@ The final sum is 311
 10. (Practice) Using Program 3.1, complete the following chart by determining the area of a rectangle
 having these lengths and widths:
 Length (in.) Width (in.) Area
-1.62         6.23
-2.86         7.52
-4.26         8.95
-8.52         10.86
-12.29        15.35
+1.62         6.23        10.0926    
+2.86         7.52        21.5072
+4.26         8.95        38.127
+8.52         10.86       92.527212.29        15.35       188.651
 
 11. (Program) The area of an ellipse (see Figure 3.4) is given by this formula:
 Area = π a b
 Using this formula, write a C++ program to calculate the area of an ellipse having a minor axis,
 a, of 2.5 inches and a major axis, b, of 6.4 inches.
-a
-b
-Figure 3.4 The minor axis, a, and the major axis, b, of an ellipse
+Use Figure 3.4 as a reference
+
+#include <iostream>
+using namespace std;
+int main(){
+double Area,a,b;
+a= 2.5;
+b = 6.4;
+Area = 3.14 * a * b;
+cout << "The area of an ellipse with a minor axis is" << Area <<endl;
+return 0;
+}
 
 12. (Program) a. Write a C++ program to calculate the dollar amount contained in a piggybank.
 The bank currently contains 12 half-dollars, 20 quarters, 32 dimes, 45 nickels, and 27 pennies.
 
+#include <iostream>
+using namespace std;
+int main(){
+double half, quart, dim, nick, pen,total;
+half =.50;
+quart = .25;
+dim = .10;
+nick = .05;
+pen = .01;
+total = (12*half) + (20*quart) +(32*dim) + (45*nick) + (27*pen);
+return 0;
+}
 b. Run the program written for Exercise 12a on a computer.
-
+Done!!
 13. (Program) a. Write a C++ program to calculate the distance, in feet, of a trip that’s 2.36 miles
 long. One mile is equal to 5280 feet.
-
+#include <iostream>
+using namespace std;
+int main(){
+double distance,miles, feet;
+miles = 2.36;
+feet = 5280;
+distance = miles * feet;
+cout << distance <<endl;
+return 0;
+}
 b. Run the program written for Exercise 13a on a computer.
-
+Done !!
 14. (Program) a. Write a C++ program to calculate the elapsed time it takes to make a 183.67-mile
 trip. The equation for computing elapsed time is elapsed time = total distance / average speed.
 Assume that the average speed during the trip is 58 miles per hour.
-
+#include <iostream>
+using namespace std;
+int main(){
+double elapsed_time, distance = 183.67 , average_speed = 58;
+elasped_time = distance / average_speed;
+cout << elasped_time<<endl;
+return 0;
+}
 b. Run the program written for Exercise 14a on a computer.
-
+Done
 15. (Program) a. Write a C++ program to calculate the sum of the numbers from 1 to 100. The
 formula for calculating this sum is sum = (n / 2) × (2 × a + (n - 1) × d), where n = number of
 terms to be added, a = the first number, and d = the difference between each number and the
 next number (d = 1).
 
-b. Run the program written for Exercise 15a on a computer.
+#include <iostream>
+using namespace std;
+int main()
+{
+	int sum, d, a;
+	
+		a = 1;
+		d = 1;
+	
+		for (int n = 1; n <= 100; n++)
+			
+		{
+			sum = (n / 2) * (2 * a + (n - 1) * d);	
+		}
+		cout << sum << endl;
+	system("PAUSE");
+	return 0;
+}
 
+b. Run the program written for Exercise 15a on a computer.
+Done
 16. (For thought) Determine why the expression a-b=25 is invalid but the expression
 a - (b=25) is valid.
+
+a-b = 25 is invalid because the variables are not properly defined; 
+and the expression a - (b=25) is valid because variable a is being subtracted from 25 and thus it is properly defined.
+
