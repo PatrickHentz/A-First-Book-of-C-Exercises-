@@ -85,22 +85,32 @@ char ch;
 char choice = 'f';
 7. (Desk check) 
 a. Determine what each statement causes to happen in the following program:
+ #include <iostream>         // include standard input and output 
+using namespace std;        // using the standard library 
+int main()                 //  beginning of main function
+{
+  int num1, num2, total;   // declartion of num1, num2, total
+  num1 = 25;               // assigning value to num1
+  num2 = 30;               // assigning value to num 2
+  total = num1 + num2;     // algorithm for the function
+  cout << “The total of ” << num1 << “ and “  // Displays num1 and num 2
+       << num2 << “ is “ << total << endl;    // the total is displayed using the simple algorithm
+  return 0; // returns nothing to the console
+}
+
+b. What output will be displayed when the program in Exercise 7a runs?
+The total of 25 and 30 is 55
+8. (Program) Write a C++ program that stores the sum of the integer numbers 12 and 33 in a
+variable named sum. Have your program display the value stored in sum.
 #include <iostream>
 using namespace std;
 int main()
 {
-  int num1, num2, total;
-  num1 = 25;
-  num2 = 30;
-  total = num1 + num2;
-  cout << “The total of ” << num1 << “ and “
-       << num2 << “ is “ << total << endl;
-  return 0;
+int sum;
+sum = 12 + 33;
+cout << "Displaying the value of sum" << sum << endl;
+return 0;
 }
-b. What output will be displayed when the program in Exercise 7a runs?
-
-8. (Program) Write a C++ program that stores the sum of the integer numbers 12 and 33 in a
-variable named sum. Have your program display the value stored in sum.
 
 9. (Program) Write a C++ program that stores the integer value 16 in the variable length and
 the integer value 18 in the variable width. Have your program calculate the value assigned to
@@ -108,14 +118,33 @@ the perimeter variable, using this formula:
 perimeter = 2 × (length + width)
 Your program should then display the value stored in perimeter. Be sure to declare all variables
 as integers at the beginning of the main() function.
-
+#include <iostream>
+using namespace std;
+int main()
+{
+int length, width;
+length = 16;
+width = 18;
+perimeter = 2 *(length + width);
+cout << "Displaying the value stored in perimeter" << perimeter << endl;
+return 0;
+}
 10. (Program) Write a C++ program that stores the integer value 16 in the variable num1 and the
 integer value 18 in the variable num2. (Be sure to declare the variables as integers.) Have your
 program calculate the total of these numbers and their average. Store the total in an integer
 variable named total and the average in an integer variable named average. (Use the statement
 average = total/2.0; to calculate the average.) Use a cout statement to display the
 total and average.
-
+#include <iostream>
+using namespace std;
+int main()
+{
+int num1 =16;
+int num2 = 18;
+total = num1 + num2;
+average = total/2;
+return 0;
+}
 11. (Debug) Enter, compile, and run the following program. Determine why an incorrect average
 is displayed and correct the error.
 #include <iostream>
@@ -129,9 +158,25 @@ int main()
   average = total / 2.0;
   cout << “The average of “ << num1
        << “ and “ << num2 << “ is “ 
+8       << average << endl;
+  return 0;
+}
+-------------------Corrected below-----------------------------
+#include <iostream>
+using namespace std;
+int main()
+{
+  float num1 = 15;
+  float num2 = 18;
+  float total, average;
+  total = num1 + num2;
+  average = total / 2.0;
+  cout << “The average of “ << num1
+       << “ and “ << num2 << “ is “ 
        << average << endl;
   return 0;
 }
+*The output for this particular situation requires a floating point declartion in order to produce the desired result.
 
 12. (Debug) The following program was written to correct the error produced by the program in
 Exercise 11. Determine why this program also doesn’t provide the correct result and correct
@@ -151,6 +196,23 @@ int main()
        << average << endl;
   return 0;
 }
+-------------------------------------------
+#include <iostream>
+using namespace std;
+int main()
+{
+  int num1 = 15;
+  int num2 = 18;
+  double total;
+  double average;
+  total = num1 + num2;
+  average = total / 2;
+  cout << “The average of “ << num1
+       << “ and “ << num2 << “ is “ 
+       << average << endl;
+  return 0;
+}
+*The varable total should be declared a floating point. 
 
 13. (Program) Write a C++ program that stores the number 105.62 in the variable firstnum,
 89.352 in the variable secnum, and 98.67 in the variable thirdnum. (Be sure to declare the
