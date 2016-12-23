@@ -1,28 +1,48 @@
 1. (Practice) Write function calls to determine the following:
 a. The square root of 6.37
+sqrt(6.37)
 b. The square root of x - y
+sqrt(x-y)
 c. The sine of 30 degrees
+sin(30 * (3.1416/180))
 d. The sine of 60 degrees
+sin(60 * (3.1416/180))
 e. The absolute value of a2 - b2
+abs(a *a - b * b) or abs(pow(a,2) - pow(b,2))
 f. The value of e raised to the third power
+exp(3)
 2. (Practice) For a = 10.6, b = 13.9, and c = -3.42, determine the following values:
 a. int (a)
+10
 b. int (b)
+13
 c. int (c)
+-3
 d. int (a + b)
+24
 e. int (a) + b + c
+20.48
 f. int (a + b) + c
+20.58
 g. int (a + b + c)
+21
 h. double (int (a)) + b
+23.9
 i. double (int (a + b))
+24
 j. abs(a) + abs(b)
+24.5
 k. sqrt(abs(a - b))
+1.81659
 3. (Practice) Write C++ statements for the following:
-a. area = (c × b × sin a) / 2
-b.
-c.
-d.
-e. b = sin2 x - cos2 x
+*See textbook for statements*
+
+a. area = (c * b * sin(a)) / 2;
+b. c = sqrt(pow(a,2)+pow(b,2));
+c. p = sqrt(abs(m-n));
+d. sum = (a*(pow(r,n)-1))/(r-1);
+e. b = pow(sin(x),2)+pow(cos(x),2);
+
 4. (Program) Write, compile, and run a C++ program that calculates and returns the fourth root
 of the number 81.0, which is 3. After verifying that your program works correctly, use it to
 determine the fourth root of 1,728.896400. Your program should make use of the sqrt()
