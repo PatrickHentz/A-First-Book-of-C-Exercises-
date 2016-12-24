@@ -118,6 +118,20 @@ program should produce this display:
 The value of the slope is xxx.xx
 The xxx.xx denotes placing the calculated value in a field wide enough for three places to
 the left of the decimal point and two places to the right of it.
+#include <iostream>
+using namespace std;
+
+int main(){
+double x1,y1,x2,y2,slope;
+x1 = 3;
+x2 = 8;
+y1 = 7;
+y2 = 12;
+slope = (y2-y1) / (x2 - x1);
+
+cout << "The value of the slope is" <<setw(5) <<setiosflags(ios::fixed)<<setprecision(2) <<slope <<endl;
+return 0;
+}
 
 
 6. (Program) Write a C++ program to calculate and display the midpoint coordinates of the line
