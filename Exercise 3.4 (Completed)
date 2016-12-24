@@ -365,9 +365,23 @@ When you’re finished, use your program to determine the fourth root of 42, 121
 2.54573, 3.31662,4,  4.9222, 5.93411 respectively
 
 12. (Program) Program 3.12 prompts users to input two numbers; the first value entered is stored
-in num1, and the second value is stored in num2. 
+in num1, and the second value is stored in num2. Using this program as a starting point,
+write a program that swaps the values stored in the two variables.
 
-Using this program as a starting point, write a program that swaps the values stored in the two variables.
+#include <iostream>
+using namespace std;
+int main()
+{
+  double num1, num2, product;
+  cout << “Please type in number 1: “;
+  cin  >> num1;
+  cout << “Please type in number 2: “;
+  cin  >> num2;
+  swap(num1,num2);
+  cout << "New num1 " << num1 << endl;
+  cout << "New num2 " << num2 << endl;
+  return 0;
+}
 
 13. (Program) Write a C++ program that prompts users to enter a number. Have your program
 accept the number as an integer and display the integer immediately by using a cout statement.
@@ -375,17 +389,56 @@ Run your program three times. The first time, enter a valid integer number; the 
 time, enter a double-precision number; and the third time, enter a character. Using the output
 display, see what number your program actually accepted from the data you entered.
 
+#include <iostream>
+using namespace std;
+int main(){
+int number;
+cout << "Enter your number" << endl;
+cin >> number;
+cout << number << endl;
+return 0;
+}
+First time:  Input: 5     Output: 5
+Second time: Input: 3.45  Output: 3
+Third time:  Input: Cat   Output: -858993460
+
 14. (Program) Repeat Exercise 13, but have your program declare the variable used to store the
 number as a double-precision variable. Run the program three times. The first time, enter an
 integer; the second time, enter a double-precision number; and the third time, enter a character.
 Using the output display, keep track of what number your program actually accepted from
 the data you entered. What happened, if anything, and why?
 
+The double-precision variable was able to send the correct numbers back for the first two runs. 
+The third run sent out useless data because the complied did not know what to do with it. 
+
+#include <iostream>
+using namespace std;
+int main(){
+double number;
+cout << "Enter your number" << endl;
+cin >> number;
+cout << number << endl;
+return 0;
+}
+First time:  Input: 5     Output: 5
+Second time: Input: 3.45  Output: 3.45
+Third time:  Input: Cat   Output: -9.25596e+061
+
 15. (For thought) a. Why do you think successful programs contain extensive data-input validity
 checks? (Hint: Review Exercises 13 and 14.)
+
+The program contain extensive data-input validity checks because 
+they must be able to display information in a particual way in order to pass all test cases.
 
 b. What do you think is the difference between a data-type check and a data-reasonableness
 check?
 
+A data type check checks the data type and how much control over the varable it has
+while the dat-resonablenees check checks if the data is even understandable.
+
 c. Assume that a program requests users to enter a month, day, and year. What are some checks
 that could be made on the data entered?
+
+check that the month is a character type
+check that the day is an integer type
+check that the year is an integer type
