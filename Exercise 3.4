@@ -344,13 +344,30 @@ the square roots of 32.25, 42, 48, 55, 63, and 79.
 11. (Program) Write, compile, and run a program to calculate and display the fourth root of a
 user-entered number. Recall from elementary algebra that you find the fourth root of a number
 by raising the number to the 1⁄4 power. (Hint : Don’t use integer division—can you see
-why?) Verify your program by calculating the fourth root of this test data: 81, 16, 1, and 0. When
-you’re finished, use your program to determine the fourth root of 42, 121, 256, 587, 1240, and
+why?) 
+#include <iostream>
+#include <math.h>
+using namespace std;
+int main(){
+double number, solution;
+cout << "Enter number to be forth-squared:"<< endl;
+cin >> number;
+solution = pow(number,(.25));
+cout << "The solution is " << solution <<endl;
+return 0;
+}
+
+Verify your program by calculating the fourth root of this test data: 81, 16, 1, and 0. 
+3,2,1,0 respectively
+When you’re finished, use your program to determine the fourth root of 42, 121, 256, 587, 1240, and
 16,256.
 
+2.54573, 3.31662,4,  4.9222, 5.93411 respectively
+
 12. (Program) Program 3.12 prompts users to input two numbers; the first value entered is stored
-in num1, and the second value is stored in num2. Using this program as a starting point, write
-a program that swaps the values stored in the two variables.
+in num1, and the second value is stored in num2. 
+
+Using this program as a starting point, write a program that swaps the values stored in the two variables.
 
 13. (Program) Write a C++ program that prompts users to enter a number. Have your program
 accept the number as an integer and display the integer immediately by using a cout statement.
