@@ -139,20 +139,35 @@ the keyboard for the displayed prompt. After the number for gallons of gas used 
 entered, your program should calculate and display the miles per gallon (mpg). This value
 should be calculated with the formula miles per gallon = miles / gallons used and displayed in an
 output message. Verify your program by using the following test data:
-Test data set 1: miles = 276, gas = 10 gallons
-Test data set 2: miles = 200, gas = 15.5 gallons
+Test data set 1: miles = 276, gas = 10 gallons // 27.6 gallon
+Test data set 2: miles = 200, gas = 15.5 gallons // 12.9032 gallon
 
-
+#include <iostream>
+using namespace std;
+int main(){
+double miles, gallons, gallon;
+cout << "Enter the miles driven:" << endl;
+cin >> miles;
+cout << "Enter the gallons of gas used:" << endl;
+cin >> gallons;
+gallon = miles/gallons;
+cout << gallon << endl;
+return 0;
+}
 After finishing your verification, use your program to complete the following chart. (Make sure to
 convert the miles driven to kilometers driven, convert gallons used to liters used, and then compute
 the kilometers per liter. There are 1.61 kilometers per mile and 4.54609 liters per gallon.)
-Miles Driven     Gallons     Used     Mpg    Km Driven    Liters    Used Km/L
-250   16.00
-275   18.00
-312   19.54
-296   17.39
+Miles Driven     Gallons Used       Mpg        Km Driven    Liters Used            Km/L
+250              16.00              15.625     402.5        72.73744              5.5336  
+275              18.00              15.2778    442.75       81.82962              5.41063  
+312              19.54              15.9672    502.32       88.8305986            5.65481  
+296              17.39              17.0213    476.56       79.0565051            6.02809     
 b. For the program written for Exercise 6a, determine how many verification runs are required
 to make sure the program is working correctly, and give a reason to support your answer.
+
+Only one is required if you use a miles and gallon pattern that result in an answer 
+that can't be easily created by mistake. Making the change of the function results being value very high.
+
 7. (Program) a. Write, compile, and run a C++ program that displays the following prompts:
 Enter a number:
 Enter a second number:
