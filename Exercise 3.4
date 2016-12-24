@@ -32,8 +32,23 @@ After each prompt is displayed, your program should use a cin object call to acc
 the keyboard for the displayed prompt. After the width of the room is entered, your program
 should calculate and display the area of the room. The area displayed should be calculated by
 using the formula area = length × width and should be included in an appropriate message.
+
+#include <iostream>
+using namespace std;
+int main(){
+int area, length, width;
+cout << "Enter the length of the room:" << endl;
+cin >>length;
+cout << "Enter the width of the room:" <<endl;
+cin >> width;
+area = lenght * width;
+cout << area <<endl; 
+return 0;
+}
+
 b. Check the area displayed by the program written for Exercise 2a by calculating the result
 manually.
+Done!!
 3. (Program) a. Write, compile, and run a C++ program that displays the following prompts:
 Enter the length of the swimming pool:
 Enter the width of the swimming pool:
@@ -43,21 +58,47 @@ the keyboard for the displayed prompt. After the depth of the swimming pool is e
 program should calculate and display the volume of the pool. The volume should be calculated
 with the formula volume = length × width × average depth and be displayed in an output
 message.
+
+#include <iostream> 
+using namespace std;
+int main(){
+int length, width, average,volume;
+cout << "Enter the length of the swimming pool:" <<endl;
+cin >> length; 
+cout << "Enter the width of the swimming pool:" <<endl;
+cin >> width;
+cout << "Enter the average depth of the swimming pool: << endl;
+cin >> average >> endl;
+cout << volume << endl;
+return 0;
+}
+
 b. Check the volume displayed by the program written for Exercise 3a by calculating the
 result manually.
+Done!!
 4. (Program) Write, compile, and run a C++ program that displays the following prompt:
 Enter the radius of a circle:
 After accepting a value for the radius, your program should calculate and display the area of
-the circle. (Hint : Area = 3.1416 × radius2.) For testing purposes, verify your program by using
+the circle. (Hint : Area = 3.1416 × radius^2.) For testing purposes, verify your program by using
 an input radius of 3 inches. After manually determining that your program’s result is correct,
 use your program to complete the following chart:
-Radius (in) Area (sq. in)
-1.0
-1.5
-2.0
-2.5
-3.0
-3.5
+Radius (in)            Area (sq. in)
+1.0                    3.1416
+1.5                    7.0686
+2.0                    12.5664
+2.5                    19.635     
+3.0                    28.2744
+3.5                    38.4846
+
+#include <iostream> 
+using namespace std;
+int main(){
+double Area,radius;
+cout<< " Enter the radius of a circle: " << endl;
+cin >> radius;
+Area = 3.1416 * pow(radius, 2);
+cout << Area << endl;
+return 0;
 5. (Program) a. Write a C++ program that first displays the following prompt:
 Enter the temperature in degrees Celsius:
 Have your program accept a value entered from the keyboard and convert the temperature
