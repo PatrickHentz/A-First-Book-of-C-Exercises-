@@ -106,20 +106,31 @@ entered to degrees Fahrenheit, using this formula:
 Fahrenheit = (9.0 / 5.0) × Celsius + 32.0
 Your program should then display the temperature in degrees Fahrenheit with an output
 message.
+#include <iosteam>
+using namespace std;
+int main(){
+double Fahrenheit, Celsius;
+cout << "Enter the temperature in degress Celsius:" << endl;
+cin >> Celsius;
+Fahrenheit = (9/5) * Celsius + 32.0;
+cout << Fahrenheit << endl;
+return 0;
+}
 b. Compile and run the program written for Exercise 5a. To verify your program, use the following
 test data and calculate the Fahrenheit equivalents by hand, and then use your program
 to see whether you get the same results:
-Test data set 1: 0 degrees Celsius
-Test data set 2: 50 degrees Celsius
-Test data set 3: 100 degrees Celsius
+Test data set 1: 0 degrees Celsius 32
+Test data set 2: 50 degrees Celsius 82
+Test data set 3: 100 degrees Celsius 132
 When you’re sure your program is working correctly, use it to complete the following chart:
 Celsius Fahrenheit
-45
-50
-55
-60
-65
-70
+45      77
+50      82
+55      87 
+60      92
+65      97 
+70      102
+
 6. (Program) a. Write, compile, and run a C++ program that displays the following prompts:
 Enter the miles driven:
 Enter the gallons of gas used:
@@ -130,14 +141,16 @@ should be calculated with the formula miles per gallon = miles / gallons used an
 output message. Verify your program by using the following test data:
 Test data set 1: miles = 276, gas = 10 gallons
 Test data set 2: miles = 200, gas = 15.5 gallons
+
+
 After finishing your verification, use your program to complete the following chart. (Make sure to
 convert the miles driven to kilometers driven, convert gallons used to liters used, and then compute
 the kilometers per liter. There are 1.61 kilometers per mile and 4.54609 liters per gallon.)
-Miles Driven Gallons Used Mpg Km Driven Liters Used Km/L
-250 16.00
-275 18.00
-312 19.54
-296 17.39
+Miles Driven     Gallons     Used     Mpg    Km Driven    Liters    Used Km/L
+250   16.00
+275   18.00
+312   19.54
+296   17.39
 b. For the program written for Exercise 6a, determine how many verification runs are required
 to make sure the program is working correctly, and give a reason to support your answer.
 7. (Program) a. Write, compile, and run a C++ program that displays the following prompts:
