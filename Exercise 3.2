@@ -196,15 +196,62 @@ a. Using the previous statements as a starting point, write a C++ program that c
 number of dollar bills, quarters, dimes, nickels, and pennies in the change when $10 is used
 to pay a bill of $6.07.
 
+#include "stdafx.h"
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
 
+	double change,paid, check;
+	paid = 10;
+	check = 6.07;
+	change = (paid - check) * 100; // (10-6.07) *100 = 393 cents
+	int dollars = (change / 100);    // 3 dolars
+	int quart = (change / 25);       // 15 quarters
+	int dim = (change / 10);         // 39 dimes
+	int nick = (change / 5);       //  78 nickles
+	int pen = (change / 1);        // 393 pennies
+
+	cout << "Total change "<< change << endl;
+	cout << "Total dollars " << dollars << endl;
+	cout << "Total quarters " << quart << endl;
+	cout << "Total dimes " << dim << endl;
+	cout << "Total nickles " << nick <<endl;
+	cout << "Total pennies " << pen << endl;
+	system("PAUSE");
+	return 0;
+}
 b. Without compiling or running your program, check the effect, by hand, of each statement in
 the program and determine what’s stored in each variable as each statement is encountered.
 
+#include <iostream>
+using namespace std;
+
+int main(){
+double change, dollars, paid, check ;
+paid = 10;
+check = 6.07;
+change = (paid - check) * 100; // (10-6.07) *100 = 393 cents
+int dollars = (change/100);    // 3 dolars
+int quart = (change/25);       // 15 quarters
+int dim = (change/10);         // 39 dimes
+int nick = (change/5);       //  78 nickles
+int pen = (change/1);        // 393 pennies
+
+return 0;
+}
 
 c. When you have verified that your algorithm works correctly, compile and run your program.
 Verify that the result produced by your program is correct, and then use your program to
 determine the change when a check of $12.36 is paid with a 20-dollar bill.
 
+total change = 764
+total dollars = 7
+total quarters = 30
+total dimes = 76
+total nickles = 152
+total pennies = 764
 
 8. (Program) Write a C++ program to calculate and display the maximum bending moment, M,
 of a beam that’s supported on both ends (see Figure 3.6). The formula is M = XW (L - X) / L,
