@@ -79,14 +79,22 @@ double volume, radius = 10, distance = 12;
 volume = 3.14*pow(radius,2)*( 200 - distance);
 cout << volume <<endl;
 return 0;
-
+* The volume is 59,032 *
 6. (Program) The circumference of an ellipse (review Figure 3.4) is given by this formula:
-Circumference
+Circumference = 3.14(sqrt(a+b)^2))
 Using this formula, write a C++ program to calculate the circumference of an ellipse with a
 minor radius, a, of 2.5 inches and a major radius, b, of 6.4 inches.
-
+#include <math.h>
 #include <iostream>
 using namespace std;
+int main(){
+double a = 2.5, b = 6.4,pi =3.14;
+	double circumference = pi*(pow(sqrt(a + b), 2));
+	cout << circumference << endl;
+return O;
+}
+
+"The circumference is 27.946"
 
 7. (Program) Write, compile, and run a C++ program to calculate the distance between two
 points with the coordinates (7, 12) and (3, 9). Use the fact that the distance between two points
@@ -94,19 +102,22 @@ with the coordinates (x1, y1) and (x2, y2) is given by this formula:
 
 distance = sqrt((x2-x1)^2 + (y2 - y1)^2)
 
-#include <iostream>
-#include <math.h>
-using namespace std;
-int main(){
-double x1,x2,y1,y2,distance;
-distance = sqrt(pow((x2-x1),2) + pow((y2-y1),2);
-cout << distance << endl;
-return 0;
-}
-
 After verifying that your program works correctly by calculating the distance between the
 two points manually, use your program to determine the distance between the points
 (-12, -15) and (22, 5).
+
+#include <iostream>
+#include <math.h>       /* pow & sqrt */ 
+using namespace std;
+int main()
+{
+	double x1 =-12, x2 =-15, y1 = 22, y2 = 5, distance;
+	distance = sqrt(pow((x2 - x1), 2) + pow((y2 - y1), 2));
+	cout << distance << endl;
+	return 0;
+}
+
+The distance is 17.2627
 
 8. (Program) If a 20-foot ladder is placed on the side of a building at a 85-degree angle, as
 shown in Figure 3.9, the height at which the ladder touches the building can be calculated as
