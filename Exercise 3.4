@@ -178,17 +178,56 @@ from the keyboard for the displayed prompt. After the fourth number has been ent
 program should calculate and display the average of the numbers. The average should be
 displayed in an output message. Check the average your program calculates by using the following
 test data:
-Test data set 1: 100, 100, 100, 100
-Test data set 2: 100, 0, 100, 0
+Test data set 1: 100, 100, 100, 100 // 100
+Test data set 2: 100, 0, 100, 0     //  50
+
+#include <iostream>
+using namespace std;
+int main(){
+double number, second_number, third_number, fourth_number,average;
+cout << "Enter a number:" << endl;
+cin >> number;
+cout << "Enter a second number:" << endl;
+cin >> second_number;
+cout << "Enter a third number:" << endl;
+cin >> third_number;
+cout << "Enter a fourth number:" << endl;
+cin >> fourth_number;
+average = (number + second_number + third_number + fourth_number)/ 4;
+cout <<"\n" << average <<endl;
+return 0;
+}
 After finishing your verification, use your program to complete the following chart:
-Numbers Average
-92, 98, 79, 85
-86, 84, 75, 86
-63, 85, 74, 82
+Numbers                 Average
+92, 98, 79, 85          88.5
+86, 84, 75, 86          82.75
+63, 85, 74, 82          76
 b. Repeat Exercise 7a, making sure you use the same variable name, number, for each number
 input. Also, use the variable sum for the sum of the numbers. (Hint: To do this, you can use
-the statement sumƒ=ƒsumƒ+ƒnumber; after each number is accepted. Review the material
+the statement sum = sum + number; after each number is accepted. Review the material
 on accumulating in Section 3.1.)
+#include <iostream>
+using namespace std;
+int main()
+{
+	double number, average, sum = 0;
+	cout << "Enter a number:" << endl;
+	cin >> number;
+	sum = sum + number;
+	cout << "Enter a second number:" << endl;
+	cin >> number;
+	sum = sum + number;
+	cout << "Enter a third number:" << endl;
+	cin >> number;
+	sum = sum + number;
+	cout << "Enter a fourth number:" << endl;
+	cin >> number;
+	sum = sum + number ;
+	average = sum / 4;
+	cout << "\n" << average << endl;
+	system("PAUSE");
+	return 0;
+}
 8. (Program) The perimeter, approximate surface area, and approximate volume of an in-ground
 pool are given by the following formulas:
 perimeter = 2 × (length + width)
