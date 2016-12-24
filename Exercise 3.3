@@ -48,35 +48,85 @@ of the number 81.0, which is 3. After verifying that your program works correctl
 determine the fourth root of 1,728.896400. Your program should make use of the sqrt()
 function or use the fact that the fourth root of a value can be obtained by raising the value to
 the 1/4 power.
+
+#include <iostream>
+using namespace std;
+ int main(){
+ double fourth_root, root;
+	root = pow(81,(.25));
+	fourth_root = root;
+	cout << fourth_root << endl;
+ return 0; 
+ }
+ 
+ *The forth root of 1,728.896400 is 6.44826
+ 
 5. (Program) The volume of oil stored in an underground 200-foot deep cylindrical tank is
 determined by measuring the distance from the top of the tank to the surface of the oil.
 Knowing this distance and the radius of the tank, the volume of oil in the tank can be determined
 by using this formula:
-volume = π radius2 (200 - distance)
+volume = π radius^2 (200 - distance)
 Using this information, write, compile, and run a C++ program that determines the volume of
 oil in a 200-foot tank that has a radius of 10 feet and measures 12 feet from the top of the tank
 to the top of the oil. Your program should display the radius, distance from the top of the tank
 to the oil, and the calculated volume.
+
+#include <math.h>
+#include <iostream>
+using namespace std;
+int main(){
+double volume, radius = 10, distance = 12;
+volume = 3.14*pow(radius,2)*( 200 - distance);
+cout << volume <<endl;
+return 0;
+
 6. (Program) The circumference of an ellipse (review Figure 3.4) is given by this formula:
 Circumference
 Using this formula, write a C++ program to calculate the circumference of an ellipse with a
 minor radius, a, of 2.5 inches and a major radius, b, of 6.4 inches.
+
+#include <iostream>
+using namespace std;
+
 7. (Program) Write, compile, and run a C++ program to calculate the distance between two
 points with the coordinates (7, 12) and (3, 9). Use the fact that the distance between two points
 with the coordinates (x1, y1) and (x2, y2) is given by this formula:
-distance =
+
+distance = sqrt((x2-x1)^2 + (y2 - y1)^2)
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+int main(){
+double x1,x2,y1,y2,distance;
+distance = sqrt(pow((x2-x1),2) + pow((y2-y1),2);
+cout << distance << endl;
+return 0;
+}
+
 After verifying that your program works correctly by calculating the distance between the
 two points manually, use your program to determine the distance between the points
 (-12, -15) and (22, 5).
+
 8. (Program) If a 20-foot ladder is placed on the side of a building at a 85-degree angle, as
 shown in Figure 3.9, the height at which the ladder touches the building can be calculated as
 height = 20 × sin 85°. Calculate this height by hand, and then write, compile, and run a C++
 program that determines and displays the value of the height. After verifying that your program
 works correctly, use it to determine the height of a 25-foot ladder placed at an angle of
 85 degrees.
-20'
-85°
-Figure 3.9 Calculating the height of a ladder against a building
+
+*See textbook for Figure 3.9*
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+int main(){
+double height;
+height = 25 * (sin((85)*(3.14/180)));
+cout << height << endl;            // * 24.9032 *
+return 0;
+}
+
 9. (Program) The maximum height reached by a ball thrown with an initial velocity, v, in
 meters/sec, at an angle of u is given by this formula:
 height = (.5 × v2 × sin2 u) / 9.8
@@ -86,12 +136,14 @@ Make sure to convert the initial velocity into the correct units. There are 1609
 mile.) Calculate the maximum height manually, and verify the result your program produces.
 After verifying the result, use your program to determine the height reached by a ball thrown
 at 7 mph at an angle of 45 degrees.
+
 10. (Program) A model of worldwide population growth, in billions of people, since 2000 is given
 by this formula:
 Population = 7.5 e0.02[Year - 2010]
 Using this formula, write, compile, and run a C++ program to estimate the worldwide population
 in the year 2012. Verify the result your program produces by calculating the answer manually,
 and then use your program to estimate the world’s population in the year 2020.
+
 11. (Program) The roads of Kansas are laid out in a rectangular grid at exactly one-mile intervals,
 as shown in Figure 3.10. Farmer Pete drives his 1939 Ford pickup x miles east and y miles
 north to get to farmer Joe’s farm. Both x and y are integer numbers. Using this information,
@@ -99,6 +151,7 @@ write, test, and run a C++ program that prompts the user for the values of x and
 uses this formula to find the shortest driving distance across the fields to Joe’s farm:
 distance = sqrt(x2 + y2);
 Round the answer to the nearest integer value before it’s displayed.
+
 12. (Program) A model to estimate the number of grams of a radioactive isotope left after t years
 is given by this formula:
 remaining material = (original material) e-0.00012t
@@ -107,6 +160,7 @@ radioactive material remaining after 1000 years, assuming an initial amount of 1
 Verify the display your program produces by using a hand calculation. After verifying that
 your program is working correctly, use it to determine the amount of radioactive material
 remaining after 275 years, assuming an initial amount of 250 grams.
+
 13. (Program) The number of years it takes for an isotope of uranium to decay to one-half an
 original amount is given by this formula, where λ, the decay constant (which is equal to the
 inverse of the mean lifetime), equals 0.00012:
@@ -115,16 +169,19 @@ Using this formula, write, compile, and run a C++ program that calculates and di
 half-life of this uranium isotope. Verify the result your program produces by using a hand calculation.
 After verifying that your program is working correctly, use it to determine the half-life
 of a uranium isotope with λ = 0.00026.
+
 14. (Program) a. Appendix B lists the integer values corresponding to each letter stored with
 the ASCII code. Note that uppercase letters consist of contiguous codes, starting with an
 integer value of 65 for the letter A and ending with 90 for the letter Z. Similarly, lowercase
 letters begin with the integer value of 97 for the letter a and end with 122 for the letter z.
 With this information as background, determine the character value of the expressions
 char ('A' + 32) and char ('Z' + 32).
+
 b. Using Appendix B, determine the integer value of the expression 'a' - 'A'.
 c. Using the results of Exercises 14a and 14b, determine the character value of the following
 expression, where uppercase letter can be any uppercase letter from A to Z:
 char (uppercase letter + 'a' - 'A').
+
 15. (Desk check and program) a. For display purposes, the setprecision() manipulator
 allows rounding all outputs to the specified number of decimal places. Doing so can, however,
 yield seemingly incorrect results when used in financial programs that require displaying all
