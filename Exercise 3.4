@@ -260,28 +260,50 @@ return 0;
 }
 
 Verify your program’s results by doing a hand calculation, using the following test data: length = 25 feet, width = 15 feet, and
-average depth = 5.5 feet. After verifying that your program is working, use it to complete the following
+average depth = 5.5 feet. 
+
+Perimeter: 80
+Volume: 2062.5
+
+Underground Surface Area: 815
+
+After verifying that your program is working, use it to complete the following
 chart:
 Length         Width       Average      Perimeter      Volume      Underground
                            Depth                                   Surface Area
-25             10          5.0          
-25             10          5.5
-25             10          6.0
-25             10          6.5
-30             12          5.0
-30             12          5.5
-30             12          6.0
-30             12          6.5
+25             10          5.0          70             1250        600   
+25             10          5.5          70             1375        635
+25             10          6.0          70             1500        670
+25             10          6.5          70             1625        705
+30             12          5.0          84             1800        780
+30             12          5.5          84             1980        822             
+30             12          6.0          84             2160        864
+30             12          6.5          84             2340        906
 9. (Program) a. Write, compile, and run a C++ program to compute and display the value of the
 second-order polynomial ax2 + bx + c for any user-entered values of the coefficients a, b, and c
 and the variable x. Have your program display a message first to inform users what the program
 does, and then display suitable prompts to alert users to enter data. (Hint: Use a prompt such
-as Enterƒtheƒcoefficientƒofƒtheƒx-squaredƒterm:.)
+as Enter the coefficient of the x-squared term:.)
+#include <math.h>
+#include <iostream> 
+using namespace std;
+int main(){
+double a,b,c,x,value;
+cout << "Enter the coefficient of the x-squared term:" <<endl;
+cin >> x;
+cout << "Enter the coefficient of the a-squared term:" <<endl;
+cout << "Enter the coefficient of the b-squared term:" <<endl;
+cout << "Enter the coefficient of the c-squared term:" <<endl;
+value = (a*pow(x,2)) + (b*x) + c;
+cout << "The value of the second-order polynimical is:" << endl;
+return 0;
+
 b. Check the result of your program written for Exercise 9a by using the following test data:
-Test data set 1: a = 0, b = 0, c = 22, x = 56
-Test data set 2: a = 0, b = 22, c = 0, x = 2
-Test data set 3: a = 22, b = 0, c = 0, x = 2
-Test data set 4: a = 2, b = 4, c = 5, x = 2
+Test data set 1: a = 0, b = 0, c = 22, x = 56   //22
+Test data set 2: a = 0, b = 22, c = 0, x = 2   //
+Test data set 3: a = 22, b = 0, c = 0, x = 2   //
+Test data set 4: a = 2, b = 4, c = 5, x = 2    //
+
 After finishing your verification, use your program to complete the following chart:
 a b c x Polynomial Value (ax2 + bx + c)
 2.0 17.0 -12.0 1.3
@@ -297,28 +319,35 @@ a b c x Polynomial Value (ax2 + bx + c)
 value of a user-entered real number. Verify your program by calculating the square roots of this
 test data: 25, 16, 0, and 2. After finishing your verification, use your program to determine the
 square roots of 32.25, 42, 48, 55, 63, and 79.
+
 11. (Program) Write, compile, and run a program to calculate and display the fourth root of a
 user-entered number. Recall from elementary algebra that you find the fourth root of a number
 by raising the number to the 1⁄4 power. (Hint : Don’t use integer division—can you see
 why?) Verify your program by calculating the fourth root of this test data: 81, 16, 1, and 0. When
 you’re finished, use your program to determine the fourth root of 42, 121, 256, 587, 1240, and
 16,256.
+
 12. (Program) Program 3.12 prompts users to input two numbers; the first value entered is stored
 in num1, and the second value is stored in num2. Using this program as a starting point, write
 a program that swaps the values stored in the two variables.
+
 13. (Program) Write a C++ program that prompts users to enter a number. Have your program
 accept the number as an integer and display the integer immediately by using a cout statement.
 Run your program three times. The first time, enter a valid integer number; the second
 time, enter a double-precision number; and the third time, enter a character. Using the output
 display, see what number your program actually accepted from the data you entered.
+
 14. (Program) Repeat Exercise 13, but have your program declare the variable used to store the
 number as a double-precision variable. Run the program three times. The first time, enter an
 integer; the second time, enter a double-precision number; and the third time, enter a character.
 Using the output display, keep track of what number your program actually accepted from
 the data you entered. What happened, if anything, and why?
+
 15. (For thought) a. Why do you think successful programs contain extensive data-input validity
 checks? (Hint: Review Exercises 13 and 14.)
+
 b. What do you think is the difference between a data-type check and a data-reasonableness
 check?
+
 c. Assume that a program requests users to enter a month, day, and year. What are some checks
 that could be made on the data entered?
