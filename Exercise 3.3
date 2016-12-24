@@ -205,12 +205,25 @@ Round the answer to the nearest integer value before it’s displayed.
  
 12. (Program) A model to estimate the number of grams of a radioactive isotope left after t years
 is given by this formula:
-remaining material = (original material) e-0.00012t
+remaining material = (original material) e^-0.00012t
 Using this formula, write, compile, and run a C++ program to determine the amount of
 radioactive material remaining after 1000 years, assuming an initial amount of 100 grams.
 Verify the display your program produces by using a hand calculation. After verifying that
 your program is working correctly, use it to determine the amount of radioactive material
 remaining after 275 years, assuming an initial amount of 250 grams.
+
+#include <iostream>
+#include <math.h>
+int main(){
+double t, remaining,original,e;
+e = 2.71;
+t  = 275;
+original = 250;
+remaining = original * pow(e,-.00012*t);
+cout << remaining;
+return 0;}
+
+"After 250 years there is 241 grams remaining"
 
 13. (Program) The number of years it takes for an isotope of uranium to decay to one-half an
 original amount is given by this formula, where λ, the decay constant (which is equal to the
