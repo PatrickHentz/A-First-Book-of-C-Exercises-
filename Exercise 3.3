@@ -140,7 +140,7 @@ return 0;
 
 9. (Program) The maximum height reached by a ball thrown with an initial velocity, v, in
 meters/sec, at an angle of u is given by this formula:
-height = (.5 × v2 × sin2 u) / 9.8
+height = (.5 × v^2 × sin^2 A) / 9.8
 Using this formula, write, compile, and run a C++ program that determines and displays the
 maximum height reached when the ball is thrown at 5 mph at an angle of 60 degrees. (Hint:
 Make sure to convert the initial velocity into the correct units. There are 1609 meters in a
@@ -148,13 +148,37 @@ mile.) Calculate the maximum height manually, and verify the result your program
 After verifying the result, use your program to determine the height reached by a ball thrown
 at 7 mph at an angle of 45 degrees.
 
+#include <iostream>
+#include <math.h>
+int main(){
+float height, A, v;
+A = 45*(3.14/180);
+v = (7*1609);
+height = (.5 * pow(v,2) * pow(sin(A),2))/9.8;
+cout << height<< endl;
+return 0;
+}
+
+*The max height is 3.2335*
+
 10. (Program) A model of worldwide population growth, in billions of people, since 2000 is given
 by this formula:
-Population = 7.5 e0.02[Year - 2010]
+Population = 7.5 e^0.02[Year - 2010]
 Using this formula, write, compile, and run a C++ program to estimate the worldwide population
 in the year 2012. Verify the result your program produces by calculating the answer manually,
 and then use your program to estimate the world’s population in the year 2020.
 
+#include <math.h>
+#include <iostream>
+using namespace std;
+int main(){
+double Population, Year; 
+Year = 20
+Population = 7.5 * pow(e, .02 *(Year- 2010));
+cout << "The poulation is" << Population <<"Billion people"<< endl;
+return 0;
+}
+*The Popluation 9.53 Billion People*
 11. (Program) The roads of Kansas are laid out in a rectangular grid at exactly one-mile intervals,
 as shown in Figure 3.10. Farmer Pete drives his 1939 Ford pickup x miles east and y miles
 north to get to farmer Joe’s farm. Both x and y are integer numbers. Using this information,
