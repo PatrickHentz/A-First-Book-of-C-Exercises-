@@ -151,6 +151,7 @@ at 7 mph at an angle of 45 degrees.
 #include <iostream>
 #include <math.h>
 int main(){
+
 float height, A, v;
 A = 45*(3.14/180);
 v = (7*1609);
@@ -179,14 +180,29 @@ cout << "The poulation is" << Population <<"Billion people"<< endl;
 return 0;
 }
 *The Popluation 9.53 Billion People*
+
 11. (Program) The roads of Kansas are laid out in a rectangular grid at exactly one-mile intervals,
 as shown in Figure 3.10. Farmer Pete drives his 1939 Ford pickup x miles east and y miles
 north to get to farmer Joe’s farm. Both x and y are integer numbers. Using this information,
 write, test, and run a C++ program that prompts the user for the values of x and y, and then
 uses this formula to find the shortest driving distance across the fields to Joe’s farm:
-distance = sqrt(x2 + y2);
+distance = sqrt(x^2 + y^2);
 Round the answer to the nearest integer value before it’s displayed.
 
+#include <math.h>
+ #include <iostream>
+ using namespace std;
+ int main(){
+ double distance, x, y;
+ cout << "Enter x" << endl;
+ cin >> x;
+ cout << "Enter y" << endl;
+ cin >> y;
+ distance = sqrt(pow(x,2) + pow(y,2));
+ cout << "The distance is" << round(distance) << endl;
+ return 0;
+ }
+ 
 12. (Program) A model to estimate the number of grams of a radioactive isotope left after t years
 is given by this formula:
 remaining material = (original material) e-0.00012t
