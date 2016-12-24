@@ -234,6 +234,19 @@ half-life of this uranium isotope. Verify the result your program produces by us
 After verifying that your program is working correctly, use it to determine the half-life
 of a uranium isotope with λ = 0.00026.
 
+#include <iostream>
+#include <math.h>
+using namespace std;
+int main(){
+double half_life, λ;
+λ = .00026;
+half_life = log(2) / λ;
+return half_life;
+return 0;
+}
+
+* The half-life is 2665.95 years * 
+
 14. (Program) a. Appendix B lists the integer values corresponding to each letter stored with
 the ASCII code. Note that uppercase letters consist of contiguous codes, starting with an
 integer value of 65 for the letter A and ending with 90 for the letter Z. Similarly, lowercase
