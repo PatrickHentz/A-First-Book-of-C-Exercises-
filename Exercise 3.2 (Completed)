@@ -260,9 +260,18 @@ length of the beam. Your program should produce this display:
 The maximum bending moment is xxxx.xxxx
 The xxxx.xxxx denotes placing the calculated value in a field wide enough for four places to
 both the right and left of the decimal point.
-W
-L
-X
-Figure 3.6 Calculating the maximum bending moment
+*See texbook for Figure*
+
+#include <iostream>
+using namespace std;
+
+int main(){
+int M, X = 10, W =30 , L = 20;
+M= X * W *( L - X ) / L;
+cout << "The maximum bending moment is" << setw(6) << setiosflags(ios::fixed) << setprecision(3)<< M << endl;
+return 0;
+}
+
+
 
 
