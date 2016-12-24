@@ -219,7 +219,7 @@ double t, remaining,original,e;
 e = 2.71;
 t  = 275;
 original = 250;
-remaining = original * pow(e,-.00012*t);
+remaining = original * pow(e,-.00012*t); // or simply use the exp() function sorry completed these pretty quick 
 cout << remaining;
 return 0;}
 
@@ -247,7 +247,7 @@ return 0;
 
 * The half-life is 2665.95 years * 
 
-14. (Program) a. Appendix B lists the integer values corresponding to each letter stored with
+a14. (Program) a. Appendix B lists the integer values corresponding to each letter stored with
 the ASCII code. Note that uppercase letters consist of contiguous codes, starting with an
 integer value of 65 for the letter A and ending with 90 for the letter Z. Similarly, lowercase
 letters begin with the integer value of 97 for the letter a and end with 122 for the letter z.
@@ -298,9 +298,30 @@ internally in the program as three-digit numbers. The solution is to round the v
 b before they’re added with the statement c = a + b;. Using the int cast, devise a method
 to round the values in the variables a and b to the nearest hundredth (penny value) before
 they’re added.
+---------------------------------------------------------------------
+stactic_cast<int>(a+b);
+---------------------------------------------------------------------
 b. Include the method you devised for Exercise 15a in a working program that produces the
 following display:
 1.67
 1.32
 ----
 2.99
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+	double a, b, c;
+	a = 1.67;
+	b = 1.32;
+	cout << setiosflags(ios::fixed) << setprecision(2);
+	cout << a << endl;
+	cout << b << endl;
+	cout << "----\n";
+	static_cast<int>(a + b);
+	c = a + b;
+	cout << c << endl;
+	system("PAUSE");
+	return 0;
+}
