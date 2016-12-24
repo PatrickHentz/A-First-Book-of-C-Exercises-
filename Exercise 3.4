@@ -238,22 +238,40 @@ depth measurements, and then calculates the pool’s perimeter, volume, and unde
 area. In writing your program, make these two calculations immediately after entering the
 input data: length × width and length + width. The results of these two calculations should be used,
 as needed, in the assignment statements for determining the perimeter, volume, and underground
-surface area without recalculating them for each equation. Verify your program’s results
-by doing a hand calculation, using the following test data: length = 25 feet, width = 15 feet, and
+surface area without recalculating them for each equation.
+
+#include <iostream>
+using namespace std;
+int main(){
+double perimeter, volume, underground_surface_area, length, width, average_depth;
+cout << "Enter length: " <<endl;
+cin >> length;
+cout << "Enter width: " << endl;
+cin >> width;
+cout << "Enter average depth: " << endl;
+cin >> average_depth;
+perimeter = 2 * (length + width);
+cout << "Perimeter: " << perimeter <<endl; 
+volume = length * width * average_depth;
+cout << "Volume: " << volume << endl;
+underground_surface_area = 2 * (length + width) * average_depth + length * width;
+cout <<"Underground Surface area: " << underground_surface_area << endl;
+return 0;
+}
+
+Verify your program’s results by doing a hand calculation, using the following test data: length = 25 feet, width = 15 feet, and
 average depth = 5.5 feet. After verifying that your program is working, use it to complete the following
 chart:
-Length Width Average
-Depth
-Perimeter Volume Underground
-Surface Area
-25 10 5.0
-25 10 5.5
-25 10 6.0
-25 10 6.5
-30 12 5.0
-30 12 5.5
-30 12 6.0
-30 12 6.5
+Length         Width       Average      Perimeter      Volume      Underground
+                           Depth                                   Surface Area
+25             10          5.0          
+25             10          5.5
+25             10          6.0
+25             10          6.5
+30             12          5.0
+30             12          5.5
+30             12          6.0
+30             12          6.5
 9. (Program) a. Write, compile, and run a C++ program to compute and display the value of the
 second-order polynomial ax2 + bx + c for any user-entered values of the coefficients a, b, and c
 and the variable x. Have your program display a message first to inform users what the program
