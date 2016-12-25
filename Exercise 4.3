@@ -71,15 +71,35 @@ return 0;
 }
 4. (Program) The interest rate paid on funds deposited in a bank is determined by the amount
 of time the money is left on deposit. For a particular bank, the following schedule is used:
-Time on Deposit Interest Rate
-Greater than or equal to 5 years .040
-Less than 5 years but greater than or equal to 4 years .035
-Less than 4 years but greater than or equal to 3 years .030
-Less than 3 years but greater than or equal to 2 years .025
-Less than 2 years but greater than or equal to 1 year .020
-Less than 1 year .015
+Time on Deposit                                                 Interest Rate
+Greater than or equal to 5 years                                .040
+Less than 5 years but greater than or equal to 4 years          .035
+Less than 4 years but greater than or equal to 3 years          .030
+Less than 3 years but greater than or equal to 2 years          .025
+Less than 2 years but greater than or equal to 1 year           .020
+Less than 1 year                                                .015
 Write, compile, and run a C++ program that accepts the time funds are left on deposit and
 displays the interest rate corresponding with the time entered.
+
+#include <iostream>
+using namespace std;
+int main(){
+float time, interest;
+cin >>time;
+if(time > 5){
+cout << .040 << endl;}
+else if( time < 5 && time>= 4){
+cout << .035 << endl;}
+else if(time < 4 && time >=3){
+cout << .030 << endl;}
+else if(time <3 && time >=2){
+cout << .025 << endl;}
+else if(time <2 && time >= 1){
+cout << .020 << endl;}
+else if(time < 1){
+cout << .015 << endl;}
+return 0;
+}
 
 5. (Program) Fluid flowing through a pipe can flow in a smooth, constant manner, called laminar
 flow; in a chaotic manner, called turbulent flow; or in an intermediate stage between smooth
@@ -90,6 +110,19 @@ number between 2000 and 3000, the flow is transitional.
 Using this information, write, compile, and run a C++ program that accepts a Reynolds number
 as user input and displays a message indicating whether the flow is laminar, turbulent,
 or transitional.
+
+#include <iostream>
+using namespace std;
+int main(){
+double numReynolds;
+cin>> numReynolds;
+if( numReynolds < 2000){
+cout << "The flow is laminar" << endl;}
+else if(numReynolds >= 2000 && numReynolds <= 3000){
+cout << "The flow is transitional" << endl;}
+else if (numReynolds > 3000){
+cout << "The flow is turbulent" << endl;}
+return 0;}
 
 6. (Program) The tolerance of critical components in a system is determined according to the
 following schedule:
