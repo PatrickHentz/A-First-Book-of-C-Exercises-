@@ -5,7 +5,21 @@ using namespace std;
 int main()
 {
   double radius, circum;
-    cout << “Enter a radius: “;
+  cout << “Enter a radius: “;
+  cin  >> radius;
+  circum = 2.0 * 3.1416 * radius;
+  cout << “\nThe circumference of the circle is “
+       << circum << endl;
+  return 0;
+}
+----------------Corrected---------------------------------------
+#include <iostream>
+using namespace std;
+int main()
+{
+  double radius, circum, PI;
+  PI = 3.1416;
+  cout << “Enter a radius: “;
   cin  >> radius;
   circum = 2.0 * 3.1416 * radius;
   cout << “\nThe circumference of the circle is “
@@ -26,6 +40,20 @@ int main()
        << celsius << endl;
   return 0;
 }
+-------------Corrected------------------------------------
+#include <iostream>
+using namespace std;
+int main()
+{
+  double fahren, celsius, FACTOR;
+  FACTOR = (5.0/9.0);
+  cout << “Enter a temperature in degrees Fahrenheit: “;
+  cin  >> fahren;
+  celsius = FACTOR * (fahren - 32.0);
+  cout << “The equivalent Celsius temperature is “
+       << celsius << endl;
+  return 0;
+}
 3. (Modify) Rewrite the following program to use the symbolic constant PRIME in place of the
 value 0.04 used in the program:
 #include <iostream>
@@ -33,9 +61,24 @@ using namespace std;
 int main()
 {
   double prime, amount, interest;
-  prime = 0.04;      // prime interest rate
+  prime = 0.04;      // prime interest rate-
   cout << Enter the amount: “;
   cin  >> amount;
+  interest = prime * amount;
+  cout << “The interest earned is “
+       << interest << “ dollars” << endl;
+  return 0;
+}
+-------------------Corrected------------------
+#include <iostream>
+using namespace std;
+int main()
+{
+  double prime, amount, interest;      
+  cout << "Enter the amount: "<< endl;
+  cin  >> amount;
+  cout << "Enter the prime : "<< endl;
+  cin >> prime;
   interest = prime * amount;
   cout << “The interest earned is “
        << interest << “ dollars” << endl;
@@ -54,21 +97,51 @@ E = (1) × (.000000056697) × (6000)4 watts/m2
   = 73,479,300 watts/m2
 Using the formula, write a C++ program that accepts a planet’s temperature and provides the
 heat generated from the planet as its output. Your program should assign the value 5.6697e-8
-to a symbolic constant named HEATFACTOR. After determining that your program is working
-correctly (make sure it produces the correct radiation for the sun), use it to complete the following
-chart:
+to a symbolic constant named HEATFACTOR. 
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+int main(){
+double E,e, T, HEATFACTOR;
+HEATFACTOR = 5.6697*exp(-8);
+e = 1;
+cin >> σ >> T;
+E = e * HEATFACTOR * pow(T,4);
+cout << E << endl;
+return 0;
+}
+
+After determining that your program is working correctly (make sure it produces the correct radiation for the sun), 
+use it to complete the following chart:
 Planet (emissivity = 1)     Average Surface            Heat Radiated
                             Temperature (° Celsius)    (watts/m2)
 Mercury                     270                        * 301.311  *
 Venus                       462                        * 2583.020 *
 Earth                       14                         * 0.002    *
+
 5. (Program) During the day, heat is absorbed by many objects, such as cars, roofs, and brick
 walls. This heat is then radiated back into the environment during the cooler evening hours.
 Using the formula E = e σ T4 (see Exercise 4), write a C++ program that determines the
 amount of heat radiated for the objects listed in the following table. Your program should
 request the object’s average surface temperature and emissivity, and then calculate and display
 the heat radiated. Make sure to use a symbolic constant named HEATFACTOR for the value of
-σ. Complete the following chart, making three runs of the program:
+σ. 
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+int main(){
+double E,e, T, HEATFACTOR;
+HEATFACTOR = 5.6697*exp(-8);
+cin >> e >> HEATFACTOR >> T;
+E = e * HEATFACTOR * pow(T,4);
+cout << E << endl;
+return 0;
+}
+
+
+Complete the following chart, making three runs of the program:
 Substance                  Average Surface             Emissivity             Heat Radiated
                            Temperature(° Celsius)                             (watts/ms)
 Automobile                 47                          .3                     .082999
