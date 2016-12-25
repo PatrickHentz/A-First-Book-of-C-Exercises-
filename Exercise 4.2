@@ -101,58 +101,105 @@ display.
 4. (Program) a. In a pass/fail course, a student passes if the grade is greater than or equal to 70
 and fails if the grade is lower than 70. Write a C++ program that accepts a grade and prints the
 message “A passing grade” or “A failing grade,” as appropriate.
-
+#include <iostream>
+using namespace std;
+int main(){
+double grade;
+cout << What is your grade<<endl;
+cin >> grade;
+if (grade < 70) {
+cout << "A failing grade" << endl;
+}
+else{ cout << "A passing grade" << endl;}
+return 0;
+}
 b. How many runs should you make for the program written in Exercise 4a to verify that it’s
 operating correctly? What data should you input in each program run?
-
+One pass is all that is required. The data should be an postive integer or floating point number.
 5. (Program) a. If money is left in a particular bank for more than 5 years, the bank pays interest
 at a rate of 4.5%; otherwise, the interest rate is 3.0%. Write a C++ program that uses the
-cinƒobject to accept the number of years in the variable numYears and display the correct
+cin object to accept the number of years in the variable numYears and display the correct
 interest rate, depending on the value input into numYears.
-
+#include <iostream>
+using namespace std;
+int main(){
+int numYears;
+cout << "Enter total number of years:"<<endl;
+cin >> numYears;
+if (numYears > 5){
+cout << "Your current interest rate is 4.5%" << endl;
+}
+else { cout << "Your current interest rate is 3.0% <<endl;}
+return 0;
+}
 b. How many runs should you make for the program written in Exercise 5a to verify that it’s
 operating correctly? What data should you input in each program run?
-
+One run is all that is required. The data type should be an integer.
 6. (Practice) a. Write a C++ program to display the message “PROCEED WITH TAKEOFF”
 or “ABORT TAKEOFF” depending on the input. If the character g is entered in the variable
 code, the first message should be displayed; otherwise, the second message should be
 displayed.
 
+#include <iostream>
+using namespace std;
+int main(){
+char your_character;
+cout << "Enter Character" << endl;
+cin >> your_character;
+if( your_character = 'g') {
+cout << "PROCEED WITH TAKEOFF" << endl;}
+else{
+cout << "ABORT TAKEOFF" << endl;
+}
+return 0;
+}
+
 b. How many runs should you make for the program written in Exercise 6a to verify that it’s
 operating correctly? What data should you input in each program run?
+
+Two runs are required for each case test. The dat input should be a character type.
 
 7. (Program) Write, compile, and run a C++ program that accepts a user-input integer number
 and determines whether it’s even or odd. The output should display the message “The
 entered number is even.” or “The entered number is odd.” corresponding to the number the
 user entered. (Hint: An even number has a 0 remainder when divided by 2.)
+
 8. (Program) Write, compile, and run a C++ program that accepts a user-entered number and
 calculates the square root and the reciprocal. Before calculating the square root, validate that
 the number isn’t negative, and before calculating the reciprocal, check that the number isn’t
 zero. If either condition occurs, display a message stating that the operation can’t be calculated.
+
 9. (Program) Years that are evenly divisible by 400 or are evenly divisible by 4 but not by 100
 are leap years. For example, because 1600 is evenly divisible by 400, 1600 was a leap year.
 Similarly, because 1988 is evenly divisible by 4 but not by 100, it was also a leap year. Using
 this information, write a C++ program that accepts the year as user input, determines whether
 the year is a leap year, and displays a message telling the user whether the entered year is or
 is not a leap year.
+
 10. (Program) a. Write, compile, and run a C++ program to compute and display a person’s
 weekly salary as determined by the following conditions: If the hours worked are less than or
 equal to 40, the person receives $12.00 per hour; otherwise, the person receives $480.00 plus
 $18.00 for each hour worked over 40 hours. The program should request the hours worked as
 input and display the salary as output.
+
 b. How many runs should you make for the program written in Exercise 10a to verify that it’s
 operating correctly? What data should you input in each program run?
+
 11. (Program) a. A senior salesperson is paid $800 a week, and a junior salesperson, $500 a
 week. Write a C++ program that accepts as input a salesperson’s status in the character variable
 status. If status equals s, the senior salesperson’s salary should be displayed; otherwise,
 the junior salesperson’s salary should be displayed.
+
 b. How many runs should you make for the program written in Exercise 11a to verify that it’s
 operating correctly? What data should you input in each program run?
+
 12. (Program) a. Write a C++ program that displays the message “I feel great today!” or “I feel
 down today #$*!” depending on the input. If the character u is entered in the variable ch, the
 first message should be displayed; otherwise, the second message should be displayed.
+
 b. How many runs should you make for the program written in Exercise 12a to verify that it’s
 operating correctly? What data should you input in each program run?
+
 13. (Program) a. Write a program to display the following two prompts:
  Enter a month (use a 1 for Jan, etc.):
  Enter a day of the month:
@@ -161,16 +208,20 @@ prompt and accept and store a number in the variable day in response to the seco
 If the month entered isn’t between 1 and 12, display a message informing the user that an
 invalid month has been entered. If the day entered isn’t between 1 and 31, display a message
 informing the user that an invalid day has been entered.
+
 b. What will your program do if the user enters a number with a decimal point for the month?
 How can you make sure your if statements check for an integer number?
+
 14. (Program) a. Write, compile, and run a C++ program that accepts a character as input data and
 determines whether the character is a lowercase letter. A lowercase letter is any character that’s
 greater than or equal to “a” and less than or equal to “z.” If the entered character is a lowercase
 letter, display the message “The character just entered is a lowercase letter.” If the entered
 letter isn’t lowercase, display the message “The character just entered is not a lowercase letter.”
+
 b. Modify the program written for Exercise 14a to also determine whether the entered character
 is an uppercase letter. An uppercase letter is any character greater than or equal to “A”
 and less than or equal to “Z.”
+
 15. (Program) Write, compile, and run a C++ program that first determines whether an entered
 character is a lowercase or an uppercase letter (see Exercise 14). If the letter is lowercase,
 determine and print its position in the alphabet. For example, if the entered letter is c, the
@@ -180,6 +231,7 @@ is lowercase, its position can be determined by subtracting 'a' from the letter 
 example, if the entered letter is G, the program should print 7 because G is the seventh letter
 in the alphabet. (Hint: If the entered character is uppercase, its position can be determined by
 subtracting 'A' from the letter and adding 1.)
+
 16. (Program) Write, compile, and run a C++ program that asks the user to input two numbers.
 After your program accepts these numbers by using one or more cin object calls, have it
 check the numbers. If the first number entered is greater than the second number, the program
@@ -187,6 +239,7 @@ should print the message “The first number is greater.”; otherwise, it shoul
 message “The first number is not greater than the second.” Test your program by entering
 the numbers 5 and 8 and then using the numbers 11 and 2. What will your program display if
 the two numbers entered are equal?
+
 17. (Debug) The following program displays the message Hello there! regardless of the letter
 input. Determine where the error is and why the program always causes the message to be
 displayed.
