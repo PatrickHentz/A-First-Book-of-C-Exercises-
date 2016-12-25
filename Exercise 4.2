@@ -80,6 +80,21 @@ number is greater.”; else, it should print the message “The first number is 
 program by entering the numbers 5 and 8 and then using the numbers 11 and 2. What do you
 think your program will display if the two numbers entered are equal? Test this case.
 
+#include <iostream>
+using namespace std;
+int main(){
+int number1, number2;
+cout << "The first number is" << endl;
+cin >> number1;
+cout << "The second number is" << endl;
+cin >> number2;
+if (number1 > number2){
+cout << "The first number is greater" << endl;
+}
+else{ cout << "The first number is smaller" << endl; }
+return 0;
+}
+
 If the two numbers are equal, the else statement is executed, which produces an incorrect
 display.
 
