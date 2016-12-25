@@ -7,52 +7,105 @@ if (angle == 90)
     cout << “The angle is not a right angle”;
 b. If the temperature is above 100 degrees, display the message “above the boiling point of
 water”; else, display the message “below the boiling point of water.”
-
+if (temp > 100)
+    cout << “above the boiling point of water”;
+  else
+    cout << “below the boiling point of water”;
 c. If the number is positive, add the number to the variable positivesum; else, add the number
 to the variable negativesum.
-
+if (number > 0)
+    number += positivesum;
+  else
+    number += negativesum;
 d. If the slope is less than 0.5, set the variable flag to 0; else, set flag to 1.
-
+if (slope < 0.5 )
+    flag = 0;
+  else
+    flag = 1;
 e. If the difference between slope1 and slope2 is less than 0.001, set the variable approx to
 0; else, calculate approx as the quantity (slope1 - slope2) / 2.0.
-
+if (slope1 - slope2 < .001 )
+    approx = 0;
+  else
+    approx = (slope1 - slope2) / 2.0;
 f. If the frequency is above 60, display the message “The frequency is too high.”
-
+if (frequency > 60) {
+cout << "The frequency is too high." << endl;
+}
 g. If the difference between temp1 and temp2 exceeds 2.3, calculate the variable error as
 (temp1 - temp2) * factor.
-
+if(temp1 - temp2 > 2.3){
+error = (temp1 - temp2) * factor;}
 h. If x is greater than y and z is less than 20, request that the user input a value for the
 variable p.
-
+if (x > y && x < 20){
+cout << "request input for varable p:";
+cin >> p;
+}
 i. If distance is greater than 20 and less than 35, request that the user input a value for the
 variable time.
-
+if (distance > 20 && distance < 35){
+cout << "request input for value of variable time:" << endl;
+cin >> time;
+}
 2. (Practice) Write if statements corresponding to the conditions shown in the following
 flowcharts:
-a. b.
-c. d.
+*See textbook for diagram*
+a. if (ace < 25)
+    sum = sum + a;
+  else
+    count = count + 1;
+
+b. if(c == 15)
+  {
+    credit = 10;
+    limit = 1200;
+  }
+  else
+  {
+    credit = 8;
+    limit = 800;
+  }
+c. if (id > 22)
+    factor = 0.7;
+	
+d. if (count == 10)
+  {
+    average = sum / count;
+    cout << average;
+  }
 3. (Practice) Write a C++ program that asks the user to input two numbers. If the first number
 entered is greater than the second number, the program should print the message “The first
 number is greater.”; else, it should print the message “The first number is smaller.” Test your
 program by entering the numbers 5 and 8 and then using the numbers 11 and 2. What do you
 think your program will display if the two numbers entered are equal? Test this case.
+
+If the two numbers are equal, the else statement is executed, which produces an incorrect
+display.
+
 4. (Program) a. In a pass/fail course, a student passes if the grade is greater than or equal to 70
 and fails if the grade is lower than 70. Write a C++ program that accepts a grade and prints the
 message “A passing grade” or “A failing grade,” as appropriate.
+
 b. How many runs should you make for the program written in Exercise 4a to verify that it’s
 operating correctly? What data should you input in each program run?
+
 5. (Program) a. If money is left in a particular bank for more than 5 years, the bank pays interest
 at a rate of 4.5%; otherwise, the interest rate is 3.0%. Write a C++ program that uses the
 cinƒobject to accept the number of years in the variable numYears and display the correct
 interest rate, depending on the value input into numYears.
+
 b. How many runs should you make for the program written in Exercise 5a to verify that it’s
 operating correctly? What data should you input in each program run?
+
 6. (Practice) a. Write a C++ program to display the message “PROCEED WITH TAKEOFF”
 or “ABORT TAKEOFF” depending on the input. If the character g is entered in the variable
 code, the first message should be displayed; otherwise, the second message should be
 displayed.
+
 b. How many runs should you make for the program written in Exercise 6a to verify that it’s
 operating correctly? What data should you input in each program run?
+
 7. (Program) Write, compile, and run a C++ program that accepts a user-input integer number
 and determines whether it’s even or odd. The output should display the message “The
 entered number is even.” or “The entered number is odd.” corresponding to the number the
