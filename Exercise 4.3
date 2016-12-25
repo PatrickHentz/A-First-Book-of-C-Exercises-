@@ -2,7 +2,20 @@
 and a right angle is equal to 90 degrees. Using this information, write a C++ program that
 accepts an angle, in degrees, and displays the type of angle corresponding to the degrees
 entered.
-
+#include <iostream>
+using namespace std;
+int main() {
+float angle;
+cout << "Enter your Angle:"<< endl;
+cin >> angle;
+if(angle < 90){
+cout << "Acute angle" <<endl;}
+else if(angle == 90){
+cout << "right angle" << endl;
+}
+else {cout << "obtuse angle <<endl;}
+return 0;
+}
 2. (Program) The grade level of undergraduate college students is typically determined according
 to the following schedule:
 Number of Credits Completed Grade Level
@@ -12,6 +25,24 @@ Less than 32 Freshman
 96 or more Senior
 Using this information, write a C++ program that accepts the number of credits a student has
 completed, determines the student’s grade level, and displays the grade level.
+
+#include <iostream>
+using namespace std;
+int main(){
+int numcredits;
+cout << "Enter your Credits Completed Grade Level" << endl;
+cin >> numcredits;
+if( numcredits >= 96){
+cout << "Senior" <<endl;
+}
+else if(numcredits >= 64 && numcredits <= 95){
+cout << "Junior" << endl;
+}
+else if( numcredits >= 32 && numcredits <= 63){
+cout << "Sophmore" <<endl:
+}
+else{cout << "Freshman" << endl;
+}
 
 3. (Program) A student’s letter grade is calculated according to the following schedule:
 Numerical Grade Letter Grade
