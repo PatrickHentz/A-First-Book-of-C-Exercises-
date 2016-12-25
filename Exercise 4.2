@@ -224,8 +224,27 @@ equal to 40, the person receives $12.00 per hour; otherwise, the person receives
 $18.00 for each hour worked over 40 hours. The program should request the hours worked as
 input and display the salary as output.
 
+#include <iostream> 
+using namespace std;
+int main() {
+double hours,total;
+cout << "Enter hours worked" << endl;
+cin >> hours;
+if (hours > 40){
+total=(12 * 40) + 480 * (18 *( hours - 40));
+cout <<" Your earned this much << total <<endl;
+}
+else if(hours <= 40) {
+total = (12 * hours);
+cout << "You earned this much" << total << endl;
+}
+return 0;
+}
+
 b. How many runs should you make for the program written in Exercise 10a to verify that it’s
 operating correctly? What data should you input in each program run?
+
+Two runs to test each case is required at least. The data should be an integer or floationg point type number.
 
 11. (Program) a. A senior salesperson is paid $800 a week, and a junior salesperson, $500 a
 week. Write a C++ program that accepts as input a salesperson’s status in the character variable
