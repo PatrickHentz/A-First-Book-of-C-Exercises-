@@ -250,17 +250,39 @@ Two runs to test each case is required at least. The data should be an integer o
 week. Write a C++ program that accepts as input a salesperson’s status in the character variable
 status. If status equals s, the senior salesperson’s salary should be displayed; otherwise,
 the junior salesperson’s salary should be displayed.
-
+#include <iostream>
+using namespace std;
+int main(){
+char status;
+status = 's';
+if(status == true){
+cout << "Senior salesperson weekly salary status is "<< 800 <<end;
+else{ cout << "Must be a junior salesperson " << 500 <<" is their salary " endl;}
+return 0;
+}
 b. How many runs should you make for the program written in Exercise 11a to verify that it’s
 operating correctly? What data should you input in each program run?
+
+two runs is required, character data type should be used.
 
 12. (Program) a. Write a C++ program that displays the message “I feel great today!” or “I feel
 down today #$*!” depending on the input. If the character u is entered in the variable ch, the
 first message should be displayed; otherwise, the second message should be displayed.
-
+#include <iostream>
+using namespace std;
+int main(){
+char feelings;
+cout << What's your feeling character << endl;
+cin >> feelings;
+if ( feelings == 'u'){
+cout << "I feel great today!" << endl;
+}
+else {cout << "I feel dow today #$*!" << endl;}
+return 0;
+}
 b. How many runs should you make for the program written in Exercise 12a to verify that it’s
 operating correctly? What data should you input in each program run?
-
+Two runs is recommended, the data type should be a character.
 13. (Program) a. Write a program to display the following two prompts:
  Enter a month (use a 1 for Jan, etc.):
  Enter a day of the month:
