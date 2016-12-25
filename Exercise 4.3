@@ -133,7 +133,19 @@ Commercial grade Greater than or equal to 1% and less than 10%
 Toy grade Greater than or equal to 10%
 Using this information, write, compile, and run a C++ program that accepts a component’s
 tolerance reading and determines the specification that should be assigned to it.
-
+#include <iostream>
+using namespace std;
+int main(){
+double tolerence;
+cin >> tolerence;
+if(tolerence < .01){
+cout << "Space exploration "<<endl;}
+else if(tolerence >= 0.1 && tolerence <= 1 ){
+cout <<  "Military grade"<<endl;}
+else if (tolerence >= 1 &&  tolerence <= 10){
+cout << "Commercial grade" << endl;}
+return 0;
+}
 7. (Program) a. Write, compile, and run a program that accepts two real numbers and a select
 code from a user. If the entered select code is 1, have the program add the two previously
 entered numbers and display the result; if the select code is 2, the numbers should be multiplied;
