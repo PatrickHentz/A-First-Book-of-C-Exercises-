@@ -384,7 +384,20 @@ should print the message “The first number is greater.”; otherwise, it shoul
 message “The first number is not greater than the second.” Test your program by entering
 the numbers 5 and 8 and then using the numbers 11 and 2. What will your program display if
 the two numbers entered are equal?
-
+#include <iostream>
+using namespace std;
+int main(){
+double number1,number2;
+cout << "Enter your first number" << endl;
+cin >> number1;
+cout << "Enter your second number" << endl;
+cin >> number2;
+if (number1 > number2){
+cout << "The first number is greater" << endl;
+}
+else { cout << "The first number is not greater than the second" << endl; }
+return 0;
+}
 17. (Debug) The following program displays the message Hello there! regardless of the letter
 input. Determine where the error is and why the program always causes the message to be
 displayed.
