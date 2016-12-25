@@ -204,7 +204,20 @@ Similarly, because 1988 is evenly divisible by 4 but not by 100, it was also a l
 this information, write a C++ program that accepts the year as user input, determines whether
 the year is a leap year, and displays a message telling the user whether the entered year is or
 is not a leap year.
-
+#include <iostream>
+using namespace std;
+int main() {
+int year;
+	cout << "What is the year" << endl;
+	cin >> year;
+	bool leap = (year % 4 == 0);
+	if (leap == true){
+		cout << "This year is a leap year" << endl;
+	}
+	else{
+		cout << "This year is not a leap year" << endl; }
+		return 0;
+		}
 10. (Program) a. Write, compile, and run a C++ program to compute and display a person’s
 weekly salary as determined by the following conditions: If the hours worked are less than or
 equal to 40, the person receives $12.00 per hour; otherwise, the person receives $480.00 plus
