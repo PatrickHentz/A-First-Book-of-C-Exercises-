@@ -33,7 +33,7 @@ int numcredits;
 cout << "Enter your Credits Completed Grade Level" << endl;
 cin >> numcredits;
 if( numcredits >= 96){
-cout << "Senior" <<endl;
+ncout << "Senior" <<endl;
 }
 else if(numcredits >= 64 && numcredits <= 95){
 cout << "Junior" << endl;
@@ -53,7 +53,22 @@ Less than 70 but greater than or equal to 60 D
 Less than 60 F
 Using this information, write, compile, and run a C++ program that accepts a student’s numerical
 grade, converts the numerical grade to an equivalent letter grade, and displays the letter grade.
-
+#include <iostream> 
+using namespace std;
+int mian(){
+double grade;
+if(grade < 90 && grade >= 80){
+cout << "B" <<endl;}
+else if(grade >= 90){
+cout << 'A' << endl;}
+else if (grade < 80 && grade >= 70){
+cout << 'C' << endl;} 
+else if (grade < 70 && grade >= 60){
+cout << 'D' << endl;}
+else if (grade < 60){
+cout << 'F' << endl;}
+return 0;
+}
 4. (Program) The interest rate paid on funds deposited in a bank is determined by the amount
 of time the money is left on deposit. For a particular bank, the following schedule is used:
 Time on Deposit Interest Rate
