@@ -138,7 +138,7 @@ One run is all that is required. The data type should be an integer.
 6. (Practice) a. Write a C++ program to display the message “PROCEED WITH TAKEOFF”
 or “ABORT TAKEOFF” depending on the input. If the character g is entered in the variable
 code, the first message should be displayed; otherwise, the second message should be
-displayed.
+ndisplayed.
 
 #include <iostream>
 using namespace std;
@@ -163,11 +163,40 @@ Two runs are required for each case test. The dat input should be a character ty
 and determines whether it’s even or odd. The output should display the message “The
 entered number is even.” or “The entered number is odd.” corresponding to the number the
 user entered. (Hint: An even number has a 0 remainder when divided by 2.)
-
+#include <iostream>
+using namespace std;
+int main(){
+int number;
+cout << "Enter number"<<endl;
+cin >> number;
+if( number % 2 == 0){
+cout << "The entered number is even" << endl;}
+else{ cout << The entered number is odd;}
+return 0;
+}
 8. (Program) Write, compile, and run a C++ program that accepts a user-entered number and
 calculates the square root and the reciprocal. Before calculating the square root, validate that
 the number isn’t negative, and before calculating the reciprocal, check that the number isn’t
 zero. If either condition occurs, display a message stating that the operation can’t be calculated.
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+int main(){
+double number,solution,solution2;
+	cout << "Enter your number" << endl;
+	cin >> number;
+	if (number >= 0 && number != 0){
+		solution = sqrt(number);
+		cout << solution << endl;
+		solution2 = (1 / number);
+		cout << solution2 << endl;
+	}
+	else if (number == 0){
+		solution = sqrt(number);
+		cout << solution << endl;
+	 cout << "The operation can't be calculated" << endl; }
+return 0;
 
 9. (Program) Years that are evenly divisible by 400 or are evenly divisible by 4 but not by 100
 are leap years. For example, because 1600 is evenly divisible by 400, 1600 was a leap year.
