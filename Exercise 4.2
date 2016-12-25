@@ -252,6 +252,7 @@ status. If status equals s, the senior salesperson’s salary should be displaye
 the junior salesperson’s salary should be displayed.
 #include <iostream>
 using namespace std;
+
 int main(){
 char status;
 status = 's';
@@ -282,7 +283,9 @@ return 0;
 }
 b. How many runs should you make for the program written in Exercise 12a to verify that it’s
 operating correctly? What data should you input in each program run?
+
 Two runs is recommended, the data type should be a character.
+
 13. (Program) a. Write a program to display the following two prompts:
  Enter a month (use a 1 for Jan, etc.):
  Enter a day of the month:
@@ -291,20 +294,58 @@ prompt and accept and store a number in the variable day in response to the seco
 If the month entered isn’t between 1 and 12, display a message informing the user that an
 invalid month has been entered. If the day entered isn’t between 1 and 31, display a message
 informing the user that an invalid day has been entered.
-
+#include <iostream>
+using namespace std;
+int main(){
+int month,day;
+cout << "Enter a month (use a 1 for Jan, etc.):" << endl;
+cin >> month;
+cout << "Enter a day of the month:" << endl;
+cin >> day;
+if( month > 12 || month < 1){
+cout << "invalid month has been entered" << endl;
+}
+else if( day < 1 || day > 31){
+cout << "invalid day has been entered" << endl;}
+return 0;
+}
 b. What will your program do if the user enters a number with a decimal point for the month?
 How can you make sure your if statements check for an integer number?
+
+the decimal point will be ignored. By simplying using an integer data-type.
 
 14. (Program) a. Write, compile, and run a C++ program that accepts a character as input data and
 determines whether the character is a lowercase letter. A lowercase letter is any character that’s
 greater than or equal to “a” and less than or equal to “z.” If the entered character is a lowercase
 letter, display the message “The character just entered is a lowercase letter.” If the entered
 letter isn’t lowercase, display the message “The character just entered is not a lowercase letter.”
-
+#include <iostream>
+using namespace std;
+int main(){
+char my_ch;
+	cout << "Enter your character" << endl;
+	cin >> my_ch;
+	if (my_ch >= 'a' && my_ch <= 'z'){
+		cout << "The character just entered is a lowercase letter." << endl;
+	}
+	else {cout << "The character just entered is not a lowercase letter." << endl; }
+return 0;
+}
 b. Modify the program written for Exercise 14a to also determine whether the entered character
 is an uppercase letter. An uppercase letter is any character greater than or equal to “A”
 and less than or equal to “Z.”
-
+#include <iostream>
+using namespace std;
+int main(){
+char my_ch;
+	cout << "Enter your character" << endl;
+	cin >> my_ch;
+	if (my_ch >= 'A' && my_ch <= 'Z'){
+		cout << "The character just entered is a uppercase letter." << endl;
+	}
+	else {cout << "The character just entered is not a uppercase letter." << endl; }
+return 0;
+}
 15. (Program) Write, compile, and run a C++ program that first determines whether an entered
 character is a lowercase or an uppercase letter (see Exercise 14). If the letter is lowercase,
 determine and print its position in the alphabet. For example, if the entered letter is c, the
