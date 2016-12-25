@@ -356,6 +356,27 @@ example, if the entered letter is G, the program should print 7 because G is the
 in the alphabet. (Hint: If the entered character is uppercase, its position can be determined by
 subtracting 'A' from the letter and adding 1.)
 
+#include <iostream>
+using namespace std;
+int main(){
+int location;
+	char my_ch;
+		cout << "Enter your character" << endl;
+		cin >> my_ch;
+		if (my_ch >= 'a' && my_ch <= 'z'){
+		cout << "The character just entered is a lowercase letter." << endl;
+		location = (my_ch - 'a') + 1;
+				cout << "the location is " << location << endl;
+		}
+		else if (my_ch >= 'A' && my_ch <= 'Z'){
+			cout << "The character just entered is a uppercase letter." << endl;
+			location = (my_ch - 'A') + 1;
+			cout << "The location is " << location << endl;
+	}
+		else { cout << "The character just entered is not a lowercase or uppercase letter." << endl; }
+	return 0;
+	}
+	
 16. (Program) Write, compile, and run a C++ program that asks the user to input two numbers.
 After your program accepts these numbers by using one or more cin object calls, have it
 check the numbers. If the first number entered is greater than the second number, the program
