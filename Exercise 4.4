@@ -12,6 +12,25 @@
    cout << “Of course I had nothing to do with my grade.\n”;
    cout << “It must have been the professor's fault.\n”;
  }
+ ---------------------Changed----------------------------------
+ switch (letterGrade)
+{
+  case 'A':
+    cout << “The numerical grade is between 90 and 100”;
+    break;
+  case 'B':
+    cout << “The numerical grade is between 80 and 89.9”;
+    break;
+  case 'C':
+    cout << “The numerical grade is between 70 and 79.9”;
+    break;
+  case 'D':
+    cout << “How are you going to explain this one?”;
+    break;
+  default:
+    cout << “Of course I had nothing to do with the grade.”;
+    cout << “\nIt must have been the professor's fault.”;
+}
 2. (Modify) Rewrite the following if-else chain by using a switch statement:
  if (bondType == 1)
  {
@@ -43,18 +62,71 @@
    retrieve();
    screen();
  }
+ ----------------------- Switch Version----------------------------
+ 
+ switch (bondType)
+{
+  case 1:
+    inData();
+    check();
+    break;
+  case 2:
+    dates();
+    leapYr();
+    break;
+  case 3:
+    yield();
+    maturity();
+    break;
+  case 4:
+    price();
+    roi();
+    break;
+    case 5:
+    files();
+    save();
+  default:
+    retrieve();
+    screen();
+}
+
 3. (Program) Each storage drive in a shipment is stamped with a code from 1 to 4, indicating
 the following storage capacities:
-Code Capacity
-1 2 GB
-2 4 GB
-3 16 GB
-4 32 GB
+Code  Capacity
+1     2 GB
+2     4 GB
+3    16 GB
+4    32 GB
 Write, compile, and run a C++ program that accepts the code number as an input value and,
 based on the value entered, displays the correct storage drive capacity.
+
+#include <iostream>
+using namespace std;
+int main(){
+switch (code){
+case 1: 
+cout << 2 <<"GB"<<endl;
+case 2:
+cout << 4 << "GB" << endl;
+case 3:
+cout << 16 << "GB" << endl;
+case 4:
+cout << 32 << "GB" << endl;
+default:
+cout << "Nothing" << endl;
+}
+return 0;
+}
 4. (Modify) Rewrite Program 4.4 by using a switch statement.
+
 5. (Modify) Repeat Exercise 9 in Section 4.3, using a switch statement instead of an
 if-else chain.
+
 6. (Modify) Rewrite Program 4.6 by using a character variable for the select code.
+
 7. (For thought) Determine why the if-else chain in Program 4.5 can’t be replaced with a
 switch statement.
+
+The expression in the switch statement must evaluate to an integer quantity and be tested
+for equality. The if-else chain in Program 4.5 compares double-precision values, violating
+the switch statement’s requirements for integer relational expressions.
