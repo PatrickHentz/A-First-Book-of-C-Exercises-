@@ -361,9 +361,9 @@ monthly income:
    return 0;
  }
 a. Will this program produce the same output as Program 4.5?
-
+Yes
 b. Which program is better? Why?
-
+The program inside of the exercise is better because it uses more coded control of the function.
 12. (Debug) The following program was written to produce the same result as Program 4.5:
  #include <iostream>
  #include <iomanip>
@@ -397,4 +397,8 @@ b. Which program is better? Why?
  }
 a. What does this program do?
 
+This program calcuated sales income based on monthly sales.
+
 b. For what values of monthly sales does this program calculate the correct income?
+
+This program calculates the correct income for every case based on the conditions.
