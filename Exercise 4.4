@@ -118,12 +118,54 @@ cout << "Nothing" << endl;
 return 0;
 }
 4. (Modify) Rewrite Program 4.4 by using a switch statement.
-
+#include <iostream>
+using namespace std;
+int main(){
+switch (marcode){
+case 'M': 
+cout << "Individual is married."<<endl;
+case 'S':
+cout << "Individual is single" << endl;
+default:
+cout << "Nothing" << endl;
+}
+return 0;
+}
 5. (Modify) Repeat Exercise 9 in Section 4.3, using a switch statement instead of an
 if-else chain.
 
 6. (Modify) Rewrite Program 4.6 by using a character variable for the select code.
 
+#include <iostream>
+using namespace std;
+int main()
+{
+  int opselect;
+  double fnum, snum;
+  cout << “Please type in two numbers: “;
+  cin  >> fnum >> snum;
+  cout << “Enter a select code: “;
+  cout << “\n        1 for addition”;
+  cout << “\n        2 for multiplication”;
+  cout << “\n        3 for division : “;
+  cin  >> opselect;
+  switch (opselect)
+  {
+    case 'a':
+      cout << “The sum of the numbers entered is “ 
+           << fnum+snum << endl;
+      break;
+    case 'b':
+      cout << “The product of the numbers entered is “ 
+           << fnum*snum << endl;
+      break;
+    case 'c':
+      cout << “The first number divided by the second is “ 
+           << fnum/snum << endl;
+      break;
+  }      // end of switch
+  return 0;
+}
 7. (For thought) Determine why the if-else chain in Program 4.5 can’t be replaced with a
 switch statement.
 
