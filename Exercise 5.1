@@ -1,8 +1,26 @@
 1. (Modify) Rewrite Program 5.1 to print the numbers 2 to 10 in increments of 2. The output
 of your program should be the following:
 2  4  6  8  10
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int count;
+			count = 2;
+			while (count <= 10)
+			{
+				if ((count % 2) == 0){
+					cout << count << " ";
+				}
+				count++;
+			}
+return 0;
+}
 2. (Modify) Rewrite Program 5.4 to produce a table starting at a Celsius value of -10 and ending
 with a Celsius value of 60, in increments of 10 degrees.
+
 3. (Desk check) a. For the following program, determine the total number of items displayed
 as well as the first and last numbers printed:
 #include <iostream>
@@ -17,10 +35,17 @@ int main()
   }
   return 0;
 }
+
+21 numbers are displayed, with 1 being the first and 21 being the last.
+
 b. Enter and run the program from Exercise 3a on a computer to verify your answers to the
 exercise.
+Done!!
 c. How would the output be affected if the two statements in the compound statement were
 reversed (that is, if the cout statement were placed before the num++ statement)?
+
+21 numbers would still be printed, but the first number would be 0 and the last would be 20.
+
 4. (Program) Write, compile, and run a C++ program that converts gallons to liters. The program
 should display gallons from 10 to 20 in 1-gallon increments and the corresponding liter equivalents.
 Use the relationship that 1 gallon = 3.785 liters.
