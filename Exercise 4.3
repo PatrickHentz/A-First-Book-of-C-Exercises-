@@ -211,11 +211,51 @@ a. Using this information, write, compile, and run a C++ program that accepts th
 line as user input and determines and displays the correct quadrant for the input data. (Note:
 If the angle is exactly 0, 90, 180, or 270 degrees, the corresponding line doesn’t reside in any
 quadrant but lies on an axis.)
-
+#include <iostream>
+using namespace std;
+int main(){
+int x;
+if(x > 0 && x<90){
+cout << "Quadrant I" << endl;}
+else if( x > 90 && x < 180)
+{cout << "Quadrant II" << endl;}
+else if(x> 180 && x < 270){
+cout << "Quadrant III" << endl;}
+else if(x>270 && x< 360){
+cout << "Quadrant IV" << endl;}
+else if (x == 0  || x == 90 || x == 180 || x== 270){
+cout << "Axis" << endl;
+return 0;
+}
 b. Modify the program written for Exercise 8a to display a message that identifies an angle of
 0 degrees as the positive x axis, an angle of 90 degrees as the positive y axis, an angle of
 180 degrees as the negative x axis, and an angle of 270 degrees as the negative y axis.
-
+#include <iostream>
+using namespace std;
+int main(){
+int x;
+if(x > 0 && x<90){
+cout << "Quadrant I" << endl;}
+else if( x > 90 && x < 180)
+{cout << "Quadrant II" << endl;}
+else if(x> 180 && x < 270){
+cout << "Quadrant III" << endl;}
+else if(x>270 && x< 360){
+cout << "Quadrant IV" << endl;}
+else if (x == 0 ){
+cout << "The positive x axis";
+}
+else if ( x == 90){
+cout << "The positive y axis";
+}
+else if ( x == 180){
+cout << "The negative x axis";
+} 
+else if ( x== 270){
+cout << "The negative y axis";
+}
+return 0;
+}
 9. (Program) Write, compile, and run a C++ program that accepts a number followed by one
 space and then a letter. If the letter following the number is f, the program is to treat the
 number entered as a temperature in degrees Fahrenheit, convert the number to the equivalent
