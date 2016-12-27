@@ -133,6 +133,39 @@ return 0;
 }
 5. (Modify) Repeat Exercise 9 in Section 4.3, using a switch statement instead of an
 if-else chain.
+#include <iostream>
+using namespace std;
+int main(){
+double number, Celsius, Fahrenheit;
+char letter;
+cout << Enter a number and a letter<< endl;
+cin >> number >> letter;
+Celsius = ((5/9)*(number - 32));
+Fahrenheit = ((9.0/5.0) * number + 32.0); 
+if ( letter == 'f'){
+cout << Celsius << endl;}
+else if (letter == 'c'){
+cout << Fahrenheit << endl;}
+return 0;
+}
+-------------------Switch Statements-----------------------------------------------
+#include <iostream>
+using namespace std;
+int main(){
+double number, Celsius, Fahrenheit;
+char letter;
+cout << Enter a number and a letter<< endl;
+cin >> number >> letter;
+Celsius = ((5/9)*(number - 32));
+Fahrenheit = ((9.0/5.0) * number + 32.0);
+switch (letter){
+case 'f': 
+cout << Fahrenheit << endl;
+case 'c':
+cout << Celsius << endl;
+}
+return 0;
+}
 
 6. (Modify) Rewrite Program 4.6 by using a character variable for the select code.
 
