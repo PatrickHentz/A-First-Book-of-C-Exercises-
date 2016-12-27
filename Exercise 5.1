@@ -151,7 +151,38 @@ YEAR   DEPRECIATION      VALUE        DEPRECIATION
 6        4000             4000           24000
 7        4000                0           28000
 
+#include <iostream>
+using namespace std;
+int main()
+{
+		const int MAX = 7;
+		const int STARTVAL = 1;
+		const int STEPSIZE = 1;
+		int year, End_year_value;
+		double depreciation, Accumulated_Depreciation;
+		cout << "YEAR    DEPRESCIATION     END-OF-YEAR VALUE     ACCUMULATED DEPRECIATION \n"
+			<< "------ - ------------- - ------------- - -------------- \n";
+		year = STARTVAL;
+		// set output formats for floating-point numbers only
+		cout << setiosflags(ios::showpoint) << setiosflags(ios::fixed)
+			<< setprecision(2);
+		while (year<= MAX )
+		{
+			int End_year_value = 28000;
+			depreciation = 4000;
+			Accumulated_Depreciation = year * depreciation;
+			End_year_value = End_year_value - Accumulated_Depreciation;
+			cout << setw(4) << year
+				<< setw(15) << depreciation
+				<< setw(15) << End_year_value
+				<< setw(15) << Accumulated_Depreciation << endl;
+			year = year + STEPSIZE;
+			
+		}
 
+	system("PAUSE");
+	return 0;
+}
 7. (Program) An automobile travels at an average speed of 55 mph for 4 hours. Write, compile,
 and run a C++ program that displays the distance, in miles, the car has traveled after 0.5, 1.0,
 1.5, and so on hours until the end of the trip.
