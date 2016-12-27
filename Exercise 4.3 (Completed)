@@ -361,9 +361,15 @@ monthly income:
    return 0;
  }
 a. Will this program produce the same output as Program 4.5?
-Yes
+Both programs produce the same output.
 b. Which program is better? Why?
-The program inside of the exercise is better because it uses more coded control of the function.
+
+Program 4.5 is better because it requires less processing. In Program 4.5, when the correct
+monthly sales figure is evaluated, the income value is calculated and the if-else statement
+is exited without further processing. In the program in Exercise 11a, the system must
+evaluate every if statement, even if the first one is the statement that evaluates to true.
+Consequently, Program 4.5 is better because it potentially requires less processing.
+
 12. (Debug) The following program was written to produce the same result as Program 4.5:
  #include <iostream>
  #include <iomanip>
@@ -397,8 +403,11 @@ The program inside of the exercise is better because it uses more coded control 
  }
 a. What does this program do?
 
-This program calcuated sales income based on monthly sales.
+The program runs but calculates incorrect results, except for the case in which monthly
+sales are less $20,000.
 
 b. For what values of monthly sales does this program calculate the correct income?
 
-This program calculates the correct income for every case based on the conditions.
+If monthly sales are less than 20000, the program produces correct results because either the
+first if or first else-if is executed. For any and all amounts >= 20000, the income for the
+first else-if statement is obtained, and the other else-if statements aren’t evaluated.
