@@ -1,17 +1,42 @@
 1. (Modify) Rewrite Program 5.6 to compute the total of eight numbers.
+#include <iostream>
+using namespace std;
+int main()
+{
+  const int MAXNUMS = 8;
+  int count;
+  double num, total;
+  cout << “\nThis program will ask you to enter “
+       << MAXNUMS << “ numbers.\n”;
+  count = 1;
+  total = 0;
+  while (count <= MAXNUMS)
+  {
+    cout << “\nEnter a number: “;
+    cin  >> num;
+    total = total + num;
+    cout << “The total is now “ << total;
+    count++;
+  }
+  cout   << “\n\nThe final total is “ << total << endl;
+  return 0;
+}
 2. (Modify) Rewrite Program 5.6 to display this prompt:
 Please type in the total number of data values to be added:
 In response to this prompt, the program should accept a user-entered number, and then use it
 to control the number of times the while loop is executed. So if the user enters 5 in response
 to the prompt, the program should request the input of five numbers and display the total after
 five numbers have been entered.
+
 3. (Modify) Rewrite Program 5.7 to compute the average of 10 numbers.
+
 4. (Modify) Rewrite Program 5.7 to display the following prompt:
 Please type in the total number of data values to be averaged:
 In response to this prompt, the program should accept a user-entered number, and then use it
 to control the number of times the while loop is executed. So if the user enters 6 in response
 to the prompt, the program should request an input of six numbers and display the average of
 the next six numbers entered.
+
 5. (Debug) By mistake, a programmer puts the statement average = total / count; in the
 while loop immediately after the statement total = total + num; in Program 5.7. As a
 result, the while loop becomes the following:
@@ -24,7 +49,9 @@ while (count <= MAXNUMS)
   count++;
 }
 a. Will the program yield the correct result with this while loop?
+
 b. From a programming perspective, which while loop is better to use, and why?
+
 6. (Program) a. Write a C++ program to convert meters to feet. The program should request the
 starting meter value, the number of conversions to be made, and the increment between metric
 values. The display should have appropriate headings and list the meters and corresponding
