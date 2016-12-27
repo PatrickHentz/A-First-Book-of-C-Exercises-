@@ -81,11 +81,62 @@ reversed (that is, if the cout statement were placed before the num++ statement)
 4. (Program) Write, compile, and run a C++ program that converts gallons to liters. The program
 should display gallons from 10 to 20 in 1-gallon increments and the corresponding liter equivalents.
 Use the relationship that 1 gallon = 3.785 liters.
+#include <iostream>
+using namespace std;
+int main()
+{
+		const int MAXCELSIUS = 20;
+		const int STARTVAL = 10;
+		const int STEPSIZE = 1;
+		int gallons;
+		double liters;
+		cout << "GALLONS   LITERS\n"
+			<< "------ - ----------\n";
+		gallons = STARTVAL;
 
+		// set output formats for floating-point numbers only
+		cout << setiosflags(ios::showpoint) << setiosflags(ios::fixed)
+			<< setprecision(2);
+		while (gallons<= MAXCELSIUS)
+		{
+			liters = (gallons * 3.78541178);
+			cout << setw(4) << gallons
+				<< setw(13) << liters << endl;
+			gallons = gallons + STEPSIZE;
+		}
+
+	system("PAUSE");
+	return 0;
 5. (Program) Write, compile, and run a C++ program that converts feet to meters. The program
 should display feet from 3 to 30 in 3-foot increments and the corresponding meter equivalents.
 Use the relationship that 3.28 feet = 1 meter.
+#include <iostream>
+using namespace std;
+int main()
+{
+		const int MAXCELSIUS = 30;
+		const int STARTVAL = 3;
+		const int STEPSIZE = 3;
+		int FEET;
+		double METERS;
+		cout << "FEET    METERS\n"
+			<< "------ - ----------\n";
+		FEET = STARTVAL;
 
+		// set output formats for floating-point numbers only
+		cout << setiosflags(ios::showpoint) << setiosflags(ios::fixed)
+			<< setprecision(2);
+		while (FEET<= MAXCELSIUS)
+		{
+			METERS = (FEET * .3048);
+			cout << setw(4) << FEET
+				<< setw(13) << METERS << endl;
+			FEET = FEET + STEPSIZE;
+		}
+
+	system("PAUSE");
+	return 0;
+}
 6. (Program) A machine purchased for $28,000 is depreciated at a rate of $4000 a year for 7 years.
 Write, compile, and run a C++ program that computes and displays a depreciation table for
 7 years. The table should have this form:
