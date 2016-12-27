@@ -186,7 +186,35 @@ int main()
 7. (Program) An automobile travels at an average speed of 55 mph for 4 hours. Write, compile,
 and run a C++ program that displays the distance, in miles, the car has traveled after 0.5, 1.0,
 1.5, and so on hours until the end of the trip.
+#include <iostream>
+using namespace std;
+int main()
+{
+		 double MAX = 4;
+		 double STARTVAL = .5;
+		 double STEPSIZE = .5;
+		 double hours,distance;
+		 double speed = 55;
+		cout << "HOURS    DISTANCE TRAVELED \n"
+			<< "------ - -------------\n";
+		hours = STARTVAL;
+		// set output formats for floating-point numbers only
+		cout << setiosflags(ios::showpoint) << setiosflags(ios::fixed)
+			<< setprecision(2);
+		while (hours <= MAX )
+		{
+			
+			distance = speed * hours;
+			cout << setw(4) << hours
+				<< setw(15) << distance
+				<< endl;
+			hours = hours + STEPSIZE;
+			
+		}
 
+	system("PAUSE");
+	return 0;
+}
 
 8. (Program) a. The following is an approximate conversion formula for converting Fahrenheit
 to Celsius temperatures:
