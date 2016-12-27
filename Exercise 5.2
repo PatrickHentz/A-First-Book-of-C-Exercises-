@@ -28,7 +28,69 @@ to control the number of times the while loop is executed. So if the user enters
 to the prompt, the program should request the input of five numbers and display the total after
 five numbers have been entered.
 
+#include <iostream>
+using namespace std;
+int main()
+{
+
+
+		 int MAXNUMS;
+			int count;
+			double num, total;
+			cout << "Please type in the total number of dat values to be added : ";
+			cin >> MAXNUMS;
+			cout << "\nThis program will ask you to enter "
+
+			<< MAXNUMS << " numbers.\n";
+
+			count = 1;
+			total = 0;
+			while (count <= MAXNUMS)
+			{
+					cout << "\nEnter a number : ";
+				    cin >> num;
+					total = total + num;
+					cout << "The total is now " << total;
+					count++;
+			}
+			cout << "\n\nThe final total is "<< total << endl;
+
+	system("PAUSE");
+	return 0;
+}
+
 3. (Modify) Rewrite Program 5.7 to compute the average of 10 numbers.
+
+#include <iomanip>
+#include <math.h>       /* pow & sqrt */
+#include <iostream>
+using namespace std;
+int main()
+{
+
+
+	const int MAXNUMS = 10;
+	int count;
+	double num, total, average;
+
+	cout << "\nThis program will ask you to enter "
+		<< MAXNUMS << "numbers.\n\n";
+	count = 1;
+	total = 0;
+	while (count <= MAXNUMS)
+	{
+		cout << "Enter a number : ";
+		cin >> num;
+		total = total + num;
+		count++;
+	}
+	count--;
+	average = total / count;
+	cout << "\nThe average of the numbers is "
+		<< average << endl;
+	system("PAUSE");
+	return 0;
+}
 
 4. (Modify) Rewrite Program 5.7 to display the following prompt:
 Please type in the total number of data values to be averaged:
@@ -37,6 +99,33 @@ to control the number of times the while loop is executed. So if the user enters
 to the prompt, the program should request an input of six numbers and display the average of
 the next six numbers entered.
 
+#include <iostream>
+using namespace std;
+int main()
+{
+  int MAXNUMS;
+	int count;
+	double num, total, average;
+  cout << "Pleae type in the totla number of data values to be averaged:" << endl;
+  cin >> MAXNUMS;
+	cout << "\nThis program will ask you to enter "
+		<< MAXNUMS << "numbers.\n\n";
+	count = 1;
+	total = 0;
+	while (count <= MAXNUMS)
+	{
+		cout << "Enter a number : ";
+		cin >> num;
+		total = total + num;
+		count++;
+	}
+	count--;
+	average = total / count;
+	cout << "\nThe average of the numbers is "
+		<< average << endl;
+	system("PAUSE");
+	return 0;
+}
 5. (Debug) By mistake, a programmer puts the statement average = total / count; in the
 while loop immediately after the statement total = total + num; in Program 5.7. As a
 result, the while loop becomes the following:
@@ -49,7 +138,7 @@ while (count <= MAXNUMS)
   count++;
 }
 a. Will the program yield the correct result with this while loop?
-
+y
 b. From a programming perspective, which while loop is better to use, and why?
 
 6. (Program) a. Write a C++ program to convert meters to feet. The program should request the
