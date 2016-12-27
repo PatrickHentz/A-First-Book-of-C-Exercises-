@@ -150,11 +150,56 @@ return 0;
 code from a user. If the entered select code is 1, have the program add the two previously
 entered numbers and display the result; if the select code is 2, the numbers should be multiplied;
 and if the select code is 3, the first number should be divided by the second number.
+
+#include <iostream>
+using namespace std;
+int main(){
+int num1,num2,result,select;
+cout << "Enter first number"<< endl;
+cin >> num1;
+cout << "Enter second number"<< endl;
+cin >> num2;
+cout << "Enter select code"<< endl;
+cin >> select;
+result = num1 + num2;
+if(select == 1){
+cout << result << endl;}
+else if(select == 2){
+cout << num1 * num2 << endl;}
+else if(select == 3){
+cout << num1 /num2 << endl;}
+return 0;
+}
 b. Determine what the program written in Exercise 7a does when the entered numbers are
 3 and 0 and the select code is 3.
+
+The following is displayed Unhandled exception at 0x001B4B3A in Exercise.exe: 0xC0000094: Integer division by zero.
+
 c. Modify the program written in Exercise 7a so that division by 0 isn’t allowed, and a message
 is displayed when this division is attempted.
-
+#include <iostream>
+using namespace std;
+int main(){
+int num1,num2,result,select;
+cout << "Enter first number"<< endl;
+cin >> num1;
+cout << "Enter second number"<< endl;
+cin >> num2;
+cout << "Enter select code"<< endl;
+cin >> select;
+result = num1 + num2;
+if(select == 1){
+cout << result << endl;}
+else if(select == 2){
+cout << num1 * num2 << endl;}
+else if (select == 3 && num2 != 0){
+		cout << num1 / num2 << endl;
+	}
+	if (select == 3 && num2 == 0){
+		cout << "This action is not allowed" << endl;
+	}
+return 0;
+}
 8. (Program) The quadrant in which a line starting from the origin is located is determined by
 the angle the line makes with the positive x axis, as follows:
 Angle from the Positive x Axis Quadrant
@@ -166,6 +211,7 @@ a. Using this information, write, compile, and run a C++ program that accepts th
 line as user input and determines and displays the correct quadrant for the input data. (Note:
 If the angle is exactly 0, 90, 180, or 270 degrees, the corresponding line doesn’t reside in any
 quadrant but lies on an axis.)
+
 b. Modify the program written for Exercise 8a to display a message that identifies an angle of
 0 degrees as the positive x axis, an angle of 90 degrees as the positive y axis, an angle of
 180 degrees as the negative x axis, and an angle of 270 degrees as the negative y axis.
@@ -228,6 +274,7 @@ monthly income:
    return 0;
  }
 a. Will this program produce the same output as Program 4.5?
+
 b. Which program is better? Why?
 
 12. (Debug) The following program was written to produce the same result as Program 4.5:
@@ -262,4 +309,5 @@ b. Which program is better? Why?
    return 0;
  }
 a. What does this program do?
+
 b. For what values of monthly sales does this program calculate the correct income?
