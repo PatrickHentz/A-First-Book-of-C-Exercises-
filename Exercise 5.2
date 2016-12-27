@@ -313,7 +313,29 @@ n is the number of terms in the series.
 Using this information, write a C++ program that uses a while loop to display each term and
 determine the sum of a geometric series having a = 1, r = .5, and n = 10. Make sure your program
 displays the value it has calculated.
+#include <iostream>
+using namespace std;
+int main()
+{
+		
+			int Startnum = 1;
+			int Maxnumber = 10;
+			double increment = 1;
+			double a=1,r=.5,n,Solution;
 
+			n = Startnum;
+
+			while (n <= Maxnumber){
+				Solution = pow((a*r ) ,(n - 1));
+				cout << a << endl;
+				cout << r << endl;
+				cout << n << endl;
+				cout << Solution << endl;
+				n = n + increment;
+			}
+	system("PAUSE");
+	return 0;
+}
 11. (Program) a. The data in the following chart was collected on a recent automobile trip:
 Mileage Gallons
 22,495 Full tank
@@ -329,11 +351,60 @@ Write, compile, and run a C++ program that accepts a mileage and gallons value a
 the miles per gallon (mpg) for that segment of the trip. The mpg is calculated as the difference
 in mileage between fill-ups divided by the number of gallons of gasoline used in the fill-up.
 
+#include <iostream>
+using namespace std;
+int main()
+{
+		
+			double startmil = 22495;
+			double endmil = 25276;
+			double increment = 200;
+			double Mileage,fill_up = 15,mpg;
+
+			Mileage = startmil;
+
+			while (Mileage <= endmil){
+
+				mpg = ((endmil - startmil) / (fill_up));
+				cout << fill_up << endl;
+				cout << Mileage << endl;
+				cout << mpg << endl;
+				 Mileage = Mileage + increment;
+			}
+	system("PAUSE");
+	return 0;
+}
+
 b. Modify the program written for Exercise 11a to also compute and display the cumulative
 mpg after each fill-up. The cumulative mpg is calculated as the difference between mileage
 at each fill-up and mileage at the start of the trip divided by the sum of gallons used to that
 point in the trip.
+#include <iostream>
+using namespace std;
+int main()
+{
+		
+			double startmil = 22495;
+			double endmil = 25276;
+			double increment = 200;
+			double Mileage,fill_up = 15,mpg,cumulativemil,currentgal = 2.5;
 
+			Mileage = startmil;
+
+			while (Mileage <= endmil){
+				currentgal = currentgal + fill_up;
+				cumulativemil = (endmil - Mileage) / (currentgal);
+				mpg = ((endmil - Mileage) / (fill_up));
+				cout << Mileage << endl;
+				cout << cumulativemil;
+				cout << Mileage << endl;
+				cout << mpg << endl;
+				 Mileage = Mileage + increment;
+
+			}
+	system("PAUSE");
+	return 0;
+}
 12. (Program) a. A bookstore summarizes its monthly transactions by keeping the following
 information for each book in stock:
 Book identification number
