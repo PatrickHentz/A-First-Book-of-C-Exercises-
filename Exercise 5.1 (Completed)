@@ -175,7 +175,8 @@ int main()
 			cout << setw(4) << year
 				<< setw(15) << depreciation
 				<< setw(15) << End_year_value
-				<< setw(15) << Accumulated_Depreciation << endl;
+
+<< setw(15) << Accumulated_Depreciation << endl;
 			year = year + STEPSIZE;
 			
 		}
@@ -224,6 +225,35 @@ that determines when the approximate equivalent Celsius temperature differs from
 exact equivalent value by more than 4 degrees. (Hint: Use a while loop that terminates when
 the difference between approximate and exact Celsius equivalents exceeds 4 degrees.)
 
+#include <iostream>
+using namespace std;
+int main()
+{
+		 const int  MAX = 100;
+		 const int  STARTVAL = 0;
+		 const int  STEPSIZE = 1;
+		 double Fahrenheit = 0;
+		 double Celsius, realCelsius;
+		cout << "REALCELSIUS      CELSIUS      \n"
+			<< " ----------- - ------------- \n";
+		Fahrenheit = STARTVAL;
+		// set output formats for floating-point numbers only
+		cout << setiosflags(ios::showpoint) << setiosflags(ios::fixed)
+			<< setprecision(2);
+		
+		while (Fahrenheit <= MAX &&  (Celsius - realCelsius) < 4 )
+		{
+			Celsius = (Fahrenheit - 30) / 2;
+			realCelsius = ((Fahrenheit - 32) * (.55555555555));
+			cout << setw(4) << realCelsius
+				<< setw(15) << Celsius				
+				<< endl;
+			Fahrenheit = Fahrenheit + STEPSIZE;	
+		}
+
+	system("PAUSE");
+	return 0;
+	}
 
 b. Using the approximate Celsius conversion formula given in Exercise 8a, write a C++ program
 that produces a table of Fahrenheit temperatures, exact Celsius equivalent temperatures,
@@ -231,3 +261,34 @@ approximate Celsius equivalent temperatures, and the difference between the exac
 and approximate equivalent Celsius values. The table should begin at 0 degrees Fahrenheit,
 use 2-degree Fahrenheit increments, and terminate when the difference between exact and
 approximate values is more than 4 degrees.
+
+#include <iostream>
+using namespace std;
+int main()
+{
+	const int  MAX = 100;
+	const int  STARTVAL = 0;
+	const int  STEPSIZE = 2;
+	double Fahrenheit = 0;
+	double Celsius, realCelsius, difference;
+	cout << "REALCELSIUS      CELSIUS     FAHRENHEIT      DIFFERENCE \n"
+		<< " ----------- - ------------- - ---------------- - ---------------\n";
+	Fahrenheit = STARTVAL;
+	// set output formats for floating-point numbers only
+	cout << setiosflags(ios::showpoint) << setiosflags(ios::fixed)
+		<< setprecision(2);
+	difference = Celsius - realCelsius;
+	while (Fahrenheit <= MAX && difference < 4)
+	{
+		Celsius = (Fahrenheit - 30) / 2;
+		realCelsius = ((Fahrenheit - 32) * (.55555555555));
+		cout << setw(4) << realCelsius
+			<< setw(15) << Celsius
+			<< setw(15) << Fahrenheit
+			<< setw(15) << difference
+			<< endl;
+		Fahrenheit = Fahrenheit + STEPSIZE;
+	}
+        system("PAUSE");
+        return 0;
+        }
