@@ -195,6 +195,7 @@ Done!!
 the ending meter value, and the increment. Instead of the condition checking for a fixed
 count, it checks for the ending meter value. If the number of iterations is greater than 20, have
 your program substitute a default increment of (ending value - starting value) / 19.
+
 #include <iostream>
 using namespace std;
 int main()
@@ -228,6 +229,7 @@ int main()
 	system("PAUSE");
 	return 0;
 }
+
 b. Run the program written in Exercise 7a on a computer. Verify that your output starts at the
 correct beginning value and ends at the correct ending value.
 Done!!
@@ -237,11 +239,40 @@ increment between Celsius values. The display should have appropriate headings a
 Celsius value and the corresponding Fahrenheit value. Use the relationship that Fahrenheit =
 (9.0 / 5.0) * Celsius + 32.0.
 
+#include <iostream>
+using namespace std;
+int main()
+{
+		
+			int StartCelsius;
+			int Maxnumber;
+			double increment;
+			double Celsius, Fahrenheit;
 
+			cout << "Enter starting Celsius value" << endl;
+			cin >> StartCelsius;
+			cout << "Enter the number of conversions to be made" << endl;
+			cin >> Maxnumber;
+			cout << "Enter the increment between metric values" << endl;
+			cin >> increment;
+			
+			
+			Celsius = StartCelsius;
+
+			while (Celsius <= Maxnumber){
+				 
+				Fahrenheit = ((9.0 / 5.0) * Celsius + 32.0);
+				cout << Celsius << endl;
+				cout << Fahrenheit << endl;
+				Celsius = Celsius + increment;
+			}
+	system("PAUSE");
+	return 0;
+}
 b. Compile and run the program written in Exercise 8a on a computer. Verify that your program
 begins at the correct starting Celsius value and contains the exact number of conversions
 specified in your input data.
-
+Done!!
 9. (Program) An arithmetic series is defined by the following:
 a + (a + d ) + (a + 2d ) + (a + 3d ) + ˙˙˙ + [(a + (n - 1)d )]
 a is the first term.
@@ -251,6 +282,29 @@ Using this information, write a C++ program that uses a while loop to display ea
 determine the sum of the arithmetic series having a = 1, d = 3, and n = 100. Make sure your
 program displays the value it has calculated.
 
+#include <iostream>
+using namespace std;
+int main()
+{
+		
+			int Startnum = 1;
+			int Maxnumber = 100;
+			double increment = 1;
+			double a=1,d=3,n,Solution;
+
+			n = Startnum;
+
+			while (n <= Maxnumber){
+				Solution = (a + (n - 1)*d);
+				cout << a << endl;
+				cout << d << endl;
+				cout << n << endl;
+				cout << Solution << endl;
+				n = n + increment;
+			}
+	system("PAUSE");
+	return 0;
+}
 10. (Program) A geometric series is defined by the following:
 a + ar + ar 2 + ar 3 + ˙˙˙ + ar n - 1
 a is the first term.
