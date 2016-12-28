@@ -113,13 +113,80 @@ conversions from Fahrenheit to Celsius. The table should start with a Fahrenheit
 20 degrees and be incremented in values of 4 degrees. Recall that Celsius = (5.0/9.0) ×
 (Fahrenheit - 32.0).
 
+#include <iostream>
+using namespace std;
+int main()
+{
+	int MAXNUMS = 96;
+	int num;
+	double Celsius, Fahrenheit;
+	cout << endl;      // print a blank line
+	
+	cout << "Celsius       Fahrenheit \n"
+		<< "------      ------   \n"; 
+	
+	for (Fahrenheit = 20; Fahrenheit <= MAXNUMS; Fahrenheit = Fahrenheit + 4)
+	{
+		Celsius = (5.0 / 9.0)*(Fahrenheit - 32.0);
+		cout << setw(10) << Celsius 
+			<< setw(10) << Fahrenheit << endl;
+	}
+	system("PAUSE");
+	return 0;
+}
+
 b. Modify the program written for Exercise 7a to request the number of conversions to be made.
 
+#include <iostream>
+using namespace std;
+int main()
+{
+	int MAXNUMS;
+	int num;
+	double Celsius, Fahrenheit;
+	cout << endl;      // print a blank line
+	cout << "Enter number of coversions to be made" << endl;
+	cin >> MAXNUMS;
+	cout << "Celsius       Fahrenheit \n"
+		<< "------      ------   \n"; 
+	
+	for (Fahrenheit = 20; Fahrenheit <= MAXNUMS; Fahrenheit = Fahrenheit + 4)
+	{
+		Celsius = (5.0 / 9.0)*(Fahrenheit - 32.0);
+		cout << setw(10) << Celsius 
+			<< setw(10) << Fahrenheit << endl;
+	}
+	system("PAUSE");
+	return 0;
+}
 8. (Program) Write, compile, and run a C++ program that converts Fahrenheit to Celsius temperature
 in increments of 5 degrees. The initial value of Fahrenheit temperature and the total
 conversions to be made should be requested as user input during program execution. Recall
 that Celsius = (5.0/9.0) × (Fahrenheit - 32.0).
-
+#include <iostream>
+using namespace std;
+int main()
+{
+	int MAXNUMS;
+	int num;
+	double Celsius, Fahrenheit;
+	cout << endl;      // print a blank line
+	cout << "Enter Fahrenheit"<< endl;
+	cin >> Fahrenheit;
+	cout << "Enter total conversions" << endl;
+	cin >> MAXNUMS;
+	cout << "Celsius       Fahrenheit \n"
+		<< "------      ------   \n"; 
+	
+	for (Fahrenheit; Fahrenheit <= MAXNUMS; Fahrenheit = Fahrenheit + 5)
+	{
+		Celsius = (5.0 / 9.0)*(Fahrenheit - 32.0);
+		cout << setw(10) << Celsius 
+			<< setw(10) << Fahrenheit << endl;
+	}
+	system("PAUSE");
+	return 0;
+}
 9. (Program) a. Write, compile, and run a C++ program that accepts five values of gallons, one
 at a time, and converts each value entered to its liter equivalent before the next value is
 requested. Use a for loop in your program. There are 3.785 liters in 1 gallon of liquid.
