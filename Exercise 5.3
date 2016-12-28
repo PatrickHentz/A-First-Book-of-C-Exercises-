@@ -1,4 +1,3 @@
-
 1. (Practice) Write a for statement for each of the following cases:
 a. Use a counter named i that has an initial value of 1, a final value of 20, and an increment of 1.
 for (i = 1; i <= 20; i++)
@@ -190,9 +189,47 @@ int main()
 9. (Program) a. Write, compile, and run a C++ program that accepts five values of gallons, one
 at a time, and converts each value entered to its liter equivalent before the next value is
 requested. Use a for loop in your program. There are 3.785 liters in 1 gallon of liquid.
-
+#include <iostream>
+using namespace std;
+int main()
+{
+	int MAXNUMS = 5;
+	double liters, gallons;
+	cout << "\nThis program wil ask you to enter" << MAXNUMS << "numbers.\n";
+	for (gallons = 0; gallons <= MAXNUMS; gallons++)
+	{
+		cout << "\nEnater a number: ";
+		cin >> gallons;
+		liters = 3.785 * gallons;
+		cout << liters << endl;
+		cout << gallons << endl;
+	}
+	system("PAUSE");
+	return 0;
+}
 b. Modify the program written for Exercise 9a to request the number of data items to be
 entered and converted first.
+
+#include <iostream>
+using namespace std;
+int main()
+{
+	int MAXNUMS;
+	double liters, gallons;
+	cout << "Enter number of data items to be enter and converted" << endl;
+	cin >> MAXNUMS;
+	cout << "\nThis program wil ask you to enter " << MAXNUMS << " numbers.\n";
+	for (gallons = 0; gallons <= MAXNUMS; gallons++)
+	{
+		cout << "\nEnater a number: ";
+		cin >> gallons;
+		liters = 3.785 * gallons;
+		cout << liters << endl;
+		cout << gallons << endl;
+	}
+	system("PAUSE");
+	return 0;
+}
 
 10. (Program) a. An old Arabian legend has it that a fabulously wealthy but unthinking king
 agreed to give a beggar 1 cent and double the amount for 64 days. Using this information,
