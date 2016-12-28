@@ -419,9 +419,69 @@ New balance = Inventory balance at the beginning of the month
 Your program should use a while statement with a fixed-count condition so that information
 on only three books is requested.
 
+#include <iostream>
+using namespace std;
+int main()
+{
+		
+			double start = 1;
+			double end = 3;
+			double increment = 1,newBal,invBal,numCopRec,numCopsold,id;
+			
+			cout << "Inventory balance at the beginning of the month" << endl;
+			cin >> invBal;
+			cout << "Book identification number" << endl;
+			cin >> id;
+			cout << "Number of copies received during the month" << endl;
+			cin >> numCopRec;
+			cout << "Number of copies sold diring the month" << endl;
+			cin >> numCopsold;
+			id = start;
+
+			while (id <= 3){
+				invBal = (invBal + numCopRec - numCopsold);
+				cout << id << endl;
+				cout << invBal << endl;
+				 id = id + increment;
+		
+			}
+	system("PAUSE");
+	return 0;
+}
+
 b. Compile and run the program written in Exercise 12a. Review the display your program
 produces and verify that the output is correct.
-
+Done!!
 13. (Modify) Modify the program you wrote for Exercise 12 to keep requesting and displaying
 results until a sentinel value of 999 is entered. Compile and run your program. Review the
 display your program produces and verify that the output is correct.
+
+#include <iostream>
+using namespace std;
+int main()
+{
+		
+			double start = 1;
+			double end = 999;
+			double increment = 1,newBal,invBal,numCopRec,numCopsold,id;
+			
+			cout << "Inventory balance at the beginning of the month" << endl;
+			cin >> invBal;
+			cout << "Book identification number" << endl;
+			cin >> id;
+			cout << "Number of copies received during the month" << endl;
+			cin >> numCopRec;
+			cout << "Number of copies sold diring the month" << endl;
+			cin >> numCopsold;
+			id = start;
+
+			while (id <= 999){
+				invBal = (invBal + numCopRec - numCopsold);
+				cout << id << endl;
+				cout << invBal << endl;
+				 id = id + increment;
+		
+			}
+	system("PAUSE");
+	return 0;
+}
