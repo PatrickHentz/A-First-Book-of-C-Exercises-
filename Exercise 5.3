@@ -244,10 +244,53 @@ on each day. The output of your program should appear as follows:
         .           .
         .           .
        64           .
-       
+
+#include <iostream>
+using namespace std;
+int main()
+{
+	int MAXNUMS = 64;
+	double amount_owed = .01;
+	cout << "Day           Amount Owed" << endl;
+	cout << "------- - -----------------" << endl;
+	for (int day = 1;  day<= MAXNUMS; day++)
+	{
+
+		amount_owed = amount_owed * 2;
+		cout << setw(5)<< day  
+	 << setw(20) << amount_owed << endl;
+
+	}
+	system("PAUSE");
+	return 0;
+}
 b. Modify the program you wrote for Exercise 10a to determine on which day the king will
 have paid the beggar a total of one million dollars.
+#include <iostream>
+using namespace std;
+int main()
+{
+	double MAXNUMS = 64;
+	double amount_owed = .01;
+	double total = 0;
+	cout << "Day           Amount Owed" << endl;
+	cout << "------- - -----------------" << endl;
+	for (int day = 1;  day<= MAXNUMS; day++)
+	{
 
+		amount_owed = amount_owed * 2;
+		total = total + amount_owed;
+		cout << setw(5)<< day  
+	 << setw(20) << amount_owed 
+	 << setw(20) << total <<endl;
+		if (total >= 1000000){
+			cout << "I just gave you a million dollars or more on this day " << day << endl;
+		}
+
+	}
+	system("PAUSE");
+	return 0;
+}
 11. (Debug) Is the following program correct? If it is, determine its output. If it’s not, determine
 the error and correct it so that the program will run.
 #include <iostream>
