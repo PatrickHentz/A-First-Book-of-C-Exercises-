@@ -66,13 +66,48 @@ int main()
   cout << i;
   return 0;
 }
-
+20, 16, 12, 8, 4, 0
 5. (Modify) Modify Program 5.10 to produce a table of the numbers 0 through 20 in increments
 of 2, with their squares and cubes.
+
+#include <iostream>
+using namespace std;
+int main()
+{
+	const int MAXNUMS = 20;
+	int num;
+	cout << endl;      // print a blank line
+	cout << "NUMBER   SQUARE   CUBE\n"
+		<< "------   ------   ----\n"; 
+
+		for (num = 0; num <= MAXNUMS; num = num + 2)
+			cout << setw(3) << num << "       "
+			<< setw(3) << num * num << "     "
+			<< setw(4) << num * num * num << endl;
+	system("PAUSE");
+	return 0;
+}
 
 6. (Modify) Modify Program 5.10 to produce a table of numbers from 10 to 1, instead of 1 to 10,
 as it currently does.
 
+#include <iostream>
+using namespace std;
+int main()
+{
+	const int MAXNUMS = 0;
+	int num;
+	cout << endl;      // print a blank line
+	cout << "NUMBER   SQUARE   CUBE\n"
+		<< "------   ------   ----\n"; 
+
+		for (num = 10; num >= MAXNUMS; num--)
+			cout << setw(3) << num << "       "
+			<< setw(3) << num * num << "     "
+			<< setw(4) << num * num * num << endl;
+	system("PAUSE");
+	return 0;
+}
 7. (Program) a. Write, compile, and run a C++ program that displays a table of 20 temperature
 conversions from Fahrenheit to Celsius. The table should start with a Fahrenheit value of
 20 degrees and be incremented in values of 4 degrees. Recall that Celsius = (5.0/9.0) ×
