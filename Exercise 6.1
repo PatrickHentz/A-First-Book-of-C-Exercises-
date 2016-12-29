@@ -1,11 +1,17 @@
 1. (Practice) For the following function headers, determine the number, type, and order
 (sequence) of the values that must be passed to the function:
 a. void factorial(int n)
+
 b. void price(int type, double yield, double maturity)
+
 c. void yield(int type, double price, double maturity)
+
 d. void interest(char flag, double price, double time)
+
 e. void total(double amount, double rate)
+
 f. void roi(int a, int b, char c, char d, double e, double f)
+
 g. void getVal(int item, int iter, char decflag, char delim)
 
 2. (Practice) a. Write a function named check() that has three parameters. The first parameter
@@ -14,47 +20,63 @@ number. The function body should just display the values of data passed to the f
 when it’s called. (Note: When tracing errors in functions, having the function display values
 it has been passed is helpful. Quite often, the error isn’t in what the function body does with
 data, but in the data received and stored.)
+
 b. Include the function written in Exercise 2a in a working program. Make sure your function
 is called from main(). Test the function by passing various data to it.
+
 3. (Practice) a. Write a function named findAbs() that accepts a double-precision number
 passed to it, computes its absolute value, and displays the absolute value. A number’s absolute
 value is the number itself if the number is positive and the negative of the number if the
 number is negative.
+
 b. Include the function written in Exercise 3a in a working program. Make sure your function
 is called from main(). Test the function by passing various data to it.
+
 4. (Practice) a. Write a function called mult() that accepts two double-precision numbers as
 parameters, multiplies these two numbers, and displays the result.
+
 b. Include the function written in Exercise 4a in a working program. Make sure your function
 is called from main(). Test the function by passing various data to it.
+
 5. (Practice) a. Write a function named sqrIt() that computes the square of the value passed
 to it and displays the result. The function should be capable of squaring numbers with decimal
 points.
+
 b. Include the function written in Exercise 5a in a working program. Make sure your function
 is called from main(). Test the function by passing various data to it.
+
 6. (Practice) a. Write a function named powfun() that raises an integer number passed to it to
 a positive integer power and displays the result. The positive integer should be the second
 value passed to the function. Declare the variable used to store the result as a long-integer data
 type to ensure enough storage for the result.
+
 b. Include the function written in Exercise 6a in a working program. Make sure your function
 is called from main(). Test the function by passing various data to it.
+
 7. (Practice) a. Write a function that produces a table of the numbers from 1 to 10, their squares,
 and their cubes. The function should produce the same display as Program 5.10.
+
 b. Include the function written in Exercise 7a in a working program. Make sure your function
 is called from main(). Test the function by passing various data to it.
+
 8. (Modify) a. Modify the function written for Exercise 7a to accept the starting value of the
 table, the number of values to be displayed, and the increment between values. If the increment
 isn’t set explicitly, the function should use a default value of 1. Name your function
 selTab(). A call to selTab(6,5,2); should produce a table of five lines, the first line starting
 with the number 6 and each succeeding number increasing by 2.
+
 b. Include the function written in Exercise 8a in a working program. Make sure your function
 is called from main(). Test the function by passing various data to it.
+
 9. (Program) a. The time in hours, minutes, and seconds is to be passed to a function named
 totsec(). Write totsec() to accept these values, determine the total number of seconds in
 the passed data, and display the calculated value.
+
 b. Include the totsec() function written for Exercise 9a in a working program. The main()
 function should correctly call totsec() and display the value the function returns. Use
 the following test data to verify your program’s operation: hours = 10, minutes = 36, and
 seconds = 54. Make sure to do a hand calculation to verify the result your program displays.
+
 10. (Program) a. The volume, V, of a sphere is given by this formula, where r is the sphere’s
 radius:
 Volume =
@@ -62,12 +84,15 @@ Volume =
 4π r 3
 Using this formula, write, compile, and run a C++ function named spherevol() that accepts
 a sphere’s radius and then calculates and displays its volume.
+
 b. Include the function written in Exercise 10a in a working program. Make sure your function
 is called from main(). Test the function by passing various data to it.
+
 11. (Program) a. Write and test a C++ function named makeMilesKmTable() to display a table
 of miles converted to kilometers. The arguments to the function should be the starting and
 stopping values of miles and the increment. The output should be a table of miles and their
 equivalent kilometer values. Use the relationship that 1 mile = 1.61 kilometers.
+
 b. Modify the function written for Exercise 12a so that two columns are displayed. For example,
 if the starting value is 1 mile, the ending value is 20 miles, and the increment is 1, the
 display should look like the following:
@@ -80,11 +105,14 @@ display should look like the following:
 (Hint : Find split = (start + stop) / 2. Let a loop execute from miles = start to split, and calculate
 and print across one line the values of miles and kilometers for both miles and (miles - start +
 split + 1).)
+
 12. (Program) a. Write a C++ function that accepts an integer argument, determines whether the
 passed integer is even or odd, and displays the result of this determination. (Hint: Use the %
 operator.)
+
 b. Include the function written in Exercise 12a in a working program. Make sure your function
 is called from main(). Test the function by passing various data to it.
+
 13. (Program) A useful function using no parameters can be constructed to return a value for π
 that’s accurate to the maximum number of decimal places your computer allows. This value is
 obtained by taking the arcsine of 1.0, which is π / 2, and multiplying the result by 2. In C++,
@@ -92,8 +120,10 @@ the required expression is 2.0 * asin(1.0); the asin() function is included in t
 C++ mathematics library. (Remember to include cmath in your preprocessor directives.) Using
 this expression, write a C++ function named pi() that calculates and displays the value of π.
 (In the next section, you see how to return this value to the calling function.)
+
 14. (Program) a. Write a function template named display() that displays the value of the
 single argument passed to it when the function is called.
+
 b. Include the function template created in Exercise 14a in a complete C++ program that calls
 the function three times: once with a character argument, once with an integer argument,
 and once with a double-precision argument.
