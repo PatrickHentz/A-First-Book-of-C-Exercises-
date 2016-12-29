@@ -191,14 +191,13 @@ at a time, and converts each value entered to its liter equivalent before the ne
 requested. Use a for loop in your program. There are 3.785 liters in 1 gallon of liquid.
 #include <iostream>
 using namespace std;
-int main()
-{
+int main(){
 	int MAXNUMS = 5;
 	double liters, gallons;
 	cout << "\nThis program wil ask you to enter" << MAXNUMS << "numbers.\n";
 	for (gallons = 0; gallons <= MAXNUMS; gallons++)
 	{
-		cout << "\nEnater a number: ";
+		cout << "\nEnter a number: ";
 		cin >> gallons;
 		liters = 3.785 * gallons;
 		cout << liters << endl;
@@ -575,9 +574,63 @@ int main()
 b. (Modify) Modify the program written for Exercise 17a to calculate and display the average
 team score. (Hint: Use a second variable to store the total of all players’ scores.)
 
+#include <iostream>
+using namespace std;
+int main()
+{
+	double average = 0;
+	double result = 0;
+	double solution;
+	double total = 0;
+
+	for (int i = 1; i <= 5; i++){
+
+		for (int j = 1; j <= 3; j++){
+			cout << i <<"st "<< " bowler:";
+				cin >> result;
+				average = average + result;
+				solution = (average / 3);
+		}
+		total = total + solution;
+
+		cout << solution << endl;
+		cout << total << endl;
+	}
+
+
+	system("PAUSE");
+	return 0;
+}
+
 c. (Modify) Rewrite the program written for Exercise 17a to eliminate the inner loop. To do
 this, you have to input three scores for each bowler rather than enter one at a time. Each
 score must be stored in its own variable name before the average is calculated.
+
+#include <iostream>
+using namespace std;
+int main()
+{
+	double average = 0;
+	double result, result2,result3;
+	double solution;
+	
+
+	for (int i = 1; i <= 5; i++){
+			cout << i <<"st "<< " bowler:";
+				cin >> result >> result2 >> result3;
+				average = average + result + result2 + result3;
+				solution = (average / 3);
+		
+		
+
+		cout << solution << endl;
+		
+	}
+
+
+	system("PAUSE");
+	return 0;
+}
 
 18. (Program) Write, compile, and run a C++ program that calculates and displays the yearly
 amount available if $1000 is invested in a bank account for 10 years. Your program should
