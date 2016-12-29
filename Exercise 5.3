@@ -480,6 +480,31 @@ experiment.
 3rd experiment results: 19.4 16.8 10.2 20.8 18.9 13.4
 4th experiment results: 36.9 39.5 49.2 45.1 42.7 50.6
 
+#include <iostream>
+using namespace std;
+int main()
+{
+	double average = 0;
+	double result = 0;
+	double solution;
+
+	for (int i = 1; i <= 4; i++){
+
+		for (int j = 1; j <= 6; j++){
+			cout << i <<"st "<< " experiment results:";
+				cin >> result;
+				average = average + result;
+				solution = average / 6;
+		}
+		
+		cout << solution << endl;
+	}
+
+
+	system("PAUSE");
+	return 0;
+}
+
 16. (Modify) Modify the program written for Exercise 15 so that the number of test results for
 each experiment is entered by the user. Write your program so that a different number of test
 results can be entered for each experiment.
