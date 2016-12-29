@@ -327,6 +327,22 @@ would have at the end of each 50-year period, starting in 1626 and ending 400 ye
 the relationship that the money available at the end of each 50-year period = the amount of
 money in the account at the start of period × the quantity (1 + .04)50.
 
+#include <iostream>
+using namespace std;
+int main()
+{
+	double money = 24,numyears = 10;
+	
+	for ( double years= 1626; years <= numyears; years = years + 50){
+		money = 24 * money *(1 + .04)*50;
+		cout << money<< '\n';
+		cout << years << endl;
+	}
+
+	system("PAUSE");
+	return 0;
+}
+
 14. (Program) A well-regarded manufacturer of widgets has been losing 4% of its sales each year.
 The company’s annual profit is 10% of sales. This year, the company has had $10 million in
 sales and a profit of $1 million. Determine the expected sales and profit for the next 10 years.
