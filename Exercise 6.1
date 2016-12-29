@@ -1,18 +1,19 @@
 1. (Practice) For the following function headers, determine the number, type, and order
 (sequence) of the values that must be passed to the function:
 a. void factorial(int n)
-
+requires one int value
 b. void price(int type, double yield, double maturity)
-
+requires three values in this order: an int and two doubles
 c. void yield(int type, double price, double maturity)
-
+requires three values in this order: an int and two doubles
 d. void interest(char flag, double price, double time)
-
+requires three values in this order: a char and two doubles
 e. void total(double amount, double rate)
-
+requries two doubles
 f. void roi(int a, int b, char c, char d, double e, double f)
-
+requires six values in this order: two ints, two chars and two doubles
 g. void getVal(int item, int iter, char decflag, char delim)
+requires four values in this order: two ints and two chars
 
 2. (Practice) a. Write a function named check() that has three parameters. The first parameter
 should accept an integer number, and the second and third parameters should accept a doubleprecision
@@ -20,10 +21,35 @@ number. The function body should just display the values of data passed to the f
 when it’s called. (Note: When tracing errors in functions, having the function display values
 it has been passed is helpful. Quite often, the error isn’t in what the function body does with
 data, but in the data received and stored.)
-
+void check(int num1, double num2, double num3){
+cout << "In check()\n";
+cout << "The value of num1 is " << num1 << endl;
+cout << "The value of num2 is " << num2 << endl;
+cout << "The value of num3 is " << num3 << endl;
+return;
+}
 b. Include the function written in Exercise 2a in a working program. Make sure your function
 is called from main(). Test the function by passing various data to it.
 
+#include <iostream>
+using namespace std;
+
+	void check(int num1, double num2, double num3){
+		cout << "In check()\n";
+		cout << "The value of num1 is " << num1 << endl;
+		cout << "The value of num2 is " << num2 << endl;
+		cout << "The value of num3 is " << num3 << endl;
+	}
+	
+	int main(){
+		
+		check( 10 ,20 ,30);
+
+
+		system("PAUSE");
+		return 0;
+	}
+       
 3. (Practice) a. Write a function named findAbs() that accepts a double-precision number
 passed to it, computes its absolute value, and displays the absolute value. A number’s absolute
 value is the number itself if the number is positive and the negative of the number if the
