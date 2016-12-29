@@ -103,15 +103,40 @@ informing the user that an invalid grade has been entered; else, the grade shoul
 a total. When a grade of 999 is entered, the program should exit the repetition loop and compute
 and display the average of the valid grades entered.
 
+#include <iostream>
+using namespace std;
+int main()
+{
+	int grade,total =0;
+	do{
+		for (int i = 1; i <= 5; i++){
+			cout << "Enter your grade" << endl;
+			cin >> grade;
+			if (grade > 0 && grade <= 100){
+				total = total + grade;
+				cout << total << endl;
+			}
+			else if ( grade == 999){
+				grade = 20;
+			}
+			else{ cout << "invalid number" << endl; }
+		}
+	} while (true);
+	
+
+	system("PAUSE");
+	return 0;
+}
+
 b. Run the program written in Exercise 2a on a computer and verify the program by using
 appropriate test data.
-
+Done!!
 3. (Program) a. Write, compile, and run a C++ program to reverse the digits of a positive integer
 number. For example, if the number 8735 is entered, the number displayed should be 5378.
 (Hint : Use a do-while statement and continuously strip off and display the number’s units
 digit. If the variable num initially contains the number entered, the units digit is obtained as
-(numƒ%ƒ10)). After a units digit is displayed, dividing the number by 10 sets up the number
-for the next iteration. Therefore, (8735ƒ%ƒ10) is 5 and (8735 / 10) is 873. The do-while
+(num % 10)). After a units digit is displayed, dividing the number by 10 sets up the number
+for the next iteration. Therefore, (8735 % 10) is 5 and (8735 / 10) is 873. The do-while
 statement should continue as long as the remaining number is not 0.
 
 b. Run the program written in Exercise 3a on a computer and verify the program by using
