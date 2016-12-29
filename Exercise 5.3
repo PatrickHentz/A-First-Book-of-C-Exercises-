@@ -547,6 +547,31 @@ the following scores:
 4th bowler: 192 201 235
 5th bowler: 186 236 272
 
+#include <iostream>
+using namespace std;
+int main()
+{
+	double average = 0;
+	double result = 0;
+	double solution;
+
+	for (int i = 1; i <= 5; i++){
+
+		for (int j = 1; j <= 3; j++){
+			cout << i <<"st "<< " bowler:";
+				cin >> result;
+				average = average + result;
+				solution = (average / 3);
+		}
+		
+		cout << solution << endl;
+	}
+
+
+	system("PAUSE");
+	return 0;
+}
+
 b. (Modify) Modify the program written for Exercise 17a to calculate and display the average
 team score. (Hint: Use a second variable to store the total of all players’ scores.)
 
