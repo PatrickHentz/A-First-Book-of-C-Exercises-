@@ -14,7 +14,6 @@ int main()
 		if (grade > 0 && grade <= 100){
 			cout << grade;
 		}
-		else{ cout << "invalid number" << endl; }
 	
 	} while (grade > 100 || grade < 0);
 	
@@ -26,8 +25,51 @@ int main()
 b. Modify the program written for Exercise 1a so that the user is alerted when an invalid grade
 has been entered.
 
+#include <iostream>
+using namespace std;
+int main()
+{
+	int grade;
+	do{
+		cout << "Enter your grade" << endl;
+			cin >> grade;
+		if (grade > 0 && grade <= 100){
+			cout << grade;
+		}
+		else{ cout << "invalid number" << endl; }
+	
+	} while (grade > 100 || grade < 0);
+	
+
+	system("PAUSE");
+	return 0;
+}
+
 c. Modify the program written for Exercise 1b so that it allows the user to exit the program by
 entering the number 999.
+
+#include <iostream>
+using namespace std;
+int main()
+{
+	int grade;
+	do{
+		cout << "Enter your grade" << endl;
+			cin >> grade;
+		if (grade > 0 && grade <= 100){
+			cout << grade;
+		}
+		else if (grade == 999){
+			grade = 10;
+		}
+		else{ cout << "invalid number" << endl; }
+	
+	} while (grade > 100 || grade < 0);
+	
+
+	system("PAUSE");
+	return 0;
+}
 
 d. Modify the program written for Exercise 1b so that it automatically terminates after five
 invalid grades are entered.
