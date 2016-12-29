@@ -509,6 +509,34 @@ int main()
 each experiment is entered by the user. Write your program so that a different number of test
 results can be entered for each experiment.
 
+#include <iostream>
+using namespace std;
+int main()
+{
+	double average = 0;
+	double result = 0;
+	double solution,num,test;
+	cout << "Enter number of experiments" << endl;
+	cin >> num;
+	cout << "Enter number of different test" << endl;
+	cin >> test;
+	for (int i = 1; i <= num; i++){
+
+		for (int j = 1; j <= test; j++){
+			cout << i <<"st "<< " experiment results:";
+				cin >> result;
+				average = average + result;
+				solution = average / 6;
+		}
+		
+		cout << solution << endl;
+	}
+
+
+	system("PAUSE");
+	return 0;
+}
+
 17. (Program) a. A bowling team consists of five players, and each player bowls three games.
 Write, compile, and run a C++ program that uses a nested loop to enter each player’s scores
 and then computes and displays the average score for each bowler. Assume each bowler has
