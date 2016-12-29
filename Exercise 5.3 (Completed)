@@ -593,7 +593,8 @@ int main()
 		}
 		total = total + solution;
 
-		cout << solution << endl;
+
+cout << solution << endl;
 		cout << total << endl;
 	}
 
@@ -642,3 +643,28 @@ through the outer loop, the interest rate should be increased by 1%. Use this re
 money available at end of each year = amount of money in account at start of the year + interest
 rate × amount available at start of the year.
 
+#include <iostream>
+using namespace std;
+int main()
+{
+	
+	double money = 1000;
+	double total = 0; 
+	
+	
+for (double interest =.06; interest <= .12; interest = interest + .01){
+		money = money + interest * money;
+		
+		
+		for (double j = 1; j <= 10; j ++){
+			total = total + money;
+			cout << total << endl;
+		}
+		
+	}
+
+
+	system("PAUSE");
+	return 0;
+}
+//something like that lol
