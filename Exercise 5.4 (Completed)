@@ -101,6 +101,7 @@ int main()
 2. (Program) a. Write, compile, and run a C++ program that continuously requests a grade to be
 entered. If the grade is less than 0 or greater than 100, your program should print a message
 informing the user that an invalid grade has been entered; else, the grade should be added to
+
 a total. When a grade of 999 is entered, the program should exit the repetition loop and compute
 and display the average of the valid grades entered.
 
@@ -163,5 +164,39 @@ b. Run the program written in Exercise 3a on a computer and verify the program b
 appropriate test data.
 
 Done!!
+
 4. (Practice) Repeat any of the exercises in Section 5.3, using a do-while statement rather than
 a for statement.
+#include <iostream>
+using namespace std;
+int main(){
+	double money = 1000;
+
+	for (double year= 1; year <= 10; year++){
+
+		money = money + .03 * money;
+
+		cout << money<< '\n';
+		
+		}
+retur 0;
+	}
+-------------Exercise for Section 5.3 Conversion------------------------------
+
+#include <iostream>
+using namespace std;
+int main()
+{
+	double money = 1000;
+	int year = 1;
+
+	do{
+		money = money + .03 * money;
+		cout << money << '\n';
+		year++;
+		
+	} while (year <= 10);
+
+	system("PAUSE");
+	return 0;
+}
