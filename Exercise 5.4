@@ -3,6 +3,26 @@ a grade. The program should request a grade continuously as long as an invalid g
 entered. An invalid grade is any grade less than 0 or greater than 100. After a valid grade has
 been entered, your program should display the value of the grade entered.
 
+#include <iostream>
+using namespace std;
+int main()
+{
+	int grade;
+	do{
+		cout << "Enter your grade" << endl;
+			cin >> grade;
+		if (grade > 0 && grade <= 100){
+			cout << grade;
+		}
+		else{ cout << "invalid number" << endl; }
+	
+	} while (grade > 100 || grade < 0);
+	
+
+	system("PAUSE");
+	return 0;
+}
+
 b. Modify the program written for Exercise 1a so that the user is alerted when an invalid grade
 has been entered.
 
