@@ -311,15 +311,82 @@ for a period of 10 years. Use the relationship that the money available at the e
 = the amount of money in the account at the start of the year + .03 × the amount available at
 the start of the year.
 
+#include <iostream>
+using namespace std;
+int main()
+{
+	double money = 1000;
+
+	for (double year= 1; year <= 10; year++){
+		money = money + .03 * money;
+		cout << money<< '\n';
+	}
+
+	system("PAUSE");
+	return 0;
+}
+
 b. Modify the program written for Exercise 12a to prompt the user for the amount of money
 initially deposited in the account.
+#include <iostream>
+using namespace std;
+int main()
+{
+	double money;
+	cout << "Enter your initial money in your account" << endl;
+	cin >> money;
+	
+	for (double year= 1; year <= 10; year++){
+		money = money + .03 * money;
+		cout << money<< '\n';
+	}
 
+	system("PAUSE");
+	return 0;
+}
 c. Modify the program written for Exercise 12a to prompt the user for both the amount of
 money initially deposited and the number of years to be displayed.
+
+#include <iostream>
+using namespace std;
+int main()
+{
+	double money,numyears;
+	cout << "Enter your initial money in your account" << endl;
+	cin >> money;
+	cout << "Enter the number of years too" << endl;
+	cin >> numyears;
+	for ( double years= 1; years <= numyears; years++){
+		money = money + .03 * money;
+		cout << money<< '\n';
+	}
+
+	system("PAUSE");
+	return 0;
+}
 
 d. Modify the program written for Exercise 12a to prompt the user for the amount of money
 initially deposited, the interest rate to be used, and the number of years to be displayed.
 
+#include <iostream>
+using namespace std;
+int main()
+{
+	double money,numyears,interest;
+	cout << "Enter your initial money in your account" << endl;
+	cin >> money;
+	cout << "Enter the number of years too" << endl;
+	cin >> numyears;
+	cout << "Enter the intrest rate last one promise" << endl;
+	cin >> interest;
+	for ( double years= 1; years <= numyears; years++){
+		money = money + interest * money;
+		cout << money<< '\n';
+	}
+
+	system("PAUSE");
+	return 0;
+}
 13. (Program) According to legend, the island of Manhattan was purchased from the native
 Indian population in 1626 for $24. Assuming this money was invested in a Dutch bank paying
 4% simple interest per year, construct a table showing how much money the native population
