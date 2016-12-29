@@ -77,6 +77,7 @@ invalid grades are entered.
 #include <iostream>
 using namespace std;
 int main()
+
 {
 	int grade;
 	do{
@@ -139,8 +140,28 @@ digit. If the variable num initially contains the number entered, the units digi
 for the next iteration. Therefore, (8735 % 10) is 5 and (8735 / 10) is 873. The do-while
 statement should continue as long as the remaining number is not 0.
 
+#include <iostream>
+using namespace std;
+int main()
+{
+	int num,rev;
+	cout << "Enter your number to reverse" << endl;
+	cin >> num;
+	do{
+		
+		rev =(num % 10);
+		cout << rev;
+		num = (num / 10);
+	} while (num !=0);
+	
+
+	system("PAUSE");
+	return 0;
+}
+
 b. Run the program written in Exercise 3a on a computer and verify the program by using
 appropriate test data.
 
+Done!!
 4. (Practice) Repeat any of the exercises in Section 5.3, using a do-while statement rather than
 a for statement.
