@@ -74,6 +74,29 @@ int main()
 d. Modify the program written for Exercise 1b so that it automatically terminates after five
 invalid grades are entered.
 
+#include <iostream>
+using namespace std;
+int main()
+{
+	int grade;
+	do{
+		for (int i = 1; i <= 5; i++){
+			cout << "Enter your grade" << endl;
+			cin >> grade;
+			if (grade > 0 && grade <= 100){
+				cout << grade;
+			}
+			else if (i >= 5){
+				grade = 20;
+			}
+			else{ cout << "invalid number" << endl; }
+		}
+	} while (grade > 100 || grade < 0);
+	
+
+	system("PAUSE");
+	return 0;
+}
 2. (Program) a. Write, compile, and run a C++ program that continuously requests a grade to be
 entered. If the grade is less than 0 or greater than 100, your program should print a message
 informing the user that an invalid grade has been entered; else, the grade should be added to
