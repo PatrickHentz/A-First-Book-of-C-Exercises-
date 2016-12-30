@@ -183,10 +183,41 @@ where r is the cylinder’s radius, and l is the length of the cylinder. Using t
 C++ function named surfarea() that accepts a cylinder’s radius and length and returns its
 surface area.
 
+double surfarea(double r, double l)
+{
+	double surf = 2 * 3.14 * r * l;
+	
+	return surf;
+}
+
 b. Include the function written in Exercise 6a in a working program. Make sure your function
 is called from main() and returns a value to main() correctly. Have main() use a cout
 statement to display the returned value. Test the function by passing various data to it and
 verifying the returned value.
+
+#include <iostream>
+using namespace std;
+
+double surfarea(double, double); // the function prototype
+int main()
+{
+	double num,num2;
+	cout << "Enter your number" << endl;
+	cin >> num;
+	cout << "Enter your other number" << endl;
+	cin >> num2;
+	cout << "The volume of a cylinder is  " << surfarea(num,num2) << endl;
+	
+	system("PAUSE");
+	return 0;
+	
+}
+double surfarea(double r, double l)
+{
+	double surf = 2 * 3.14 * r * l;
+	
+	return surf;
+}
 
 7. (Program) a. Write a function named totamt() that uses four parameters named quarters,
 dimes, nickels, and pennies, which represent the number of each of these coins in a piggybank.
