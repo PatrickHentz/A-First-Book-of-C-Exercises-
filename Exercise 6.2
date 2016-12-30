@@ -187,7 +187,8 @@ double surfarea(double r, double l)
 {
 	double surf = 2 * 3.14 * r * l;
 	
-	return surf;
+
+return surf;
 }
 
 b. Include the function written in Exercise 6a in a working program. Make sure your function
@@ -224,10 +225,45 @@ dimes, nickels, and pennies, which represent the number of each of these coins i
 The function should determine the dollar value of the number of quarters, dimes,
 nickels, and pennies passed to it and return the calculated value.
 
+double totamt(double quarters, double dimes, double nickels, double pennies)
+{
+	double value = (quarters * .25) + (dimes * .10) + (nickels * .05) + (pennies * .01);
+	
+	return value;
+}
+
 b. Include the function written in Exercise 7a in a working program. Make sure your function
 is called from main() and returns a value to main() correctly. Have main() use a cout
 statement to display the returned value. Test the function by passing various data to it and
 verifying the returned value.
+
+#include <iostream>
+using namespace std;
+
+double totamt(double, double,double,double); // the function prototype
+int main()
+{
+	double num,num2,num3,num4;
+	cout << "Enter your number" << endl;
+	cin >> num;
+	cout << "Enter your other number" << endl;
+	cin >> num2;
+	cout << "Enter your third number" << endl;
+	cin >> num3;
+	cout << "Enter your forth number" << endl;
+	cin >> num4;
+	cout << "The volume of a cylinder is  " << totamt(num,num2,num3,num4) << endl;
+	
+	system("PAUSE");
+	return 0;
+	
+}
+double totamt(double quarters, double dimes, double nickels, double pennies)
+{
+	double value = (quarters * .25) + (dimes * .10) + (nickels * .05) + (pennies * .01);
+	
+	return value;
+}
 
 8. (Program) a. Write a function named daycount() that accepts a month, day, and year as its
 input arguments; calculates an integer representing the total number of days from the turn of
