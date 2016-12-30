@@ -317,7 +317,7 @@ double daycount(int month, double day, double year)
 	else if (month == 1){
 		month = 0;
 	}
-	else{ month = month * 30;}
+	else{ month = (month-1) * 30;} // only one I needed *facepam* lol
 
 	double value = (day)+(month)+(year*365);
 
@@ -333,10 +333,44 @@ order automatically. Using this formula, write a function named convertdays() th
 a month, day, and year; converts the passed data into a single date integer; and returns the
 integer to the calling function.
 
+int convertdays(int month, int day, int year)
+{
+
+	int date = year * 10000 + month * 100 + day;
+
+		return date;
+}
 
 b. Include the convertdays() function written for Exercise 9a in a working program. The
 main() function should call convertdays() correctly and display the integer the function
 returns. Test the function by passing various data to it and verifying the returned value.
+
+#include <iostream>
+using namespace std;
+
+int convertdays(int, int, int); // the function prototype
+int main()
+{
+	int num,num2,num3;
+	cout << "Enter your month" << endl;
+	cin >> num;
+	cout << "Enter your day " << endl;
+	cin >> num2;
+	cout << "Enter the year" << endl;
+	cin >> num3;
+	cout << "The total number of day passed sence the first of the year" << convertdays(num,num2,num3) << endl;
+	
+	system("PAUSE");
+	return 0;
+	
+}
+int convertdays(int month, int day, int year)
+{
+
+	int date = year * 10000 + month * 100 + day;
+
+		return date;
+}
 
 10. (Program) a. Write a function named ReadOneChar() that reads a key pressed on the keyboard
 and displays the integer code of the entered character.
