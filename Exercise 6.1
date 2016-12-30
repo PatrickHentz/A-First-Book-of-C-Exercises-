@@ -320,6 +320,17 @@ of miles converted to kilometers. The arguments to the function should be the st
 stopping values of miles and the increment. The output should be a table of miles and their
 equivalent kilometer values. Use the relationship that 1 mile = 1.61 kilometers.
 
+void makeMilesKmTable(int start, int max, int increment){
+	cout << "Miles" << "  =   " << "Kilometers" << "   " << "Miles" <<
+		"=" << "Kilometers" << endl;
+	for (int miles = start; miles <= max; miles = miles + increment){
+		double kilo = miles * 1.61;
+	
+			cout << miles <<setw(20)<< kilo << endl ;
+		}
+	
+}
+
 b. Modify the function written for Exercise 12a so that two columns are displayed. For example,
 if the starting value is 1 mile, the ending value is 20 miles, and the increment is 1, the
 display should look like the following:
@@ -333,6 +344,34 @@ display should look like the following:
 and print across one line the values of miles and kilometers for both miles and (miles - start +
 split + 1).)
 
+#include <iostream>
+using namespace std;
+
+void makeMilesKmTable(int start, int max, int increment){
+	cout << "Miles" << "  =   " << "Kilometers" << endl;
+	double split = ((start + max) / 2);
+	
+	for (int miles = start; miles <= split; miles = miles + increment){
+		double kilo = miles * 1.61;
+		cout << miles << setw(20) << kilo << endl;
+		}
+	cout << "Miles" << "    =     " << "Kilometers" << endl;
+	for (int miles2 = split + 1; miles2 <= max; miles2 = miles2 + increment){
+		double kilo = miles2 * 1.61;
+		cout << miles2 << setw(20) << kilo << endl;
+	}
+	
+}
+	
+	int main(){
+		
+	   makeMilesKmTable(1,20,1);
+
+
+		system("PAUSE");
+		return 0;
+	}
+	
 12. (Program) a. Write a C++ function that accepts an integer argument, determines whether the
 passed integer is even or odd, and displays the result of this determination. (Hint: Use the %
 operator.)
