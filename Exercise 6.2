@@ -137,13 +137,45 @@ double findAbs(double number)
 	return number;
 }
 5. (Program) a. The volume, V, of a cylinder is given by the formula
-V = π r 2 L
+V = π r^2 L
 where r is the cylinder’s radius and L is its length. Using this formula, write a C++ function
 named cylvol() that accepts a cylinder’s radius and length and returns its volume.
+
+double cylvol(double r, double L)
+{
+	double volume = 3.1416 * pow(r, 2)*L;
+	
+	return volume;
+}
+
 b. Include the function written in Exercise 5a in a working program. Make sure your function
 is called from main() and returns a value to main() correctly. Have main() use a cout
 statement to display the returned value. Test the function by passing various data to it and
 verifying the returned value.
+#include <cmath>
+#include <iostream>
+using namespace std;
+
+double cylvol(double, double); // the function prototype
+int main()
+{
+	double num,num2;
+	cout << "Enter your number" << endl;
+	cin >> num;
+	cout << "Enter your other number" << endl;
+	cin >> num2;
+	cout << "The volume of a cylinder is  " << cylvol(num,num2) << endl;
+	
+	system("PAUSE");
+	return 0;
+	
+}
+double cylvol(double r, double L)
+{
+	double volume = 3.1416 * pow(r, 2)*L;
+	
+	return volume;
+}
 
 6. (Program) a. The surface area, S, of a cylinder is given by the formula
 S = 2 π r l
