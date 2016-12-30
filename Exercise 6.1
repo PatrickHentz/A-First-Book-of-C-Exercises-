@@ -216,9 +216,42 @@ isn’t set explicitly, the function should use a default value of 1. Name your 
 selTab(). A call to selTab(6,5,2); should produce a table of five lines, the first line starting
 with the number 6 and each succeeding number increasing by 2.
 
+void sqrtfun(int start, int maxnum, int increment){
+	cout << "SQUARE           CUBE" << endl;
+	cout << "-------- - ------------" << endl;
+	for (double num = start; num <=(start + maxnum *increment)-1; num = num + increment){
+
+		cout << num * num << "            "
+		 << num * num * num << endl;
+		
+		
+	}
+}
+
 b. Include the function written in Exercise 8a in a working program. Make sure your function
 is called from main(). Test the function by passing various data to it.
 
+void sqrtfun(int start, int maxnum, int increment){
+	cout << "SQUARE           CUBE" << endl;
+	cout << "-------- - ------------" << endl;
+	for (double num = start; num <=(start + maxnum *increment)-1; num = num + increment){
+
+		cout << num * num << "            "
+		 << num * num * num << endl;
+		
+		
+	}
+}
+	
+	int main(){
+		
+	   sqrtfun( 6,5,2);
+
+
+		system("PAUSE");
+		return 0;
+	}
+	
 9. (Program) a. The time in hours, minutes, and seconds is to be passed to a function named
 totsec(). Write totsec() to accept these values, determine the total number of seconds in
 the passed data, and display the calculated value.
