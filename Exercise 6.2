@@ -271,9 +271,58 @@ the century to the date that’s passed; and returns the calculated integer to t
 For this problem, assume each year has 365 days and each month has 30 days. Test your function
 by verifying that the date 1/1/00 returns a day count of 1.
 
+double daycount(int month, double day, double year)
+{
+	if (month % 30 == 0){
+		month = 30;
+	}
+	else if (month == 1){
+		month = 0;
+	}
+	else{ month = month * 30;}
+
+	double value = (day)+(month)+(year*365);
+
+		return value;
+}
+
 b. Include the daycount() function written for Exercise 8a in a working program. The
 main() function should correctly call daycount() and display the integer returned by the
 function. Test the function by passing various data to it and verifying the returned value.
+
+#include <iostream>
+using namespace std;
+
+double daycount(int, double,double); // the function prototype
+int main()
+{
+	double num,num2,num3;
+	cout << "Enter your month" << endl;
+	cin >> num;
+	cout << "Enter your day " << endl;
+	cin >> num2;
+	cout << "Enter the year" << endl;
+	cin >> num3;
+	cout << "The total number of day passed sence the first of the year" << daycount(num,num2,num3) << endl;
+	
+	system("PAUSE");
+	return 0;
+	
+}
+double daycount(int month, double day, double year)
+{
+	if (month % 30 == 0){
+		month = 30;
+	}
+	else if (month == 1){
+		month = 0;
+	}
+	else{ month = month * 30;}
+
+	double value = (day)+(month)+(year*365);
+
+		return value;
+}
 
 9. (Program) a. A clever and simple method of preparing to sort dates into ascending (increasing)
 or descending (decreasing) order is to convert a date in the form month/day/year into an
@@ -283,6 +332,7 @@ to the integer 20110228. Sorting the resulting integer numbers puts dates into t
 order automatically. Using this formula, write a function named convertdays() that accepts
 a month, day, and year; converts the passed data into a single date integer; and returns the
 integer to the calling function.
+
 
 b. Include the convertdays() function written for Exercise 9a in a working program. The
 main() function should call convertdays() correctly and display the integer the function
