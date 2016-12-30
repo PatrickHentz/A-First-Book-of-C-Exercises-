@@ -284,15 +284,37 @@ void totsec(int hours, int minutes, int seconds){
 	
 10. (Program) a. The volume, V, of a sphere is given by this formula, where r is the sphere’s
 radius:
-Volume =
-3
-4π r 3
+Volume = (4π r^3)/3
 Using this formula, write, compile, and run a C++ function named spherevol() that accepts
 a sphere’s radius and then calculates and displays its volume.
+
+void spherevol(double radius){
+	double pi = 3.1416;
+	double total = (((4 * pi) * pow(radius, 3)) / 3);
+	cout << total << endl;
+}
 
 b. Include the function written in Exercise 10a in a working program. Make sure your function
 is called from main(). Test the function by passing various data to it.
 
+#include <iostream>
+using namespace std;
+
+void spherevol(double radius){
+	double pi = 3.1416;
+	double total = (((4 * pi) * pow(radius, 3)) / 3);
+	cout << total << endl;
+}
+	
+	int main(){
+		
+	   spherevol(10);
+
+
+		system("PAUSE");
+		return 0;
+	}
+	
 11. (Program) a. Write and test a C++ function named makeMilesKmTable() to display a table
 of miles converted to kilometers. The arguments to the function should be the starting and
 stopping values of miles and the increment. The output should be a table of miles and their
