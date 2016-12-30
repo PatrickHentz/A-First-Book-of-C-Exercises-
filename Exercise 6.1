@@ -55,30 +55,119 @@ passed to it, computes its absolute value, and displays the absolute value. A nu
 value is the number itself if the number is positive and the negative of the number if the
 number is negative.
 
+#include <iostream>
+using namespace std;
+
+void findAbs(double num){
+	num = abs(num);
+	cout << num << endl;
+}
+
 b. Include the function written in Exercise 3a in a working program. Make sure your function
 is called from main(). Test the function by passing various data to it.
+#include <iostream>
+using namespace std;
 
+void findAbs(double num){
+	num = abs(num);
+	cout << num << endl;
+}
+	
+	int main(){
+		
+		findAbs( -10);
+
+
+		system("PAUSE");
+		return 0;
+	}
+	
 4. (Practice) a. Write a function called mult() that accepts two double-precision numbers as
 parameters, multiplies these two numbers, and displays the result.
 
+void mult(double num, double num2){
+	int result = num2 *num;
+	cout << result<< endl;
+}
 b. Include the function written in Exercise 4a in a working program. Make sure your function
 is called from main(). Test the function by passing various data to it.
 
+#include <iostream>
+using namespace std;
+
+void mult(double num, double num2){
+	int result = num2 *num;
+	cout << result<< endl;
+}
+	
+	int main(){
+		
+		mult( 50,20);
+
+
+		system("PAUSE");
+		return 0;
+	}
+	
 5. (Practice) a. Write a function named sqrIt() that computes the square of the value passed
 to it and displays the result. The function should be capable of squaring numbers with decimal
 points.
 
+void sqrtIt(double num){
+	double result = sqrt(num);
+	cout << result << endl;
+}
+
 b. Include the function written in Exercise 5a in a working program. Make sure your function
 is called from main(). Test the function by passing various data to it.
 
+#include <iostream>
+using namespace std;
+
+void sqrtIt(double num){
+	double result = sqrt(num);
+	cout << result << endl;
+}
+	
+	int main(){
+		
+	   sqrtIt( 50);
+
+
+		system("PAUSE");
+		return 0;
+	}
+	
 6. (Practice) a. Write a function named powfun() that raises an integer number passed to it to
 a positive integer power and displays the result. The positive integer should be the second
 value passed to the function. Declare the variable used to store the result as a long-integer data
 type to ensure enough storage for the result.
 
+void powfun(double num, double num2){
+	double result = pow(num,num2);
+	cout << result << endl;
+}
+
 b. Include the function written in Exercise 6a in a working program. Make sure your function
 is called from main(). Test the function by passing various data to it.
 
+#include <iostream>
+using namespace std;
+
+void powfun(double num, double num2){
+	double result = pow(num,num2);
+	cout << result << endl;
+}
+	
+	int main(){
+		
+	   powfun( 50, 2);
+
+
+		system("PAUSE");
+		return 0;
+	}
+	
 7. (Practice) a. Write a function that produces a table of the numbers from 1 to 10, their squares,
 and their cubes. The function should produce the same display as Program 5.10.
 
