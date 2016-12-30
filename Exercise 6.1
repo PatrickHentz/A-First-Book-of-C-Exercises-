@@ -171,9 +171,45 @@ void powfun(double num, double num2){
 7. (Practice) a. Write a function that produces a table of the numbers from 1 to 10, their squares,
 and their cubes. The function should produce the same display as Program 5.10.
 
+void sqrtfun(){
+	cout << "SQUARE           CUBE" << endl;
+	cout << "-------- - ------------" << endl;
+	for (double num = 1; num <= 10; num++){
+		
+		cout << num * num << "            "
+		 << num * num * num << endl;
+		
+		
+	}
+}
+
 b. Include the function written in Exercise 7a in a working program. Make sure your function
 is called from main(). Test the function by passing various data to it.
 
+#include <iostream>
+using namespace std;
+
+void sqrtfun(){
+	cout << "SQUARE           CUBE" << endl;
+	cout << "-------- - ------------" << endl;
+	for (double num = 1; num <= 10; num++){
+		
+		cout << num * num << "            "
+		 << num * num * num << endl;
+		
+		
+	}
+}
+	
+	int main(){
+		
+	   sqrtfun( );
+
+
+		system("PAUSE");
+		return 0;
+	}
+	
 8. (Modify) a. Modify the function written for Exercise 7a to accept the starting value of the
 table, the number of values to be displayed, and the increment between values. If the increment
 isn’t set explicitly, the function should use a default value of 1. Name your function
