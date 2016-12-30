@@ -256,11 +256,32 @@ void sqrtfun(int start, int maxnum, int increment){
 totsec(). Write totsec() to accept these values, determine the total number of seconds in
 the passed data, and display the calculated value.
 
+void totsec(int hours, int minutes, int seconds){
+	int total = (hours * 60 * 60) + (minutes * 60) + seconds;
+	cout << "Total Seconds equals " << total << endl;
+}
 b. Include the totsec() function written for Exercise 9a in a working program. The main()
 function should correctly call totsec() and display the value the function returns. Use
 the following test data to verify your program’s operation: hours = 10, minutes = 36, and
 seconds = 54. Make sure to do a hand calculation to verify the result your program displays.
 
+#include <iostream>
+using namespace std;
+
+void totsec(int hours, int minutes, int seconds){
+	int total = (hours * 60 * 60) + (minutes * 60) + seconds;
+	cout << "Total Seconds equals " << total << endl;
+}
+	
+	int main(){
+		
+	   totsec(10,36,54);
+
+
+		system("PAUSE");
+		return 0;
+	}
+	
 10. (Program) a. The volume, V, of a sphere is given by this formula, where r is the sphere’s
 radius:
 Volume =
