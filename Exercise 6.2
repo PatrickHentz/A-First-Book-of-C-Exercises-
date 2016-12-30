@@ -3,6 +3,34 @@ arguments and returns a double-precision value to main(). Make sure to modify ma
 pass two double-precision values to findMax() and to accept and store the double-precision
 value returned by findMax().
 
+#include <iostream>
+using namespace std;
+
+double findMax(double, double); // the function prototype
+int main()
+{
+	double firstnum, secnum, max;
+	cout << "\nEnter a number : ";
+	cin >> firstnum;
+	cout << "Great!Please enter a second number : ";
+	cin >> secnum;
+	max = findMax(firstnum, secnum); // the function is called here
+	cout << "\nThe maximum of the two numbers is " << max << endl;
+	
+	system("PAUSE");
+	return 0;
+	
+}
+double findMax(double x, double y)
+{                     // start of function body
+	double maxnum;         // variable declaration
+	if (x >= y)         // find the maximum number
+		maxnum = x;
+	else
+		maxnum = y;
+	return maxnum;      // return statement
+}
+
 2. (Practice) Write function headers for the following functions:
 a. A function named check(), which has three parameters. The first parameter should accept
 an integer number, the second parameter a floating-point number, and the third parameter
