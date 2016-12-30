@@ -36,38 +36,106 @@ a. A function named check(), which has three parameters. The first parameter sho
 an integer number, the second parameter a floating-point number, and the third parameter
 a double-precision number. The function returns no value.
 
+void check(int num1, float num2, double num3)
+
 b. A function named findAbs() that accepts a double-precision number passed to it and
-returns that number’s absolute value.
+returns that number’s absolute value
+
+double findAbs(double x)
 
 c. A function named mult() that accepts two floating-point numbers as parameters, multiplies
 these two numbers, and returns the result.
 
+float mult(float first, float second)
+
 d. A function named square() that computes and returns the square of the integer value
 passed to it.
+
+int square(int number)
 
 e. A function named powfun() that raises an integer number passed to it to a positive integer
 power (also passed as an argument) and returns the result as an integer.
 
+int powfun(int num, int exponent)
+
 f. A function named table() that produces a table of numbers from 1 to 10, their squares, and
 their cubes. No arguments are to be passed to the function, and the function returns no value.
+
+void table(void) or void table()
 
 3. (Program) a. Write a function named rightTriangle() that accepts the lengths of two sides
 of a right triangle as the arguments a and b. The subroutine should determine and return the
 hypotenuse, c, of the triangle. (Hint: Use Pythagoras’ theorem, c2 = a2 + b2.)
+
+double rightTriangle(double a, double b)
+  {
+    return sqrt((a * a) + (b * b));
+  }
+  
 b. Include the function written for Exercise 3a in a working program. The main() function
 should call rightTriangle() correctly and display the value the function returns. Test the
 function by passing various data to it and verifying the returned value.
+
+#include <math.h>  
+#include <cmath>
+#include <iostream>
+using namespace std;
+
+double rightTriangle(double, double); // the function prototype
+int main()
+{
+	double num,num2;
+	cout << "Enter your number" << endl;
+	cin >> num;
+	cout << "Enter your other number" << endl;
+	cin >> num2;
+	cout << "The sqrt is  " << rightTriangle(num,num2) << endl;
+	
+	system("PAUSE");
+	return 0;
+	
+}
+double rightTriangle(double a, double b)
+{
+	
+	return sqrt((a*a) + (b*b));
+}
 
 4. (Program) a. Write a C++ function named findAbs() that accepts a double-precision number
 passed to it, computes its absolute value, and returns the absolute value to the calling
 function. A number’s absolute value is the number itself if the number is positive and the
 negative of the number if the number is negative.
 
+double findAbs(double number)
+  {
+    if(number < 0)
+      number = -number;
+    return number;
+  }
+
 b. Include the function written in Exercise 4a in a working program. Make sure your function
 is called from main() and returns a value to main() correctly. Have main() use a cout
 statement to display the returned value. Test the function by passing various data to it and
 verifying the returned value.
 
+double findAbs(double); // the function prototype
+int main()
+{
+	double number;
+	cout << "Enter your number" << endl;
+	cin >> number;
+	cout << "The number is now positve " << findAbs(number) << endl;
+	
+	system("PAUSE");
+	return 0;
+	
+}
+double findAbs(double number)
+{
+	if (number < 0)
+		number = -number;
+	return number;
+}
 5. (Program) a. The volume, V, of a cylinder is given by the formula
 V = π r 2 L
 where r is the cylinder’s radius and L is its length. Using this formula, write a C++ function
