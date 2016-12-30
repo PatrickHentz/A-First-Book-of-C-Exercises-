@@ -376,9 +376,35 @@ void makeMilesKmTable(int start, int max, int increment){
 passed integer is even or odd, and displays the result of this determination. (Hint: Use the %
 operator.)
 
+void evenOrOdd(int num){
+	if (num % 2 == 0){
+		cout << "even" << endl;
+	}
+	else{ cout << "odd" << endl; }
+	
+}
+
 b. Include the function written in Exercise 12a in a working program. Make sure your function
 is called from main(). Test the function by passing various data to it.
+#include <iostream>
+using namespace std;
 
+void evenOrOdd(int num){
+	if (num % 2 == 0){
+		cout << "even" << endl;
+	}
+	else{ cout << "odd" << endl; }
+	
+}
+	
+	int main(){
+		
+	   evenOrOdd(1);
+
+
+		system("PAUSE");
+		return 0;
+	}
 13. (Program) A useful function using no parameters can be constructed to return a value for π
 that’s accurate to the maximum number of decimal places your computer allows. This value is
 obtained by taking the arcsine of 1.0, which is π / 2, and multiplying the result by 2. In C++,
@@ -387,9 +413,38 @@ C++ mathematics library. (Remember to include cmath in your preprocessor directi
 this expression, write a C++ function named pi() that calculates and displays the value of π.
 (In the next section, you see how to return this value to the calling function.)
 
+#include <cmath>
+#include <iostream>
+using namespace std;
+
+void pi(){
+	double result =2.0 *asin(1.0);
+	cout << result << endl;
+}
+	
+	int main(){
+		
+	   pi();
+
+
+		system("PAUSE");
+		return 0;
+	}
+	
 14. (Program) a. Write a function template named display() that displays the value of the
 single argument passed to it when the function is called.
+
+void display(int result){
+	
+	cout << result << endl;
+}
 
 b. Include the function template created in Exercise 14a in a complete C++ program that calls
 the function three times: once with a character argument, once with an integer argument,
 and once with a double-precision argument.
+
+void display(char result3, int result, double result2){
+	cout << result3 << endl;
+	cout << result << endl;
+	cout << result2 << endl;
+}
