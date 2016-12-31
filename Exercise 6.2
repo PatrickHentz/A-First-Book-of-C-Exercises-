@@ -539,22 +539,98 @@ Similarly, because 1988 is evenly divisible by 4 but not by 100, it was also a l
 this information, write a C++ function that accepts the year as user input and returns a 1 if the
 passed year is a leap year or a 0 if it isn’t.
 
+int leapyear( int num)
+{
 
+	if (num % 4 == 0 && num % 100 != 0){
+		num = 1;
+	}
+	else{ num = 0; }
+		return num;
+}
 
 b. Include the function written in Exercise 14a in a working program. Make sure your function
 is called from main() and returns a value to main() correctly. Have main() use a cout
 statement to display the returned value. Test the function by passing various data to it and
 verifying the returned value.
 
+#include <iostream>
+using namespace std;
+
+int leapyear(int); // the function prototype
+int main()
+{
+	int a;
+	
+	cout << "Enter a" << endl;
+	cin >> a;
+	
+	cout << "The integer part of any number is  " << leapyear(a) << endl;
+
+	
+	system("PAUSE");
+	return 0;
+	
+}
+int leapyear( int num)
+{
+
+	if (num % 4 == 0 && num % 100 != 0){
+		num = 1;
+	}
+	else{ num = 0; }
+		return num;
+}
+
 15. (Program) a. A second-degree polynomial in x is given by the expression ax2 + bx + c, where a,
 b, and c are known numbers and a is not equal to 0. Write a C++ function named polyTwo
 (a,b,c,x) that computes and returns the value of a second-degree polynomial for any passed
 values of a, b, c, and x.
 
+int polyTwo( int a, int b, int c, int x)
+{
+
+	int poly = a*pow(x, 2) + b*x + c;
+
+		return poly;
+}
+
 b. Include the function written in Exercise 15a in a working program. Make sure your function
 is called from main() and returns a value to main() correctly. Have main() use a cout
 statement to display the returned value. Test the function by passing various data to it and
 verifying the returned value.
+
+#include <cmath>
+#include <iostream>
+using namespace std;
+
+int polyTwo(int,int,int,int); // the function prototype
+int main()
+{
+	int a,b,c,x;
+	
+	cout << "Enter a" << endl;
+	cin >> a;
+	cout << "Enter b" << endl;
+	cin >> b;
+	cout << "Enter c" << endl;
+	cin >> c;
+	cout << "Enter x" << endl;
+	cin >> x;
+	cout << "The second polynomical is  " << polyTwo(a,b,c,x) << endl;
+
+	
+	system("PAUSE");
+	return 0;
+	
+}
+int polyTwo( int a, int b, int c, int x)
+{
+
+	int poly = a*pow(x, 2) + b*x + c;
+
+		return poly;
+}
 
 16. (Program) a. The following is a useful programming algorithm for rounding a real number to
 n decimal places:
@@ -571,7 +647,11 @@ Step 4: 78375 divided by 103 = 78.375
 Using this algorithm, write a C++ function that accepts a user-entered value and returns the
 result rounded to two decimal places.
 
+
+
 b. Include the function written in Exercise 16a in a working program. Make sure your function
 is called from main() and returns a value to main() correctly. Have main() use a cout
 statement to display the returned value. Test the function by passing various data to it and
 verifying the returned value.
+
+
