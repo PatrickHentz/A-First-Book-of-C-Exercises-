@@ -1,3 +1,4 @@
+
 1. (Practice) Write parameter declarations for the following:
 a. A parameter named amount that will be a reference to a double-precision value
 double& amount
@@ -38,6 +39,42 @@ is called from main() and returns a value to main() correctly. Have main() use a
 statement to display the returned value. Test the function by passing various data to it and
 verifying the returned value.
 
+#include <iostream>
+using namespace std;
+
+void findMax(int,int,int&); // the function prototype
+int main()
+{
+	int num;
+	int num2;
+	int num3;
+	
+	cout << "Enter first number" << endl;
+	cin >> num;
+	cout << "Enter second number" << endl;
+	cin >> num2;
+	
+	findMax(num, num2, num3);
+	
+	cout << "The Highest number is" << num3 << endl;
+
+	
+	
+	system("PAUSE");
+	return 0;
+	
+}
+void findMax(int x, int y, int& max)
+{                    // start of function body
+		int maxnum;        // variable declaration
+
+		if (x >= y)        // find the maximum number
+			maxnum = x;
+		else
+		maxnum = y;
+		max = maxnum;
+		return;            // return statement
+}
 
 4. (Program) a. Write a function named change() that has an integer parameter and six integer
 reference parameters named hundreds, fifties, twenties, tens, fives, and ones. The
