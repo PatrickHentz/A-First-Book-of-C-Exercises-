@@ -634,24 +634,62 @@ int polyTwo( int a, int b, int c, int x)
 
 16. (Program) a. The following is a useful programming algorithm for rounding a real number to
 n decimal places:
-Step 1: Multiply the number by 10n.
+Step 1: Multiply the number by 10^n.
 Step 2: Add 0.5.
 Step 3: Delete the fractional part of the result.
-Step 4: Divide by 10n.
+Step 4: Divide by 10^n.
 For example, using this algorithm to round the number 78.374625 to three decimal places
 yields:
-Step 1: 78.374625 × 103 = 78374.625
+Step 1: 78.374625 × 10^3 = 78374.625
 Step 2: 78374.625 + 0.5 = 78375.125
 Step 3: Retaining the integer part = 78375
-Step 4: 78375 divided by 103 = 78.375
+Step 4: 78375 divided by 10^3 = 78.375
 Using this algorithm, write a C++ function that accepts a user-entered value and returns the
 result rounded to two decimal places.
 
+double realTwoNum(double num, int& num2)
+{
+	num=(num * pow(10, 2));
 
+	num = num + .5;
+	num2 = (int) num;
+	double done = (num2 / pow(10, 2));
+
+		return done;
+}
 
 b. Include the function written in Exercise 16a in a working program. Make sure your function
 is called from main() and returns a value to main() correctly. Have main() use a cout
 statement to display the returned value. Test the function by passing various data to it and
 verifying the returned value.
 
+#include <cmath>
+#include <iostream>
+using namespace std;
 
+double realTwoNum(double,int&); // the function prototype
+int main()
+{
+	double num;
+	int num2;
+	
+	cout << "Enter a" << endl;
+	cin >> num;
+	
+	cout << "The number with two decimal places  " << realTwoNum(num,num2) << endl;
+
+	
+	system("PAUSE");
+	return 0;
+	
+}
+double realTwoNum(double num, int& num2)
+{
+	num=(num * pow(10, 2));
+
+	num = num + .5;
+	num2 = (int) num;
+	double done = (num2 / pow(10, 2));
+
+		return done;
+}
