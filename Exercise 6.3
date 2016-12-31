@@ -1,45 +1,74 @@
 1. (Practice) Write parameter declarations for the following:
 a. A parameter named amount that will be a reference to a double-precision value
+double& amount
 b. A parameter named price that will be a reference to a double-precision number
+double& price
 c. A parameter named minutes that will be a reference to an integer number
+int& minutes
 d. A parameter named key that will be a reference to a character
+char& key
 e. A parameter named yield that will be a reference to a double-precision number
+double yield
 2. (Practice) Three integer arguments are to be used in a call to a function named time(). Write
 a suitable function header for time(), assuming that time() accepts these variables as the
 reference parameters sec, min, and hours and returns no value to its calling function.
+
+void time(int& sec,int& min,int& hours)
+
 3. (Modify) a. Rewrite the findMax() function in Program 6.4 so that the variable max,
 declared in main(), is used to store the maximum value of the two passed numbers. The
 value of max should be set from within findMax(). (Hint : A reference to max has to be
 accepted by findMax().)
+
+void findMax(int x, int y, int& max)
+  {                    // start of function body
+    int maxnum;        // variable declaration
+  
+    if (x >= y)        // find the maximum number
+      maxnum = x;
+    else
+      maxnum = y;
+      max = maxnum;
+  
+    return;            // return statement
+  }
+
 b. Include the function written in Exercise 3a in a working program. Make sure your function
 is called from main() and returns a value to main() correctly. Have main() use a cout
 statement to display the returned value. Test the function by passing various data to it and
 verifying the returned value.
+
+
 4. (Program) a. Write a function named change() that has an integer parameter and six integer
 reference parameters named hundreds, fifties, twenties, tens, fives, and ones. The
 function is to consider the passed integer value as a dollar amount and convert the value into
 the fewest number of equivalent bills. Using the reference parameters, the function should
 alter the arguments in the calling function.
+
 b. Include the function written in Exercise 4a in a working program. Make sure your function
 is called from main() and returns a value to main() correctly. Have main() use a cout
 statement to display the returned value. Test the function by passing various data to it and
 verifying the returned value.
+
 5. (Program) Write a function named time() that has an integer parameter named seconds
 and three integer reference parameters named hours, mins, and secs. The function is to
 convert the passed number of seconds into an equivalent number of hours, minutes, and seconds.
 Using the reference parameters, the function should alter the arguments in the calling
 function.
+
 6. (Program) Write a function named yearCalc() that has an integer parameter representing
 the total number of days from the date 1/1/2000 and reference parameters named year, month,
 and day. The function is to calculate the current year, month, and day given the number of days
 passed to it. Using the reference parameters, the function should alter the arguments in the
 calling function. For this problem, assume each year has 365 days, and each month has 30 days.
+
 7. (Program) Write a function named liquid() that has an integer number parameter and
 reference parameters named gallons, quarts, pints, and cups. The passed integer represents
 the total number of cups, and the function is to determine the numbers of gallons, quarts,
 pints, and cups in the passed value. Using the reference parameters, the function should alter
 the arguments in the calling function. Use these relationships: 2 cups = 1 pint, 4 cups = 1 quart,
 and 16 cups = 1 gallon.
+
 8. (Desk check) The following program uses the same argument and parameter names in both
 the calling and called functions. Determine whether doing so causes any problem for the
 compiler.
@@ -60,3 +89,5 @@ void time(int& min, int& hour)   // accept two references
   sec = (hour * 60 + min) * 60;
   cout << “The total number of seconds is “ << sec << endl;
   return;
+
+
