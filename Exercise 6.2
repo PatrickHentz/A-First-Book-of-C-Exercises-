@@ -375,9 +375,36 @@ int convertdays(int month, int day, int year)
 10. (Program) a. Write a function named ReadOneChar() that reads a key pressed on the keyboard
 and displays the integer code of the entered character.
 
+int ReadOneChar(char reads)
+{
+return reads;
+}
+
 b. Include the ReadOneChar() function written for Exercise 10a in a working program. The
 main() function should correctly call ReadOneChar() and display the integer the function
 returns. Test the function by passing various data to it and verifying the returned value.
+
+#include <iostream>
+using namespace std;
+
+int ReadOneChar(char); // the function prototype
+int main()
+{
+	char one;
+	cout << "Enter your character" << endl;
+	cin >> one;
+	cout << "The key pressed was " << ReadOneChar(one) << endl;
+
+	
+	system("PAUSE");
+	return 0;
+	
+}
+int ReadOneChar(char reads)
+{
+		return reads;
+}
+
 11. (Program) Heron’s formula for the area, A, of a triangle with sides of length a, b, and c is
 A s s a s b s c = ( )( )( ) ⎡⎣
 ⎤⎦
