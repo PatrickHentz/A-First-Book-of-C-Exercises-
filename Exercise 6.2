@@ -445,6 +445,7 @@ int HeronForm( int a, int b, int c)
 	int s = ((a + b + c) / 2);
 	Area = (s*(s)*(s - a)*(s - b)*(s - c));
 
+
 	if ((Area == -(Area))){
 		Area = -1;
 	}
@@ -455,10 +456,38 @@ int HeronForm( int a, int b, int c)
 12. (Program) a. Write a function named whole() that returns the integer part of any number
 passed to the function. (Hint: Assign the passed argument to an integer variable.)
 
+int whole( int a)
+{
+		return a;
+}
+
 b. Include the function written in Exercise 12a in a working program. Make sure your function
 is called from main() and returns a value to main() correctly. Have main() use a cout
 statement to display the returned value. Test the function by passing various data to it and
 verifying the returned value.
+
+#include <iostream>
+using namespace std;
+
+int whole(int); // the function prototype
+int main()
+{
+	int s,a,b,c;
+	
+	cout << "Enter a" << endl;
+	cin >> a;
+	
+	cout << "The integer part of any number is  " << whole(a) << endl;
+
+	
+	system("PAUSE");
+	return 0;
+	
+}
+int whole( int a)
+{
+		return a;
+}
 
 13. (Program) a. Write a C++ function named fracpart() that returns the fractional part of any
 number passed to it. For example, if the number 256.879 is passed to fracpart(), the number
@@ -467,16 +496,50 @@ Exercise 12. The number returned can then be determined as the number passed to
 fracpart() less the returned value when the same argument is passed to whole(). The
 completed program should consist of main() followed by fracpart() followed by whole().
 
+double fracpart( double a)
+{
+	double b;
+	double frac=modf(a, &b);
+		return frac;
+}
+
 b. Include the function written in Exercise 13a in a working program. Make sure your function
 is called from main() and returns a value to main() correctly. Have main() use a cout
 statement to display the returned value. Test the function by passing various data to it and
 verifying the returned value.
+
+#include <iostream>
+using namespace std;
+
+double fracpart(double); // the function prototype
+int main()
+{
+	double a;
+	
+	cout << "Enter a" << endl;
+	cin >> a;
+	
+	cout << "The integer part of any number is  " << fracpart(a) << endl;
+
+	
+	system("PAUSE");
+	return 0;
+	
+}
+double fracpart( double a)
+{
+	double b;
+	double frac=modf(a, &b);
+		return frac;
+}
 
 14. (Program) a. Years that are evenly divisible by 400 or are evenly divisible by 4 but not by 100
 are leap years. For example, because 1600 is evenly divisible by 400, 1600 was a leap year.
 Similarly, because 1988 is evenly divisible by 4 but not by 100, it was also a leap year. Using
 this information, write a C++ function that accepts the year as user input and returns a 1 if the
 passed year is a leap year or a 0 if it isn’t.
+
+
 
 b. Include the function written in Exercise 14a in a working program. Make sure your function
 is called from main() and returns a value to main() correctly. Have main() use a cout
