@@ -1,18 +1,33 @@
 1. (Practice) Write array declarations, including initializers, for the following:
 a. A list of 10 integer grades: 89, 75, 82, 93, 78, 95, 81, 88, 77, and 82
+const int SIZE = 10;
+int grades[SIZE] = {89, 75, 82, 93, 78, 95, 81, 88, 77, 82};
 b. A list of five double-precision amounts: 10.62, 13.98, 18.45, 12.68, and 14.76
+const int SIZE = 5;
+  double amounts[SIZE] = {10.62, 13.98, 18.45, 12.68, 14.76}; 
 c. A list of 100 double-precision interest rates, with the first six rates being 6.29, 6.95, 7.25,
 7.35, 7.40, and 7.42
+const int SIZE = 100;
+  double rates[SIZE] = {6.29, 6.95, 7.25, 7.35, 7.40, 7.42}; 
 d. A list of 64 double-precision temperatures, with the first 10 temperatures being 78.2, 69.6,
 68.5, 83.9, 55.4, 67.0, 49.8, 58.3, 62.5, and 71.6
+const int SIZE = 64;
+  double temps[SIZE]
+    = {78.2, 69.6, 68.5, 83.9, 55.4, 67.0, 49.8, 58.3, 62.5, 71.6};
 e. A list of 15 character codes, with the first seven codes being f, j, m, q, t, w, and z
+const int SIZE = 15;
+  char codes[SIZE] = { 'f', 'j', 'm', 'q', 't', 'w', 'z' };
 2. (Practice) Write an array declaration statement that stores the following values in an array
 named prices: 16.24, 18.98, 23.75, 16.29, 19.54, 14.22, 11.13, and 15.39. Include these statements
 in a program that displays the values in the array.
+
+
 3. (Program) Write, compile, and run a C++ program that uses an array declaration statement to
 initialize the following numbers in an array named slopes: 17.24, 25.63, 5.94, 33.92, 3.71,
 32.84, 35.93, 18.24, and 6.92. Your program should locate and display the maximum and minimum
 values in the array.
+
+
 4. (Program) Write, compile, and run a C++ program that stores the following numbers in an
 array named prices: 9.92, 6.32, 12.63, 5.95, and 10.29. Your program should also create two
 arrays named units and amounts, each capable of storing five double-precision numbers.
@@ -33,26 +48,42 @@ numbers of your own choosing as intializers. Then write, compile, and run a C++ 
 that reads the numbers in the array and places all zero and positive numbers in an array
 named positive and all negative numbers in an array named negative. Finally, have your
 program display the values in both the positive and negative arrays.
+
 6. (Practice) The string of characters “Good Morning” is to be stored in a character array
 named goodstr1. Write the declaration for this array in three different ways.
+char goodstr1[] = “Good Morning”;
+char goodstr1[] = {'G', 'o', 'o', 'd', ' ', 'M', 'o', 'r', 'n', 'i', 'n',
+ 'g'};
+char goodstr1[12] = {'G', 'o', 'o', 'd', ' ', 'M', 'o', 'r', 'n', 'i', 'n
+','g'};
 7. (Practice) a. Write declaration statements to store the string of characters “Input
 the Following Data” in a character array named message1, the string “------------” in
 an array named message2, the string “Enter the Date:” in an array named message3, and
 the string “Enter the Account Number:” in an array named message4.
+
+char message1[] = “Input the Following Data”;
+  char message2[] = “------------------------”;
+  char message3[] = “Enter the Date: “;
+  char message4[] = “Enter the Account Number: “;
+  
 b. Include the array declarations written in Exercise 7a in a program that uses a cout statement
 to display the messages. For example, the statement cout << message1; causes the
 string stored in the message1 array to be displayed. Your program requires four of these
 statements to display the four messages. Using a cout statement to display a string requires
 placing the end-of-string marker \0 in the character array used to store the string.
+
 8. (Program) a. Write a declaration to store the string “This is a test” in an array named
 strtest. Include the declaration in a program to display the message using the following loop:
 for (i = 0; i < NUMDISPLAY; i++)
   cout << strtest[i];
 NUMDISPLAY is a named constant for the number 14.
+
 b. Modify the for statement in Exercise 8a to display only the array characters t, e, s, and t.
+
 c. Include the array declaration written in Exercise 8a in a program that uses a cout statement
 to display characters in the array. For example, the statement cout << strtest; causes
 the string stored in the strtest array to be displayed. Using this statement requires having
 the end-of-string marker, \0, as the last character in the array.
+
 d. Repeat Exercise 8a, using a while loop. (Hint: Stop the loop when the \0 escape sequence
 is detected. The expression while (strtest[i] != '\0') can be used.)
