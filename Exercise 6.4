@@ -226,6 +226,15 @@ void Two(void)
     .
 }
 
+---------------------------------------------------
+Variable or Constant Name | Scope
+---------------------------------------------------
+p2                         local to One()
+a,b                        global to main(), One(), and Two()
+c,d,e,f                    local to main()
+m,n                        local to One()
+p,d,q,r                    local to Two()
+
 
 5. (Desk check) Determine the values displayed by each cout statement in the following
 program:
