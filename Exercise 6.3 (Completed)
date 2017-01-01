@@ -301,4 +301,6 @@ void time(int& min, int& hour)   // accept two references
   cout << “The total number of seconds is “ << sec << endl;
   return;
 
+NO!!, Doing this does not cause any problems the main function and 
+modular function act independently when it comes to the declaration of variable names.
 
