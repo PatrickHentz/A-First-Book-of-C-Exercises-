@@ -1,3 +1,4 @@
+
 1. (Practice) a. List the storage categories available to local variables.
 
 The storage categories available to local variables are auto, static, and register.
@@ -36,14 +37,26 @@ void init2()
   return;
 }
 
+*The difference between the following functions is that the yrs's value is declared at slightly different times.*
+
 4. (Practice) a. Describe the difference between a global static variable and a global extern
 variable.
+
+A global static variable are initalized to 0 at complie time. 
+The global extern variable is used to extend a global variable's scope beyond its normal boundaries.
 
 b. If a variable is declared with an extern storage category, what other declaration statement
 must be present somewhere in the program?
 
+An extern declaration statement simply informs the computer that a global
+variable already exists and can now be used. The actual storage for the variable must be created
+somewhere else in the program by using one, and only one, global declaration statement
+in which the keyword extern hasn’t been used.
+
 5. (Practice) The declaration statement static double years; can be used to create a local
 or global static variable. What determines the scope of the variable years?
+
+
 
 6. (Practice) For the function and variable declarations shown in Figure 6.15, place an extern
 declaration to accomplish each of the following:
