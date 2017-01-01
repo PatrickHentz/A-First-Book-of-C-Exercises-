@@ -1,4 +1,4 @@
-||1. (Practice) a. For the following section of code, determine the data type and scope of all
+1. (Practice) a. For the following section of code, determine the data type and scope of all
 declared variables and symbolic constants on a separate sheet of paper, using the column headings
 shown in the following chart. (The entries for the first variable have been filled in.)
 Variable or Constant Name Data Type Scope
@@ -91,8 +91,7 @@ const long NUMBER;
 int main()
 {
   int a,b,c;
-  double x,y;
-     .
+  double x,y;     .
      .
   return 0;
 }
@@ -135,8 +134,60 @@ s, t, x                     double      local to func2()
 b. Draw a box around the appropriate section of the preceding code to enclose the scope of
 each variable or constant.
 
+#include <iostream>
+using namespace std;
+------------------------------------------------------------------|
+const char KEY;                                                   |
+--------------------------------------------------------------|   |   
+const long NUMBER;                                            |   |
+----------------------------------------------------------|   |   |
+                                                          |   |   |
+                                                          |   |   |
+int main()                                                |   |   |
+-----------------------------------------------|          |   |   |
+{                                              |          |   |   |
+  int a,b,c;                                   |          |   |   |
+  double x,y;                                  |          |   |   |
+    .                                          |          |   |   |
+    .                                          |          |   |   |
+    .                                          |          |   |   |
+  return 0;                                    |          |   |   |
+}                                              |          |   |   |
+double secnum;                                 |          |   |   |
+-----------------------------------------------|          |   |   |
+int func1( int num1, int num2)                            |   |   |
+-----------------------------------------------|          |   |   |
+{                                              |          |   |   |
+  int o,p;                                     |          |   |   |
+  float q;                                     |          |   |   |
+      .                                        |          |   |   |
+      .                                        |          |   |   |
+      .                                        |          |   |   |
+  return p;                                    |          |   |   |
+}                                              |          |   |   |
+-----------------------------------------------|          |   |   | 
+double func2(double first, double last)                   |   |   |
+-----------------------------------------------|          |   |   |
+{                                              |          |   |   |
+  int a,b,c,o,p;                               |          |   |   |
+  double r;                                    |          |   |   |
+  double s,t,x;                                |          |   |   |
+      .                                        |          |   |   |
+      .                                        |          |   |   |
+      .                                        |          |   |   |
+  return s * t;                                |          |   |   |
+}                                              |          |   |   |
+-----------------------------------------------|          |   |   |
+                                                          |   |   |
+----------------------------------------------------------|   |   |
+--------------------------------------------------------------|   |
+------------------------------------------------------------------|
+
 c. Determine the data type of the arguments that the func1() and func2() functions expect
 and the data type of the value these functions return.
+
+The func1() data type is an integer and it returns an integer
+The func2() data type is an double and it returns a double
 
 3. (Practice) The term “scope” can also apply to a function’s parameters. What do you think is
 the scope of all function parameters?
