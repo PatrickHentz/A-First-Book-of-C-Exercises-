@@ -82,10 +82,72 @@ function is to consider the passed integer value as a dollar amount and convert 
 the fewest number of equivalent bills. Using the reference parameters, the function should
 alter the arguments in the calling function.
 
+void change(int parameter, int& hundreds, int& fifties, int& twenties, int& tens, int& fives, int& ones)
+{                    // start of function body
+	
+	hundreds = parameter / 100;
+	parameter %= 100;
+	fifties = parameter / 50;
+	parameter %= 50;
+	twenties = parameter / 20;
+	parameter %= 20;
+	tens = parameter / 10;
+	parameter %= 10;
+	fives = parameter / 5;
+	parameter %= 5;
+	ones = parameter;
+
+		return;            // return statement
+}
+
 b. Include the function written in Exercise 4a in a working program. Make sure your function
 is called from main() and returns a value to main() correctly. Have main() use a cout
 statement to display the returned value. Test the function by passing various data to it and
 verifying the returned value.
+
+#include <iostream>
+using namespace std;
+
+void change(int,int&, int&, int&, int&, int&,int&); // the function prototype
+int main()
+{
+	int num,num2,num3,num4,num5,num6,num7;
+	
+	
+	cout << "Enter your number" << endl;
+	cin >> num;
+
+	change(num,num2,num3,num4,num5,num6,num7);
+	cout << "You get back " << num2<< "hundreds"<< endl;
+	cout << "You get back " << num3 << "fifties" << endl;
+	cout << "You get back " << num4 << "twenties" << endl;
+	cout << "You get back " << num5 << "tens" << endl;
+	cout << "You get back " << num6 << "fives" << endl;
+	cout << "You get back " << num7 << "ones" << endl;
+
+	
+	
+	system("PAUSE");
+	return 0;
+	
+}
+void change(int parameter, int& hundreds, int& fifties, int& twenties, int& tens, int& fives, int& ones)
+{                    // start of function body
+	
+	hundreds = parameter / 100;
+	parameter %= 100;
+	fifties = parameter / 50;
+	parameter %= 50;
+	twenties = parameter / 20;
+	parameter %= 20;
+	tens = parameter / 10;
+	parameter %= 10;
+	fives = parameter / 5;
+	parameter %= 5;
+	ones = parameter;
+
+		return;            // return statement
+}
 
 5. (Program) Write a function named time() that has an integer parameter named seconds
 and three integer reference parameters named hours, mins, and secs. The function is to
