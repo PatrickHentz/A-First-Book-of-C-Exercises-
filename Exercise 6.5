@@ -1,6 +1,24 @@
 1. (Practice) a. List the storage categories available to local variables.
+
+The storage categories available to local variables are auto, static, and register.
+
 b. List the storage categories available to global variables.
+
+The storage categories available to global variables are extern and static. A local auto
+variable is unique to the function in which it’s declared. Every time the function is called,
+the auto variable is re-created, as though it never existed. A local static variable is also
+unique to the function where it’s declared. However, a static variable retains its last value
+and isn’t re-created when its function is called again.
+
 2. (Practice) Describe the difference between a local auto variable and a local static variable.
+
+The first function declares yrs to be a static variable and assigns a value of 1 to it only once,
+when the function is compiled. Each time the function is called thereafter, the value in yrs is
+increased by 2. The second function also declares yrs to be static but assigns it the value 1
+every time it’s called, and the value of yrs after the function is finished will always be 3. By
+resetting the value of yrs to 1 each time it’s called, the second function defeats the purpose
+of declaring the variable to be static.
+
 3. (Practice) What’s the difference between the following functions?
 void init1()
 {
@@ -17,12 +35,16 @@ void init2()
   yrs = yrs + 2;
   return;
 }
+
 4. (Practice) a. Describe the difference between a global static variable and a global extern
 variable.
-b. If a variable is declared with an externƒstorage category, what other declaration statement
+
+b. If a variable is declared with an extern storage category, what other declaration statement
 must be present somewhere in the program?
-5. (Practice) The declaration statement staticƒdoubleƒyears; can be used to create a local
+
+5. (Practice) The declaration statement static double years; can be used to create a local
 or global static variable. What determines the scope of the variable years?
+
 6. (Practice) For the function and variable declarations shown in Figure 6.15, place an extern
 declaration to accomplish each of the following:
 a. Extend the scope of the global variable choice into file2.
