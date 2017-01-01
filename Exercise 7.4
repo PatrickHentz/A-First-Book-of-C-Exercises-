@@ -1,10 +1,22 @@
 1. (Practice) Write specification statements for the following:
 a. An array of integers with 6 rows and 10 columns
+const int NUMROWS = 6;
+  const int NUMCOLS = 10;
+      int val[NUMROWS][NUMCOLS];
 b. An array of integers with 2 rows and 5 columns
+const int NUMROWS = 2;
+  const int NUMCOLS = 5;
+      int val[NUMROWS][NUMCOLS];
 c. An array of characters with 7 rows and 12 columns
+const int NUMROWS = 7;
+  const int NUMCOLS = 12;
+      char val[NUMROWS][NUMCOLS];
 d. An array of characters with 15 rows and 7 columns
+
 e. An array of double-precision numbers with 10 rows and 25 columns
+
 f. An array of double-precision numbers with 16 rows and 8 columns
+
 2. (Desk check) Determine the output produced by the following program:
 #include <iostream>
 using namespace std;
@@ -16,6 +28,10 @@ int main()
       cout << val[i][j] << “ “;
   return 0;
 }
+
+The output is as follows:
+8   16   9   52   3   15   27   6   14   25   2   10
+
 3. (Program) a. Write, compile, and run a C++ program that adds the values of all elements in
 the val array used in Exercise 2 and displays the total.
 b. Modify the program written for Exercise 3a to display the total of each row separately.
