@@ -20,6 +20,7 @@ double dist[SIZE];
 g. A list of 6 integer code numbers
 const int SIZE = 6;
 int codenum[SIZE];
+
 2. (Practice) Write correct notation for the first, third, and seventh elements of the following
 arrays:
 a. int grades[20]
@@ -55,9 +56,18 @@ c. cin >> amounts[0];
 
 b. Write a for loop that can be used to enter values for each array declared in Exercise 2.
 
+for (int grade = 0; grade <=20; grade++)
+for (double prices = 0; prices <=10; prices++)
+for (double amounts = 0; amounts <=16; amounts++)
+for (int dist = 0; dist <=15; dist++)
+for (double velocity = 0; velocity <=25; velocity++)
+for (double time = 0; time <=100; time++)
+
 4. (Practice) a. Write output statements using cout that can be used to display values from the
 first, third, and seventh elements of each array declared in Exercise 2.
+
 b. Write a for loop that can be used to display values for each array declared in Exercise 2.
+
 5. (Desk check) List the elements displayed by the following sections of code:
 a. for (m = 1; m <= 5; m++)
     cout << a[m] << “ “;
