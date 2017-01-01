@@ -198,7 +198,41 @@ and day. The function is to calculate the current year, month, and day given the
 passed to it. Using the reference parameters, the function should alter the arguments in the
 calling function. For this problem, assume each year has 365 days, and each month has 30 days.
 
+#include <iostream>
+using namespace std;
 
+void yearCalc(int,int&, int&, int&); // the function prototype
+int main()
+{
+	int num,num2,num3,num4;
+	
+	
+	cout << "Enter your number" << endl;
+	cin >> num;
+
+	yearCalc(num,num2,num3,num4);
+	cout << "You get back " << num2<< " years"<< endl;
+	cout << "You get back " << num3 << " months" << endl;
+	cout << "You get back " << num4 << " days" << endl;
+
+
+	
+	
+	system("PAUSE");
+	return 0;
+	
+}
+void yearCalc(int total,int& year, int& month, int& days)
+{                    // start of function body
+	
+	year = total / 365;
+	total %= 365;
+	month=  total / 30;
+	total %= 30;
+	days = total;
+	
+		return;            // return statement
+}
 
 7. (Program) Write a function named liquid() that has an integer number parameter and
 reference parameters named gallons, quarts, pints, and cups. The passed integer represents
@@ -206,6 +240,45 @@ the total number of cups, and the function is to determine the numbers of gallon
 pints, and cups in the passed value. Using the reference parameters, the function should alter
 the arguments in the calling function. Use these relationships: 2 cups = 1 pint, 4 cups = 1 quart,
 and 16 cups = 1 gallon.
+
+#include <iostream>
+using namespace std;
+
+void liquid(int,int&, int&, int&,int&); // the function prototype
+int main()
+{
+	int num,num2,num3,num4, num5;
+	
+	
+	cout << "Enter your number" << endl;
+	cin >> num;
+
+	liquid(num,num2,num3,num4,num5);
+	cout << "You get back " << num2<< " gallons"<< endl;
+	cout << "You get back " << num3 << " quarts" << endl;
+	cout << "You get back " << num4 << " pints" << endl;
+	cout << "You get back " << num5 << " cups" << endl;
+
+
+	
+	
+	system("PAUSE");
+	return 0;
+	
+}
+void liquid(int total,int& gallons, int& quarts, int& pints, int& cups)
+{                    // start of function body
+	
+	gallons = total / 16;
+	total %= 16;
+	quarts=  total / 4;
+	total %= 4;
+	pints = total / 2;
+	total %= 2;
+    cups = total;
+	
+		return;            // return statement
+}
 
 8. (Desk check) The following program uses the same argument and parameter names in both
 the calling and called functions. Determine whether doing so causes any problem for the
