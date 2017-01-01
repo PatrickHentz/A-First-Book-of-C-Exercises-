@@ -125,6 +125,7 @@ int main()
 	cout << "You get back " << num6 << "fives" << endl;
 	cout << "You get back " << num7 << "ones" << endl;
 
+
 	
 	
 	system("PAUSE");
@@ -155,11 +156,49 @@ convert the passed number of seconds into an equivalent number of hours, minutes
 Using the reference parameters, the function should alter the arguments in the calling
 function.
 
+#include <iostream>
+using namespace std;
+
+void time(int,int&, int&, int&); // the function prototype
+int main()
+{
+	int num,num2,num3,num4;
+	
+	
+	cout << "Enter your number" << endl;
+	cin >> num;
+
+	time(num,num2,num3,num4);
+	cout << "You get back " << num2<< " hours"<< endl;
+	cout << "You get back " << num3 << " minutes" << endl;
+	cout << "You get back " << num4 << " seconds" << endl;
+
+
+	
+	
+	system("PAUSE");
+	return 0;
+	
+}
+void time(int seconds,int& hours, int& mins, int& secs)
+{                    // start of function body
+	
+	hours = seconds / 120;
+	seconds %= 120;
+	mins = seconds / 60;
+	mins %= 60;
+	secs = seconds;
+	
+		return;            // return statement
+}
+
 6. (Program) Write a function named yearCalc() that has an integer parameter representing
 the total number of days from the date 1/1/2000 and reference parameters named year, month,
 and day. The function is to calculate the current year, month, and day given the number of days
 passed to it. Using the reference parameters, the function should alter the arguments in the
 calling function. For this problem, assume each year has 365 days, and each month has 30 days.
+
+
 
 7. (Program) Write a function named liquid() that has an integer number parameter and
 reference parameters named gallons, quarts, pints, and cups. The passed integer represents
