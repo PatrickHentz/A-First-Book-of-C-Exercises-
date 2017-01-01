@@ -60,14 +60,16 @@ The scope of the variable years is static and can only be extended to the scope 
 
 6. (Practice) For the function and variable declarations shown in Figure 6.15, place an extern
 declaration to accomplish each of the following:
-a. Extend the scope of the global variable choice into file2.
-b. Extend the scope of the global variable flag into the average() function only.
-c. Extend the scope of the global variable date into average() and variance().
-d. Extend the scope of the global variable date into roi() only.
-e. Extend the scope of the global variable coupon into roi() only.
-f. Extend the scope of the global variable bondtype into file1.
-g. Extend the scope of the global variable maturity into both watts() and thrust().
-char choice;
+a. Extend the scope of the global variable choice into file2. Done!!
+b. Extend the scope of the global variable flag into the average() function only. Done!!
+c. Extend the scope of the global variable date into average() and variance(). Done!!
+d. Extend the scope of the global variable date into roi() only. Done!!
+e. Extend the scope of the global variable coupon into roi() only. Done!!
+f. Extend the scope of the global variable bondtype into file1. Done!!
+g. Extend the scope of the global variable maturity into both watts() and thrust(). Done!!
+
+file1 
+extern char choice;
 int flag;
 long date, time;
 int main()
@@ -80,34 +82,37 @@ double factor;
 double watts()
 {
 .
-.
-.
+exten int maturity; 
+
 }
 double thrust()
 {
 .
-.
+static int maturity;
 .
 }
-file1 file2
+-------------------------------
+file2
 char bondtype;
 double resistance;
-double roi()
+exten double roi()
 {
-.
-.
-.
+exten int coupon;
+static int coupon;
+exten long data;
+static long data;
 }
 double average()
 {
-.
-.
+exten long data;
+static int flag;
 .
 }
 double variance()
 {
-.
+static long data;
 .
 .
 }
-Figure 6.15 Files for Exercise 6
+
+*See textbook Figure 6.15 Files for Exercise 6
