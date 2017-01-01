@@ -97,6 +97,23 @@ double func2(double first, double last)
   return s * t;
 }
 
+--------------------------------------------------------------------------
+Variable or Constant Name | Data Type | Scope
+--------------------------------------------------------------------------
+KEY                         char        global to main(), func1(), and func2()
+NUMBER                      long int    global to main(), func1(), and func2()
+a,b,c                       int         local to main()
+x,y                         double      local to main()
+secnum                      double      global to func1() and func2()
+num1,num2                   int         local to func1()
+o,p                         int         local to func1()
+q                           float       local to func1()
+first,last                  double      local to func2()
+a,b,c,o,p                   int         local to func2()
+r                           double      local to func2()
+s, t, x                     double      local to func2()
+--------------------------------------------------------------------------
+
 b. Draw a box around the appropriate section of the preceding code to enclose the scope of
 each variable or constant.
 
@@ -105,6 +122,11 @@ and the data type of the value these functions return.
 
 3. (Practice) The term “scope” can also apply to a function’s parameters. What do you think is
 the scope of all function parameters?
+
+All function parameters have local scope in their defined function. Note that although function
+parameters assume a value that depends on the calling function, these parameters can change
+values in their functions. This makes them behave as though they were local variables in the
+called function.
 
 4. (Practice) Define the scope of the parameter p2 and the variables a, b, c, d, e, f, m, n, p, d, q,
 and r in the following program structure:
