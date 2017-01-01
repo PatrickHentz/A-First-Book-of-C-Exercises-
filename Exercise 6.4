@@ -35,10 +35,32 @@ int step(double first, double last)
       .
   return(10*numofyrs);
 }
+
+--------------------------------------------------------------------------
+Variable or Constant Name | Data Type | Scope
+--------------------------------------------------------------------------
+PRICE                       int         global to main(), roi(), and step()
+YEARS                       long int    global to main(), roi(), and step()
+YIELD                       double      global to main(), roi(), and step()
+bondtype                    int         local to main()
+interest                    double      local to main()
+coupon                      double      local to main()
+mat1                        int         local to roi()
+mat2                        int         local to roi()
+count                       int         local to roi()
+effectiveRate               double      local to roi()
+first                       double      local to step()
+last                        double      local to step()
+numofyrs                    int         local to step()
+fracpart                    double      local to step()
+--------------------------------------------------------------------------
+
 b. Draw a box around the appropriate section of the preceding code to enclose the scope of
 each variable or constant.
+
 c. Determine the data type of the arguments that the roi() and step() functions expect and
 the data type of the value these functions return.
+
 2. (Practice) a. For the following section of code, determine the data type and scope of all
 declared variables on a separate sheet of paper, using the column headings shown in the following
 chart. (The entries for the first variable have been filled in.)
@@ -74,12 +96,16 @@ double func2(double first, double last)
      .
   return s * t;
 }
+
 b. Draw a box around the appropriate section of the preceding code to enclose the scope of
 each variable or constant.
+
 c. Determine the data type of the arguments that the func1() and func2() functions expect
 and the data type of the value these functions return.
+
 3. (Practice) The term “scope” can also apply to a function’s parameters. What do you think is
 the scope of all function parameters?
+
 4. (Practice) Define the scope of the parameter p2 and the variables a, b, c, d, e, f, m, n, p, d, q,
 and r in the following program structure:
 #include <iostream>
@@ -108,6 +134,8 @@ void Two(void)
     .
     .
 }
+
+
 5. (Desk check) Determine the values displayed by each cout statement in the following
 program:
 #include <iostream>
