@@ -245,12 +245,14 @@ void display();       // function prototype
 int main()
 {
   int firstnum = 20;  // declare and initialize a local variable
-    cout << “\nThe value of firstnum is “ << firstnum << endl;
+    cout << “\nThe value of firstnum is “ << firstnum << endl;  // displays 20
   display();
   return 0;
 }
 void display(void)
 {
-  cout << “The value of firstnum is now “ << firstnum << endl;
+  cout << “The value of firstnum is now “ << firstnum << endl;  // displays 10
   return;
 }
+
+The computer displays 20 as the original number and then the firstnum value is reassigned to 10.
