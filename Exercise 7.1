@@ -437,7 +437,53 @@ int main()
 b. Calculate the variance of the data used in Exercise 10a. The variance is obtained by squaring
 each deviation and dividing the sum of the squared deviations by the number of deviations.
 
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <algorithm>
+#include <iostream>
+using namespace std;
 
+
+int main()
+{
+	  
+	const int SIZE = 14;
+	  float i, grade[SIZE],solution,standardDeviation = 0.0,deviation[SIZE],sum=0;
+	  int total = 0;
+	  
+	  for (i = 0; i < 14; i++)    
+	  {
+		  cout << "Enter your grade" << endl;
+		  cin >> grade[SIZE];
+		  total = total + grade[SIZE];
+
+	  }
+	  int average = total / 14;
+	  cout << "Your total is" << endl;
+	  cout << total << endl;
+	  cout << "Your average is " << endl;
+	  cout << average <<endl;
+	  
+	  for (i = 0; i < 14; i++){
+		  standardDeviation += pow(grade[SIZE] - average, 2);
+		  solution = sqrt(standardDeviation / 14);
+		  cout << "Standard Deviation = " << solution << endl;
+		  solution = deviation[SIZE];
+
+		  int variance = sqrt(solution);
+		  sum = sum + variance;
+
+	  }
+
+	  cout << "The variance is " << endl;
+	  cout << sum / 14 << endl;
+	 
+
+	  system("PAUSE");
+	
+	return 0;
+}
 
 11. (Program) Write, compile, and run a C++ program that specifies three one-dimensional arrays
 named price, amount, and total. Each array should be capable of holding 10 elements.
