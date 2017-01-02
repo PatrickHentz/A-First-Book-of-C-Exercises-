@@ -393,8 +393,51 @@ of each value from the average. Store each deviation in an array named deviation
 deviation is obtained as the element value less the average of all the data. Have your program
 display each deviation with its corresponding element from the grades array.
 
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <algorithm>
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+	  
+	const int SIZE = 14;
+	  float i, grade[SIZE],solution,standardDeviation = 0.0,deviation[SIZE];
+	  int total = 0;
+	  
+	  for (i = 0; i < 14; i++)    
+	  {
+		  cout << "Enter your grade" << endl;
+		  cin >> grade[SIZE];
+		  total = total + grade[SIZE];
+
+	  }
+	  int average = total / 14;
+	  cout << "Your total is" << endl;
+	  cout << total << endl;
+	  cout << "Your average is " << endl;
+	  cout << average <<endl;
+	  
+	  for (i = 0; i < 14; i++){
+		  standardDeviation += pow(grade[SIZE] - average, 2);
+		  solution = sqrt(standardDeviation / 14);
+		  cout << "Standard Deviation = " << solution << endl;
+		  solution = deviation[SIZE];
+
+	  }
+
+	  system("PAUSE");
+	
+	return 0;
+}
+
 b. Calculate the variance of the data used in Exercise 10a. The variance is obtained by squaring
 each deviation and dividing the sum of the squared deviations by the number of deviations.
+
+
 
 11. (Program) Write, compile, and run a C++ program that specifies three one-dimensional arrays
 named price, amount, and total. Each array should be capable of holding 10 elements.
@@ -405,6 +448,8 @@ output, with the corresponding value under each column heading:
 total     price     amount
 -----     -----     ------
 
+
+
 12. (Program) Define an array named peopleTypes that can store a maximum of 50 integer
 values entered at the keyboard. Enter a series of 1s, 2s, 3s, and 4s in the array to represent
 people at a local school function; 1 represents an infant, 2 represents a child, 3 represents a
@@ -412,6 +457,8 @@ teenager, and 4 represents an adult. No other integer value should be accepted a
 and data entry should stop when a negative value is entered. Your program should count the
 number of each 1, 2, 3, and 4 in the array and display a list of how many infants, children,
 teenagers, and adults were at the school function.
+
+
 
 13. (Program) a. Write, compile, and run a C++ program that reads a list of double-precision
 grades from the keyboard into an array named grade. The grades are to be counted as they’re
