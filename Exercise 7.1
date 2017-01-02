@@ -247,6 +247,35 @@ only one loop, and the maximum should be determined as array element values are 
 input. (Hint: Set the maximum equal to the first array element, which should be input before
 the loop used to input the remaining array values.)
 
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+	  const int NUMELS  = 10;
+	  int i,  fmax[NUMELS],temp=0;
+	  for (i = 1; i <= NUMELS; i++)    // Enter the grades
+	  {
+		  cout << "Enter a number: ";
+		  cin >> fmax[i];
+
+		  if (fmax[i] > temp){
+             
+			  temp = fmax[i];
+		  }
+
+	  }
+	
+	  cout << "The biggest number is: " << temp << endl;
+
+	  system("PAUSE");
+	
+	return 0;
+	
+
+}
+
 b. Repeat Exercise 8a, keeping track of both the maximum element in the array and the index
 number for the maximum. After displaying the numbers, display these two messages
 (replacing the underlines with the correct values):
