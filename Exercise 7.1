@@ -494,7 +494,43 @@ output, with the corresponding value under each column heading:
 total     price     amount
 -----     -----     ------
 
+#include <iostream>
+using namespace std;
 
+
+int main()
+{
+	  
+	const int SIZE = 10;
+	const int MAX = 10;
+	const int MAX2 = 10;
+	  int i, price[SIZE],amount[MAX], total[MAX2];
+	  
+	  for (i = 0; i < SIZE; i++)    
+	  {
+		  cout << "Enter price" << endl;
+		  cin >> price[i];
+		  
+	  }
+	  for (i = 0; i < MAX; i++){
+		  cout << "Enter amount" << endl;
+		  cin >> amount[i];
+		  
+	  }
+
+	  cout << "Total " << setw(15) << " Price " << setw(15) << " Amount " << endl;
+	  cout << "---------  " << "   ----------   " << " -----------   " << endl;
+	  
+	  for (i = 0; i < SIZE; i++){
+		  total[i] = (price[i] * amount[i]);
+		  
+		  cout << total[i] << setw(15) << price[i] <<setw(15)<< amount[i] << endl;
+	  }
+
+	  system("PAUSE");
+	
+	return 0;
+}
 
 12. (Program) Define an array named peopleTypes that can store a maximum of 50 integer
 values entered at the keyboard. Enter a series of 1s, 2s, 3s, and 4s in the array to represent
