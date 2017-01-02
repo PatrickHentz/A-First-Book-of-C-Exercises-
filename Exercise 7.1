@@ -140,15 +140,72 @@ d. for (k = 3; k <= 12; k = k + 3)
 e. for (i = 2; i < 11; i = i + 2)
     cout << c[i] << “ “;
     -858993460 times five
+    
+    *Note that the complier just sent out junk numbers because the varables where never entered
+    
 6. (Program) a. Write, compile, and run a C++ program to input the following values into an
 array named prices: 10.95, 16.32, 12.15, 8.22, 15.98, 26.22, 13.54, 6.45, and 17.59. After the
 data has been entered, have your program display the values.
 
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+	  const int NUMELS  =  9;
+	  int i,  prices[NUMELS];
+	  for (i  =  0;  i < NUMELS;  i++)    // Enter the grades
+		  {
+		    cout  <<  "Enter a price: ";
+		    cin   >>  prices[i];
+		   }
+	  cout  <<  endl;
+	  for (i  =  0;  i < NUMELS;  i++)    // Print the grades
+		    cout  <<  "price ["  <<  i  <<  "] is "  <<  prices[i]  <<  endl;
+
+	system("PAUSE");
+	return 0;
+	
+}
+
 b. Repeat Exercise 6a, but after the data has been entered, have your program display it in the
 following form:
 10.95 16.32 12.15
- 8.22 15.98 26.22
+8.22 15.98 26.22
 13.54  6.45 17.59
+
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+	  const int NUMELS  =  9;
+	  int i,  prices[NUMELS];
+	  for (i  =  0;  i < NUMELS;  i++)    // Enter the grades
+		  {
+		    cout  <<  "Enter a price: ";
+		    cin   >>  prices[i];
+		   }
+	  cout  <<  endl;
+	  for (i = 0; i < 3; i++) {   // Print the grades
+		  cout << prices[i] << " ";
+	  }
+	  cout << endl;
+	  for (i = 3; i < 6; i++) {   // Print the grades
+		  cout << prices[i] << " ";
+	  }
+	  cout << endl;
+	  for (i = 6; i < NUMELS; i++) {   // Print the grades
+		  cout << prices[i] << " ";
+	  }
+	  cout << endl;
+
+	system("PAUSE");
+	return 0;
+	
+}
 
 7. (Program) Write, compile, and run a C++ program to input eight integer numbers into an
 array named grade. As each number is input, add the numbers to a total. After all numbers are
@@ -178,8 +235,10 @@ obtained, calculate the average of the numbers, and use the average to determine
 of each value from the average. Store each deviation in an array named deviation. Each
 deviation is obtained as the element value less the average of all the data. Have your program
 display each deviation with its corresponding element from the grades array.
+
 b. Calculate the variance of the data used in Exercise 10a. The variance is obtained by squaring
 each deviation and dividing the sum of the squared deviations by the number of deviations.
+
 11. (Program) Write, compile, and run a C++ program that specifies three one-dimensional arrays
 named price, amount, and total. Each array should be capable of holding 10 elements.
 Using a for loop, input values for the price and amount arrays. The entries in the total
@@ -188,6 +247,7 @@ total[i] = price[i] * amount[i]). After all the data has been entered, display t
 output, with the corresponding value under each column heading:
 total     price     amount
 -----     -----     ------
+
 12. (Program) Define an array named peopleTypes that can store a maximum of 50 integer
 values entered at the keyboard. Enter a series of 1s, 2s, 3s, and 4s in the array to represent
 people at a local school function; 1 represents an infant, 2 represents a child, 3 represents a
@@ -195,12 +255,14 @@ teenager, and 4 represents an adult. No other integer value should be accepted a
 and data entry should stop when a negative value is entered. Your program should count the
 number of each 1, 2, 3, and 4 in the array and display a list of how many infants, children,
 teenagers, and adults were at the school function.
+
 13. (Program) a. Write, compile, and run a C++ program that reads a list of double-precision
 grades from the keyboard into an array named grade. The grades are to be counted as they’re
 read, and entry is to be terminated when a negative value has been entered. After all grades
 have been input, your program should find and display the sum and average of the grades. The
 grades should then be listed with an asterisk (*) placed in front of each grade that’s below the
 average.
+
 b. Extend the program written for Exercise 13a to display each grade and its letter equivalent,
 using the following scale:
 Greater than or equal to 90 = A
@@ -208,11 +270,13 @@ Greater than or equal to 80 and less than 90 = B
 Greater than or equal to 70 and less than 80 = C
 Greater than or equal to 60 and less than 70 = D
 Less than 60 = F
+
 14. (Program) Using the srand() and rand() C++ library functions (discussed in Section 6.8),
 fill an array of 1000 floating-point numbers with random numbers that have been scaled to the
 range 1 to 100. Then determine and display the number of random numbers having values
 between 1 and 50 and the number having values greater than 50. What do you expect the
 output counts to be?
+
 15 (Program) a. Write, compile, and run a C++ program that inputs 10 double-precision numbers
 in an array named raw. After these numbers are entered in the array, your program should cycle
 through raw 10 times. During each pass through the array, your program should select the lowest
@@ -221,5 +285,6 @@ program is finished, the sorted array should contain the numbers in raw in sorte
 lowest to highest. (Hint: Be sure to reset the lowest value selected during each pass to a very
 high number so that it’s not selected again. You need a second for loop in the first for loop to
 locate the minimum value for each pass.)
+
 b. The method used in Exercise 15a to sort the values in the array is inefficient. Can you
 determine why? What might be a better method of sorting the numbers in an array?
