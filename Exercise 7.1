@@ -178,14 +178,14 @@ following form:
 #include <iostream>
 using namespace std;
 
-
 int main()
 {
 	  const int NUMELS  =  9;
 	  int i,  prices[NUMELS];
 	  for (i  =  0;  i < NUMELS;  i++)    // Enter the grades
 		  {
-		    cout  <<  "Enter a price: ";
+
+cout  <<  "Enter a price: ";
 		    cin   >>  prices[i];
 		   }
 	  cout  <<  endl;
@@ -210,6 +210,36 @@ int main()
 7. (Program) Write, compile, and run a C++ program to input eight integer numbers into an
 array named grade. As each number is input, add the numbers to a total. After all numbers are
 input, display the numbers and their average.
+
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+	  const int NUMELS  =  8;
+	  int i,  grade[NUMELS], total = 0,average;
+	  for (i  =  1;  i <= NUMELS;  i++)    // Enter the grades
+		  {
+		    cout  <<  "Enter a grade: ";
+		    cin   >>  grade[i];
+		   }
+	  cout << endl;
+	  for (i = 1; i <= 8; i++) {   // Print the grades
+		  cout << grade[i] << " " << endl;
+		  total = total + grade[i];
+		  average = total / i;
+		  
+		  
+	  }
+	  cout << "The average is " << endl;
+	  cout << average << endl;
+
+	  system("PAUSE");
+	
+	return 0;
+	
+}
 
 8. (Program) a. Write, compile, and run a C++ program to input 10 integer numbers into an
 array named fmax and determine the maximum value entered. Your program should contain
