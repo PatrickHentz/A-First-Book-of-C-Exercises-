@@ -329,7 +329,8 @@ int main()
 		  cin >> fmax[i];
 
 		  if (fmax[i] < temp){
-			  temp = fmax[i];
+
+temp = fmax[i];
 			  min = i;
 
 		  }
@@ -348,6 +349,41 @@ int main()
 
 9. (Program) Write, compile, and run a C++ program that creates an array of five integer numbers
 and displays these numbers in reverse order.
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <algorithm>
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+	  
+	  int i, rev[] = { 1, 30, 3, 20, 5 };
+	  int len = sizeof(rev) / sizeof(int);
+	  int start = 0, end = len - 1;
+	  
+	  while (start <= end)
+	  {
+		  int temp = rev[start];
+		  rev[start] = rev[end];
+		  rev[end] = temp;
+		  start++;
+		  end--;
+	  }
+	  
+	  for (i = 0; i < len; i++)    
+	  {
+		  cout << rev[i] << endl;
+	  }
+
+	  
+	  system("PAUSE");
+	
+	return 0;
+}
 
 10. (Program) a. Write, compile, and run a C++ program to input the following integer numbers
 into an array named grades: 89, 95, 72, 83, 99, 54, 86, 75, 92, 73, 79, 75, 82, and 73. As each
