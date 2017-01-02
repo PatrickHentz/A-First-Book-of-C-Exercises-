@@ -315,7 +315,36 @@ int main()
 
 c. Repeat Exercise 8b, but have your program locate the minimum value of the data entered.
 
+#include <iostream>
+using namespace std;
 
+
+int main()
+{
+	  const int NUMELS  = 10;
+	  int i,  fmax[NUMELS],temp=100000000,min;
+	  for (i = 0; i < NUMELS; i++)    // Enter the grades
+	  {
+		  cout << "Enter a number: ";
+		  cin >> fmax[i];
+
+		  if (fmax[i] < temp){
+			  temp = fmax[i];
+			  min = i;
+
+		  }
+
+	  }
+	
+	  cout << "The minimum value is: " << temp << endl;
+	 cout << "This is element number [" << min << "] in the list of numbers" << endl;
+	  
+	  system("PAUSE");
+	
+	return 0;
+	
+
+}
 
 9. (Program) Write, compile, and run a C++ program that creates an array of five integer numbers
 and displays these numbers in reverse order.
