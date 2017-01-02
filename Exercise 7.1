@@ -282,7 +282,40 @@ number for the maximum. After displaying the numbers, display these two messages
 The maximum value is: ____
 This is element number ___ in the list of numbers
 
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+	  const int NUMELS  = 10;
+	  int i,  fmax[NUMELS],temp=0,max;
+	  for (i = 0; i < NUMELS; i++)    // Enter the grades
+	  {
+		  cout << "Enter a number: ";
+		  cin >> fmax[i];
+
+		  if (fmax[i] > temp){
+			  temp = fmax[i];
+			  max = i;
+
+		  }
+
+	  }
+	
+	  cout << "The maximum value is: " << temp << endl;
+	 cout << "This is element number [" << max << "] in the list of numbers" << endl;
+	  
+	  system("PAUSE");
+	
+	return 0;
+	
+
+}
+
 c. Repeat Exercise 8b, but have your program locate the minimum value of the data entered.
+
+
 
 9. (Program) Write, compile, and run a C++ program that creates an array of five integer numbers
 and displays these numbers in reverse order.
