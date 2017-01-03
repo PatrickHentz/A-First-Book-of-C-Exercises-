@@ -747,10 +747,62 @@ lowest to highest. (Hint: Be sure to reset the lowest value selected during each
 high number so that it’s not selected again. You need a second for loop in the first for loop to
 locate the minimum value for each pass.)
 
+#include <iostream>
+using namespace std;
 
+
+
+int main()
+{
+
+		int raw[] = { 5, 2, 3, 23, 12, 9, 32, 54,43,10 };
+		int temp;
+		for (int i = 1; i < 10; i++){
+			
+			for (int j= i; j < 10; j++){
+				if (raw[j] < raw[i]){
+					temp = raw[i];
+					raw[i] = raw[j];
+					raw[j] = temp;
+				}
+				
+			}
+		}
+		for (int i = 1; i < 10; i++){
+			cout << raw[i] << endl;
+		}
+
+	  system("PAUSE");
+	
+	return 0;
+}
 
 b. The method used in Exercise 15a to sort the values in the array is inefficient. Can you
 determine why? What might be a better method of sorting the numbers in an array?
 
+The function is inefficient because it requires multiable loops in order to obtain data.
+The follow code only requires one loop thus saving time. 
 
+#include <vector>
+#include <algorithm>
+#include <iostream>
+using namespace std;
+
+
+bool wayToSort(int i, int j) { return i < j; }
+
+int main()
+{
+
+		vector<int> raw = { 5, 2, -3, 23, 12, 9, 32, -54,43,10 };
+
+		sort(raw.begin(), raw.end(), wayToSort);
+
+		for (int i : raw)
+			cout << i << endl;
+
+	  system("PAUSE");
+	
+	return 0;
+}
 
