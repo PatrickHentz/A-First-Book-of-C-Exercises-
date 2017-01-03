@@ -540,7 +540,45 @@ and data entry should stop when a negative value is entered. Your program should
 number of each 1, 2, 3, and 4 in the array and display a list of how many infants, children,
 teenagers, and adults were at the school function.
 
+#include <algorithm>
+#include <iostream>
+#include <map>
+using namespace std;
 
+
+int main()
+{
+		// seed data
+	    const int SIZE = 50;
+		int peopleTypes[SIZE];
+
+		for (int i = 0; i < SIZE; i++){
+			cout << "Enter a person types that was at the school function" << endl;
+				cin >> peopleTypes[i];
+			 if (peopleTypes[i] <= 0){
+				 break;
+			}
+
+		}
+		// create and fill the map
+		std::map< int, int > occurances;
+		for (int i = 0; i < SIZE; ++i)
+			if (peopleTypes[i] >= 1  && peopleTypes[i] <= 4){
+				++occurances[peopleTypes[i]];
+			}
+			
+		std::cout << "Greatest: " << occurances.rbegin()->first << '\n';
+
+		// print the contents of the map
+		using iterator = std::map< int, int >::iterator;
+		for (iterator iter = occurances.begin(); iter != occurances.end(); ++iter)
+			
+			std::cout << iter->first << ": " << iter->second << '\n';
+
+	  system("PAUSE");
+	
+	return 0;
+}
 
 13. (Program) a. Write, compile, and run a C++ program that reads a list of double-precision
 grades from the keyboard into an array named grade. The grades are to be counted as they’re
