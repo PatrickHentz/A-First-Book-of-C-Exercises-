@@ -709,7 +709,34 @@ range 1 to 100. Then determine and display the number of random numbers having v
 between 1 and 50 and the number having values greater than 50. What do you expect the
 output counts to be?
 
+#include <algorithm>
+#include <iostream>
+using namespace std;
 
+
+int main()
+{
+	const int NUMBERS = 1000;
+	double randvalue;
+	int i;
+	
+	srand(time(NULL));
+	for (i = 1; i <= NUMBERS; ++i)
+	{
+		randvalue = (double(rand()) / RAND_MAX * 100);
+		if (randvalue <= 50){
+			cout << "This number is less or equal to 50 " << endl;
+			cout << setw(20) << randvalue << endl;
+		}
+		else if (randvalue > 50){ 
+			cout << "This number is greater than 50" << endl;
+			cout << setw(20) << randvalue << endl; }
+	}
+
+	  system("PAUSE");
+	
+	return 0;
+}
 
 15 (Program) a. Write, compile, and run a C++ program that inputs 10 double-precision numbers
 in an array named raw. After these numbers are entered in the array, your program should cycle
