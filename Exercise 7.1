@@ -587,7 +587,50 @@ have been input, your program should find and display the sum and average of the
 grades should then be listed with an asterisk (*) placed in front of each grade that’s below the
 average.
 
+#include <iostream>
+using namespace std;
 
+
+int main()
+{
+		const int SIZE = 20;
+		double grade[SIZE], sum = 0;
+		int total = 0,average;
+	
+			for (int i = 0; i < SIZE; i++)
+			{
+					cout << "Enter your grade" << endl;
+					cin >> grade[i];
+					
+
+						total = total + grade[i];
+						average = total / sizeof(grade[i]);
+
+						if (grade[i] <= 0)
+						{
+							break;
+						}
+					
+			}
+			
+			cout << "Your total is" << endl;
+		    cout << total << endl;
+			cout << "Your average is " << endl;
+			cout << average << endl;
+			cout << "The grades with an asterisk are below average" << endl;
+			for (int i = 0; i <= sizeof(grade[i]); ++i){
+				if (grade[i] < average){
+					cout << "*" << grade[i] << endl;
+				}
+				else if (grade[i] >= average)
+				{ cout << grade[i] << endl; }
+			}
+
+
+	  system("PAUSE");
+	
+	return 0;
+}
 
 b. Extend the program written for Exercise 13a to display each grade and its letter equivalent,
 using the following scale:
