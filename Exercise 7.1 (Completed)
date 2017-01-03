@@ -1,24 +1,38 @@
 1. (Practice) Write array declarations for the following:
 a. A list of 100 integer grades
+
 const int SIZE = 100;
 int grades[SIZE];
+
 b. A list of 50 double-precision temperatures
+
 const int SIZE = 50;
 double temp[SIZE];
+
 c. A list of 30 characters, each representing a code
+
 const int SIZE = 30;
 char code[SIZE];
+
 d. A list of 100 integer years
+
 const int SIZE = 100;
 int year [SIZE];
+
 e. A list of 32 double-precision velocities
+
 const int SIZE = 32;
 double velo[SIZE];
+
 f. A list of 1000 double-precision distances
+
 const int SIZE = 1000;
 double dist[SIZE];
+
 g. A list of 6 integer code numbersconst int SIZE = 6;
-int codenum[SIZE];
+
+const int SIZE = 6;
+int code[SIZE];
 
 2. (Practice) Write correct notation for the first, third, and seventh elements of the following
 arrays:
