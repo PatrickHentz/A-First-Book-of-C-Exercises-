@@ -60,16 +60,17 @@ int main()
 {
 
 		
-	double slopes[] = { 17.24,25.63,5.94,33.92,3.71,32.84,35.93,18.24,6.92};
+ 	double slopes[] = { 17.24,25.63,5.94,33.92,3.71,32.84,35.93,18.24,6.92};
 	double max = slopes[0];
 	for (int i = 0; i < 8; i++){
 		if (slopes[i] > max){
 			max = slopes[i];
-		}
+
+}
 		
 	}
 	double min = slopes[0];
-	for (int i = 0; i < 8; i++){
+ 	for (int i = 0; i < 8; i++){
 		if (slopes[i] < min){
 			min = slopes[i];
 		}
@@ -91,13 +92,45 @@ the units array when the program is run. Your program should store the product o
 values in the prices and units array in the amounts array. For example, use
 amounts[1] = prices[1] * units[1]. Your program should then display the following
 output (fill in the chart):
-Price Units Amount
-9.92
-6.32
-12.63
-5.95
-10.29
-Total:
+Price            Units          Amount
+9.92              1              9.92
+6.32              2              12.64
+12.63             3              37.89
+5.95              5              29.75
+10.29             6              61.74
+Total: 151.94
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+	const int NUM = 5;
+	double prices[] = { 9.92, 6.32, 12.63, 5.95, 10.29 };
+	double units[5];
+	double amounts[5];
+	double total = 0;
+	for (int i = 0; i < NUM; i++){
+		cout << "Enter number of units" << endl;
+		cin >> units[i];
+		amounts[i] = prices[i] * units[i];
+		total = total + amounts[i];
+
+	}
+
+	cout << "Price          Units         Amount" << endl;
+
+	for (int i = 0; i < NUM; i++){
+		cout << prices[i] <<setw(15)<< units[i] <<setw(15) << amounts[i] << endl;
+	}
+	cout << "Total:" << total << endl;
+
+	  system("PAUSE");
+	
+	return 0;
+}
+
 5. (Program) Define an array with a maximum of 20 integer values and fill the array with
 numbers of your own choosing as intializers. Then write, compile, and run a C++ program
 that reads the numbers in the array and places all zero and positive numbers in an array
