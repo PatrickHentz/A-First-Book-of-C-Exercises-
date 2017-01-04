@@ -69,7 +69,24 @@ the following numbers in an array named rates: 6.5, 7.2, 7.5, 8.3, 8.6, 9.4, 9.6
 There should be a function call to show() that accepts the rates array as a parameter named
 rates and then displays the numbers in the array.
 
+#include <iostream>
+using namespace std;
 
+
+void show(double * rates, double size){
+	for (int i = 0; i < size; i++){
+		cout << *(rates + i) << " ";
+	}
+	return;
+}
+
+int main(){
+	double rates[] = { 6.5, 7.2, 7.5, 8.3, 8.6, 9.4, 9.6, 9.8, 10.0 };
+	show(rates, 9);
+
+		system("PAUSE");
+		return 0;
+	}
 
 6. (Program) a. Write, compile, and run a C++ program that has a declaration in main() to store
 the string “Vacation is near” in an array named message. There should be a function call to
