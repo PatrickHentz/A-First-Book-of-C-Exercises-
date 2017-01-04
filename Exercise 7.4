@@ -72,6 +72,7 @@ int main(){
 		return 0;
 	}
 
+
 b. Modify the program written for Exercise 3a to display the total of each row separately.
 
 #include <iostream>
@@ -100,6 +101,26 @@ and second[1][2]. The first and second arrays should be initialized as follows:
     first             second
 16   18   23        24   52   77
 54   91   11        16   19   59
+
+#include <iostream>
+using namespace std;
+
+int main(){
+	int i, j, first[2][3] = { 16,18,23,54,91,11 };
+	int second[2][3] = { 24, 52, 77, 16, 19, 59 };
+	int total = 0;
+	for (i = 0; i < 2; i++){
+		for (j = 0; j < 3; j++){
+			total = second[i][j] + first[i][j];
+			cout << total << endl;
+		
+		
+	}
+}
+	
+		system("PAUSE");
+		return 0;
+	}
 
 5. (Program) a. Write, compile, and run a C++ program that finds and displays the maximum value
 in a two-dimensional array of integers. The array should be declared as a 4-by-5 array of integers
