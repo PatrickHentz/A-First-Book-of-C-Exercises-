@@ -104,6 +104,7 @@ Total: 151.94
 using namespace std;
 
 int main()
+
 {
 
 	const int NUM = 5;
@@ -137,13 +138,43 @@ that reads the numbers in the array and places all zero and positive numbers in 
 named positive and all negative numbers in an array named negative. Finally, have your
 program display the values in both the positive and negative arrays.
 
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+	const int NUM = 20;
+	int nums[] = { 9, -3, 20, 30, 40, 50, 60, 70, 80, 90, 100, -100, 0, 3, 2, 1, -10, -5, -1, 4 };
+	int positive[NUM];
+	int negative[NUM];
+	for (int i = 0; i < 20; i++){
+
+		if (nums[i] >= 0){
+			positive[i] = nums[i];
+			cout << "Positive values: " << positive[i] << endl;
+		}
+		else if (nums[i] < 0){
+			negative[i] = nums[i];
+			cout << "Negative values: " << negative[i] << endl;
+		}
+
+
+	}
+
+	
+	  system("PAUSE");
+	
+	return 0;
+}
+
 6. (Practice) The string of characters “Good Morning” is to be stored in a character array
 named goodstr1. Write the declaration for this array in three different ways.
+
 char goodstr1[] = “Good Morning”;
-char goodstr1[] = {'G', 'o', 'o', 'd', ' ', 'M', 'o', 'r', 'n', 'i', 'n',
- 'g'};
-char goodstr1[12] = {'G', 'o', 'o', 'd', ' ', 'M', 'o', 'r', 'n', 'i', 'n
-','g'};
+char goodstr1[] = {'G', 'o', 'o', 'd', ' ', 'M', 'o', 'r', 'n', 'i', 'n','g'};
+char goodstr1[12] = {'G', 'o', 'o', 'd', ' ', 'M', 'o', 'r', 'n', 'i', 'n','g'};
+
 7. (Practice) a. Write declaration statements to store the string of characters “Input
 the Following Data” in a character array named message1, the string “------------” in
 an array named message2, the string “Enter the Date:” in an array named message3, and
