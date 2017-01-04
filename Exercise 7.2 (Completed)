@@ -254,7 +254,8 @@ int main()
 		case 't':
 			cout << strtest[i] << endl;
 			break;
-		case 'e':
+
+case 'e':
 			cout << strtest[i] << endl;
 			break;
 		case 's': 
