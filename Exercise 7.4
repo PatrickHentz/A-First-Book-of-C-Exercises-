@@ -1,21 +1,39 @@
 1. (Practice) Write specification statements for the following:
 a. An array of integers with 6 rows and 10 columns
+
 const int NUMROWS = 6;
-  const int NUMCOLS = 10;
-      int val[NUMROWS][NUMCOLS];
+const int NUMCOLS = 10;
+int val[NUMROWS][NUMCOLS];
+      
 b. An array of integers with 2 rows and 5 columns
+
 const int NUMROWS = 2;
-  const int NUMCOLS = 5;
-      int val[NUMROWS][NUMCOLS];
+const int NUMCOLS = 5;
+int val[NUMROWS][NUMCOLS];
+      
 c. An array of characters with 7 rows and 12 columns
+
 const int NUMROWS = 7;
-  const int NUMCOLS = 12;
-      char val[NUMROWS][NUMCOLS];
+const int NUMCOLS = 12;
+char val[NUMROWS][NUMCOLS];
+      
 d. An array of characters with 15 rows and 7 columns
+
+const int NUMROWS = 15;
+const int NUMCOLS = 7;
+char val[NUMROWS][NUMCOLS];
 
 e. An array of double-precision numbers with 10 rows and 25 columns
 
+const int NUMROWS = 10;
+const int NUMCOLS =7;
+char val[NUMROWS][NUMCOLS];
+
 f. An array of double-precision numbers with 16 rows and 8 columns
+
+const int NUMROWS = 16;
+const int NUMCOLS = 8;
+char val[NUMROWS][NUMCOLS];
 
 2. (Desk check) Determine the output produced by the following program:
 #include <iostream>
@@ -34,7 +52,9 @@ The output is as follows:
 
 3. (Program) a. Write, compile, and run a C++ program that adds the values of all elements in
 the val array used in Exercise 2 and displays the total.
+
 b. Modify the program written for Exercise 3a to display the total of each row separately.
+
 4. (Program) Write, compile, and run a C++ program that adds equivalent elements of the twodimensional
 arrays named first and second. Both arrays should have two rows and three columns.
 For example, element [1][2] of the resulting array should be the sum of first[1][2]
@@ -42,25 +62,32 @@ and second[1][2]. The first and second arrays should be initialized as follows:
     first             second
 16   18   23        24   52   77
 54   91   11        16   19   59
+
 5. (Program) a. Write, compile, and run a C++ program that finds and displays the maximum value
 in a two-dimensional array of integers. The array should be declared as a 4-by-5 array of integers
 and initialized with the data 16, 22, 99, 4, 18, -258, 4, 101, 5, 98, 105, 6, 15, 2, 45, 33, 88, 72, 16, and 3.
+
 b. Modify the program written in Exercise 5a so that it also displays the maximum value’s row
 and column subscript values.
+
 6. (Program) Write, compile, and run a C++ program that selects the values in a 4-by-5 array of
 positive integers in increasing order and stores the selected values in a one-dimensional array
 named sort. Use the data given in Exercise 5a to initialize the two-dimensional array.
+
 7. (Program) a. A professor has constructed a 3-by-5 two-dimensional array of grades. This array
 contains the test grades of students in the professor’s advanced compiler design class. Write,
 compile, and run a C++ program that reads 15 array values and then determines the total number
 of grades in these ranges: less than 60, greater than or equal to 60 and less than 70, greater
 than or equal to 70 and less than 80, greater than or equal to 80 and less than 90, and greater
 than or equal to 90.
+
 b. Entering 15 grades each time you run the program written for Exercise 7a is cumbersome.
 What method can be used for initializing the array during the testing phase?
+
 c. How might the program you wrote for Exercise 7a be modified to include the case of no
 grade being input? That is, what grade could be used to indicate an invalid grade, and how
 would your program have to be modified to exclude counting an invalid grade?
+
 8. (Program) a. Create a two-dimensional list of integer part numbers and quantities of each
 part in stock, and write a function that displays data in the array in decreasing quantity order.
 No more than 100 different parts are being tracked. Test your program with the following data:
@@ -71,7 +98,9 @@ Part No. Quantity
 867 125
 346 59
 1025 105
+
 b. Modify the function written in Exercise 8a to display the data in part number order.
+
 9. (Program) a. Your professor has asked you to write a C++ program that determines grades for
 five students at the end of the semester. For each student, identified by an integer number, four
 exam grades must be kept, and two final grade averages must be computed. The first grade
@@ -90,11 +119,14 @@ Student Grade 1 Grade2 Grade 3 Grade 4
 3 82 94 73 86
 4 64 74 84 94
 5 94 84 74 64
+
 b. What modifications would you need to make to your program so that it can handle 60 students
 rather than 5?
+
 c. Modify the program written for Exercise 9a by adding an eighth column to the array. The
 grade in the eighth column should be calculated by computing the average of the top three
 grades only.
+
 10. (Program) The answers to a true-false test are as follows: T T F F T. Given a two-dimensional
 answer array, in which each row corresponds to the answers provided on one test, write a function
 that accepts the two-dimensional array and number of tests as parameters and returns a
@@ -106,8 +138,10 @@ Test 3: T T F F T
 Test 4: F T F F F
 Test 5: F F F F F
 Test 6: T T F T F
+
 11. (Modify) Modify the function you wrote for Exercise 10 so that each test is stored in column
 order rather than row order.
+
 12. (Program) A three-dimensional weather array for the months July and August 2011 has columns
 labeled by the month numbers 7 and 8. In each column, there are rows numbered 1
 through 31, representing the days, and for each day, there are two ranks labeled H and L,
