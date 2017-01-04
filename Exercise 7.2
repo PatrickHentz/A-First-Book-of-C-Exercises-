@@ -142,6 +142,7 @@ program display the values in both the positive and negative arrays.
 using namespace std;
 
 int main()
+
 {
 
 	const int NUM = 20;
@@ -180,7 +181,7 @@ the Following Data” in a character array named message1, the string “-------
 an array named message2, the string “Enter the Date:” in an array named message3, and
 the string “Enter the Account Number:” in an array named message4.
 
-char message1[] = “Input the Following Data”;
+  char message1[] = “Input the Following Data”;
   char message2[] = “------------------------”;
   char message3[] = “Enter the Date: “;
   char message4[] = “Enter the Account Number: “;
@@ -190,6 +191,28 @@ to display the messages. For example, the statement cout << message1; causes the
 string stored in the message1 array to be displayed. Your program requires four of these
 statements to display the four messages. Using a cout statement to display a string requires
 placing the end-of-string marker \0 in the character array used to store the string.
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+	    char message1[] = "Input the Following Data";
+		char message2[] = "------------------------";
+		char message3[] = "Enter the Date : ";
+		char message4[] = "Enter the Account Number : ";
+	
+		cout << message1 << endl;
+		cout << message2 << endl;
+		cout << message3 << endl;
+		cout << message4 << endl;
+
+
+	  system("PAUSE");
+	
+	return 0;
+}
 
 8. (Program) a. Write a declaration to store the string “This is a test” in an array named
 strtest. Include the declaration in a program to display the message using the following loop:
