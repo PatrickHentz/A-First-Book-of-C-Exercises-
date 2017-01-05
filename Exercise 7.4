@@ -120,19 +120,63 @@ int main(){
 }
 	
 		system("PAUSE");
-		return 0;
-	}
 
 5. (Program) a. Write, compile, and run a C++ program that finds and displays the maximum value
 in a two-dimensional array of integers. The array should be declared as a 4-by-5 array of integers
 and initialized with the data 16, 22, 99, 4, 18, -258, 4, 101, 5, 98, 105, 6, 15, 2, 45, 33, 88, 72, 16, and 3.
 
+#include <iostream>
+using namespace std;
 
+
+int main(){
+		   double arr[4][5] = { 16, 22, 99, 4, 18,
+			                -258, 4, 101, 5, 98,
+			                 105, 6, 15, 2, 45, 
+					 33, 88, 72, 16, 3 };
+	   
+		   for (int i = 0; i < 4; i++){
+			   for (int j = 0; j < 4; j++){
+				   if (arr[i][j] > arr[0][0]){
+					   arr[0][0] = arr[i][j];
+					  
+				   }
+			   }
+		   }
+	
+		   cout << arr[0][0] << endl;
+		system("PAUSE");
+		return 0;
+	}
 
 b. Modify the program written in Exercise 5a so that it also displays the maximum value’s row
 and column subscript values.
 
+#include <iostream>
+using namespace std;
 
+
+int main(){
+		   double arr[4][5] = { 16, 22, 99, 4, 18,
+			                  -258, 4, 101, 5, 98,
+			                   105, 6, 15, 2, 45, 
+					     	   33, 88, 72, 16, 3 };
+		   int a = 0; int b = 0;
+	   
+		   for (int i = 0; i < 4; i++){
+			   for (int j = 0; j < 4; j++){
+				   if (arr[i][j] > arr[0][0]){
+					   arr[0][0] = arr[i][j];
+					   a = i;
+					   b = j;
+				   }
+			   }
+		   }
+	
+		   cout << arr[0][0] << setw(10) << a << setw(10)<< b << endl;
+		system("PAUSE");
+		return 0;
+	}
 
 6. (Program) Write, compile, and run a C++ program that selects the values in a 4-by-5 array of
 positive integers in increasing order and stores the selected values in a one-dimensional array
