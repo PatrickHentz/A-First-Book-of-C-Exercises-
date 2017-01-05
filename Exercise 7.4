@@ -383,18 +383,61 @@ used for the student number, the next four columns for the grades, and the last 
 for the computed final grades. The program’s output should be a display of the data in the
 completed array. For testing purposes, the professor has provided the following data:
 Student Grade 1 Grade2 Grade 3 Grade 4
-1 100 100 100 100
-2 100 0 100 0
-3 82 94 73 86
-4 64 74 84 94
-5 94 84 74 64
+1       100     100    100     100
+2       100     0      100     0
+3       82      94      73     86
+4       64      74      84     94
+5       94      84      74     64
+Regular Final Grade:
+Weight Final Grade:
+
+#include <algorithm>
+#include <iostream>
+using namespace std;
+
+int main() {
+
+
+
+	double grade[5][6] = { { 1, 100, 100, 100, 100 },
+	{ 2, 100, 0, 100, 0 },
+	{ 3, 82, 94, 73, 86 },
+	{ 4, 64, 74, 84, 94 },
+	{ 5, 94, 84, 74, 64 },
+	};
+	for (int i = 0; i < 5; i++){
+		for (int j = 0; j < 6; j++){
+			 grade[i][6] = (grade[i][1] * .2) + (grade[i][2] * .3) + (grade[i][2] * .3) + (grade[i][4] * .2);
+			 grade[i][5] = (grade[i][1] + grade[i][2] + grade[i][3] + grade[i][4]) / 4;
+
+
+
+		}
+	}
+	for (int i = 0; i < 5; i++){
+		cout << "This is the regualar average for Student " << (i + 1) << endl;
+		cout << grade[i][5] << endl;
+	}
+	for (int k = 0; k < 5; k++){
+	cout << "This is the weighed final grade for Student " << (k+1)<< endl;
+	cout << grade[k][6] << endl;
+}
+
+		system("PAUSE");
+		return 0;
+	}
 
 b. What modifications would you need to make to your program so that it can handle 60 students
 rather than 5?
 
+Increasing the range of the variable i would also increase the number of students that can be handled.
+Ex. for(int i = 0; i < 60; i++)
+
 c. Modify the program written for Exercise 9a by adding an eighth column to the array. The
 grade in the eighth column should be calculated by computing the average of the top three
 grades only.
+
+
 
 10. (Program) The answers to a true-false test are as follows: T T F F T. Given a two-dimensional
 answer array, in which each row corresponds to the answers provided on one test, write a function
@@ -408,8 +451,12 @@ Test 4: F T F F F
 Test 5: F F F F F
 Test 6: T T F T F
 
+
+
 11. (Modify) Modify the function you wrote for Exercise 10 so that each test is stored in column
 order rather than row order.
+
+
 
 12. (Program) A three-dimensional weather array for the months July and August 2011 has columns
 labeled by the month numbers 7 and 8. In each column, there are rows numbered 1
@@ -421,3 +468,5 @@ the user to request the following:
 • Average high and low temperatures for a given month
 • Month and day with the highest temperature
 • Month and day with the lowest temperature
+
+
