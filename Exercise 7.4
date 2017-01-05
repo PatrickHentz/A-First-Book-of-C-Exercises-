@@ -243,8 +243,7 @@ int main() {
 		else if (arr2[i] >= 90){
 			count5++;
 		}
-	}
-	cout << "Less than 60 " << count << endl;
+	}	cout << "Less than 60 " << count << endl;
 	cout << "Greater than or equal to 60 and less than 70 " << count2 << endl;
 	cout << "Greater than or equal to 70 and less than 80 " << count3 << endl;
 	cout << "Greater than or equal to 80 and less than 90 " << count4 << endl;
@@ -264,21 +263,112 @@ grade being input? That is, what grade could be used to indicate an invalid grad
 would your program have to be modified to exclude counting an invalid grade?
 
 if(arr2[i] == NULL){cin.ignore}
-
-if the input is invalid than the value that was entered can be ignored.
+//if the input is invalid than the value that was entered can be ignored.
 
 8. (Program) a. Create a two-dimensional list of integer part numbers and quantities of each
 part in stock, and write a function that displays data in the array in decreasing quantity order.
 No more than 100 different parts are being tracked. Test your program with the following data:
 Part No. Quantity
-1001 62
-949 85
-1050 33
-867 125
-346 59
-1025 105
+1001     62
+949      85
+1050     33
+867      125
+346      59
+1025     105
+ 
+#include <iostream>
+using namespace std;
+
+int main() {
+	int a[][6] = {
+		{   62, 85,  33,125, 59,105 },   // Quantity   
+		{ 1001,949,1050,867,346,1025 }   // Part No.   
+	};
+	int i, j, k, temp, temp1;
+
+	//Bubble sorting is applieed on one first row while the other row is swapped
+
+	for (j = 1; j<6; j++)
+	{
+		for (i = 0; i<5; i++)
+		{
+			if (a[0][i]<a[0][i + 1])
+			{
+				temp = a[0][i];
+				a[0][i] = a[0][i + 1];
+				a[0][i + 1] = temp;
+
+				temp1 = a[1][i];
+				a[1][i] = a[1][i + 1];
+				a[1][i + 1] = temp1;
+			}
+		}
+	}
+
+	printf("\n\nArray after sorting:\n");
+	for (i = 0; i <2; i++)
+	{
+		
+		for (j = 0; j<6; j++)
+		{
+			printf("%d\t", a[i][j]);        //printing sorted array
+		}
+		printf("\n");
+	}
+	
+
+
+		system("PAUSE");
+		return 0;
+	}
 
 b. Modify the function written in Exercise 8a to display the data in part number order.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int a[][6] = {
+		{ 1001, 949, 1050, 867, 346, 1025 },   // Part No.   
+		{ 62, 85, 33, 125, 59, 105 }   // Quantity  
+	};
+	int i, j, k, temp, temp1;
+
+	//Bubble sorting is applieed on one first row while the other row is swapped
+
+	for (j = 1; j<6; j++)
+	{
+		for (i = 0; i<5; i++)
+		{
+			if (a[0][i]<a[0][i + 1])
+			{
+				temp = a[0][i];
+				a[0][i] = a[0][i + 1];
+				a[0][i + 1] = temp;
+
+				temp1 = a[1][i];
+				a[1][i] = a[1][i + 1];
+				a[1][i + 1] = temp1;
+			}
+		}
+	}
+
+	printf("\n\nArray after sorting:\n");
+	for (i = 0; i <2; i++)
+	{
+		
+		for (j = 0; j<6; j++)
+		{
+			printf("%d\t", a[i][j]);        //printing sorted array
+		}
+		printf("\n");
+	}
+	
+
+
+		system("PAUSE");
+		return 0;
+	}
 
 9. (Program) a. Your professor has asked you to write a C++ program that determines grades for
 five students at the end of the semester. For each student, identified by an integer number, four
