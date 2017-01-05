@@ -199,7 +199,7 @@ int main(int argc, char **argv) {
 
 	for (int k = 0; k<20; k++) {
 		cout << sort[k] <<endl;
-		//printf("arr[%d] = %2d\n", k, arr2[k]);
+		//printf("arr[%d] = %2d\n", k, sort[k]);
 	}
 
 		system("PAUSE");
@@ -213,12 +213,51 @@ of grades in these ranges: less than 60, greater than or equal to 60 and less th
 than or equal to 70 and less than 80, greater than or equal to 80 and less than 90, and greater
 than or equal to 90.
 
+#include <iostream>
+using namespace std;
 
+int main() {
+	const int SIZE = 15;
+	int arr[3][5];
+	int *arr2 = (int*)arr;
+	int count = 0, count2 = 0, count3 = 0, count4 = 0, count5 = 0;
+	
+	for(int j =0; int j=15; j++){
+	for(int k =0; int k = 15; j++){
+	cin << arr[j][k]<< endl;
+	}
+	}
+	for (int i = 0; i < 15; i++){
+		if (arr2[i] < 60){
+			count++;
+		}
+		else if (arr2[i] >= 60 && arr2[i] <= 70){
+			count2++;
+		}
+		else if (arr2[i] >= 70 && arr2[i] <= 80){
+			count3++;
+		}
+		else if (arr2[i] >= 80 && arr2[i] <= 90){
+			count4++;
+		}
+		else if (arr2[i] >= 90){
+			count5++;
+		}
+	}
+	cout << "Less than 60 " << count << endl;
+	cout << "Greater than or equal to 60 and less than 70 " << count2 << endl;
+	cout << "Greater than or equal to 70 and less than 80 " << count3 << endl;
+	cout << "Greater than or equal to 80 and less than 90 " << count4 << endl;
+	cout << "Greater than or equal to 90 " << count5 << endl;
+
+		system("PAUSE");
+		return 0;
+	}
 
 b. Entering 15 grades each time you run the program written for Exercise 7a is cumbersome.
 What method can be used for initializing the array during the testing phase?
 
-
+int arr[3][5] = { 100, 22, 99,40,90, 89,78, 50, 98,100, 61, 94,95, 67 ,100};
 
 c. How might the program you wrote for Exercise 7a be modified to include the case of no
 grade being input? That is, what grade could be used to indicate an invalid grade, and how
