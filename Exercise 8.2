@@ -3,29 +3,41 @@ reference:
 a. prices[5] b. grades[2] c. yield[10]
 d. dist[9] e. mile[0] f. temp[20]
 g. celsius[16] h. num[50] i. time[12]
+
 2. (Practice) Replace each of the following pointer references with a subscript reference:
 a. *(message+6) b. *amount c. *(yrs+10)
 d. *(stocks+2) e. *(rates+15) f. *(codes+19)
+
 3. (Practice) a. List three things the declaration statement doubleƒprices[5]; causes the
 compiler to do.
+
 b. If each double-precision number uses 8 bytes of storage, how much storage is set aside for
 the prices array?
+
 c. Draw a diagram similar to Figure 8.16 for the prices array.
+
 d. Determine the byte offset in relation to the start of the prices array, corresponding to the
 offset in the expression *(prices+3).
+
 4. (Practice) a. Write a declaration to store the string “This is a sample” in an array named
 samtest. Include the declaration in a program that displays the values in samtest by using a
 for loop that uses a pointer access to each element in the array.
+
 b. Modify the program written in Exercise 4a to display only array elements 10 through 15 (the
 letters s, a, m, p, l, and e).
+
 5. (Practice) Write a declaration to store the following values in an array named rates: 12.9,
 18.6, 11.4, 13.7, 9.5, 15.2, and 17.6. Include the declaration in a program that displays the values
 in the array by using pointer notation.
+
 6. (Modify) a. Repeat Exercise 6a in Section 7.1, but use pointer references to access all array
 elements.
+
 b. Repeat Exercise 6b in Section 7.1, but use pointer references to access all array elements.
+
 7. (Modify) Repeat Exercise 7 in Section 7.1, but use pointer references to access all array
 elements.
+
 8. (Modify) As described in Table 8.2, the new operator returns the address of the first new storage
 area allocated or returns NULL if there’s insufficient storage. Modify Program 8.8 to check
 that a valid address has been returned before attempting to place values in the grades array.
