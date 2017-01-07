@@ -19,8 +19,7 @@ to the expressions &temp, &dist, &date, and &miles.
 
 4. (Practice) a. Write a C++ program that includes the following declaration statements. Have
 the program use the address operator and a cout statement to display the addresses corresponding
-to each variable.
-
+to each variable.|
 int num, count;
 long date;
 float slope;
@@ -51,7 +50,11 @@ b. After running the program written for Exercise 4a, draw a diagram of how your
 has set aside storage for the variables in the program. On your diagram, fill in the addresses
 the program displays.
 
-
+num   ->|00B3FB0C|->storage set aside last hex digits |0D||0E||0F|
+count ->|00B3FB00|->storage set aside last hex digits |01||02||03|
+data  ->|00B3FAF4|->storage set aside last hex digits |F5||F6||F7|
+slope ->|00B3FAE8|->storage set aside last hex digits |E9||EA||EB|
+yield ->|00B3FAD8|->storage set aside last hex digits |D9||DA||DB|
 
 c. Modify the program written in Exercise 4a (using the sizeof() operator discussed in
 Section 2.1) to display the amount of storage your computer reserves for each data type.
