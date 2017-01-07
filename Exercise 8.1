@@ -62,7 +62,34 @@ With this information and the address information provided in Exercise 4b, deter
 whether your computer set aside storage for the variables in the order in which they were
 declared.
 
+#include <iostream>
+using namespace std;
 
+int main(){
+
+
+	int num, count;
+	long date;
+	float slope;
+	double yield;
+
+	cout << "The address of num is " << sizeof(&num) << endl;
+	cout << "The address of count is " << sizeof(&count) << endl;
+	cout << "The address of date is " << sizeof(&date) << endl;
+	cout << "The address of slope is " << sizeof(&slope) << endl;
+	cout << "The address of yield is " << sizeof(&yield) << endl;
+
+	cout << sizeof(num) << endl;
+	cout << sizeof(count) << endl;
+	cout << sizeof(date) << endl;
+	cout << sizeof(slope) << endl;
+	cout << sizeof(yield) << endl;
+	
+	system("PAUSE");
+	return 0;
+}
+
+No, the computer doesn't set aside storage for the variables in the order in which they were declared
 
 5. (Review) If a variable is declared as a pointer, what must be stored in the variable?
 
