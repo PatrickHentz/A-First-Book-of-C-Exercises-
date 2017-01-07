@@ -1,14 +1,37 @@
-1. (Practice) Replace each of the following references to a subscripted variable with a pointer
-reference:
-a. prices[5] b. grades[2] c. yield[10]
-d. dist[9] e. mile[0] f. temp[20]
-g. celsius[16] h. num[50] i. time[12]
+1. (Practice) Replace each of the following references to a subscripted variable with a pointer reference:
+a. prices[5]
+*(prices + 5)
+b. grades[2]
+*(grades + 2)
+c. yield[10]
+*(yield + 10)
+d. dist[9]
+*(dist + 9)
+e. mile[0]
+*mile
+f. temp[20]
+*(temp + 20)
+g. celsius[16]
+*(celsius + 16)
+h. num[50] 
+*(num + 50)
+i. time[12]
+*(time + 12)
 
 2. (Practice) Replace each of the following pointer references with a subscript reference:
-a. *(message+6) b. *amount c. *(yrs+10)
-d. *(stocks+2) e. *(rates+15) f. *(codes+19)
-
-3. (Practice) a. List three things the declaration statement doubleƒprices[5]; causes the
+a. *(message+6)
+message[6]
+b. *amount 
+amount[0]
+c. *(yrs+10)
+yrs[10]
+d. *(stocks+2)
+stocks[2]
+e. *(rates+15)
+rates[15]
+f. *(codes+19)
+codes[19]
+3. (Practice) a. List three things the declaration statement double prices[5]; causes the
 compiler to do.
 
 b. If each double-precision number uses 8 bytes of storage, how much storage is set aside for
