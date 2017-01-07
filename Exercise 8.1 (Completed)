@@ -236,41 +236,21 @@ Not Valid
 u. yAddr = ptAddr;
 Not Valid
 
-
 12. (Practice) For the variables and addresses in Figure 8.10, fill in the data determined by the
 following statements:
 a. ptNum = &m;
+8096
 b. amtAddr = &amt;
+16256
 c. *zAddr = 25;
+8024
 d. k = *numAddr;
+10132
 e. ptDay = zAddr;
+20492
 f. *ptYr = 2011;
+15010
 g. *amtAddr = *numAddr;
-Variable: ptNum
-Address: 500
-Variable: amtAddr
-Address: 564
-Variable: zAddr
-Address: 8024
-Variable: numAddr
-Address: 10132
-Variable: ptDay
-Address: 14862
-Variable: ptYr
-Address: 15010
-Variable: amt
-Address: 16256
-Variable: firstnum
-Address: 18938
-Variable: years
-Address: 694
-Variable: m
-Address: 8096
-Variable: slope
-Address: 20492
-Variable: k
-Address: 24608
-20492 18938
-694
-154
-Figure 8.10 Memory locations for Exercise 12
+10132
+
+*See Textbook for Figure 8.10 Memory locations for Exercise 12*
