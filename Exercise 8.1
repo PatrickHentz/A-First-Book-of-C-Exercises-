@@ -21,12 +21,31 @@ to the expressions &temp, &dist, &date, and &miles.
 the program use the address operator and a cout statement to display the addresses corresponding
 to each variable.
 
-intƒnum,ƒcount;
-longƒdate;
-floatƒslope;
-doubleƒyield;
+int num, count;
+long date;
+float slope;
+double yield;
+
+#include <iostream>
+using namespace std;
+
+int main(){
 
 
+	int num, count;
+	long date;
+	float slope;
+	double yield;
+
+	cout << "The address of num is " << &num << endl;
+	cout << "The address of count is " << &count << endl;
+	cout << "The address of date is " << &date << endl;
+	cout << "The address of slope is " << &slope << endl;
+	cout << "The address of yield is " << &yield << endl;
+
+	system("PAUSE");
+	return 0;
+}
 
 b. After running the program written for Exercise 4a, draw a diagram of how your computer
 has set aside storage for the variables in the program. On your diagram, fill in the addresses
