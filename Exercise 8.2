@@ -43,11 +43,20 @@ Every location before the array is also created.
 b. If each double-precision number uses 8 bytes of storage, how much storage is set aside for
 the prices array?
 
-
+8 * 6 = 48
+48 bytes are set aside for the prices array.
 
 c. Draw a diagram similar to Figure 8.16 for the prices array.
 
-
+prices
+|&prices[0]|
+|
+|
+V
+|Address || Address||Address ||Address|| Address || Address|
+prices[0] prices[1] prices[2] prices[3] prices[4]  prices[5]
+  or         or        or        or        or         or
+*prices*(prices +1)*(prices +1)*(prices +1)*(prices +1)*(prices +1)
 
 d. Determine the byte offset in relation to the start of the prices array, corresponding to the
 offset in the expression *(prices+3).
