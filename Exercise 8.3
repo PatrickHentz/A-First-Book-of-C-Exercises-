@@ -1,6 +1,22 @@
 1. (Modify) Replace the while statement in Program 8.10 with a for statement.
 
+#include <iostream>
+#include <new>
+using namespace std;
+int main()
+{
 
+		const int VALUES = 5;
+		int nums[VALUES] = { 16, 54, 7, 43, -5 };
+		int total = 0, *nPt;
+		   // store address of nums[0] in nPt
+		for (nPt = nums; nPt < nums + VALUES; nPt++){
+			total += *nPt;
+			cout << "The total of the array elements is " << total << endl;
+		}
+	system("PAUSE");
+	return 0;
+}
 
 2. (Program) a. Write a program that stores the following numbers in an array named rates:
 6.25, 6.50, 6.8, 7.2, 7.35, 7.5, 7.65, 7.8, 8.2, 8.4, 8.6, 8.8, and 9.0. Display the values in the array
