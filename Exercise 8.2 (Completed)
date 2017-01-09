@@ -248,4 +248,39 @@ area allocated or returns NULL if there’s insufficient storage. Modify Program
 that a valid address has been returned before attempting to place values in the grades array.
 Display an appropriate message if not enough storage is available.
 
-
+#include <iostream>
+#include <new>
+using namespace std;
+int main()
+{
+	int numgrades, i;
+	
+	cout << "Enter the number of grades to be processed : ";
+	cin >> numgrades;
+	int *grades = new int[numgrades];  // create the array
+	
+	for (i = 0; i < numgrades; i++)
+	{
+		if ( numgrades >= 20){
+			cout << " Not enough storage or invalid address entered" << endl;
+			goto end;
+		}
+		if (numgrades > 0 && numgrades < 20){
+			cout << "  Enter a grade : ";
+			cin >> grades[i];
+		}
+	}
+	if (numgrades > 0 && numgrades < 20){
+		cout << "\nAn array was created for " << numgrades << " integers\n";
+		cout << "The values stored in the array are: ";
+		for (i = 0; i < numgrades; i++)
+			cout << "\n   " << grades[i];
+		cout << endl;
+		delete[] grades;   // return the storage to the heap
+		// the [] is required for array deletions
+	}
+	else{ cout << "Nothing to show" << endl; }
+	end:
+	system("PAUSE");
+	return 0;
+}
