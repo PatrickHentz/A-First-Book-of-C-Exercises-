@@ -21,12 +21,23 @@ double rates[256];
 Write three different headers for a function named maximum() that accepts the rates array as
 a parameter named speed and returns a double-precision value.
 
-
+void maximum(double *speed)
+void maximum(double speed[])
+void maximum(double speed[256])
 
 4. (Modify) Modify the findMax() function to locate the minimum value of the passed array.
 Write the function using only pointers.
 
-
+int findMax(int *vals, int numels)   // find the maximum value
+{
+	int i, min = *vals++;   // get the first element and increment it
+	for (i = 1; i < numels; i++, vals++)
+	{
+		if (min > *vals)
+			min = *vals;
+	}
+	return min;
+}
 
 5. (Debug) In the second version of findMax(), vals was incremented in the altering list of the
 for statement. Instead, you do the incrementing in the condition expression of the if statement,
