@@ -22,11 +22,45 @@ int main()
 6.25, 6.50, 6.8, 7.2, 7.35, 7.5, 7.65, 7.8, 8.2, 8.4, 8.6, 8.8, and 9.0. Display the values in the array
 by changing the address in a pointer called dispPt. Use a for statement in your program.
 
+#include <iostream>
+#include <new>
+using namespace std;
+int main()
+{
 
+		const int VALUES = 13;
+		double rates[VALUES] = { 6.25, 6.50, 6.8, 7.2, 7.35, 7.5, 7.65, 7.8, 8.2, 8.4, 8.6, 8.8, 9.0 };
+		
+		   // store address of nums[0] in nPt
+		for (int i = 0; i < 13; i++){
+			cout << *(rates + i) << endl;
+			
+		}
+	system("PAUSE");
+	return 0;
+}
 
 b. Modify the program written in Exercise 2a to use a while statement.
 
+#include <iostream>
+#include <new>
+using namespace std;
+int main()
+{
 
+		const int VALUES = 13;
+		double rates[VALUES] = { 6.25, 6.50, 6.8, 7.2, 7.35, 7.5, 7.65, 7.8, 8.2, 8.4, 8.6, 8.8, 9.0 };
+		
+		   // store address of nums[0] in nPt
+		int i = 0;
+		while( i < 13){
+			cout << *(rates + i) << endl;
+			i++;
+			
+		}
+	system("PAUSE");
+	return 0;
+}
 
 3. (Program) a. Write a program that stores the string Hooray for All of Us in an array
 named strng. Use the declaration strng[] =“Hooray for All of Us”;, which ensures
