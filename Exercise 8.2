@@ -11,6 +11,7 @@ d. dist[9]
 e. mile[0]
 *mile
 f. temp[20]
+
 *(temp + 20)
 g. celsius[16]
 *(celsius + 16)
@@ -20,6 +21,7 @@ i. time[12]
 *(time + 12)
 
 2. (Practice) Replace each of the following pointer references with a subscript reference:
+
 a. *(message+6)
 message[6]
 b. *amount 
@@ -68,22 +70,69 @@ The offset is  32 bytes
 samtest. Include the declaration in a program that displays the values in samtest by using a
 for loop that uses a pointer access to each element in the array.
 
+#include <iostream>
+using namespace std;
+
+int main(){
+
+
+	char samtest[17] = { "This is a sample" };
+
+	for (int i = 0; i < 17; i++){
+		std::cout << *(samtest+i) << endl;
+	}
+	
+	system("PAUSE");
+	return 0;
+
+}
+
 b. Modify the program written in Exercise 4a to display only array elements 10 through 15 (the
 letters s, a, m, p, l, and e).
+
+#include <iostream>
+using namespace std;
+
+int main(){
+
+
+	char samtest[17] = { "This is a sample" };
+
+	for (int i = 0; i < 17; i++){
+		if (i >= 10 && i <= 15){
+			std::cout << *(samtest + i) << endl;
+		}
+		
+	}
+	
+	system("PAUSE");
+	return 0;
+
+}
 
 5. (Practice) Write a declaration to store the following values in an array named rates: 12.9,
 18.6, 11.4, 13.7, 9.5, 15.2, and 17.6. Include the declaration in a program that displays the values
 in the array by using pointer notation.
 
+
+
 6. (Modify) a. Repeat Exercise 6a in Section 7.1, but use pointer references to access all array
 elements.
 
+
+
 b. Repeat Exercise 6b in Section 7.1, but use pointer references to access all array elements.
+
+
 
 7. (Modify) Repeat Exercise 7 in Section 7.1, but use pointer references to access all array
 elements.
+
+
 
 8. (Modify) As described in Table 8.2, the new operator returns the address of the first new storage
 area allocated or returns NULL if there’s insufficient storage. Modify Program 8.8 to check
 that a valid address has been returned before attempting to place values in the grades array.
 Display an appropriate message if not enough storage is available.
+
+
