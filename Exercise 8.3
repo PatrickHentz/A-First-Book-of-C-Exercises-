@@ -68,16 +68,63 @@ that the end-of-string escape sequence \0 is included in the array. Display the 
 the array by changing the address in a pointer called messPt. Use a for statement in your
 program.
 
+#include <iostream>
+using namespace std;
+int main()
+{
+	char strng[] = { "Hooray for All of Us\0" };
 
+	char *messPt = strng;
+
+	for (int i = 0; i < 22; i++){
+		cout << *(messPt + i) << endl;
+	}
+		
+	system("PAUSE");
+	return 0;
+}
 
 b. Modify the program written in Exercise 3a to use the while statement while
 (*messPt++ != '\0').
 
+#include <iostream>
+using namespace std;
+int main()
+{
+	char strng[] = { " Hooray for All of\0 Us" };
+
+	char *messPt = strng;
+	
+
+	while(*messPt++ != '\0'){
+		cout << *messPt << endl;
+		
+	}
+		
+	system("PAUSE");
+	return 0;
+}
 
 
 c. Modify the program written in Exercise 3a to start the display with the word All.
 
+#include <iostream>
+using namespace std;
+int main()
+{
+	char strng[] = { " Hooray for All of\0 Us" };
 
+	char *messPt = strng;
+	
+	for (int i = 11; i < 22; i++){
+			
+		cout << *(messPt + i) << endl;
+			
+	}
+		
+	system("PAUSE");
+	return 0;
+}
 
 4. (Program) Write a program that stores the following numbers in the array named miles: 15,
 22, 16, 18, 27, 23, and 20. Have your program copy the data stored in miles to another array
