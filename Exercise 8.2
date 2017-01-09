@@ -56,12 +56,13 @@ V
 |Address || Address||Address ||Address|| Address || Address|
 prices[0] prices[1] prices[2] prices[3] prices[4]  prices[5]
   or         or        or        or        or         or
-*prices*(prices +1)*(prices +1)*(prices +1)*(prices +1)*(prices +1)
+*prices*(prices +1)*(prices +2)*(prices +3)*(prices +4)*(prices +5)
 
 d. Determine the byte offset in relation to the start of the prices array, corresponding to the
 offset in the expression *(prices+3).
 
-
+24 bytes(3 * 8) + 8 = 32 bytes
+The offset is  32 bytes
 
 4. (Practice) a. Write a declaration to store the string “This is a sample” in an array named
 samtest. Include the declaration in a program that displays the values in samtest by using a
