@@ -131,13 +131,45 @@ int main()
 named dist, and then display the values in the dist array. Your program should use pointer
 notation when copying and displaying array elements.
 
+#include <iostream>
+using namespace std;
+int main()
+{
+	int miles[] = { 15,22, 16, 18, 27, 23, 20 };
 
+	int *dist = miles;
+	
+	for (int i = 0; i < 7; i++){
+			
+		cout << *dist++ << endl;
+			
+	}
+		
+	system("PAUSE");
+	return 0;
+}
 
 5. (Program) Write a C++ program that stores the following letters in the array named message:
 This is a test. Have your program copy the data stored in message to another array
 named mess2 and then display the letters in the mess2 array.
 
+#include <iostream>
+using namespace std;
+int main()
+{
+	char message[] = { "This is a test" };
 
+	char *mess2 = message;
+	
+	for (int i = 0; i < 15; i++){
+			
+		cout << *mess2++ << endl;
+			
+	}
+		
+	system("PAUSE");
+	return 0;
+}
 
 6. (Program) Write a program that declares three one-dimensional arrays named miles,
 gallons, and mpg. Each array should be capable of holding 10 elements. In the miles array,
