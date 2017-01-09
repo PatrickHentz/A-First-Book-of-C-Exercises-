@@ -136,16 +136,112 @@ int main(){
 6. (Modify) a. Repeat Exercise 6a in Section 7.1, but use pointer references to access all array
 elements.
 
+#include <iostream>
+using namespace std;
 
+int main()
+
+{
+	const int NUMELS = 9;
+	int i, prices[NUMELS];
+	for (i = 0; i < NUMELS; i++)    // Enter the prices
+
+	{
+		cout << "Enter a price: ";
+		cin >> *(prices + i);
+	}
+
+	cout << endl;
+	for (i = 0; i < NUMELS; i++)    // Print the prices
+
+		cout << "price [" << i << "] is " << *(prices + i) << endl;
+
+	system("PAUSE");
+	return 0;
+
+}
 
 b. Repeat Exercise 6b in Section 7.1, but use pointer references to access all array elements.
 
+#include <iostream>
+using namespace std;
 
+int main()
+
+{
+	const int NUMELS = 9;
+	int i, prices[NUMELS];
+	for (i = 0; i < NUMELS; i++)    // Enter the grades
+
+	{
+		cout << "Enter a price: ";
+		cin >> *(prices +i);
+
+	}
+	cout << endl;
+
+	for (i = 0; i < 3; i++) {   // Print the grades
+
+		cout << *(prices + i) << " ";
+
+	}
+	cout << endl;
+
+	for (i = 3; i < 6; i++) {   // Print the grades
+
+		cout << *(prices + i) << " ";
+
+	}
+	cout << endl;
+
+	for (i = 6; i < NUMELS; i++) {   // Print the grades
+		cout << *(prices + i) << " ";
+	}
+	cout << endl;
+
+	system("PAUSE");
+	return 0;
+}
 
 7. (Modify) Repeat Exercise 7 in Section 7.1, but use pointer references to access all array
 elements.
 
+#include <iostream>
 
+using namespace std;
+
+int main()
+
+{
+	const int NUMELS = 8;
+	int i, grade[NUMELS], total = 0, average;
+
+	for (i = 1; i <= NUMELS; i++)    // Enter the grades
+
+	{
+		cout << "Enter a grade: ";
+		cin >> *(grade +i);
+
+	}
+
+	cout << endl;
+
+	for (i = 1; i <= 8; i++) {   // Print the grades
+		
+		cout << *(grade + i) << " " << endl;
+		total = total + *(grade + i);
+		average = total / i;
+
+	}
+
+	cout << "The average is " << endl;
+	cout << average << endl;
+
+	system("PAUSE");
+
+	return 0;
+
+}
 
 8. (Modify) As described in Table 8.2, the new operator returns the address of the first new storage
 area allocated or returns NULL if there’s insufficient storage. Modify Program 8.8 to check
