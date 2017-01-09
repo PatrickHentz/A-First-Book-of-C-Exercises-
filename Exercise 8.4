@@ -2,16 +2,25 @@
 double prices[500];
 Write three different headers for a function named sortArray() that accepts the prices
 array as a parameter named inArray and returns no value.
+
 2. (Practice) The following declaration was used to create the keys array:
 char keys[256];
 Write three different headers for a function named findKey() that accepts the keys array as
 a parameter named select and returns no value.
+
+
 3. (Practice) The following declaration was used to create the rates array:
 double rates[256];
 Write three different headers for a function named maximum() that accepts the rates array as
 a parameter named speed and returns a double-precision value.
+
+
+
 4. (Modify) Modify the findMax() function to locate the minimum value of the passed array.
 Write the function using only pointers.
+
+
+
 5. (Debug) In the second version of findMax(), vals was incremented in the altering list of the
 for statement. Instead, you do the incrementing in the condition expression of the if statement,
 as follows:
@@ -24,18 +33,29 @@ int findMax(int *vals, int numels)    // incorrect version
   return (max);
 }
 Determine why this version produces an incorrect result.
+
+
+
 6. (Program) a. Write a program that has a declaration in main() to store the following numbers
 in an array named rates: 6.5, 7.2, 7.5, 8.3, 8.6, 9.4, 9.6, 9.8, and 10.0. Include a function call to
 show() that accepts rates in a parameter named rates and then displays the numbers by
 using the pointer notation *(rates + i).
+
+
+
 b. Modify the show() function written in Exercise 6a to alter the address in rates. Always
 use the expression *rates rather than *(rates + i) to retrieve the correct element.
+
+
 7. (Program) a. Write a program that has a declaration in main() to store the string
 Vacation is near in an array named message. Include a function call to display() that
 accepts message in an argument named strng and then displays the contents of message by
 using the pointer notation *(strng + i).
+
+
 b. Modify the display() function written in Exercise 7a to use the expression *strng
 rather than *(strng + i) to retrieve the correct element.
+
 8. (Program) Write a program that declares three one-dimensional arrays named price,
 quantity, and amount. Each array should be declared in main() and be capable of holding
 10 double-precision numbers. The numbers to be stored in price are 10.62, 14.89, 13.21,
@@ -46,14 +66,18 @@ equivalent elements in the price and quantity arrays: for example, amount[1] = p
 * quantity[1].
 After extend() has put values in the amount array, display the values in the array from within
 main(). Write the extend() function by using pointers.
+
 9. (Program) Write a function named trimfrnt() that deletes all leading blanks from a string.
 Write the function using pointers with the return type void.
+
 10. (Program) Write a function named trimrear() that deletes all trailing blanks from a string.
 Write the function using pointers with the return type void.
+
 11. (Program) Write a C++ program that asks for two lowercase characters. Pass the two entered
 characters, using pointers, to a function named capit(). The capit() function should capitalize
 the two letters and return the capitalized values to the calling function through its
 pointer arguments. The calling function should then display all four letters.
+
 12. (Desk check) a. Determine the output of the following program:
 #include <iostream>
 using namespace std;
@@ -75,5 +99,6 @@ void arr(int (*val) [3])
   cout << endl << *(*val) + 1;
   return;
 }
+
 b. Given the declaration for val in the arr() function, is the notation val[1][2] valid in the
 function?
