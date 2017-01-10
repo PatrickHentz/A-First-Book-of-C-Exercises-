@@ -80,7 +80,8 @@ return;
 int main()
 {
 	
-		double rates[] = { 6.5, 7.2, 7.5, 8.3, 8.6, 9.4, 9.6, 9.8,10.0 };
+
+double rates[] = { 6.5, 7.2, 7.5, 8.3, 8.6, 9.4, 9.6, 9.8,10.0 };
 	    show(rates, 9);
 	
 
@@ -108,9 +109,62 @@ Vacation is near in an array named message. Include a function call to display()
 accepts message in an argument named strng and then displays the contents of message by
 using the pointer notation *(strng + i).
 
+#include <iostream>
+using namespace std;
+
+
+void display(char *strng, double numels)    // incorrect version
+{
+	for (int i = 0; i < numels; i++){
+
+		cout << *(strng+ i)  << endl;
+
+	}
+	return;
+
+}
+
+int main()
+{
+	
+		char strng[] = { " Vacation is near " };
+	    display(strng, 19);
+	
+
+	system("PAUSE");
+	return 0;
+}
+	
 
 b. Modify the display() function written in Exercise 7a to use the expression *strng
 rather than *(strng + i) to retrieve the correct element.
+
+#include <iostream>
+using namespace std;
+
+
+void display(char *strng, double numels)    // incorrect version
+{
+	for (int i = 0; i < numels; i++, strng++){
+
+		cout << *strng  << endl;
+
+	}
+	return;
+
+}
+
+int main()
+{
+	
+		char strng[] = { " Vacation is near " };
+	    display(strng, 19);
+	
+
+	system("PAUSE");
+	return 0;
+}
+
 
 8. (Program) Write a program that declares three one-dimensional arrays named price,
 quantity, and amount. Each array should be declared in main() and be capable of holding
