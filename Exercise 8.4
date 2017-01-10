@@ -60,7 +60,32 @@ in an array named rates: 6.5, 7.2, 7.5, 8.3, 8.6, 9.4, 9.6, 9.8, and 10.0. Inclu
 show() that accepts rates in a parameter named rates and then displays the numbers by
 using the pointer notation *(rates + i).
 
+#include <iostream>
+using namespace std;
 
+
+void show(double *rates, double numels)    // incorrect version
+{
+	for (int i = 0; i < numels; i++){
+
+		cout << *(rates + i) << endl;
+
+
+	}
+	return;
+
+}
+
+int main()
+{
+	
+		double rates[] = { 6.5, 7.2, 7.5, 8.3, 8.6, 9.4, 9.6, 9.8,10.0 };
+	    show(rates, 9);
+	
+
+	system("PAUSE");
+	return 0;
+}
 
 b. Modify the show() function written in Exercise 6a to alter the address in rates. Always
 use the expression *rates rather than *(rates + i) to retrieve the correct element.
