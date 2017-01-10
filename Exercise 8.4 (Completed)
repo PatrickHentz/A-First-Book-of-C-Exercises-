@@ -323,7 +323,7 @@ int main()
   const int ROWS = 2;
   const int COLS = 3;
     int nums[ROWS][COLS] = { {33,16,29},
-                         {54,67,99}};
+                           {54,67,99}};
   arr(nums);
   return 0;
 }
@@ -336,9 +336,10 @@ void arr(int (*val) [3])
   return;
 }
 
-
+The output is 33,16,99,34.
 
 b. Given the declaration for val in the arr() function, is the notation val[1][2] valid in the
 function?
 
+Yes, because arrays and pointers behave the same way and are interchangeable in function notation.
 
