@@ -144,8 +144,7 @@ using namespace std;
 
 
 void display(char *strng, double numels)    // incorrect version
-{
-	for (int i = 0; i < numels; i++, strng++){
+{	for (int i = 0; i < numels; i++, strng++){
 
 		cout << *strng  << endl;
 
@@ -172,21 +171,57 @@ quantity, and amount. Each array should be declared in main() and be capable of 
 16.55, 18.62, 9.47, 6.58, 18.32, 12.15, and 3.98. The numbers to be stored in quantity are 4,
 8.5, 6, 7.35, 9, 15.3, 3, 5.4, 2.9, and 4.8. Have your program pass these three arrays to a function
 called extend(), which calculates the elements in the amount array as the product of the
-equivalent elements in the price and quantity arrays: for example, amount[1] = price[1]
-* quantity[1].
+equivalent elements in the price and quantity arrays: for example, amount[1] = price[1] * quantity[1].
 After extend() has put values in the amount array, display the values in the array from within
 main(). Write the extend() function by using pointers.
+
+#include <iostream>
+using namespace std;
+
+void extend(double *price, double *quantity){
+
+	const int NUM = 10;
+
+	double amount[NUM];
+
+	for (int i = 0; i < 10; i++){
+
+		*(amount+i) = *(price + i) * *(quantity + i);
+		cout << *(amount +i) << endl;
+	}
+	return;
+}
+
+int main(){
+
+	const int NUM = 10;
+
+	double price[] = { 10.62, 14.89, 13.21, 16.55, 18.62, 9.47, 6.58, 18.32, 12.15, 3.98 };
+	double quantity[] = { 4, 8.5, 6, 7.35, 9, 15.3, 3, 5.4, 2.9, 4.8 };
+
+	extend(price, quantity);
+
+	system("PAUSE");
+
+	return 0;
+}
 
 9. (Program) Write a function named trimfrnt() that deletes all leading blanks from a string.
 Write the function using pointers with the return type void.
 
+
+
 10. (Program) Write a function named trimrear() that deletes all trailing blanks from a string.
 Write the function using pointers with the return type void.
+
+
 
 11. (Program) Write a C++ program that asks for two lowercase characters. Pass the two entered
 characters, using pointers, to a function named capit(). The capit() function should capitalize
 the two letters and return the capitalized values to the calling function through its
 pointer arguments. The calling function should then display all four letters.
+
+
 
 12. (Desk check) a. Determine the output of the following program:
 #include <iostream>
@@ -210,5 +245,9 @@ void arr(int (*val) [3])
   return;
 }
 
+
+
 b. Given the declaration for val in the arr() function, is the notation val[1][2] valid in the
 function?
+
+
