@@ -1,3 +1,4 @@
+
 1. (Practice) Write declaration and open statements that link the following external filenames
 to their corresponding internal filenames. All files are text-based.
 External Filename      InternalFilename      Mode
@@ -36,7 +37,7 @@ inFile.open("exper.dat");
 
 b. Rewrite the two statements for Exercise 2a, using a single statement.
 
-ifsteam inFile("inData.txt");
+ifstream inFile("inData.txt");
 ifstream inFile("prices.txt");
 ifstream inFile("coupons.dat");
 ifstream inFile("exper.dat");
@@ -45,7 +46,21 @@ ifstream inFile("exper.dat");
 and then opening them as text output files: outDate.txt, rates.txt, distance.txt, and
 file2.txt.
 
+ofstream inFile;
+inFile.open("outDate.txt");
+ofstream inFile;
+inFile.open("rates.txt");
+ofstream inFile;
+inFile.open("distance.txt");
+ofstream inFile;
+inFile.ope("file2.txt");
+
 b. Rewrite the two statements for Exercise 3a, using a single statement.
+
+ofstream inFile("outDate.txt");
+ofstream inFile("rates.txt");
+ofstream inFile("distance.txt");
+ofstream inFile("file2.txt");
 
 4. (Practice) Enter and run Program 9.1 on your computer.
 
