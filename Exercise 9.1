@@ -128,11 +128,60 @@ int main()
 
 6. (Practice) a. Enter and run Program 9.3a on your computer.
 
-
+#include <iostream>
+#include <fstream>
+#include <cstdlib>  // needed for exit()
+#include <string>   // needed for the string class
+using namespace std;
+int main()
+{
+	string filename = "prices.dat"; // create and initialize a string object
+	// with the filename at the top of the
+	// main() function
+	ifstream inFile;
+		inFile.open(filename.c_str());  // open the file
+	if (inFile.fail())  // check for successful open
+	{
+		cout << "\nThe file named " << filename
+			<< " was not successfully opened"
+			<< "\n Please check that the file currently exists."
+			<< endl;
+		system("PAUSE");
+		exit(1);
+	}
+	cout << "\nThe file has been successfully opened for reading.\n";
+	system("PAUSE");
+	return 0;
+}
 
 b. Add a close() method to Program 9.3a, and then run the program.
 
-
+#include <iostream>
+#include <fstream>
+#include <cstdlib>  // needed for exit()
+#include <string>   // needed for the string class
+using namespace std;
+int main()
+{
+	string filename = "prices.dat"; // create and initialize a string object
+	// with the filename at the top of the
+	// main() function
+	ifstream inFile;
+		inFile.open(filename.c_str());  // open the file
+		inFile.close();
+	if (inFile.fail())  // check for successful open
+	{
+		cout << "\nThe file named " << filename
+			<< " was not successfully opened"
+			<< "\n Please check that the file currently exists."
+			<< endl;
+		system("PAUSE");
+		exit(1);
+	}
+	cout << "\nThe file has been successfully opened for reading.\n";
+	system("PAUSE");
+	return 0;
+}
 
 7. (Practice) a. Enter and run Program 9.3b on your computer.
 
