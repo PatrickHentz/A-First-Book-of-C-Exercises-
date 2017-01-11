@@ -1,17 +1,38 @@
 1. (Practice) a. Create a file named test.dat containing the data in the test.dat file used in
 Program 9.7. (You can use a text editor or copy the test.dat file from this book’s Web site.)
+
+
+
 b. Enter and run Program 9.7 on your computer.
+
+
+
 2. (Modify) Rewrite Program 9.7 so that the origin for the seekg() method used in the for loop
 is the start of the file rather than the end.
+
+
+
 3. (Modify) Modify Program 9.7 to display an error message if seekg() attempts to reference a
 position beyond the end of file.
+
+
+
 4. (Practice) Write a program that reads and displays every second character in a file named
 test.dat.
+
+
+
 5. (Practice) Using the seek() and tell() methods, write a function named fileChars()
 that returns the total number of characters in a file.
+
+
+
 6. (Practice) a. Write a function named readBytes() that reads and displays n characters starting
 from any position in a file. The function should accept three arguments: a file object name,
 the offset of the first character to be read, and the number of characters to be read. (Note: The
-prototype for readBytes() should be voidƒreadBytes(fstream&,ƒlong,ƒint).)
+prototype for readBytes() should be voidƒreadBytes(fstream&, long, int).)
+
+
+
 b. Modify the readBytes() function written in Exercise 6a to store the characters read into
 a string or an array. The function should accept the storage address as a fourth argument.
