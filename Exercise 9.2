@@ -33,13 +33,122 @@ int main()
 b. Modify Program 9.5 to use the expression !inFile.eof() in place of the expression
 inFile.good(), and run the program to see whether it operates correctly.
 
+#include <iostream>
+#include <fstream>
+#include <cstdlib>   // needed for exit()
+#include <string>    // needed for the string class
+using namespace std;
+int main()
+{
+	string filename = "prices.dat";  // put the filename up front
+	string descrip;
+	double price;
+	ifstream inFile;
+	inFile.open(filename.c_str());
+	if (inFile.fail())  // check for successful open
+	{
+		cout << "\nThe file was not successfully opened"
+			<< "\n Please check that the file currently exists."
+			<< endl;
+		system("PAUSE");
+		exit(1);
+	}
+	// read and display the file's contents
+	inFile >> descrip >> price;
+	while (!inFile.eof()) // check next character
+	{
+		cout << descrip << ' ' << price << endl;
+		inFile >> descrip >> price;
+	}
+	inFile.close();
+	system("PAUSE");
+	return 0;
+}
+
 2. (Practice and Modify) a. Enter and run Program 9.6.
+
+#include <iostream>
+#include <fstream>
+#include <cstdlib>   // needed for exit()
+#include <string>    // needed for the string class
+using namespace std;
+int main()
+{
+	string filename = "prices.dat";  // put the filename up front
+	string line;
+	ifstream inFile;
+	inFile.open(filename.c_str());
+	if (inFile.fail())  // check for successful open
+	{
+		cout << "\nThe file was not successfully opened"
+			<< "\n Please check that the file currently exists."
+			<< endl;
+		exit(1);
+	}
+	// read and display the file's contents
+	while (getline(inFile, line))
+		cout << line << endl;
+	inFile.close();
+	return 0;
+}
 
 b. Modify Program 9.6 by replacing cout with cerr, and verify that the output for the standard
 error file stream is the screen.
 
+#include <iostream>
+#include <fstream>
+#include <cstdlib>   // needed for exit()
+#include <string>    // needed for the string class
+using namespace std;
+int main()
+{
+	string filename = "prices.dat";  // put the filename up front
+	string line;
+	ifstream inFile;
+	inFile.open(filename.c_str());
+	if (inFile.fail())  // check for successful open
+	{
+		cerr << "\nThe file was not successfully opened"
+			<< "\n Please check that the file currently exists."
+			<< endl;
+		exit(1);
+	}
+	// read and display the file's contents
+	while (getline(inFile, line))
+		cerr << line << endl;
+	inFile.close();
+	return 0;
+}
+
 c. Modify Program 9.6 by replacing cout with clog, and verify that the output for the standard
 log stream is the screen.
+
+#include <iostream>
+#include <fstream>
+#include <cstdlib>   // needed for exit()
+#include <string>    // needed for the string class
+using namespace std;
+int main()
+{
+	string filename = "prices.dat";  // put the filename up front
+	string line;
+	ifstream inFile;
+	inFile.open(filename.c_str());
+	if (inFile.fail())  // check for successful open
+	{
+		clog<< "\nThe file was not successfully opened"
+			<< "\n Please check that the file currently exists."
+			<< endl;
+		system("PAUSE");
+		exit(1);
+	}
+	// read and display the file's contents
+	while (getline(inFile, line))
+		clog << line << endl;
+	inFile.close();
+	system("PAUSE");
+	return 0;
+}
 
 3. (Practice and Modify) a. Write a C++ program that accepts lines of text from the keyboard
 and writes each line to a file named text.dat until an empty line is entered. An empty line
