@@ -185,11 +185,56 @@ int main()
 
 7. (Practice) a. Enter and run Program 9.3b on your computer.
 
-
+#include <iostream>
+#include <fstream>
+#include <cstdlib>   // needed for exit()
+#include <string>    // needed for the string class
+using namespace std;
+int main()
+{
+	string filename; // declare a string object with no initialization
+	ifstream inFile;
+	cout << "Please enter the name of the file you wish to open : ";
+	cin >> filename;
+	inFile.open(filename.c_str());  // open the file
+	if (inFile.fail())  // check for successful open
+	{
+		cout << "\nThe file named " << filename
+			<< " was not successfully opened"
+			<< "\n Please check that the file currently exists."
+			<< endl;
+		exit(1);
+	}
+	cout << "\nThe file has been successfully opened for reading.\n";
+	return 0;
+}
 
 b. Add a close() method to Program 9.3b, and then run the program.
 
-
+#include <iostream>
+#include <fstream>
+#include <cstdlib>   // needed for exit()
+#include <string>    // needed for the string class
+using namespace std;
+int main()
+{
+	string filename; // declare a string object with no initialization
+	ifstream inFile;
+	cout << "Please enter the name of the file you wish to open : ";
+	cin >> filename;
+	inFile.open(filename.c_str());  // open the file
+	inFile.close();
+	if (inFile.fail())  // check for successful open
+	{
+		cout << "\nThe file named " << filename
+			<< " was not successfully opened"
+			<< "\n Please check that the file currently exists."
+			<< endl;
+		exit(1);
+	}
+	cout << "\nThe file has been successfully opened for reading.\n";
+	return 0;
+}
 
 8. (Practice) Using the reference manuals provided with your computer’s OS, determine the
 following:
