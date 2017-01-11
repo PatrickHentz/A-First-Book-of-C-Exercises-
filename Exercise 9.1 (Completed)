@@ -217,6 +217,7 @@ b. Add a close() method to Program 9.3b, and then run the program.
 #include <string>    // needed for the string class
 using namespace std;
 int main()
+
 {
 	string filename; // declare a string object with no initialization
 	ifstream inFile;
@@ -257,12 +258,31 @@ coba.mem                     memo                           binary and output
 coupons.bnd                  coups                          binary and append
 prices.dat                   priFile                        binary and input
 
+ofstream memo;
+memo.open("coba.mem");
+ifstream coups;
+coups.open("coupons.bnd");
+ifstream priFile;
+priFile.open("prices.dat");
 
 
 b. Redo Exercise 10a, using only fstream objects.
 
-
+fstream memo;
+memo.open("coba.mem", ios:: out | ios::binary);
+fstream coups;
+coups.open("coupons.bnd", ios::app | ios::binary);
+fstream priFile;
+coups.open("prices.dat", ios::in | ios::binary);
 
 c. Write close() statements for each file opened in Exercise 10a.
 
-
+ofstream memo;
+memo.open("coba.mem");
+memo.close();
+ifstream coups;
+coups.open("coupons.bnd");
+coups.close();
+ifstream priFile;
+priFile.open("prices.dat");
+coups.close();
