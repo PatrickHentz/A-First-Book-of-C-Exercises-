@@ -22,14 +22,24 @@ fstream rates;
 rates.open("rates.dat", ios::in);
 
 2. (Practice) a. Write a set of two statements that declares the following objects as ifstream
-objects and then opens them as text input files:ƒinData.txt, prices.txt, coupons.dat,
+objects and then opens them as text input files: inData.txt, prices.txt, coupons.dat,
 and exper.dat.
 
-
+ifstream inFile;
+inFile.open("inData.txt");
+ifstream inFile;
+inFile.open("prices.txt");
+ifstream inFile;
+inFile.open("coupons.dat");
+ifstream inFile;
+inFile.open("exper.dat");
 
 b. Rewrite the two statements for Exercise 2a, using a single statement.
 
-
+ifsteam inFile("inData.txt");
+ifstream inFile("prices.txt");
+ifstream inFile("coupons.dat");
+ifstream inFile("exper.dat");
 
 3. (Practice) a. Write a set of two statements declaring the following objects as ofstream objects
 and then opening them as text output files: outDate.txt, rates.txt, distance.txt, and
