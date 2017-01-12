@@ -278,7 +278,43 @@ int main()
 b. Write a C++ program to read the employee.dat file created in Exercise 5a and produce a
 duplicate copy of the file named employee.bak.
 
+#include <iostream>
+#include <fstream>
+#include <cstdlib>   // needed for exit()
+#include <string>    // needed for the string class
+#include <iomanip>   // needed for formatting
+using namespace std;
+int main()
+{
+	string filename2 = "employee.dak";
+	string filename = "employee.dat";  // put the filename up front
+	
+	string line;
+	ifstream inFile;
+	ifstream inFile2;
+	ofstream outFile;
+	inFile.open(filename.c_str());
+	inFile2.open(filename2.c_str());
+	outFile.open(filename2.c_str());
+	if (inFile.fail())  // check for successful open
+	{
+		cout << "\nThe file was not successfully opened"
+			<< "\n Please check that the file currently exists."
+			<< endl;
+		exit(1);
+	}
+	// read and copy the file's contents
+	while (getline(inFile, line))
+	   
+		outFile << line;
 
+
+	    inFile2.close();
+	    inFile.close();
+		outFile.close();
+	system("PAUSE");
+	return 0;
+}
 
 c. Modify the program written in Exercise 5b to accept the names of the original and duplicate
 files as user input.
