@@ -707,7 +707,40 @@ Hanson, P.            15.00                48
 Lasard, D.            16.50                35
 Stillman, W.          12.00                50
 
+#include <iostream>
+#include <fstream>
+#include <cstdlib>   // needed for exit()
+#include <string>    // needed for the string class
+#include <iomanip>   // needed for formatting
+using namespace std;
+int main()
+{
+	string filename = "pay.dat";  // put the filename up front
+	ofstream outFile;
+	outFile.open(filename.c_str());
+	if (outFile.fail())
+	{
+		cout << "The file was not successfully opened" << endl;
+		exit(1);
+	}
 
+	// send data to the file
+
+
+
+	outFile << "Callaway, G." << setw(10) << 16.00 << setw(10) << 40 <<  endl
+		<< "Hanson, P."<< setw(10) << 15.00 << setw(10) <<  48 << endl
+		<< "Lasard, D." << setw(10) << 16.50<< setw(10) << 35 << endl
+		<< "Stillman, W." << setw(10) << 12.50 << setw(10) << 50 << endl;
+		
+		
+		
+	outFile.close();
+	cout << "The file " << filename
+		<< " has been successfully written." << endl;
+	system("PAUSE");
+	return 0;
+}
 
 b. Write a C++ program that uses the information in the file created in Exercise 10a to produce
 the following pay report for each employee:
