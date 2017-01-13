@@ -531,7 +531,37 @@ Car Number          Miles Driven           Gallons of Gas Used
 85                  1322                   86
 97                  235                    14
 
+#include <iostream>
+#include <fstream>
+#include <cstdlib>   // needed for exit()
+#include <string>    // needed for the string class
+#include <iomanip>   // needed for formatting
+using namespace std;
+int main()
+{
+	string filename = "car.dat";  // put the filename up front
+	ofstream outFile;
+	outFile.open(filename.c_str());
+	if (outFile.fail())
+	{
+		cout << "The file was not successfully opened" << endl;
+		exit(1);
+	}
 
+	// send data to the file
+
+	outFile << 55 << setw(10) << 250 << setw(10) << 19 << endl
+		<< 62 << setw(10) << 525 << setw(10) << 38 << endl
+		<< 71 << setw(10) << 123 << setw(10) << 6 << endl
+		<< 85 << setw(10) << 97 << setw(10) << 86 << endl
+		<< 97 << setw(10) << 235 << setw(10) << 14 << endl;
+		
+	outFile.close();
+	cout << "The file " << filename
+		<< " has been successfully written." << endl;
+	system("PAUSE");
+	return 0;
+}
 
 b. Write a C++ program that reads the data in the file created in Exercise 8a and displays the
 car number, miles driven, gallons of gas used, and miles per gallon (mpg) for each car. The
