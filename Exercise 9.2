@@ -938,7 +938,74 @@ Then assign a letter grade on the basis of 90–100 = A, 80–89 = B, 70–79 = 
 less than 60 = F. All the information, including the final grade and the letter grade, should then
 be displayed and written to a file.
 
+#include <iostream>
+#include <fstream>
+#include <cstdlib>   // needed for exit()
+#include <string>    // needed for the string class
+#include <iomanip>   // needed for formatting
+using namespace std;
+int main()
+{
+	string filename = "grade.dat";  // put the filename up front
+	ofstream outFile;
+	ifstream inFile;
+	inFile.open(filename.c_str());
+	outFile.open(filename.c_str());
 
+
+	if (outFile.fail())
+	{
+		cout << "The file was not successfully opened" << endl;
+		exit(1);
+	}
+	// send data to the file
+	double Exam1;
+	double Exam2;
+	double Homework;
+	double FinalExam;
+	string name;
+	for (int i = 1; i <= 20; i++){
+	cout << "Enter student's name" << endl;
+	cin >> name;
+	cout << "Enter Exam 1 Grade for student " << endl;
+	cin >> Exam1;
+	cout << "Enter Exam 2 Grade " << endl;
+	cin >> Exam2;
+	cout << "Enter Homework Grade " << endl;
+	cin >> Homework;
+	cout << "Enter Final Exam Grade " << endl;
+	cin >> FinalExam;
+	outFile << "Name  " << setw(20) << "Exam 1 Grade" << setw(20) << "Exam 2 Grade" << setw(20) << "Homework Grade" << setw(20) << "Final Exam Grade" << endl;
+	
+	outFile << name << setw(20) << Exam1 << setw(20) << Exam2 << setw(20) << Homework << setw(20) << FinalExam << endl;
+
+	double finalgrad = .20 *Exam1 + 0.20 * Exam2 + 0.35 * Homework + 0.25 * FinalExam;
+	outFile << "Your Final Grade is" << endl;
+	outFile << finalgrad << endl;
+
+	if (finalgrad >= 90){
+		outFile << "A" << endl;
+	}
+	else if (finalgrad >= 80 && finalgrad <= 89){
+		outFile << "B" << endl;
+	}
+	else if (finalgrad >= 70 && finalgrad <= 79){
+		outFile << "C" << endl;
+	}
+	else if (finalgrad >= 60 && finalgrad <= 69){
+		outFile << "D" << endl;
+	}
+	else if (finalgrad < 60){
+		outFile << "F" << endl;
+	}
+	}
+	inFile.close();
+	outFile.close();
+	cout << "The file " << filename
+		<< " has been successfully written." << endl;
+	system("PAUSE");
+	return 0;
+}
 
 13. (Program) A bank’s customer records are to be stored in a file and read into a set of arrays so
 that a customer’s record can be accessed randomly by account number. Create the file by
