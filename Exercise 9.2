@@ -804,7 +804,36 @@ int main()
 11. (Program) a. Store the following data in a file named numbers.dat:
 5  96  87  78  93  21  4  92  82  85  87  6  72  69  85  75  81  73
 
+#include <iostream>
+#include <fstream>
+#include <cstdlib>   // needed for exit()
+#include <string>    // needed for the string class
+#include <iomanip>   // needed for formatting
+using namespace std;
+int main()
+{
+	string filename = "numbers.dat";  // put the filename up front
+	ofstream outFile;
+	outFile.open(filename.c_str());
+	if (outFile.fail())
+	{
+		cout << "The file was not successfully opened" << endl;
+		exit(1);
+	}
 
+	// send data to the file
+	outFile << 5 << setw(10) << 96 << setw(10) << 87 << setw(10) << 78 << setw(10) 
+		    << 93 << setw(10) << 21 << setw(10) << 4 << setw(10) << 92 << setw(10) 
+		    << 82 << setw(10) << 85 << setw(10) << 87 << setw(10) << 6 << setw(10)
+			<< 72 << setw(10) << 69 << setw(10) << 85 << setw(10) << 75 << setw(10)
+			<< 81 << setw(10) << 73;
+			
+	outFile.close();
+	cout << "The file " << filename
+		<< " has been successfully written." << endl;
+	system("PAUSE");
+	return 0;
+}
 
 b. Write a C++ program to calculate and display the average of each group of numbers in the
 file created in Exercise 11a. The data is arranged in the file so that each group of numbers
