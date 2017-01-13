@@ -843,7 +843,88 @@ indicates that the following four numbers are a group, and the 6 indicates that 
 numbers are a group. (Hint: Use a nested loop. The outer loop should terminate when the
 end of file has been encountered.)
 
+#include <iostream>
+#include <fstream>
+#include <cstdlib>   // needed for exit()
+#include <string>    // needed for the string class
+#include <iomanip>   // needed for formatting
+using namespace std;
+int main()
+{
+	string filename = "numbers.dat";  // put the filename up front
+	ofstream outFile;
+	ifstream inFile;
+	inFile.open(filename.c_str());
+	outFile.open(filename.c_str());
+	
 
+	if (outFile.fail())
+	{
+		cout << "The file was not successfully opened" << endl;
+		exit(1);
+	}
+	// send data to the file
+	//outFile << 5 <<  96  << 87  << 78 << 93 <<  21 << 4 <<  92 << 82 
+	//	<< 85  << 87 << 6 << 72 << 69 << 85 << 75 << 81 << 73;
+
+	while (inFile.good())
+	{
+		double InPut[] = { 5, 96, 87, 78, 93, 21, 4, 92, 82, 85, 87, 6, 72, 69, 85, 75, 81, 73 };
+		double total = 0;
+
+		inFile >> InPut[0];
+		cout << "The number of elements in this group is " << InPut[0] << endl;
+		cout << "The data in this group is: ";
+
+		for (int i = 0; i <= 5; i++)
+		{
+			inFile >> InPut[i];
+			total = total + InPut[i];
+			cout << InPut[i] << " ";
+			outFile << InPut[i] << " ";
+
+		}
+
+		cout << endl << "Average = " << (total - InPut[0]) / InPut[0] << endl;  // Sum divided by InPut
+		outFile << endl << "Average = " << (total - InPut[0]) / InPut[0] << endl;
+		total = 0; // Reset Total
+		
+		inFile >> InPut[6];
+		cout << "The number of elements in this group is " << InPut[6] << endl;
+		cout << "The data in this group is: ";
+		for (int j = 6; j <= 10; j++)
+		{
+			inFile >> InPut[j];
+			total = total + InPut[j];
+			cout << InPut[j] << " ";
+			outFile << InPut[j] << " ";
+		}
+		cout << endl << "Average = " << (total - InPut[6]) / InPut[6] << endl;  // Sum divided by InPut
+		outFile << endl << "Average = " << (total - InPut[6]) / InPut[6] << endl;
+		total = 0; // Reset Total
+		
+	inFile >> InPut[11];
+	cout << "The number of elements in this group is " << InPut[11] << endl;
+	cout << "The data in this group is: ";
+	
+	for (int k = 11; k < 18; k++)
+		{
+			inFile >> InPut[k];
+			total = total + InPut[k];
+			cout << InPut[k] << " ";
+			outFile << InPut[k] << " ";
+		}
+	    cout << endl << "Average = " << (total - InPut[11]) / InPut[11] << endl;  // Sum divided by InPut
+		outFile << endl << "Average = " << (total - InPut[11]) / InPut[11] << endl;
+		total = 0; // Reset Total
+	}
+			
+	outFile.close();
+	cout << "The file " << filename
+		<< " has been successfully written." << endl;
+	system("PAUSE");
+	return 0;
+}
 
 12. (Program) Write a C++ program that allows users to enter the following information from the
 keyboard for each student in a class (up to 20 students) and stores the data in a text file named
