@@ -61,7 +61,39 @@ int main()
 4. (Practice) Write a program that reads and displays every second character in a file named
 test.dat.
 
-
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <cstdlib>
+using namespace std;
+int main()
+{
+	string filename = "test.dat";
+	char ch;
+	long offset, last;
+	ifstream inFile(filename.c_str());
+	if (inFile.fail())   // check for successful open
+	{
+		cout << "\nThe file was not successfully opened"
+			<< "\n Please check that the file currently exists"
+			<< endl;
+		exit(1);
+	}
+	inFile.seekg(0L, ios::end);   // move to the end of the file
+	last = inFile.tellg();       // save the offset of the last character
+	for (offset = 0L; offset <= last - 1; offset++)
+	{
+		if (offset % 2 == 0){
+		inFile.seekg(offset, ios::beg);
+		ch = inFile.get();
+		cout << ch << " ";
+	   }
+	}
+	inFile.close();
+	cout << endl;
+	system("PAUSE");
+	return 0;
+}
 
 5. (Practice) Using the seek() and tell() methods, write a function named fileChars()
 that returns the total number of characters in a file.
