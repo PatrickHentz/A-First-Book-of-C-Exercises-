@@ -117,6 +117,7 @@ double fileChars(){
 	return total;
 }
 
+
 6. (Practice) a. Write a function named readBytes() that reads and displays n characters starting
 from any position in a file. The function should accept three arguments: a file object name,
 the offset of the first character to be read, and the number of characters to be read. (Note: The
@@ -174,3 +175,52 @@ int main()
 
 b. Modify the readBytes() function written in Exercise 6a to store the characters read into
 a string or an array. The function should accept the storage address as a fourth argument.
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <cstdlib>
+using namespace std;
+
+void readBytes(ofstream& fileOut, long value, int n){
+	string filename = "test.dat";
+	char ch;
+	long last;
+	int total = 0;
+	ifstream inFile(filename.c_str());
+	inFile.seekg(0L, ios::end);   // move to the end of the file
+	last = inFile.tellg();       // save the offset of the last character
+	for (long offset = value; offset <= value+n; offset++)
+	{
+		inFile.seekg(offset, ios::beg);
+		ch = inFile.get();
+		cout << ch << " ";
+		fileOut << ch << " ";
+		
+	}
+	inFile.close();
+	return;
+}
+
+int main()
+{
+	string filename = "test.dat";
+	char ch;
+	long offset, last;
+	string file = "test1.dat";
+	ifstream inFile(filename.c_str());
+	ofstream fileOut(file.c_str());
+
+	if (inFile.fail())   // check for successful open
+	{
+		cout << "\nThe file was not successfully opened"
+			<< "\n Please check that the file currently exists"
+			<< endl;
+		exit(1);
+	}
+
+    readBytes(fileOut, 2L, 8L);
+	system("PAUSE");
+	return 0;
+}
+
