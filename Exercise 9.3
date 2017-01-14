@@ -98,7 +98,24 @@ int main()
 5. (Practice) Using the seek() and tell() methods, write a function named fileChars()
 that returns the total number of characters in a file.
 
-
+double fileChars(){
+	string filename = "test.dat";
+	char ch;
+	long offset, last;
+	int total = 0;
+	ifstream inFile(filename.c_str());
+	inFile.seekg(0L, ios::end);   // move to the end of the file
+	last = inFile.tellg();       // save the offset of the last character
+	for (offset = 0L; offset <= last; offset++)
+	{
+		inFile.seekg(offset, ios::beg);
+		ch = inFile.get();
+		//cout << ch << " ";
+		total =+ offset;
+	}
+	inFile.close();
+	return total;
+}
 
 6. (Practice) a. Write a function named readBytes() that reads and displays n characters starting
 from any position in a file. The function should accept three arguments: a file object name,
