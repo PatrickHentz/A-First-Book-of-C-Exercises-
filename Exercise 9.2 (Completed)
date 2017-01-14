@@ -1095,4 +1095,52 @@ The format of each line in the file is identical, with fixed-length fields defin
 Using this data file, write a C++ program that reads the file and produces a report listing the
 shipped date, part number, first name, last name, and company name.
 
+#include <iostream>
+#include <fstream>
+#include <cstdlib>   // needed for exit()
+#include <string>    // needed for the string class
+#include <iomanip>   // needed for formatting
+using namespace std;
+int main()
+{
+	string filename = "shipped.dat";  // put the filename up front
+	ofstream outFile;
+	ifstream inFile;
+	inFile.open(filename.c_str());
+	outFile.open(filename.c_str());
 
+
+	if (outFile.fail())
+	{
+		std::cout << "The file was not successfully opened" << endl;
+		exit(1);
+	}
+	// send data to the file
+
+	string shipped;
+	string partnum;
+	string Firstnam;
+	string Lastnam;
+	string companynam;
+	string tracknum;
+
+	outFile << "04/12/11 D50625 74444 James Lehoff Rotech" << endl;
+	outFile << "04/12/11 D60752 75255 Janet Lezar Rotech" << endl;
+	outFile << "04/12/11 D40295 74477 Bill McHenry Rotech" << endl;
+	outFile << "04/12/11 D23745 74470 Diane Kaiser Rotech" << endl;
+	outFile << "04/12/11 D50892 75155 Helen Richardson NapTime" << endl;
+	outFile.close();
+
+	inFile >> shipped >> tracknum >> partnum >> Firstnam >> Lastnam >> companynam;
+	while(inFile.good())
+		{
+		cout << shipped << ' ' << partnum  << ' ' << Firstnam << ' ' << Lastnam << ' ' << companynam << endl;
+		inFile  >> shipped >> partnum >> Firstnam >> Lastnam >> companynam;
+		 }
+	inFile.close();
+	
+	std::cout << "The file " << filename
+		      << " has been successfully written." << endl;
+	std::system("PAUSE");
+	return 0;
+}
