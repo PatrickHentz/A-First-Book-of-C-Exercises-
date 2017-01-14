@@ -11,7 +11,14 @@ Done!!
 2. (Modify) Rewrite Program 9.7 so that the origin for the seekg() method used in the for loop
 is the start of the file rather than the end.
 
-
+	for (offset = 0L; offset <= last; offset++)
+	{
+		inFile.seekg(offset, ios::beg);
+		ch = inFile.get();
+		cout << ch << " : ";
+	}
+	inFile.close();
+	cout << endl;
 
 3. (Modify) Modify Program 9.7 to display an error message if seekg() attempts to reference a
 position beyond the end of file.
