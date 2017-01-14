@@ -23,7 +23,40 @@ is the start of the file rather than the end.
 3. (Modify) Modify Program 9.7 to display an error message if seekg() attempts to reference a
 position beyond the end of file.
 
-
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <cstdlib>
+using namespace std;
+int main()
+{
+	string filename = "test.dat";
+	char ch;
+	long offset, last;
+	ifstream inFile(filename.c_str());
+	if (inFile.fail())   // check for successful open
+	{
+		cout << "\nThe file was not successfully opened"
+			<< "\n Please check that the file currently exists"
+			<< endl;
+		exit(1);
+	}
+	inFile.seekg(0L, ios::end);   // move to the end of the file
+	last = inFile.tellg();       // save the offset of the last character
+	for (offset = 0L; offset <= last-1; offset++)
+	{
+		inFile.seekg(offset, ios::beg);
+		ch = inFile.get();
+		cout << ch << " : ";
+		if (offset >= last){
+			cout << "Error" << endl;
+		}
+	}
+	inFile.close();
+	cout << endl;
+	system("PAUSE");
+	return 0;
+}
 
 4. (Practice) Write a program that reads and displays every second character in a file named
 test.dat.
