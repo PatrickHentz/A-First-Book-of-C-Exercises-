@@ -1017,7 +1017,70 @@ After the file is created, write a C++ program that requests a user-input accoun
 displays the corresponding name and account balance from the file. (Hint: Read the data in the
 file into an array, and then search the array for the account number.)
 
+#include <iostream>
+#include <fstream>
+#include <cstdlib>   // needed for exit()
+#include <string>    // needed for the string class
+#include <iomanip>   // needed for formatting
+using namespace std;
+int main()
+{
+	string filename = "record.dat";  // put the filename up front
+	ofstream outFile;
+	ifstream inFile;
+	inFile.open(filename.c_str());
+	outFile.open(filename.c_str());
 
+
+	if (outFile.fail())
+	{
+		std::cout << "The file was not successfully opened" << endl;
+		exit(1);
+	}
+	// send data to the file
+	const int value = 5;
+	int record;
+	std::cout << "Enter an Account Number" << endl;
+	
+	std::cin >> record;
+	inFile >> record;
+
+	switch (record){
+	case 1000:
+		outFile << "Patrick"<< endl;
+		outFile << "Hentz" << endl;
+		outFile << 10533.34 << endl;
+		break;
+	case 1001:
+		outFile << " John " << endl;
+		outFile << " Doe " << endl;
+		outFile << 12032.29 << endl;
+		break;
+	case 1002:
+		outFile << " John " << endl;
+		outFile << " Bow " << endl;
+		outFile << 12132.29 << endl;
+		break;
+	case 1003:
+		outFile << " John " << endl;
+		outFile << " Mo " << endl;
+		outFile << 12232.29 << endl;
+		break;
+	case 1004:
+		outFile << " John " << endl;
+		outFile << " Grow " << endl;
+		outFile << 12332.29 << endl;
+		break;
+	}
+
+
+	inFile.close();
+	outFile.close();
+	std::cout << "The file " << filename
+		<< " has been successfully written." << endl;
+	std::system("PAUSE");
+	return 0;
+}
 
 14. (Program) Create a text file with the following data or use the shipped.dat file provided on
 this book’s Web site. The headings aren’t part of the file; they simply indicate what the data
