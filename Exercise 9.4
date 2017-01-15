@@ -38,7 +38,22 @@ int fcheck(ifstream& fileIn)
 printLine() that reads and displays any line of the file. For example, the function called
 printLine(fstream& fName,5); should display the fifth line of the passed object stream.
 
-
+void printLine(ofstream& fileOut, int n)
+{
+	const int NUMLINES = 7;  // number of lines
+	int count;
+	string line;
+	cout << "Please enter five lines of text : " << endl;
+	for (count = 0; count < NUMLINES; ++count)
+	{
+		getline(cin, line);
+		if (count == n){
+		fileOut << line << endl;
+	}
+	}
+	cout << "\nThe file has been successfully written.";
+	return;
+}
 
 4. (Modify) Rewrite the getOpen() function used in Program 9.9 to incorporate the file-checking
 procedures described in this section. Specifically, if the entered filename exists, an appropriate
