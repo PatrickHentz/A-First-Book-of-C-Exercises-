@@ -1,7 +1,17 @@
 1. (Practice) A function named pFile() is to receive a filename as a reference to an ifstream
 object. What declarations are required to pass a filename to pFile()?
 
+// within the main() function
+string fname = "pass.dat";
+void pFile(ifstream&);
+ifstream inFile;
+inFile.open(fname.c_str());
+pFile(inFile);
 
+// within the pFile function
+void pFile(ifstream& fileIn){
+
+}
 
 2. (Practice) Write a function named fcheck() that checks whether a file exists. The function
 should accept an ifstream object as a formal reference parameter. If the file exists, the function
@@ -11,7 +21,7 @@ should return a value of 1; otherwise, the function should return a value of 0.
 
 3. (Practice) A data file consisting of a group of lines has been created. Write a function named
 printLine() that reads and displays any line of the file. For example, the function called
-printLine(fstream&ƒfName,5); should display the fifth line of the passed object stream.
+printLine(fstream& fName,5); should display the fifth line of the passed object stream.
 
 
 
