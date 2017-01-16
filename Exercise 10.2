@@ -159,7 +159,38 @@ void Circle::showCircle()
 d. Construct a class implementation section for the constructor and showData() methods corresponding
 to the class declaration created for Exercise 2d.
 
+// class implementation section	
+System::System(char c, double cp, char p, double pp, char s, double sp){
+	computer = c;
+	compPrice = cp;
+	printer = p;
+	printPrice = pp;
+	screen = s;
+	scrnPrice = sp;
+}
 
+void System::setSystem(char c, double cp, char p, double pp, char s, double sp){
+	computer = c;
+	compPrice = cp;
+	printer = p;
+	printPrice = pp;
+	screen = s;
+	scrnPrice = sp;
+}
+
+void System::showSystem()
+{
+	cout << "The Electroic's prices are";
+	cout << setw(2) << computer << " $"
+		 << setw(3) << compPrice << " Show Printer " 
+		 << setw(2) << printer << " $"
+		 << setw(3) << printPrice << "Show Screen"
+		 << setw(2) << screen << " $"
+		 << setw(3) << scrnPrice << endl;
+		
+	return;
+
+}
 
 4. (Program) a. Include the class declaration and implementation sections prepared for
 Exercises 2a and 3a in a complete working program.
@@ -328,7 +359,72 @@ int main(){
 d. Include the class declaration and implementation sections prepared for Exercises 2d and 3d
 in a complete working program.
 
+#include <iostream>
+#include <iomanip>
+using namespace std;
 
+//class declaration section
+class System
+
+{
+
+private:
+	char computer;
+	char printer;
+	char screen;
+	double compPrice;
+	double printPrice;
+	double scrnPrice;
+public:
+
+	System(char = 'D', double = 500, char = 'H', double = 300, char = 'D', double = 900);
+	void setSystem(char, double, char, double, char, double);
+	void showSystem();
+
+};
+// class implementation section	
+System::System(char c, double cp, char p, double pp, char s, double sp){
+	computer = c;
+	compPrice = cp;
+	printer = p;
+	printPrice = pp;
+	screen = s;
+	scrnPrice = sp;
+}
+
+void System::setSystem(char c, double cp, char p, double pp, char s, double sp){
+	computer = c;
+	compPrice = cp;
+	printer = p;
+	printPrice = pp;
+	screen = s;
+	scrnPrice = sp;
+}
+
+void System::showSystem()
+{
+	cout << "The Electroic's prices are";
+	cout << setw(2) << computer << " $"
+		 << setw(3) << compPrice << " Show Printer " 
+		 << setw(2) << printer << " $"
+		 << setw(3) << printPrice << "Show Screen"
+		 << setw(2) << screen << " $"
+		 << setw(3) << scrnPrice << endl;
+		
+	return;
+
+}
+	
+int main(){
+	System a, b, c( 'A', 400,'B', 500, 'C', 100);
+	b.setSystem( 'D',900,'E', 400, 'F', 600);
+	a.showSystem();
+	b.showSystem();
+	c.showSystem();
+
+	system("PAUSE");
+	return 0;
+}
 
 5. (Desk check) Determine the errors in the following class declaration section:
 class Employee
