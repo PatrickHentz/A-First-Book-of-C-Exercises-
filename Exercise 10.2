@@ -455,6 +455,30 @@ is 4/1/2014, the returned value is 20140401. (Dates in this form are useful when
 sorts because placing the numbers in numerical order automatically places the corresponding
 dates in chronological order.)
 
+// class declaration section
+class Date
+{
+private:
+	int month;
+	int day;
+	int year;
+public:
+	Date(int = 7, int = 4, int = 2012); // constructor
+	void setDate(int, int, int);   // member method to copy a date
+	void showDate();               // member method to display a date
+	int convert();              //converts the dates to a sorting order
+};
+// class implementation section
+int Date::convert()
+{
+	
+	int con = year * 10000 + month * 100 + day;
+
+	return con;
+}
+
+b. Include the modified Date class constructed for Exercise 6a in a complete C++ program.
+
 #include <iostream>
 #include <iomanip>
 using namespace std;
@@ -516,10 +540,6 @@ int main()
 	system("PAUSE");
 	return 0;
 }
-
-b. Include the modified Date class constructed for Exercise 6a in a complete C++ program.
-
-
 
 7. (Modify) a. Add to Program 10.1’s class definition an additional member method named
 leapyr() that returns a true if the year is a leap year and a false if it’s not a leap year. A leap
