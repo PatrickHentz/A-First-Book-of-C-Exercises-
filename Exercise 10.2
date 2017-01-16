@@ -131,7 +131,30 @@ void Complex::showComplex()
 c. Construct a class implementation section for the constructor and showData() methods
 corresponding to the class declaration created for Exercise 2c.
 
+// class implementation section	
+Circle::Circle(int x, int y, double r){
+	xcenter = x;
+	ycenter = y;
+	radius = r;
+}
 
+void Circle::setCircle(int x, int y, double r){
+	xcenter = x;
+	ycenter = y;
+	radius = r;
+}
+
+void Circle::showCircle()
+{
+	cout << "The Circle x,y and radius are ";
+	cout << setfill('0')
+		<< setw(2) << xcenter << ','
+		<< setw(2) << ycenter << " and the radius " 
+		<< setw(2) << radius << endl;
+		
+	return;
+
+}
 
 d. Construct a class implementation section for the constructor and showData() methods corresponding
 to the class declaration created for Exercise 2d.
@@ -250,7 +273,57 @@ int main(){
 c. Include the class declaration and implementation sections prepared for Exercises 2c and 3c
 in a complete working program.
 
+#include <iostream>
+#include <iomanip>
+using namespace std;
 
+//class declaration section
+class Circle
+{
+private:
+		int xcenter;
+		int ycenter;
+		double radius;
+public:
+		Circle(int = 5, int = 5, double = 5);
+		void setCircle(int, int, double);
+		void showCircle();
+};
+// class implementation section	
+Circle::Circle(int x, int y, double r){
+	xcenter = x;
+	ycenter = y;
+	radius = r;
+}
+
+void Circle::setCircle(int x, int y, double r){
+	xcenter = x;
+	ycenter = y;
+	radius = r;
+}
+
+void Circle::showCircle()
+{
+	cout << "The Circle x,y and radius are ";
+	cout << setfill('0')
+		<< setw(2) << xcenter << ','
+		<< setw(2) << ycenter << " and the radius " 
+		<< setw(2) << radius << endl;
+		
+	return;
+
+}
+	
+int main(){
+	Circle a, b, c( 3, 4, 5.23);
+	b.setCircle( 9, 4, 8.34);
+	a.showCircle();
+	b.showCircle();
+	c.showCircle();
+
+	system("PAUSE");
+	return 0;
+}
 
 d. Include the class declaration and implementation sections prepared for Exercises 2d and 3d
 in a complete working program.
