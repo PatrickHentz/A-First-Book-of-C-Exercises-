@@ -56,9 +56,24 @@ class Circle
    void showCircle();
 };
 
-d. A class named System that has character data members named computer, printer, and screen, each capable of holding 30 characters (including the end-of-string NULL), and double-precision data members named compPrice, printPrice, and scrnPrice
+d. A class named System that has character data members named computer, printer, and screen, each capable of holding 30 characters (including the end-of-string NULL),
+and double-precision data members named compPrice, printPrice, and scrnPrice
 
-
+class System
+{
+ private:
+  char computer;
+  char printer;
+  char screen;
+  double compPrice;
+  double printPrice;
+  double scrnPrice;
+ public:
+  System(char = Dell,double = 500, char = HP, double = 300, char = Dell, double = 900);
+  void setSystem(char,double,char,double,char,double);
+  void showSystem();
+};
+ 
 3. (Practice) a. Construct a class implementation section for the constructor and showData()
 member methods corresponding to the class declaration created for Exercise 2a.
 
