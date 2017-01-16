@@ -406,7 +406,8 @@ void System::showSystem()
 	cout << "The Electroic's prices are";
 	cout << setw(2) << computer << " $"
 		 << setw(3) << compPrice << " Show Printer " 
-		 << setw(2) << printer << " $"
+
+<< setw(2) << printer << " $"
 		 << setw(3) << printPrice << "Show Screen"
 		 << setw(2) << screen << " $"
 		 << setw(3) << scrnPrice << endl;
@@ -433,8 +434,18 @@ public:
   int empnum;
   char code;
 private:
-  class(int = 0);
+  class(int = 0); // This line of code does not create a proper contructor
   void showemp(int, char);
+};
+---------Corrected Code------------
+class Employee
+{
+public:
+ int empnum;
+ char code;
+private:
+ Employee(int = 0, char = 'E');
+ void showemp(int, char);
 };
 
 6. (Modify) a. Add another member method named convert() to Program 10.1 that does the
@@ -444,7 +455,11 @@ is 4/1/2014, the returned value is 20140401. (Dates in this form are useful when
 sorts because placing the numbers in numerical order automatically places the corresponding
 dates in chronological order.)
 
+
+
 b. Include the modified Date class constructed for Exercise 6a in a complete C++ program.
+
+
 
 7. (Modify) a. Add to Program 10.1’s class definition an additional member method named
 leapyr() that returns a true if the year is a leap year and a false if it’s not a leap year. A leap
@@ -453,9 +468,13 @@ evenly divisible by 400 are leap years. For example, the year 1996 is a leap yea
 evenly divisible by 4 and not evenly divisible by 100. The year 2000 is a leap year because
 it’s evenly divisible by 400.
 
+
+
 b. Include the class definition constructed for Exercise 7a in a complete C++ program. The
 main() function should display the message The year is a leap year or the message
 The year is not a leap year (depending on the Date object’s year value).
+
+
 
 8. (Modify) a. Add a member method named dayOfWeek() to Program 10.1’s class definition
 that determines the day of the week for any Date object. An algorithm for determining the day
@@ -474,9 +493,13 @@ Endif
 Using this algorithm, the variable DayOfWeek has a value of 0 if the date is a Saturday, 1 if a
 Sunday, and so forth.
 
+
+
 b. Include the class definition constructed for Exercise 8a in a complete C++ program. The
 main() function should display the name of the day (Sun, Mon, Tue, and so on) for the
 Date object being tested.
+
+
 
 9. (Program) a. Construct a class named Rectangle that has double-precision data members
 named length and width. The class should have member methods named perimeter() and
@@ -484,15 +507,23 @@ area() to calculate a rectangle’s perimeter and area, a member method named se
 set a rectangle’s length and width, and a member method named showData() that displays a
 rectangle’s length, width, perimeter, and area.
 
+
+
 b. Include the Rectangle class constructed in Exercise 9a in a working C++ program.
+
+
 
 10. (Modify) a. Modify the Date class defined in Program 10.1 to include a nextDay() method
 that increments a date by one day. Test your method to ensure that it increments days into a
 new month and into a new year correctly.
 
+
+
 b. Modify the Date class defined in Program 10.1 to include a priorDay() method that decrements
 a date by one day. Test your method to ensure that it decrements days into a prior
 month and into a prior year correctly.
+
+
 
 11. (Modify) Modify the Date class in Program 10.1 to contain a method that compares two Date
 objects and returns the larger of the two. The method should be written according to the following
@@ -504,3 +535,5 @@ Convert each date into an integer value having the form yyyymmdd
 Compare the corresponding integers for each date
 The larger integer corresponds to the later date
 Return the later date
+
+
