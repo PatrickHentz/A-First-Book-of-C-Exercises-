@@ -15,9 +15,20 @@ l. Interface - consists of a class's public member method declaarations and any 
 2. (Practice) Write a class declaration section for each of the following specifications. In each
 case, include a prototype for a constructor and a member method named showData() that can
 be used to display data member values.
-
 a. A class named Time that has integer data members named secs, mins, and hours
 
+class Time
+{
+ private:
+  int hour;
+  int minute;
+  int secouds;
+ public:
+  Time(int =7, int = 40, int = 25)
+  void setTime(int,int,int);
+  void showTime();
+};
+  
 b. A class named Complex that has double-precision data members named real and imaginary
 
 c. A class named Circle that has integer data members named xcenter and ycenter and a double-precision data member named radius
