@@ -37,7 +37,7 @@ private:
  double real;
  double imaginary;
 public:
- Complex(double = sqrt(-1), double = 5);
+ Complex(double = 5, double = 15);
  void setComplex(double,double);
  void showComplex();
  };
@@ -105,11 +105,38 @@ void Time::showTime()
 b. Construct a class implementation section for the constructor and showData() methods corresponding
 to the class declaration created for Exercise 2b.
 
+// class implementation section	
+Complex::Complex(double r, double i){
+	real = r;
+	imaginary = i;
+}
+
+void Complex::setComplex(double r , double i){
+	real = r;
+	imaginary = i;
+}
+
+void Complex::showComplex()
+{
+	cout << "The Complex number is ";
+	cout << setfill('0')
+		<< setw(2) << real << '+'
+		<< setw(2) << imaginary << 'i' << endl;
+		
+
+	return;
+
+}
+
 c. Construct a class implementation section for the constructor and showData() methods
 corresponding to the class declaration created for Exercise 2c.
 
+
+
 d. Construct a class implementation section for the constructor and showData() methods corresponding
 to the class declaration created for Exercise 2d.
+
+
 
 4. (Program) a. Include the class declaration and implementation sections prepared for
 Exercises 2a and 3a in a complete working program.
@@ -170,11 +197,64 @@ int main(){
 b. Include the class declaration and implementation sections prepared for Exercises 2b and 3b
 in a complete working program.
 
+#include "stdafx.h" 
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+//class declaration section
+class Complex
+{
+private:
+	double real;
+	double imaginary;
+public:
+	Complex(double = 5, double = 15);
+	void setComplex(double, double);
+	void showComplex();
+};
+// class implementation section	
+Complex::Complex(double r, double i){
+	real = r;
+	imaginary = i;
+}
+
+void Complex::setComplex(double r , double i){
+	real = r;
+	imaginary = i;
+}
+
+void Complex::showComplex()
+{
+	cout << "The Complex number is ";
+	cout << setfill('0')
+		<< setw(2) << real << '+'
+		<< setw(2) << imaginary << 'i' << endl;
+		
+
+	return;
+
+}
+	
+int main(){
+	Complex a, b, c( 3, 34);
+	b.setComplex( 9, 45);
+	a.showComplex();
+	b.showComplex();
+	c.showComplex();
+
+	system("PAUSE");
+	return 0;
+}
+
 c. Include the class declaration and implementation sections prepared for Exercises 2c and 3c
 in a complete working program.
 
+
+
 d. Include the class declaration and implementation sections prepared for Exercises 2d and 3d
 in a complete working program.
+
 
 
 5. (Desk check) Determine the errors in the following class declaration section:
