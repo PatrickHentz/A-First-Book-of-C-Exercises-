@@ -22,14 +22,25 @@ class Time
  private:
   int hour;
   int minute;
-  int secouds;
+  int seconds;
  public:
-  Time(int =7, int = 40, int = 25)
+  Time(int =7, int = 40, int = 25);
   void setTime(int,int,int);
   void showTime();
 };
   
 b. A class named Complex that has double-precision data members named real and imaginary
+
+class Complex
+{
+private:
+ double real;
+ double imaginary;
+public:
+ Complex(double = sqrt(-1), double = 5);
+ void setComplex(double,double);
+ void showComplex();
+ };
 
 c. A class named Circle that has integer data members named xcenter and ycenter and a double-precision data member named radius
 
