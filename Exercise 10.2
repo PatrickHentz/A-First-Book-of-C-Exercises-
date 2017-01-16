@@ -77,6 +77,31 @@ class System
 3. (Practice) a. Construct a class implementation section for the constructor and showData()
 member methods corresponding to the class declaration created for Exercise 2a.
 
+// class implementation section	
+Time::Time(int h, int m, int s){
+	hour = h;
+	minute = m;
+	seconds = s;
+}
+
+void Time::setTime(int h, int m, int s){
+	hour = h;
+	minute = m;
+	seconds = s;
+}
+
+void Time::showTime()
+{
+	cout << "The time is ";
+	cout << setfill('0')
+		<< setw(2) << hour << ':'
+		<< setw(2) << minute << ':'
+		<< setw(2) << seconds << endl;
+
+	return;
+
+}
+
 b. Construct a class implementation section for the constructor and showData() methods corresponding
 to the class declaration created for Exercise 2b.
 
@@ -88,6 +113,59 @@ to the class declaration created for Exercise 2d.
 
 4. (Program) a. Include the class declaration and implementation sections prepared for
 Exercises 2a and 3a in a complete working program.
+
+#include "stdafx.h" 
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+//class declaration section
+class Time
+{
+private:
+		int hour;
+		int minute;
+		int seconds;
+public:
+		Time(int = 7, int = 40, int = 25); // constructor
+		void setTime(int, int, int); // member method to copy time
+		void showTime();             // member method to display time
+};
+// class implementation section	
+Time::Time(int h, int m, int s){
+	hour = h;
+	minute = m;
+	seconds = s;
+}
+
+void Time::setTime(int h, int m, int s){
+	hour = h;
+	minute = m;
+	seconds = s;
+}
+
+void Time::showTime()
+{
+	cout << "The time is ";
+	cout << setfill('0')
+		<< setw(2) << hour << ':'
+		<< setw(2) << minute << ':'
+		<< setw(2) << seconds << endl;
+
+	return;
+
+}
+	
+int main(){
+	Time a, b, c(10, 3, 34);
+	b.setTime(10, 9, 45);
+	a.showTime();
+	b.showTime();
+	c.showTime();
+
+	system("PAUSE");
+	return 0;
+}
 
 b. Include the class declaration and implementation sections prepared for Exercises 2b and 3b
 in a complete working program.
