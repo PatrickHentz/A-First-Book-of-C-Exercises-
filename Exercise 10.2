@@ -793,11 +793,75 @@ area() to calculate a rectangle’s perimeter and area, a member method named se
 set a rectangle’s length and width, and a member method named showData() that displays a
 rectangle’s length, width, perimeter, and area.
 
-
+Done!!
 
 b. Include the Rectangle class constructed in Exercise 9a in a working C++ program.
 
+#include <iostream>
+#include <iomanip>
+using namespace std;
 
+// class declaration section
+class Rectangle
+{
+private:
+	double length;
+	double width;
+public:
+	Rectangle(double = 5, double = 9); // constructor
+	void setData(double,double);   // member method to copy a Rectangle
+	void showData();
+	void perimeter();               // member method to display a Rectangle
+	void area();             
+};
+// class implementation section
+Rectangle::Rectangle(double l, double w)
+{
+	length = l;
+	width = w;
+}
+void Rectangle::setData(double l, double w)
+{
+	length = l;
+	width = w;
+	return;
+}
+void Rectangle::showData()
+{
+	cout << "The Rectangle has a length, width, perimeter, and area " << endl;
+	cout << setw(2) <<"Lenght: "<< length << endl;
+    cout << setw(2) <<"Width: " << width << endl;
+	cout << "Perimeter "; perimeter();
+	cout << "Area "; area();
+	return;
+}
+
+void Rectangle::perimeter()
+{
+	double per = (length * 2) + (width * 2);
+	cout << per << endl;
+	return;
+}
+
+void Rectangle::area(){
+	double ar = length * width;
+	cout << ar << endl;
+	return;
+}
+
+int main()
+{
+	Rectangle a, b, c(4, 1);  // declare 3 objects
+	b.setData(12, 25);  // assign values to b's data members
+	a.showData();           // display object a's values
+	b.showData();           // display object b's values
+	c.showData();           // display object c's values
+
+	
+
+	system("PAUSE");
+	return 0;
+}
 
 10. (Modify) a. Modify the Date class defined in Program 10.1 to include a nextDay() method
 that increments a date by one day. Test your method to ensure that it increments days into a
