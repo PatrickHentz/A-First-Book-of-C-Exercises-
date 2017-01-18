@@ -888,7 +888,22 @@ b. Modify the Date class defined in Program 10.1 to include a priorDay() method 
 a date by one day. Test your method to ensure that it decrements days into a prior
 month and into a prior year correctly.
 
-
+void Date::priorDay(){
+	
+	if ( month != 1 && day == 1) {
+		month--;
+		day = 31;
+	}
+	else if ( month == 1 && day == 1){
+		--year;
+		day = 31;
+		month = 12;
+	}
+	else if ( day <= 30 && month !=12){
+		day--;
+	}
+	cout << month <<'/' << day << '/'<< year << endl;
+}
 
 11. (Modify) Modify the Date class in Program 10.1 to contain a method that compares two Date
 objects and returns the larger of the two. The method should be written according to the following
