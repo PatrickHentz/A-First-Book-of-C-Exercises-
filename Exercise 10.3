@@ -222,7 +222,25 @@ int main()
 tick() method that increments the time by one second. Test your method to ensure that it
 increments time into a new minute and a new hour correctly.
 
+void Time::tick(){
 
+	if (minutes != 60 && seconds == 60) {
+		minutes++;
+		seconds = 1;
+
+	}
+	else if (minutes == 60 && seconds == 60){
+
+		hours++;
+		seconds = 1;
+		minutes = 1;
+
+	}
+	else if (seconds < 60 && minutes != 60){
+     	seconds++;
+	}
+	cout << hours << ':' << minutes << ':' << seconds << endl;
+}
 
 b. Modify the Time class written for Exercise 6a to include a detick() method that decrements
 the time by one second. Test your method to ensure that it decrements time into a
