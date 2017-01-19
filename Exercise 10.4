@@ -69,7 +69,29 @@ Living room: length = 12.4, width = 20
 Dining room: length = 14, width = 10.5.
 Your program should display the area of each room and the total area of all four rooms combined.
 
+int main()
+{
+	RoomType roomOne(12.5, 18.2), hall(12.40,20),kitchen(14,14),livingRoom(12.4,20),diningRoom(14,10.5);  // declare a variable of type RoomType
+	cout << "The values for this room are : \n";
+	roomOne.showRoomValues();       // use a class method on this object
+	cout << "\nThe floor area of this room is : ";
+	roomOne.calculateRoomArea();    // use another class method on this object
+	roomOne.setNewRoomValues(9, 12);   // call the mutator
+	cout << "\n\nThe values for this room have been changed to : \n";
+	roomOne.showRoomValues();
+	cout << "\nThe floor area of this room is : ";
+	roomOne.calculateRoomArea();
 
+	hall.showRoomValues();
+	kitchen.showRoomValues();
+	livingRoom.showRoomValues();
+	diningRoom.showRoomValues();
+
+	cout << endl;
+
+	system("PAUSE");
+	return 0;
+}
 
 4. (Practice) Enter and run Program 10.6 on your computer.
 
