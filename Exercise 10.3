@@ -281,8 +281,66 @@ Cartesian coordinates. For conversion from polar to Cartesian coordinates, use t
 x = r cos (theta)
 y = r sin (theta)
 
-
+Done!!
 
 b. Include the program written for Exercise 7a in a working C++ program.
 
+#include <iostream>
+#include <iomanip>
+#include <cmath>
 
+using namespace std;
+
+// class declaration section
+
+class Coord
+
+{
+private:
+	double xval;
+	double yval;
+
+public:
+	Coord(double = 20, double = 30);   // constructor
+	void convToCartesian(double,double);
+	void showCoord();      // member method to display a Coord
+	
+};
+
+// class implementation section
+
+Coord::Coord(double xx, double yy)
+
+{
+	xval = xx;
+	yval = yy;
+}
+void Coord::convToCartesian(double r,double theta){
+
+	double x = r * cos(theta);
+	double y = r * sin(theta);
+	cout << x << ',' << y << endl;
+	return;
+}
+
+void Coord::showCoord(){
+	cout << xval << ',' << yval << endl;
+}
+
+
+int main()
+{
+	Coord a, b(4, 1), c; // declare three objects
+	
+	a.showCoord();
+	b.showCoord();
+	c.showCoord();
+
+	a.convToCartesian(10, 23);
+	b.convToCartesian(24, 45);
+	c.convToCartesian(23, 12);
+	
+	system("PAUSE");
+
+	return 0;
+}
