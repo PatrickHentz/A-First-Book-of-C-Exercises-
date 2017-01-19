@@ -246,7 +246,31 @@ b. Modify the Time class written for Exercise 6a to include a detick() method th
 the time by one second. Test your method to ensure that it decrements time into a
 prior hour and into a prior minute correctly.
 
+void Time::detick(){
 
+	if (minutes != 1 && seconds == 1) {
+
+		minutes--;
+
+		seconds = 59;
+
+	}
+
+	else if (minutes == 1 && seconds == 1){
+
+		--hours;
+		seconds = 59;
+		minutes = 59;
+
+	}
+	else if (seconds < 60 && minutes != 60){
+		seconds--;
+
+	}
+
+	cout << hours<< ':' << minutes << ':' << seconds << endl;
+
+}
 
 7. (Program) a. Construct a class named Coord containing two double-precision data members
 named xval and yval, used to store a point’s x and y values in Cartesian coordinates. The
