@@ -95,18 +95,36 @@ int main()
 
 4. (Practice) Enter and run Program 10.6 on your computer.
 
-
+Done!!
 
 5. (Modify) a. Modify the main() function in Program 10.6 to put a second elevator in service
 starting at the 5th floor and have a maximum floor of 20. Have this second elevator move to
 the 1st floor and then move to the 12th floor.
 
+int main()
+{
+	Elevator a,b(2,5,20);   // declare 1 object of type Elevator
+	a.request(6);
+	a.request(3);
 
+	b.request(1);
+	b.request(12);
+
+	system("PAUSE");
+	return 0;
+}
 
 b. Verify that the constructor is called by adding a message in it that’s displayed each time a
 new object is created. Run your program to verify its operation.
 
+Elevator::Elevator(int idnum, int cfloor, int maxfloor)
+{
+	elNum = idnum;
+	currentFloor = cfloor;
+	highestFloor = maxfloor;
 
+	cout << "Called Verified" << endl;
+}
 
 6. (Modify) Modify the main() function in Program 10.6 to use a while loop that calls the
 Elevator’s request() method with a random number between 1 and 15. If the random
