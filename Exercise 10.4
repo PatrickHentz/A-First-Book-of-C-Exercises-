@@ -132,7 +132,24 @@ number is the same as the elevator’s current floor, generate another request. 
 should terminate after five valid requests have been made and be satisfied by movement of
 the elevator. (Hint: Review Section 6.8 about the use of random numbers.)
 
-
+int main()
+{
+	Elevator a, b(2, 5, 20);   // declare 1 object of type Elevator
+	
+	int total = 0;
+	
+	while (total < 5)
+	{
+		double var = rand() % 15 + 1;
+	    b.request(var);
+	if (var == var){
+		b.request(var);
+	}
+	total++;
+    }
+	system("PAUSE");
+	return 0;
+}
 
 7. (Program) Construct a class named Light that simulates a traffic light. The class’s color
 attribute should change from Green to Yellow to Red and then back to Green by using the
