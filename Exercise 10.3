@@ -159,13 +159,64 @@ Included in the class should be member methods to 1) enter a student ID number, 
 single test grade and update the total number of grades entered, and 3) compute an average
 grade and display the student ID followed by the average grade.
 
-
+Done!!
 
 b. Include the class constructed in Exercise 5a in the context of a complete program. Your
 program should declare two objects of type Student and accept and display data for the two
 objects to verify operation of the member methods.
 
+#include <iostream>
+#include <iomanip>
+using namespace std;
+// class declaration section
+class Student
+{
+private:
+	int IDnum;
+	double grade;
+	int total;
+public:
+	Student(int = 0, double = 0, int = 0);   // constructor
+	void averageGrade(int);           // another constructor
+	void displayIDAvg();      // member method to display a Student
+};
+// class implementation section
+Student::Student(int ID, double grad, int tot)
+{
+	IDnum = ID;
+	total = tot;
+	grade = grad;
 
+	
+
+}
+
+void Student::averageGrade( int grades){
+	
+	
+	int result = grades;
+		
+	
+		int average = result ;
+		cout << average << endl;
+		return;
+}
+void Student::displayIDAvg()
+{
+	cout << "The Student is ID & Average is ";
+	cout << IDnum << endl;
+	averageGrade(100);
+
+	cout << endl;
+	return;
+}
+int main()
+{
+	Student a, b(374, 98, 1); // declare three objects
+	b.displayIDAvg();
+	system("PAUSE");
+	return 0;
+}
 
 6. (Modify) a. In Exercise 4, you were asked to construct a Time class. For this class, include a
 tick() method that increments the time by one second. Test your method to ensure that it
