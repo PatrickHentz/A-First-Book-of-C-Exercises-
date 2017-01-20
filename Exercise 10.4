@@ -229,12 +229,64 @@ number of hours the employee should work each week. The class should provide the
 the capability to enter data for a new employee, the capability to change data for a new
 employee, and the capability to display existing data for a new employee.
 
-
+Done!! :)
 
 b. Include the class definition created for Exercise 8a in a working C++ program that asks the
 user to enter data for three employees and then displays the entered data.
 
+#include "stdafx.h" 
+#include <iostream>
+using namespace std;
+// class declaration section
+class Employee
+{
+private:
+	int  EmployeeIDNum;
+	double  payRate;
+	double hoursWorked;
 
+public:
+	Employee(int = 1, double = 35, double  = 40);  // constructor
+	void changeEmployee();
+	void displayEmployee();
+};
+// class implementation section
+Employee::Employee(int eid, double pr, double hw)
+{
+	EmployeeIDNum = eid;
+	payRate = pr;
+	hoursWorked = hw;
+
+}
+void Employee::changeEmployee()
+{
+	for (int i = 1; i <= 3; i++){
+		cout << "Enter " << i << "employees info" << endl;
+		cin >> EmployeeIDNum;
+		cin >> payRate;
+		cin >> hoursWorked;
+	    displayEmployee();
+	}
+	return;
+}
+
+void Employee::displayEmployee(){
+	cout << "The ID number is " << EmployeeIDNum << endl;
+	cout << "The payrate for this employee is " << payRate << endl;
+	cout << "The hours worked by this employee is " << hoursWorked << endl;
+
+}
+int main()
+{
+	Employee a, b(2001, 50, 60);   // declare 1 object of type Employee
+	
+	a.displayEmployee();
+	a.changeEmployee();
+	
+	
+	system("PAUSE");
+	return 0;
+}
 
 c. Modify the program written for Exercise 8b to include a menu that offers the user the following
 choices:
