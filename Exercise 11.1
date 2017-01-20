@@ -1,9 +1,21 @@
 1. (Practice) Enter and run Program 11.1 on your computer.
+
+
+
 2. (Program) a. Define a greater than relational operator function named operator>() that can
 be used with the Date class declared in Program 11.1.
+
+
+
 b. Define a less than relational operator function named operator<() that can be used with
 the Date class declared in Program 11.1.
+
+
+
 c. Include the operator function written for Exercises 2a and 2b in a working C++ program.
+
+
+
 3. (Debug) a. Determine whether the following addition operator function produces the same
 result as the function in Program 11.2:
 Date Date::operator+(int days)   // return a Date object
@@ -16,7 +28,13 @@ Date Date::operator+(int days)   // return a Date object
   temp.month = temp.month % 12;           // determine actual month
   return temp;
 }
+
+
+
 b. Verify your answer to Exercise 3a by including the function in a working C++ program.
+
+
+
 4. (Program) a. Construct a class named Cartesian containing two double-precision data
 members named x and y, used to store a point’s x and y values in rectangular coordinates. The
 member functions should include a constructor that initializes an object’s x and y values to 0
@@ -25,32 +43,43 @@ function that performs a memberwise assignment between two Cartesian objects.
 b. Include the class written for Exercise 4a in a working C++ program that creates and displays
 the values of two Cartesian objects; the second object is assigned the values of the first
 object.
+
+
+
 5. (Program) a. Construct a class named Time containing three integer data members named
 hrs, mins, and secs used to store hours, minutes, and seconds. The member functions should
 include a constructor that provides default values of 0 for each data member, a display function
 that prints an object’s data values, and an assignment operator that performs a memberwise
 assignment between two Time objects.
+
 b. Include the Time class developed in Exercise 5a in a working C++ program that creates and
 displays two Time objects; the second object is assigned the values of the first object.
+
 6. (Program) a. Construct a class named Complex containing two double-precision data members
 named real and imag, used to store the real and imaginary parts of a complex number.
 The member functions should include a constructor that provides default values of 0 for each
 data member, a display function that prints an object’s data values, and an assignment operator
 that performs a memberwise assignment between two Complex objects.
+
 b. Include the class written for Exercise 6a in a working C++ program that creates and displays
 the values of two Complex objects; the second object is assigned the values of the first
 object.
+
 7. (Program) a. Construct a class named Car containing these three data members: a doubleprecision
 variable named engineSize, a character variable named bodyStyle, and an integer
 variable named colorCode. The member functions should include a constructor that provides
 default values of 0 for each numeric data member and an X for each character variable; a display
 function that prints the engine size, body style, and color code; and an assignment operator
 that performs a memberwise assignment between two Car objects for each instance variable.
+
 b. Include the class written for Exercise 7a in a working C++ program that creates and displays
 two Car objects; the second object is assigned the values of the first object.
+
 8. (Program) a. Create a class named String and include an addition operator function that
 concatenates two strings. The function should return a string.
+
 b. Include the overloaded operator written for Exercise 8a in a working C++ program.
+
 9. (Program) a. Define a subtraction operator function that can be used with the Date class
 declared in Program 11.1. The subtraction should accept a long integer argument representing
 the number of days to be subtracted from an object’s date and return a Date. In doing the
@@ -58,16 +87,21 @@ subtraction, assume all months consist of 30 days and all years consist of 360 d
 an end-of-month adjustment should be made, if necessary, that converts any resulting day of
 31 to a day of 30, unless the month is February. If the resulting month is February and the day
 is 29, 30, or 31, it should be changed to 28.
+
 b. Define another subtraction operator function named operator-() that can be used with
 the Date class defined in Program 11.1. The subtraction should yield a long integer representing
 the difference in days between two dates. In calculating the day difference, use the
 financial assumption that all months have 30 days and all years have 360 days.
+
 c. Include the overloaded operators written for Exercise 9a and 9b in a working C++ program.
+
 10. (Modify) a. Rewrite the addition operator function in Program 11.2 to account for the actual
 days in a month, omitting leap years. (Note: This function requires an array to store the days in
 each month.)
+
 b. Verify the operation of the operator function written for Exercise 10a by including it in a
 working C++ program.
+
 11. (Program) a. Construct a class named Fractions containing two integer data members
 named num and denom, used to store the numerator and denominator of a fraction having the
 form num/denom. Your class should include a default constructor that initializes num and denom
@@ -78,8 +112,11 @@ Subtraction: a/b - c/d = (a * d - b * c) / (b * d)
 Multiplication: a/b * c/d = (a* c) / (b * d)
 Division: (a/b) / (c/d) = (a * d) / (b * c)
 Your class should have input and output functions for entering and displaying a fraction.
+
 b. Include the class written for Exercise 11a by including it in a working C++ program that can
 be used to test each of the class’s member methods.
+
 12. (Modify) a. Rewrite the comparison operator function in Program 11.1 as a friend function.
+
 b. Verify the operation of the friend operator function written for Exercise 12a by including it
 in a working C++ program.
