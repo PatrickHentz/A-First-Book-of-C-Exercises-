@@ -297,7 +297,100 @@ choices:
 In response to the user’s choice, the program should initiate an action to implement the
 choice.
 
+#include <iostream>
+using namespace std;
+// class declaration section
+class Employee
+{
+private:
+	int  EmployeeIDNum;
+	double  payRate;
+	double hoursWorked;
 
+public:
+	Employee(int = 1, double = 35, double  = 40);  // constructor
+	void addEmployee();
+	void modifyEmployee(int, double, double);
+	void deleteEmployee();
+	void displayEmployee();
+};
+// class implementation section
+Employee::Employee(int eid, double pr, double hw)
+{
+	EmployeeIDNum = eid;
+	payRate = pr;
+	hoursWorked = hw;
+
+}
+
+
+void Employee::modifyEmployee(int eid, double pr, double hw){
+	
+	EmployeeIDNum = eid;
+	payRate = pr;
+	hoursWorked = hw;
+
+	return;
+}
+
+void Employee::deleteEmployee(){
+
+	cout << "Can't complete requires a restructure into an array so see #9 for the answer, Don't complain this is free lol" << endl;
+	return;
+}
+void Employee::addEmployee()
+{
+		cout << "Enter a new employees info" << endl;
+		cin >> EmployeeIDNum;
+		cin >> payRate;
+		cin >> hoursWorked;
+	    displayEmployee();
+	
+	return;
+}
+
+void Employee::displayEmployee(){
+	cout << "The ID number is " << EmployeeIDNum << endl;
+	cout << "The payrate for this employee is " << payRate << endl;
+	cout << "The hours worked by this employee is " << hoursWorked << endl;
+
+}
+
+int main()
+{
+	Employee a, b(2001, 50, 60);   // declare 1 object of type Employee
+
+	int choose, newNum, newNum2, newNum3;
+	while (choose != 4){
+		cout << "Menu :)" << endl;
+		cout << "1. Add an employee" << endl;
+		cout << "2. Modify employee data" << endl;
+		cout << "3. Delete an employee" << endl;
+		cout << "4. exit this menu" << endl;
+
+		cin >> choose;
+
+		if (choose == 1){
+			a.addEmployee();
+			a.displayEmployee();
+		}
+	    if (choose == 2){
+			cout << "Enter new Values" << endl;
+			cin >> newNum;
+			cin >> newNum2;
+			cin >> newNum3;
+			a.modifyEmployee(newNum, newNum2, newNum3);
+			a.displayEmployee();
+		}
+		if (choose == 3){
+			a.deleteEmployee();
+
+		}
+	}
+	
+	system("PAUSE");
+	return 0;
+}
 
 9. (Program) a. Construct a class definition to represent types of food. A type of food is classified
 as basic or prepared. Basic foods are further classified as Dairy, Meat, Fruit, Vegetable,
