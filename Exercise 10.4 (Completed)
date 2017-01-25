@@ -399,7 +399,7 @@ or Grain. The class should provide these services: the capability to enter data 
 the capability to change data for a new food, and the capability to display existing data for a
 new food.
 
-
+Done!! :)
 
 b. Include the class definition created for Exercise 9a in a working C++ program that asks the
 user to enter data for four food items and then displays the entered data.
