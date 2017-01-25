@@ -478,4 +478,107 @@ choices:
 In response to the user’s choice, the program should initiate an action to implement the
 choice.
 
+#include <iostream>
+#include <string>
+using namespace std;
+// class declaration section
 
+class Food
+{
+private:
+	string type;
+	string details;
+	int weight ;
+	int cost;
+public:
+	Food(string = "basic", int = 10, int = 20);  // constructor
+    void addFood();
+	void modifyFood(string,int,int);
+    void displayFood();
+};
+// class implementation section
+
+Food::Food(string ty, int we, int co)
+
+{
+	type = ty;
+	weight = we;
+	cost = co;
+}
+
+void Food::addFood()
+
+{
+	
+		cout << "Enter Foods info" << endl;
+		std::getline(std::cin, type);
+		if (type == "basic"){
+			cout << "Enter further classifications" << endl;
+			getline(cin, details);
+		}
+		cin >> weight;
+		cin >> cost;
+		displayFood();
+	
+	return;
+}
+void Food::modifyFood(string ty, int we, int co)
+
+{
+	type = ty;
+	weight = we;
+	cost = co;
+}
+
+void Food::displayFood(){
+	cout << "The Food Type is " << type << endl;
+	if (type == "basic"){
+		cout << details << endl;
+	}
+	cout << "The Food weight is " << weight << endl;
+	cout << "The Food costs " << cost << endl;
+
+}
+int main()
+{
+	Food menu[100];   // declare 2 object of type Food
+	
+	int choose = 0, newNum2, newNum3, i = 0;
+	string newNum;
+	while (choose != 4){
+		cout << "Menu" << endl;
+		cout << "1. Add a food item\n"
+			"2. Modify a food item\n"
+			"3. Delete a food item\n"
+			"4. Exit this menu\n" << endl;
+
+		cin >> choose;
+
+		if (choose == 1){
+			cout << "Enter item's location to be added" << endl;
+			cin >> i;
+			menu[i].addFood();
+
+		}
+		if (choose == 2){
+			cout << "Enter new Values" << endl;
+			cin >> newNum;
+			cin >> newNum2;
+			cin >> newNum3;
+			cout << "Enter item's location to be modified" << endl;
+			cin >> i;
+			menu[i].modifyFood(newNum, newNum2, newNum3);
+			menu[i].displayFood();
+
+		}
+		if (choose == 3){
+			cout << "Enter item's location to be deleted" << endl;
+			cin >> i;
+			menu[i].modifyFood(NULL, NULL, NULL);
+			menu[i].displayFood();
+		}
+	}
+
+	system("PAUSE");
+	return 0;
+}
