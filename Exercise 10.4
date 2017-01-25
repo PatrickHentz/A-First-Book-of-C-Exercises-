@@ -404,7 +404,70 @@ new food.
 b. Include the class definition created for Exercise 9a in a working C++ program that asks the
 user to enter data for four food items and then displays the entered data.
 
+#include <iostream>
+#include <string>
+using namespace std;
+// class declaration section
 
+class Food
+{
+private:
+	string type;
+	string details;
+	int weight ;
+	int cost;
+public:
+	Food(string = "basic", int = 10, int = 20);  // constructor
+    void changeFood();
+    void displayFood();
+};
+// class implementation section
+
+Food::Food(string ty, int we, int co)
+
+{
+	type = ty;
+	weight = we;
+	cost = co;
+}
+
+void Food::changeFood()
+
+{
+	for (int i = 1; i <= 4; i++){
+		cout << "Enter " << i << " Foods info" << endl;
+		std::getline(std::cin, type);
+		if (type == "basic"){
+			cout << "Enter further classifications" << endl;
+			getline(cin, details);
+		}
+		cin >> weight;
+		cin >> cost;
+		displayFood();
+	}
+	return;
+}
+
+void Food::displayFood(){
+	cout << "The Food Type is " << type << endl;
+	if (type == "basic"){
+		cout << details << endl;
+	}
+	cout << "The Food weight is " << weight << endl;
+	cout << "The Food costs " << cost << endl;
+
+}
+int main()
+{
+	Food a, b;   // declare 2 object of type Food
+
+	a.displayFood();
+	a.changeFood();
+
+
+	system("PAUSE");
+	return 0;
+}
 
 c. Modify the program written for Exercise 9b to include a menu that offers the user the following
 choices:
