@@ -1,21 +1,26 @@
 1. (Practice) Write two declaration statements that can be used in place of the declaration
 char text[] = “Hooray!”;.
+
 2. (Desk check) Determine the value of *text, *(text + 3), and *(text + 7) for each of
 the following sections of code:
 a. char *text;
 char message[] = “the check is in the mail”;
 text = message;
+
 b. char *text;
 char formal[] = {'T','h','i','s','','i','s','','a','n','', 
                    'i','n','v','i','t','a','t','i','o','n','\0'};
 text = &formal[0];
+
 c. char *text;
 char more[] = “Happy Holidays”;
 text = &more[4];
+
 d. char *text, *second;
 char blip[] = “The good ship”;
 second = blip;
 text = ++second;
+
 3. (Debug) Determine the error in the following program:
 #include <iostream>
 using namespace std;
@@ -30,11 +35,22 @@ int main()
   }
   return 0;
 }
+
+
+
 4. (Program) a. Write a C++ function that displays the day of the week corresponding to a userentered
 number between 1 and 7. That is, in response to the input 2, the program displays the
 name Monday. Use an array of pointers in the function.
+
 b. Include the function written for Exercise 4a in a complete working program.
+
 5. (Modify) Modify the function written in Exercise 4a so that it returns the address of the character
 string containing the correct day to be displayed.
+
+
+
 6. (Program) Write a function that accepts 10 lines of user-entered text and stores them as
 10 C-strings. Use a pointer array in your function.
+
+
+
