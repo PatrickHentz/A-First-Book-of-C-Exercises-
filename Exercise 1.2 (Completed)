@@ -1,6 +1,7 @@
 1. (Practice) State whether the following are valid identifiers and if so, whether they’re mnemonic
 names that convey some idea of their purpose. If the identifier names are invalid,
 state why.
+
 1m1234 Invalid; begins with a number
 power Valid; mnemonic
 add_5 Valid; mnemonic
