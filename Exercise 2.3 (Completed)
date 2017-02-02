@@ -15,6 +15,7 @@ grade1           valid
 12345            invalid (begins with a number)
 a1b2c3d4         valid
 finGrad          valid
+
 2. (Practice) State whether the following variable names are valid. If they’re invalid, state the
 reason. Also, indicate which of the valid variable names shouldn’t be used because they convey
 no information about the variable.
