@@ -9,6 +9,9 @@ struct Date
 In writing the days() function, follow the convention that all years have 360 days and each
 month consists of 30 days. The function should return the number of days for any Date structure
 passed to it.
+
+
+
 2. (Program) Write a C++ function named difDays() that calculates and returns the difference
 between two dates. Each date is passed to the function as a structure by using the following
 global data type:
@@ -20,16 +23,41 @@ struct Date
 };
 The difDays() function should make two calls to the days() function written for
 Exercise 1.
+
+
+
+
 3. (Modify) a. Rewrite the days() function written for Exercise 1 to receive a reference to a
 Date structure rather than a copy of the structure.
+
+
+
+
 b. Redo Exercise 3a, using a pointer rather than a reference.
+
+
+
+
 4. (Program) a. Write a C++ function named larger() that returns the later date of any two
 dates passed to it. For example, if the dates 10/9/2010 and 11/3/2012 are passed to larger(),
 the second date is returned.
+
+
+
+
 b. Include the larger() function written for Exercise 4a in a complete program. Store the
 Date structure returned by larger() in a separate Date structure and display the member
 values of the returned Date.
+
+
+
 5. (Modify) a. Modify the days() function written for Exercise 1 to account for the actual number
 of days in each month. Assume, however, that each year contains 365 days (that is, don’t
 account for leap years).
+
+
+
 b. Modify the function written for Exercise 5a to account for leap years.
+
+
+
