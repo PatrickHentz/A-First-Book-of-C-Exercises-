@@ -65,11 +65,56 @@ should contain a static data member named scaleFactor. The xCenter and yCenter v
 represent a circle’s center point, radius represents the circle’s actual radius, and scaleFactor
 represents a scale factor used to scale the circle to fit on a variety of display devices.
 
-
+Done!!
 
 b. Include the class written for Exercise 2a in a working C++ program.
 
+#include "stdafx.h" 
+#include <iostream>
+using namespace std;
+// class declaration section
+class Circle
+{
+private:
+	int xCenter;
+	int yCenter;
+	double radius;
+	int scaleFactor;
 
+public:
+	Circle(int = 5, int = 5, double = 3, int = 5);      // constructor
+	void display();         // accessor method
+	
+};
+
+// class implementation section
+Circle::Circle(int x,int y, double r , int s)
+{
+	xCenter = x;
+	yCenter = y;
+	radius = r;
+	scaleFactor = s;
+	
+}
+void Circle::display()
+{
+	cout << xCenter * scaleFactor << " , " << yCenter * scaleFactor << endl;
+	cout << "The radius is " << radius * scaleFactor<< endl;
+}
+
+
+
+int main()
+{
+	Circle a(2,3,4,1),b(2,1,3,2),c;
+	
+	a.display();
+	b.display();
+	c.display();
+
+	system("PAUSE");
+	return 0;
+}
 
 3. (Debug) a. State whether the following three statements in Program 10.9
 re = addreal(a,b);
