@@ -249,7 +249,73 @@ function should accept two Complex objects and return a Complex object. The real
 imaginary parts of the returned object should be the sum of the real and imaginary parts of the
 two objects passed to addComplex().
 
+// Exercise.cpp : Defines the entry point for the console application.
+#include "stdafx.h" 
+#include <iostream>
+#include <cmath>
+#include <tuple>
 
+using namespace std;
+// class declaration section
+class Complex
+{
+	// friends list
+	friend double addComplex(Complex&, Complex&);
+
+private:
+
+	double real;
+	double imag;
+
+public:
+
+	Complex(double = 0, double = 0);  // constructor
+	void display();
+};
+
+// class implementation section
+
+Complex::Complex(double rl, double im)
+{
+	real = rl;
+	imag = im;
+}
+
+void Complex::display()
+{
+	char sign = '+';
+	if (imag < 0) sign = '-';
+	cout << real << sign << abs(imag) << 'i';
+	return;
+}
+
+// friend implementations
+
+double addComplex(Complex &a, Complex &b)
+{
+	double myComp = (a.real + b.real);
+    double imagComp =(a.imag + b.imag);
+	
+		return myComp + imagComp;
+}
+
+int main()
+{
+	Complex a(3.2, 5.6), b(1.1, -8.4);
+	double re, im;
+	cout << "\nThe first complex number is ";
+	a.display();
+	cout << "\nThe second complex number is ";
+	b.display();
+	Complex c(addComplex(a, b));
+	cout << "\n\nThe sum of these two complex numbers is ";
+	c.display();
+	cout << endl;
+	system("PAUSE");
+
+	return 0;
+
+}
 
 6. (Program) a. Construct a class named Coord containing two double-precision variables
 named xval and yval, used to store the x and y values of a point in rectangular coordinates.
