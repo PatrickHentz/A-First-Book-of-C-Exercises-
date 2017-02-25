@@ -149,11 +149,87 @@ Date Date::operator+(int days)   // return a Date object
   return temp;
 }
 
-
+Yes!!
 
 b. Verify your answer to Exercise 3a by including the function in a working C++ program.
 
+#include "stdafx.h" 
+#include <iostream>
+#include <cmath>
+#include <tuple>
+#include <iostream>
+#include <iostream>
+#include <iomanip>
+using namespace std;
+// class declaration section
+class Date
+{
+private:
+	int month;
+	int day;
+	int year;
+public:
+	Date(int = 7, int = 4, int = 2012);     // constructor
+	Date operator+(int); // prototype for the + operator function
+	void showDate();     // member function to display a date
+};
+// class implementation section
+Date::Date(int mm, int dd, int yyyy)
+{
+	month = mm;
+	day = dd;
+	year = yyyy;
+}
+/*Date Date::operator+(int days)
+{
+	Date temp;  // a temporary date to store the result
+	temp.day = day + days;   // add the days
+	temp.month = month;
+	temp.year = year;
+	while (temp.day > 30)    // adjust the months
+	{
+		temp.month++;
+		temp.day -= 30;
+	}
+	while (temp.month > 12)  // adjust the years
+	{
+		temp.year++;
+		temp.month -= 12;
+	}
+	return temp;     // the values in temp are returned
+}*/
+Date Date::operator+(int days)   // return a Date object
+{
+		Date temp;
+		temp.day = day + days;   // add the days in
+		temp.month = month + int(day / 30);       // determine total months
+		temp.day = temp.day % 30;               // determine actual day
+		temp.year = year + int(temp.month / 12);  // determine total years
+		temp.month = temp.month % 12;           // determine actual month
+		return temp;
+}
 
+void Date::showDate()
+{
+	cout << setfill('0')
+		<< setw(2) << month << '/'
+		<< setw(2) << day << '/'
+		<< setw(2) << year % 100;
+	return;
+}
+int main()
+{
+	Date oldDate(4, 1, 2011), newDate; // declare two objects
+	cout << "The initial date is ";
+	oldDate.showDate();
+	cout << endl;
+	newDate = oldDate + 284;   // add in 284 days = 9 months and 14 days
+	cout << "The new date is ";
+	newDate.showDate();
+	cout << endl;
+	system("PAUSE");
+	return 0;
+}
 
 4. (Program) a. Construct a class named Cartesian containing two double-precision data
 members named x and y, used to store a point’s x and y values in rectangular coordinates. The
