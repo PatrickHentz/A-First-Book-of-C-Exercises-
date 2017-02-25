@@ -249,7 +249,6 @@ function should accept two Complex objects and return a Complex object. The real
 imaginary parts of the returned object should be the sum of the real and imaginary parts of the
 two objects passed to addComplex().
 
-// Exercise.cpp : Defines the entry point for the console application.
 #include "stdafx.h" 
 #include <iostream>
 #include <cmath>
@@ -294,9 +293,11 @@ void Complex::display()
 double addComplex(Complex &a, Complex &b)
 {
 	double myComp = (a.real + b.real);
-    double imagComp =(a.imag + b.imag);
-	
-		return myComp + imagComp;
+	double imagComp = (a.imag + b.imag);
+	char sign = '+';
+	if (imagComp < 0) sign = '-';
+	cout << myComp << sign << abs(imagComp) << 'i';
+	return 0;
 }
 
 int main()
@@ -307,9 +308,10 @@ int main()
 	a.display();
 	cout << "\nThe second complex number is ";
 	b.display();
-	Complex c(addComplex(a, b));
+
 	cout << "\n\nThe sum of these two complex numbers is ";
-	c.display();
+	Complex c(addComplex(a, b));
+	
 	cout << endl;
 	system("PAUSE");
 
