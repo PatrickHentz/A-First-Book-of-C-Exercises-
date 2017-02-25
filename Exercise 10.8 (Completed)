@@ -53,19 +53,38 @@ model an object
 4. (Practice) For each of the following, determine what behavior might be of interest to someone
 buying the item.
 a. A car
+max speed
+0 to 60 time
+move
 
 b. An elevator
+rate of door closing
+speed to top floor
+ropes max load
 
 5. (Practice) a. List five attributes for a character in a video game.
+height
+weight
+eye color
+hair type
+skin tone
 
 b. List five behaviors that a character in a video game should have.
 [Add the following as the last exercise:]
+move
+speak
+think
+read
+write
 
 6. (Practice) a. List the attributes and behaviors of interest in a program that simulates dealing
 a hand of playing cards. For this exercise, use any card game you’re familiar with.
 
+Game: Black Jack
 
+attributes: deck size, players, number of cards in hand
+behaviors: move, deal, talk, sees, counts, reads
 
 b. What attributes of cards wouldn’t be of interest for purposes of the simulation?
 
-
+attributes: card size, card age, card text size
