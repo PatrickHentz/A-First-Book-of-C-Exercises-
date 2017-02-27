@@ -237,7 +237,58 @@ member functions should include a constructor that initializes an object’s x a
 and functions to input and display an object’s x and y values. Additionally, include an assignment
 function that performs a memberwise assignment between two Cartesian objects.
 
+#include "stdafx.h" 
+#include <iostream>
+#include <cmath>
+#include <tuple>
+#include <iomanip>
+using namespace std;
+// class declaration section
+class Cartesian
+{
+private:
+	double x;
+	double y;
+public:
+	Cartesian(double = 0, double = 0);     // constructor
+	Cartesian operator+(int); // prototype for the + operator function
+	void showCartesian();     // member function to display a Cartesian
+};
+// class implementation section
+Cartesian::Cartesian(double xval, double yval)
+{
+	x = xval;
+	y = yval;
+}
 
+Cartesian Cartesian::operator+(int point)   // return a Cartesian object
+{
+		Cartesian temp;
+		temp.x = x + point;   // add to point
+		temp.y = y + 120;               // determine actual y value
+		return temp;
+}
+
+void Cartesian::showCartesian()
+{
+	cout << setfill('0')
+		<< setw(2) << x << ','
+		<< setw(2) << y << endl;
+	return;
+}
+int main()
+{
+	Cartesian oldCartesian(4, 1), newCartesian; // declare two objects
+	cout << "The initial Cartesian is ";
+	oldCartesian.showCartesian();
+	cout << endl;
+	newCartesian = oldCartesian + 5;   
+	cout << "The new Cartesian is ";
+	newCartesian.showCartesian();
+	cout << endl;
+	system("PAUSE");
+	return 0;
+}
 
 b. Include the class written for Exercise 4a in a working C++ program that creates and displays
 the values of two Cartesian objects; the second object is assigned the values of the first
@@ -247,12 +298,17 @@ object.
 
 5. (Program) a. Construct a class named Time containing three integer data members named
 hrs, mins, and secs used to store hours, minutes, and seconds. The member functions should
+
 include a constructor that provides default values of 0 for each data member, a display function
 that prints an object’s data values, and an assignment operator that performs a memberwise
 assignment between two Time objects.
 
+
+
 b. Include the Time class developed in Exercise 5a in a working C++ program that creates and
 displays two Time objects; the second object is assigned the values of the first object.
+
+
 
 6. (Program) a. Construct a class named Complex containing two double-precision data members
 named real and imag, used to store the real and imaginary parts of a complex number.
@@ -279,6 +335,7 @@ concatenates two strings. The function should return a string.
 
 b. Include the overloaded operator written for Exercise 8a in a working C++ program.
 
+
 9. (Program) a. Define a subtraction operator function that can be used with the Date class
 declared in Program 11.1. The subtraction should accept a long integer argument representing
 the number of days to be subtracted from an object’s date and return a Date. In doing the
@@ -287,19 +344,29 @@ an end-of-month adjustment should be made, if necessary, that converts any resul
 31 to a day of 30, unless the month is February. If the resulting month is February and the day
 is 29, 30, or 31, it should be changed to 28.
 
+
+
 b. Define another subtraction operator function named operator-() that can be used with
 the Date class defined in Program 11.1. The subtraction should yield a long integer representing
 the difference in days between two dates. In calculating the day difference, use the
 financial assumption that all months have 30 days and all years have 360 days.
 
+
+
 c. Include the overloaded operators written for Exercise 9a and 9b in a working C++ program.
+
+
 
 10. (Modify) a. Rewrite the addition operator function in Program 11.2 to account for the actual
 days in a month, omitting leap years. (Note: This function requires an array to store the days in
 each month.)
 
+
+
 b. Verify the operation of the operator function written for Exercise 10a by including it in a
 working C++ program.
+
+
 
 11. (Program) a. Construct a class named Fractions containing two integer data members
 named num and denom, used to store the numerator and denominator of a fraction having the
@@ -312,10 +379,18 @@ Multiplication: a/b * c/d = (a* c) / (b * d)
 Division: (a/b) / (c/d) = (a * d) / (b * c)
 Your class should have input and output functions for entering and displaying a fraction.
 
+
+
 b. Include the class written for Exercise 11a by including it in a working C++ program that can
 be used to test each of the class’s member methods.
 
+
+
 12. (Modify) a. Rewrite the comparison operator function in Program 11.1 as a friend function.
+
+
 
 b. Verify the operation of the friend operator function written for Exercise 12a by including it
 in a working C++ program.
+
+
