@@ -276,25 +276,64 @@ void Cartesian::showCartesian()
 		<< setw(2) << y << endl;
 	return;
 }
+
+b. Include the class written for Exercise 4a in a working C++ program that creates and displays
+the values of two Cartesian objects; the second object is assigned the values of the first
+object.
+
+// Exercise.cpp : Defines the entry point for the console application.
+#include "stdafx.h" 
+#include <iostream>
+#include <cmath>
+#include <tuple>
+#include <iomanip>
+using namespace std;
+// class declaration section
+class Cartesian
+{
+private:
+	double x;
+	double y;
+public:
+	Cartesian(double = 0, double = 0);     // constructor
+	Cartesian operator+(int); // prototype for the + operator function
+	void showCartesian();     // member function to display a Cartesian
+};
+// class implementation section
+Cartesian::Cartesian(double xval, double yval)
+{
+	x = xval;
+	y = yval;
+}
+
+Cartesian Cartesian::operator+(int point)   // return a Cartesian object
+{
+		Cartesian temp;
+		temp.x = x + point;   // add to point
+		temp.y = y ;               // determine actual y value
+		return temp;
+}
+
+void Cartesian::showCartesian()
+{
+	cout << setfill('0')
+		<< setw(2) << x << ','
+		<< setw(2) << y << endl;
+	return;
+}
 int main()
 {
-	Cartesian oldCartesian(4, 1), newCartesian; // declare two objects
+	Cartesian oldCartesian(5, 10), newCartesian; // declare two objects
 	cout << "The initial Cartesian is ";
 	oldCartesian.showCartesian();
 	cout << endl;
-	newCartesian = oldCartesian + 5;   
+	newCartesian = oldCartesian;   
 	cout << "The new Cartesian is ";
 	newCartesian.showCartesian();
 	cout << endl;
 	system("PAUSE");
 	return 0;
 }
-
-b. Include the class written for Exercise 4a in a working C++ program that creates and displays
-the values of two Cartesian objects; the second object is assigned the values of the first
-object.
-
-
 
 5. (Program) a. Construct a class named Time containing three integer data members named
 hrs, mins, and secs used to store hours, minutes, and seconds. The member functions should
