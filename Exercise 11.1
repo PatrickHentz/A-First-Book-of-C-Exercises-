@@ -306,8 +306,7 @@ Cartesian::Cartesian(double xval, double yval)
 	y = yval;
 }
 
-Cartesian Cartesian::operator+(int point)   // return a Cartesian object
-{
+Cartesian Cartesian::operator+(int point)   // return a Cartesian object{
 		Cartesian temp;
 		temp.x = x + point;   // add to point
 		temp.y = y ;               // determine actual y value
@@ -337,7 +336,6 @@ int main()
 
 5. (Program) a. Construct a class named Time containing three integer data members named
 hrs, mins, and secs used to store hours, minutes, and seconds. The member functions should
-
 include a constructor that provides default values of 0 for each data member, a display function
 that prints an object’s data values, and an assignment operator that performs a memberwise
 assignment between two Time objects.
