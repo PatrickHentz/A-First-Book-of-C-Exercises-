@@ -340,12 +340,69 @@ include a constructor that provides default values of 0 for each data member, a 
 that prints an object’s data values, and an assignment operator that performs a memberwise
 assignment between two Time objects.
 
-
+Done!!
 
 b. Include the Time class developed in Exercise 5a in a working C++ program that creates and
 displays two Time objects; the second object is assigned the values of the first object.
 
+#include "stdafx.h" 
+#include <iostream>
+#include <cmath>
+#include <tuple>
+#include <iomanip>
+using namespace std;
+// class declaration section
+class Time
+{
+private:
+	int hrs;
+	int mins;
+	int sec;
+public:
+	Time(int = 0, int = 0, int = 0);     // constructor
+	Time operator+(int); // prototype for the + operator function
+	void showTime();     // member function to display a Time
+};
+// class implementation section
+Time::Time(int hh, int mm, int ss)
+{
+	hrs = hh;
+	mins = mm;
+	sec = ss;
+}
 
+Time Time::operator+(int time)   // return a Time object
+{
+		Time temp;
+		temp.sec = sec + time;           // add to time
+		temp.mins = mins + int(sec/60);  // add mins
+		temp.sec = temp.sec % 60;
+		temp.hrs = hrs + int(temp.mins / 60);
+		temp.mins = temp.mins % 60;
+		return temp;
+}
+
+void Time::showTime()
+{
+	cout << setfill('0')
+		<< setw(2) << hrs << ':'
+		<< setw(2) << mins << ':'
+		<< setw(2) << sec << endl;
+	return;
+}
+int main()
+{
+	Time oldTime(5, 10,20), newTime; // declare two objects
+	cout << "The initial Time is ";
+	oldTime.showTime();
+	cout << endl;
+	newTime = oldTime;   
+	cout << "The new Time is ";
+	newTime.showTime();
+	cout << endl;
+	system("PAUSE");
+	return 0;
+}
 
 6. (Program) a. Construct a class named Complex containing two double-precision data members
 named real and imag, used to store the real and imaginary parts of a complex number.
