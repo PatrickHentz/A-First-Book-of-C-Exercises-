@@ -410,13 +410,65 @@ The member functions should include a constructor that provides default values o
 data member, a display function that prints an object’s data values, and an assignment operator
 that performs a memberwise assignment between two Complex objects.
 
-
+Done!!
 
 b. Include the class written for Exercise 6a in a working C++ program that creates and displays
 the values of two Complex objects; the second object is assigned the values of the first
 object.
 
+// Exercise.cpp : Defines the entry point for the console application.
+#include "stdafx.h" 
+#include <iostream>
+#include <cmath>
+#include <tuple>
+#include <iomanip>
+using namespace std;
+// class declaration section
+class Complex
+{
+private:
+	double real;
+	double imag;
+public:
+	Complex(double = 0, double = 0);     // constructor
+	Complex operator+(int); // prototype for the + operator function
+	void showComplex();     // member function to display a Complex
+};
+// class implementation section
+Complex::Complex(double rr, double ii)
+{
+	real = rr;
+	imag = ii;
+}
 
+Complex Complex::operator+(int com)   // return a Complex object
+{
+	Complex temp;
+		temp.real = com;           // add to Complex
+		temp.imag = com;
+		return temp;
+}
+
+void Complex::showComplex()
+{
+	cout << setfill('0')
+		<< setw(2) << real << '+'
+		<< setw(2) << imag << 'i' << endl;
+	return;
+}
+int main()
+{
+	Complex oldComplex( 10,20), newComplex; // declare two objects
+	cout << "The initial Complex is ";
+	oldComplex.showComplex();
+	cout << endl;
+	newComplex = oldComplex;   
+	cout << "The new Complex is ";
+	newComplex.showComplex();
+	cout << endl;
+	system("PAUSE");
+	return 0;
+}
 
 7. (Program) a. Construct a class named Car containing these three data members: a doubleprecision
 variable named engineSize, a character variable named bodyStyle, and an integer
