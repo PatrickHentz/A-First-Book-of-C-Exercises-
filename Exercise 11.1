@@ -477,12 +477,67 @@ default values of 0 for each numeric data member and an X for each character var
 function that prints the engine size, body style, and color code; and an assignment operator
 that performs a memberwise assignment between two Car objects for each instance variable.
 
-
+Done!!
 
 b. Include the class written for Exercise 7a in a working C++ program that creates and displays
 two Car objects; the second object is assigned the values of the first object.
 
+#include "stdafx.h" 
+#include <iostream>
+#include <cmath>
+#include <tuple>
+#include <iomanip>
+using namespace std;
+// class declaration section
+class Car
+{
+private:
+	double engineSize;
+	char bodyStyle;
+	int colorCode;
+public:
+	Car(double = 0, char = 'X', int = 0);     // constructor
+	Car operator+(int); // prototype for the + operator function
+	void showCar();     // member function to display a Car
+};
+// class implementation section
+Car::Car(double ee, char bb, int cc)
+{
+	engineSize = ee;
+	bodyStyle = bb;
+	colorCode = cc;
+}
 
+Car Car::operator+(int myCar)   // return a Car object
+{
+	Car temp;
+		temp.engineSize = myCar;           // add to Car
+		temp.bodyStyle = myCar;
+		temp.colorCode = myCar;
+		return temp;
+}
+
+void Car::showCar()
+{
+	cout << setfill('0')
+		<< setw(2) << engineSize << ','
+		<< setw(1) << bodyStyle << ','
+		<< setw(2) << colorCode << endl;
+	return;
+}
+int main()
+{
+	Car oldCar( 10,'B',20), newCar; // declare two objects
+	cout << "The initial Car is ";
+	oldCar.showCar();
+	cout << endl;
+	newCar = oldCar;   
+	cout << "The new Car is ";
+	newCar.showCar();
+	cout << endl;
+	system("PAUSE");
+	return 0;
+}
 
 8. (Program) a. Create a class named String and include an addition operator function that
 concatenates two strings. The function should return a string.
