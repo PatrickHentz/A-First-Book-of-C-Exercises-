@@ -542,11 +542,64 @@ int main()
 8. (Program) a. Create a class named String and include an addition operator function that
 concatenates two strings. The function should return a string.
 
-
+Done!!
 
 b. Include the overloaded operator written for Exercise 8a in a working C++ program.
 
+#include "stdafx.h" 
+#include <iostream>
+#include <cmath>
+#include <tuple>
+#include <iomanip>
+#include <string>
+using namespace std;
+// class declaration section
+class String
+{
+private:
+	string string1;
+	string string2;
+public:
+	String(string = "Random", string = "Words");     // constructor
+	String operator+(string); // prototype for the + operator function
+	void showString();     // member function to display a String
+};
+// class implementation section
+String::String(string ss, string ww)
+{
+	string1 = ss;
+	string2 = ww;
+}
 
+String String::operator+(string myString)   // return a String object
+{
+	String temp;
+		temp.string1 = myString;           // add to String
+		temp.string2 = temp.string1 + myString;
+		return temp;
+}
+
+void String::showString()
+{
+	cout << setfill('0')
+		<< setw(2) << string1 
+		<< setw(2) << string2
+		<< endl;
+	return;
+}
+int main()
+{
+	String oldString( "Awesome", "Completed"), newString; // declare two objects
+	cout << "The initial String is ";
+	oldString.showString();
+	cout << endl;
+	newString = oldString;   
+	cout << "The new String is ";
+	newString.showString();
+	cout << endl;
+	system("PAUSE");
+	return 0;
+}
 
 9. (Program) a. Define a subtraction operator function that can be used with the Date class
 declared in Program 11.1. The subtraction should accept a long integer argument representing
