@@ -609,7 +609,16 @@ an end-of-month adjustment should be made, if necessary, that converts any resul
 31 to a day of 30, unless the month is February. If the resulting month is February and the day
 is 29, 30, or 31, it should be changed to 28.
 
+Date Date::operator-(long int sub){
+	Date temp;
+	temp.day = day + sub;   // add the days in
+	temp.month = month + long int(day / 30);       // determine total months
+	temp.day = temp.day % 30;               // determine actual day
+	temp.year = year + long int(temp.month / 12);  // determine total years
+	temp.month = temp.month % 12;           // determine actual month
+	return temp;
 
+}
 
 b. Define another subtraction operator function named operator-() that can be used with
 the Date class defined in Program 11.1. The subtraction should yield a long integer representing
