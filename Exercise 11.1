@@ -897,12 +897,99 @@ Multiplication: a/b * c/d = (a* c) / (b * d)
 Division: (a/b) / (c/d) = (a * d) / (b * c)
 Your class should have input and output functions for entering and displaying a fraction.
 
-
+Done!!
 
 b. Include the class written for Exercise 11a by including it in a working C++ program that can
 be used to test each of the class’s member methods.
 
+#include "stdafx.h" 
+#include <iostream>
+#include <cmath>
+#include <tuple>
+#include <iostream>
+#include <iostream>
+#include <iomanip>
 
+using namespace std;
+
+// class declaration section
+
+class Fractions
+{
+private:
+	int num;
+	int denom;
+public:
+	Fractions(int = 1, int = 1);     // constructor
+	Fractions operator+(Fractions&); // prototype for the + operator function
+	Fractions operator-(Fractions&);
+	Fractions operator*(Fractions&);
+	Fractions operator/(Fractions&);
+	void showFractions();     // member function to display a Fractions
+};
+
+// class implementation section
+
+Fractions::Fractions(int nn, int dd)
+
+{
+	num = nn;
+	denom = dd;
+}
+
+Fractions Fractions::operator+(Fractions& add){
+	Fractions temp;
+	temp.num = (num * add.denom + denom * add.num);
+    temp.denom = (denom * add.denom);
+	return temp;
+}
+
+Fractions Fractions::operator-(Fractions& sub){
+	Fractions temp;
+	temp.num = (num * sub.denom - denom * sub.num);
+	temp.denom = (denom * sub.denom);
+	return temp;
+}
+
+Fractions Fractions::operator*(Fractions& multi){
+	Fractions temp;
+	temp.num = (num * multi.num);
+	temp.denom = (denom * multi.denom);
+	return temp;
+}
+
+Fractions Fractions::operator/(Fractions& add){
+	Fractions temp;
+	temp.num = (num * add.denom);
+	temp.denom = (denom * add.num);
+	return temp;
+}
+void Fractions::showFractions()
+
+{
+	cout << num << '/' << denom;
+	return;
+}
+
+int main()
+{
+	Fractions a(91, 20), b(23,20), c(40,53), d(10,49),add,sub,mult,div; // declare two objects
+	add = a + b;
+	sub = c - d;
+	mult = a * b;
+	div = c / d;
+	add.showFractions();
+	cout << endl;
+	sub.showFractions();
+	cout << endl;
+	mult.showFractions();
+	cout << endl;
+	div.showFractions();
+	cout << endl;
+	
+	system("PAUSE");
+	return 0;
+}
 
 12. (Modify) a. Rewrite the comparison operator function in Program 11.1 as a friend function.
 
