@@ -609,23 +609,34 @@ an end-of-month adjustment should be made, if necessary, that converts any resul
 31 to a day of 30, unless the month is February. If the resulting month is February and the day
 is 29, 30, or 31, it should be changed to 28.
 
-Date Date::operator-(long int sub){
-	Date temp;
-	temp.day = day + sub;   // add the days in
-	temp.month = month + long int(day / 30);       // determine total months
-	temp.day = temp.day % 30;               // determine actual day
-	temp.year = year + long int(temp.month / 12);  // determine total years
-	temp.month = temp.month % 12;           // determine actual month
-	return temp;
 
-}
 
 b. Define another subtraction operator function named operator-() that can be used with
 the Date class defined in Program 11.1. The subtraction should yield a long integer representing
 the difference in days between two dates. In calculating the day difference, use the
 financial assumption that all months have 30 days and all years have 360 days.
 
+Date Date::operator-(long int days)
+{
+Date temp;  // a temporary date to store the result
+temp.day = day - days;   // add the days
+temp.month = month;
+temp.year = year;
 
+while (temp.day < 1)    // adjust the months
+{
+temp.month--;
+temp.day += 30;
+}
+
+while (temp.month < 1)  // adjust the years
+{
+temp.year--;
+temp.month += 12;
+}
+
+return temp;     // the values in temp are returned
+}
 
 c. Include the overloaded operators written for Exercise 9a and 9b in a working C++ program.
 
