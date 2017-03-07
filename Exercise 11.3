@@ -1,8 +1,12 @@
 1. (For review) a. Define the three new data type conversions introduced in this section and
 the method of performing each conversion.
 
+
+
 b. Define the terms “type conversion constructor” and “conversion operator function” and
 describe how they’re used in user-defined conversions.
+
+
 
 2. (Program) Write a C++ program that declares a class named Time having integer data members
 named hours, minutes, and seconds. Include a type conversion constructor that converts
@@ -11,6 +15,8 @@ as hours:minutes:seconds. For example, the long integer 30336 should convert to 
 8:25:36. Use military time—for example, 2:30 p.m. is represented as 14:30:00. The relationship
 between time representations is as follows:
 elapsed seconds = hours × 3600 + minutes × 60 + seconds
+
+
 
 3. (Program) A Julian date is represented as the number of days from a known base date. The
 following pseudocode shows one algorithm for converting from a Gregorian date, in the form
@@ -28,9 +34,13 @@ Using this algorithm, modify Program 11.7 to cast from a Gregorian Date object t
 Julian representation as a long integer. Test your program by using the Gregorian
 dates 1/31/2011 and 3/16/2012, which correspond to the Julian dates 734533 and 734943.
 
+
+
 4. (Modify) Modify the program written for Exercise 2 to include a conversion operator function
 that converts an object of type Time into a long integer representing the number of seconds
 from midnight.
+
+
 
 5. (Program) Write a C++ program that has a Date class and a Julian class. The Date class
 should be the same Date class used in Program 11.6, and the Julian class should represent a
@@ -39,9 +49,13 @@ class that converts a Date object to a Julian object, using the algorithm shown 
 Test your program by converting 1/31/2011 and 3/16/2012, which correspond to the Julian
 dates 734533 and 734943.
 
+
+
 6. (Program) Write a C++ program that has a Time class and an Ltime class. The Time class
 should have integer data members named hours, minutes, and seconds, and the Ltime class
 should have a long integer data member named elsecs, which represents the number of
 elapsed seconds since midnight. For the Time class, include a conversion operator function
 named Ltime() that converts a Time object to an Ltime object. For the Ltime class, include
 a conversion operator function named Time() that converts an Ltime object to a Time object.
+
+
