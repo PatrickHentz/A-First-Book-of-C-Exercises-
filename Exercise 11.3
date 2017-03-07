@@ -1,12 +1,18 @@
 1. (For review) a. Define the three new data type conversions introduced in this section and
 the method of performing each conversion.
 
-
+Conversion from a class type to a built-in type
+Conversion from a built-in type to a class type
+Conversion from a class type to a class type
 
 b. Define the terms “type conversion constructor” and “conversion operator function” and
 describe how they’re used in user-defined conversions.
 
+type conversion constructor - is any constructor whose first argument is not a member of its
+class and whose remaining arguments, if any, have default values.
 
+conversion operator function - Converting from a class data type to a class data type is done in the same manner as a conversion
+from a class to a built-in data type.
 
 2. (Program) Write a C++ program that declares a class named Time having integer data members
 named hours, minutes, and seconds. Include a type conversion constructor that converts
