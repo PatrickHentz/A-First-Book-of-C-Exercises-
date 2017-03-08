@@ -22,7 +22,60 @@ as hours:minutes:seconds. For example, the long integer 30336 should convert to 
 between time representations is as follows:
 elapsed seconds = hours × 3600 + minutes × 60 + seconds
 
+#include "stdafx.h" 
+#include <iostream>
+#include <iomanip>
+using namespace std;
+// class declaration section
+class Time
+{
+private:
+	int hours;
+	int minutes;
+	int seconds;
+public:
+	Time(int = 7, int = 4, int = 20);   // constructor
+	Time (long);
+	void showTime();      // method to display a Time
+	
+	
+};
+// class implementation section
+Time::Time(int hh, int mm, int ss)
+{
+	hours = hh;
+	minutes = mm;
+	seconds = ss;
+}
+void Time::showTime()
+{
+	cout << setfill('0')
+		<< setw(2) << hours << ':'
+		<< setw(2) << minutes<< ':'
+		<< setw(2) << seconds;
+	return;
+}
 
+//conversion operator definition for converting a long int to a Time
+Time::Time(long findTime)
+{
+	hours = int(findTime / 3600);
+	minutes = int((findTime - hours * 3600) / 60);
+	seconds = int(findTime - hours * 3600 - minutes * 60);
+}
+
+
+int main()
+{
+	Time oldTime(30336L), newTime;
+
+	newTime = Time(oldTime);
+	newTime.showTime();
+	cout << endl;
+	
+	system("pause");
+	return 0;
+}
 
 3. (Program) A Julian date is represented as the number of days from a known base date. The
 following pseudocode shows one algorithm for converting from a Gregorian date, in the form
