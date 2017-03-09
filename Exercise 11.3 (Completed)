@@ -342,4 +342,92 @@ elapsed seconds since midnight. For the Time class, include a conversion operato
 named Ltime() that converts a Time object to an Ltime object. For the Ltime class, include
 a conversion operator function named Time() that converts an Ltime object to a Time object.
 
+#include "stdafx.h" 
+#include <iostream>
+#include <iomanip>
+using namespace std;
+// forward declaration of class Intdate
+class Ltime;
+// class declaration section for Date
+class Time
+{
+private:
+	int hours, minutes, seconds;
+public:
+	Time(int = 7, int = 4, int = 20);  // constructor
+	operator Ltime();  // conversion operator from Date to Intdate
+	void showTime();
+};
+// class declaration section for Intdate
+class Ltime
+{
+private:
+	long hhmmss;
+public:
+	Ltime(long = 0);    // constructor
+	operator Time();  // conversion operator from Intdate to Date
+	void showint();
+};
+// class implementation section for Date
+Time::Time(int hh, int mm, int ss)  // constructor
+{
+	hours = hh;
+	minutes = mm;
+	seconds = ss;
+}
+// conversion operator function converting from Date to Intdate class
+Time::operator Ltime()   // must return an Intdate object
+{
+	long elapsedsec = hours * 3600 + minutes * 60 + seconds;
 
+	return(Ltime(elapsedsec));
+}
+// member function to display a Date
+void Time::showTime()
+{
+	cout << setfill('0')
+		<< setw(2) << hours << ':'
+		<< setw(2) << minutes << ':'
+		<< setw(2) << seconds;
+	return;
+}
+// class implementation section for Intdate
+Ltime::Ltime(long hms)  // constructor
+{
+	hhmmss = hms;
+}
+// conversion operator function converting from Intdate to Date class
+Ltime::operator Time()   // must return a Date object
+{
+	long hours, minutes, seconds;
+	hours = int(hhmmss / 3600);
+
+	minutes = int((hhmmss - hours * 3600) / 60);
+
+	seconds = int(hhmmss - hours * 3600 - minutes * 60);
+	return(Time(hours, minutes, seconds));
+}
+// member function to display an Intdate
+void Ltime::showint()
+{
+	cout << hhmmss;
+	return;
+}
+int main()
+{
+	Time a(1, 31, 20), b;      // declare two Date objects
+	Ltime c, d;  // declare two Intdate objects
+	c = Time(b);      // cast c into a Date object
+	d = Ltime(a);   // cast a into an Intdate object
+	cout << " a's date is ";
+		a.showTime();
+	cout << "\n   as an Time object this time is ";
+	    d.showint();
+	cout << "\n c's time is ";
+		c.showint();
+	cout << "\n   as a Time object this time is ";
+	    b.showTime();
+	cout << endl;
+	system("PAUSE");
+	return 0;
+}
