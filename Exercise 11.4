@@ -151,7 +151,51 @@ member function that displays all valid member grades, as determined by the grad
 calculates and displays the average of the grades. Include the class in a working C++ program
 that declares three class objects named a, b, and c.
 
+#include "stdafx.h" 
+#include <iostream>
+#include <iomanip>
+using namespace std;
+// class declaration section
+class Student
+{
+private:
+	int IDnum;
+	int count;
+	double arr[4];
+public:
+	Student(int = 0, int = 0, double = 0);    // constructor
+	Student operator()(int);   // function prototype
+	void showStudent();        // member function to display a Student
+};
+// class implementation section
+Student::Student(int ii, int cc, double aa)
+{
+	IDnum = ii;
+	count = cc;
+	arr[count]= aa;
 
+}
+
+void Student::showStudent()
+{
+	for (count = 1; count < 4; count++) {
+		IDnum = count * rand() %1000;
+		arr[count] = rand() % 100 + 70;
+	}
+	double ans = ((arr[0] + arr[1] + arr[2] + arr[3]) / 4);
+	cout <<"The student with ID number " << IDnum << " Average is " << ans << endl;
+	return;
+}
+int main()
+{
+	Student a,b,c; // declare two objects
+	cout << "The Student's info is "<< endl;
+	a.showStudent();
+	b.showStudent();
+	c.showStudent();
+	system("PAUSE");
+	return 0;
+}
 
 b. Modify the class constructed for Exercise 3a to include a member operator[] function
 that has a double-precision grade count argument. The function should check the grade
