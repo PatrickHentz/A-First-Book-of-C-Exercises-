@@ -8,7 +8,11 @@ f. class hierarchy - order in which one class is derived from another.
 
 2. (Review) Describe the difference between private and protected class members.
 
-
+Protected access behaves the same as private access, in that it permits access only to
+member or friend functions, but it allows any derived class to inherit this restriction. The
+derived class then defines the type of inheritance it’s willing to take on, subject to the base
+class’s access restrictions. This definition is done by the class access specifier, which is listed
+after the colon at the start of the class declaration section.
 
 3. (Review) What three features must a programming language include to be classified as an
 object-oriented language?
