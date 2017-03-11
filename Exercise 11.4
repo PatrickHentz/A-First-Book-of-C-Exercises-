@@ -270,7 +270,66 @@ that has a grade index and grade value as arguments. The function should force a
 the grade corresponding to the index value and update the count, if necessary. For example,
 an argument list of 4, 98.5 should change the fourth test grade value to 98.5.
 
+#include "stdafx.h" 
+#include <iostream>
+#include <iomanip>
+using namespace std;
+// class declaration section
+class Student
+{
+private:
+		int IDnum;
+		int count;
+		double arr[4];
+public:
+		Student(int = 0, int = 0, double = 0);    // constructor
+		Student operator()(int , double);   // function prototype
+		void showStudent();        // member function to display a Student
+};
+// class implementation section
+Student::Student(int ii, int cc, double aa)
+{
+		IDnum = ii;
+		count = cc;
+		arr[count] = aa;
+}
 
+
+void Student::showStudent()
+{
+	double ans = 0;
+		for (count = 0; count < 4; count++) {
+			IDnum = rand() % 10000;
+				arr[count] = rand() % 100;
+				ans += arr[count];
+		}
+		cout << "The student with ID number " << IDnum << " Average is " << (ans/4) << endl;
+		return;
+}
+
+Student Student::operator()( int counts, double grade)
+{
+	Student temp;
+	for (temp.count = 0; temp.count < 4; temp.count++){
+
+	if(temp.count == counts){
+		temp.arr[counts] = grade;
+	}
+}
+	return temp;
+}
+int main()
+{
+		Student a, b, c; // declare two objects
+		cout << "The Student's info is " << endl;
+		a.showStudent();
+		b.showStudent();
+		c = a(3,98.5);
+		
+		c.showStudent();
+		system("PAUSE");
+		return 0;
+}
 
 4. (Modify) a. Modify Program 10.9 to include a member operator[] function that multiplies
 an object’s complex number (both the real and the imaginary parts) by a real number and
