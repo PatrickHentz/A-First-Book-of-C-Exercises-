@@ -103,13 +103,73 @@ distance =sqrt( (x - x )^2 + (y - y )^2)
 Additionally, the derived class should have a constructor and an override function named
 area() that returns a circle’s area.
 
-
+Done!!
 
 b. Include the classes constructed for Exercise 5a in a working C++ program. Have your program
 call all the member functions in each class. In addition, call the base class’s
 distance() function with two Circle objects and explain the result this function returns.
 
+#include "stdafx.h" 
+#include <iostream>
+#include <cmath>
+using namespace std;
+const double PI = 2.0 * asin(1.0);
+// class declaration section
+class Point
+{
+protected:
+	double x1;
+	double x2;
+	double y1;
+	double y2;
+public:
+	Point(double = 14.0, double  = 18.0, double = 19.0, double = 31.0);  // constructor
+	double distance();
+};
+// class implementation section for Point
+Point::Point(double xx, double yy, double yy2, double xx2)  // constructor
+{
+	x1 = xx;
+	y1 = yy;
+	y2 = yy2;
+	x2 = xx2;
+}
+// calculate the area of a Point
+double Point::distance()
+{
+	double distance = sqrt(pow(x1 - x2, 2) + pow(y1 - y2, 2));
+	return distance;
+}
 
+// class declaration section where Cylinder is derived from Point
+class Circle : public Point
+{
+protected:
+	double radius;  // add one data member and
+public:           // two member functions
+	Circle(double r = 1.0) : Point(r) {}
+	double area();
+};
+// class implementation section for Cylinder
+double Circle::area()   // calculates a volume
+{
+	double area = PI * pow(radius, 2);
+	return area; // note the base function call
+}
+
+int main()
+{
+	Point Point_1, Point_2(2);  // create two Point objects
+	Circle Circle_1(4),Circle_2(2);      // create one Cylinder object
+	cout << "The distance of Point_1 is " << Point_1.distance() << endl;
+	cout << "The area of Circle_1 is " << Circle_1.area() << endl;
+    Circle_2 = Circle_1.distance();
+	cout << Circle_2.distance() << endl;
+	system("PAUSE");
+	return 0;
+}
+
+*The distance that is returned replaced all unfilled requirments with 0 and then prints the formula required.
 
 6. (Modify) a. Using the classes constructed for Exercise 5a, derive a class named Cylinder
 from the Circle class. The Cylinder class should have a constructor and a member function
