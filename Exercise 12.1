@@ -23,12 +23,75 @@ classes, inheritance and polymorphism.
 Circle class. The only additional class members of Sphere should be a constructor and a
 calcval() function that returns the sphere’s volume. (Note: Volume = 4 / 3 πr3.)
 
-
+Done!!
 
 b. Include the class constructed for Exercise 4a in a working C++ program. Have your program
 call all the member functions in the Sphere class.
 
+#include "stdafx.h" 
+#include <iostream>
+#include <cmath>
+using namespace std;
+const double PI = 2.0 * asin(1.0);
+// class declaration section
+class Circle
+{
+protected:
+	double radius;
+public:
+	Circle(double = 1.0);  // constructor
+	double calcval();
+};
+// class implementation section for Circle
+Circle::Circle(double r)  // constructor
+{
+	radius = r;
+}
+// calculate the area of a Circle
+double Circle::calcval()
+{
+	return(PI * radius * radius);
+}
+// class declaration section where Cylinder is derived from Circle
+class Cylinder : public Circle
+{
+protected:
+	double length;  // add one data member and
+public:           // two member functions
+	Cylinder(double r = 1.0, double l = 1.0) : Circle(r), length(l) {}
+	double calcval();
+};
+// class implementation section for Cylinder
+double Cylinder::calcval()   // calculates a volume
+{
+	return (length * Circle::calcval()); // note the base function call
+}
+class Sphere : public Circle
+{
+public:
+	Sphere(double r = 1.0) : Circle(r){}
+	double calcval();
+};
+double Sphere::calcval(){
+	return ((4 / 3) * PI * pow(radius, 3));
+}
 
+int main()
+{
+	Circle Circle_1, Circle_2(2);  // create two Circle objects
+	Cylinder Cylinder_1(3, 4);      // create one Cylinder object
+	Sphere Sphere_1(5);
+	cout << "The area of Circle_1 is " << Circle_1.calcval() << endl;
+	cout << "The area of Circle_2 is " << Circle_2.calcval() << endl;
+	cout << "The volume of Cylinder_1 is " << Cylinder_1.calcval() << endl;
+	Circle_1 = Cylinder_1;  // assign a Cylinder to a Circle
+	cout << "\nThe area of Circle_1 is now " << Circle_1.calcval() << endl;
+	Circle_1 = Sphere_1;
+	cout << "\nThe area of Circle_1 is now " << Circle_1.calcval() << endl;
+	cout << "\nThe volume of Sphere_1 is " << Sphere_1.calcval() << endl;
+	system("PAUSE");
+	return 0;
+}
 
 5. (Program) a. Create a base class named Point consisting of x and y data members representing
 point coordinates. From this class, derive a class named Circle with another data member
