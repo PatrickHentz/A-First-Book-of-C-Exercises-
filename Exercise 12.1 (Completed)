@@ -272,9 +272,69 @@ member functions of the base Rectangle class should consist of a constructor and
 function. The derived Box class should have a constructor, a volume() function, and an override
 function named area() that returns the surface area of the box.
 
-
+Done!!
 
 b. Include the classes constructed for Exercise 7a in a working C++ program. Have your program
 call all the member functions in each class, and verify the results manually.
 
+#include "stdafx.h" 
+#include <iostream>
+#include <cmath>
+using namespace std;
+const double PI = 2.0 * asin(1.0);
+// class declaration section
+class Rectangle
+{
+protected:
+	double length;
+	double width;
 
+public:
+	Rectangle(double = 4.0, double  = 8.0);  // constructor
+	double area();
+};
+// class implementation section for Point
+Rectangle::Rectangle(double ll, double ww)  // constructor
+{
+	length = ll;
+	width = ww;
+}
+
+double Rectangle::area()
+{
+	double area = length * width;
+	return area;
+}
+
+// class declaration section where Box is derived from Rectangle
+class Box : public Rectangle
+{
+protected:
+	double depth;  // add one data member and
+public:           // two member functions
+	Box(double d = 5.0, double l = 3.0, double w = 4.0) : Rectangle(l,w), depth(d) {}
+	double volume();
+	double surf_area();
+};
+// class implementation section 
+double Box::surf_area()   // calculates a volume
+{
+	double surf_area = (2*length*width) +(2 *length * depth) + (2*width * depth);
+	return surf_area; // note the base function call
+}
+double Box::volume()
+{
+	double volume = length * width  * depth;
+	return volume;
+}
+
+int main()
+{
+	Rectangle Rect_1, Rect_2;  // create two Rectangle objects
+	Box Box_1;      // create one BOX object
+	cout << "The area of box 1 is " << Box_1.area() << endl;
+	cout << "The volume of box 1 is " << Box_1.volume() << endl;
+	cout << "The area of the rectangle is " << Rect_2.area() << endl;
+	system("PAUSE");
+	return 0;
+}
