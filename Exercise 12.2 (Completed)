@@ -19,9 +19,12 @@ An example of polymorphic behavior is any base class object that values are chan
 
 5. (Review) Describe the two methods C++ provides for implementing polymorphism.
 
-
+Virtual functions tells the compiler to create a pointer to a function.
+Operator overloading is the overloading of the default operator.
 
 6. (Review) Explain whether the multiplication operator provided for integer and doubleprecision
 built-in types is an example of overloading or polymorphism.
+
+It is an example of overloading where the given function is assigned an operator in order to modify the resulting answer.
 
 
