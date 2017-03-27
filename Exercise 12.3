@@ -1,20 +1,41 @@
 1. (Review) a. Explain how dynamic allocation of memory works.
 
+dynamic allocation of memory, in which the amount of storage to be allocated is assigned, as requested, at runtime
+instead of being fixed at compile time. Dynamic allocation of memory is useful when dealing
+with lists and objects because it allows expanding the list as new items are added and contracting
+the list as items are deleted.
+
 b. Describe the process of creating a dynamically allocated object. Specifically, discuss the
 roles of a pointer variable and the new operator in creating a dynamically allocated object.
+
+After an object has been dynamically created, it can be accessed only by using the address
+the new operator returns. So like the this pointer, the newly created object’s address must be
+stored in a pointer variable
 
 c. Discuss the importance of deleting dynamically allocated objects, and explain what can
 happen if these objects aren’t deleted.
 
+Deleting dynamically created objects when their usefulness ends is crucial. Otherwise, as new objects are created,
+the computer starts to “eat up” available memory space, especially if the same pointer
+is used in creating a new object before the old object is deleted. The reason is that after an
+existing object’s address is overwritten with a new object’s address, there’s no way for the
+system to reclaim the memory. This condition is referred to as memory leak.
+
 2. (Review) a. Explain what a pointer is.
+
+The variable that stores the address of another variable 
 
 b. For each of the following pointer declarations, identify the pointer variable’s name and
 the data type of the object to be accessed when the address in the pointer variable is
 dereferenced:
 i. Checkout *a;
+
 ii. Pump *pointer1;
+
 iii. Pump *addr_of_aPump;
+
 iv. int *addr_of_int;
+
 v. double *b;
 
 c. If the asterisks were removed from the declarations in Exercise 2b, what would the names
