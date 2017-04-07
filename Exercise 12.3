@@ -56,13 +56,73 @@ The name would be a variable that stores a value and not an address.
 3. (Practice) a. Enter and run Program 12.4, but specify the number of objects to be created as
 four. Explain why your program outputs the same memory addresses.
 
+#include "stdafx.h" 
+#include <iostream>
+using namespace std;
+// class declaration section
+class Checkout
+{
+private:
+	int numItems;
+	double arrivalTime;
+public:
+	Checkout();    // the constructor
+	// the following is an inline destructor
+	~Checkout()
+	{
+		cout << "!!!!This Customer object has been deleted !!!!\n";
+	};
+	void showObject();
+	void getItems(){ return; };  // inline do-nothing methods
+	void getTime() { return; };  // will be used in Program 12.5
+};
+// class implementation section
+Checkout::Checkout() // constructor
+{
+	cout << "\n**** A new Customer object has been created ****\n";
+	numItems = 5;
+	arrivalTime = 2.5;
+}
+void Checkout::showObject()
+{
+	cout << "     For this object:\n";
+	cout << "    numItems = " << numItems
+		<< "   arrivalTime = " << arrivalTime << endl;
+	return;
+}
+int main()
+{
+	Checkout *anotherTrans;  // pointer to a Checkout object
+	int i, howMany;
+	cout << "Enter the number of transactions to be created : ";
+	cin >> howMany;
+	for (i = 1; i <= howMany; i++)
+	{
+		anotherTrans = new Checkout; // create a new Checkout object
+		// display the address of the created object
+		cout << "The memory address of this object is : " << anotherTrans << endl;
+		anotherTrans->showObject();  // display contents of this object
+		delete anotherTrans;  // delete the object
+	}
+	system("pause");
+	return 0;
+}
+
+// The address remains the same because the memory used is constatantly being deleted and reused.
+
 b. Remove the statement delete anotherTrans; or convert it to a comment (called “commenting
 out”), and rerun Program 12.4. Again, make sure to have the program create four
 new objects. Explain why the memory addresses now differ for each new object.
 
+The addresses memory locations storage is always allocated and never deleted.
+
 c. Using the results of Exercise 3b, why is it no longer possible to access any of the first three
 created objects after the fourth object has been dynamically created? What does this imply
 about the previously allocated memory, and why is it a serious flaw in the program?
+
+because they take up memory at run-time which mean that the memory is unchangeable within the code before hand.
+This implies that previously allocated memory is non-reusable. 
+If the size of the program was to grow large enough there would be no memory slot to save result and the program would crash. 
 
 4. (Practice) Enter and run Program 12.5.
 
