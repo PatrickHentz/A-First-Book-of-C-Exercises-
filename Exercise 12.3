@@ -358,7 +358,49 @@ No, the program will produce decent result without dynamically creating the obje
 amount of gas requested. Each customer should arrive randomly between 1 and 15 minutes
 and request between 3 and 15 gallons of gas. The name of your class should be Customer.
 
+#include "stdafx.h" 
+#include <iostream>
+#include <ctime>
+#include <cmath>
 
+using namespace std;
+// Customer class
+// precondition:
+// srand() must be called once before the flip()method is called
+// class declaration section
+class Customer
+{
+private:
+	//none
+public:
+	Customer() { cout << "\n**** A new Customer object has been created ****"; };
+	~Customer() { cout << "\n!!!!This Customer object has been deleted !!!!\n"; };
+	void arrgas();
+	static void total_gas();
+};
+
+
+// class implementation section
+void Customer::arrgas()
+{
+	int arrival, gas, total;
+	arrival = rand() % 15 + 1;
+	cout << "Arrival Times " << arrival << endl;
+	gas = rand() % 15 + 3;
+	cout << "Gas Requested " << gas << endl;
+
+	return;
+}
+
+int main()
+{
+		Customer *anewCustomer;  // declare a pointer to a Customer object
+			anewCustomer = new Customer; // create a new Customer object
+			anewCustomer->arrgas();    // flip the Customer
+		        delete anewCustomer;     // delete the object
+		system("PAUSE");
+		return 0;
+}
 
 b. Include the class written for Exercise 9a in a program that simulates the arrival of 10 customers
 (using a while loop). The arrival time and number of gallons of gas each customer
