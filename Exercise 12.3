@@ -407,7 +407,59 @@ b. Include the class written for Exercise 9a in a program that simulates the arr
 requests should be displayed. After the last customer, your program should display the total
 number of gallons requested.
 
+#include "stdafx.h" 
+#include <iostream>
+#include <ctime>
+#include <cmath>
 
+using namespace std;
+// Customer class
+// precondition:
+// srand() must be called once before the flip()method is called
+// class declaration section
+class Customer
+{
+private:
+	//none
+public:
+	Customer() { cout << "\n**** A new Customer object has been created ****" << endl; };
+	~Customer() { cout << "\n!!!!This Customer object has been deleted !!!!\n"<< endl; };
+	void arrgas();
+};
+
+
+// class implementation section
+void Customer::arrgas()
+{
+
+	int arrival, gas, total = 0, number = 0;
+	while (number <= 10){
+
+		arrival = rand() % 15 + 1;
+		cout << "Arrival Times " << arrival << endl;
+		gas = rand() % 15 + 3;
+		cout << "Gas Requested " << gas << endl;
+		total = +total + gas;
+		if (number < 10){
+		cout << "Next Customer!!" << endl;
+	}
+	number++;
+}
+	cout << "The total amount of gas bought was " << total << endl;
+	return;
+}
+
+int main()
+{
+		Customer *anewCustomer;  // declare a pointer to a Customer object
+		
+			    anewCustomer = new Customer; // create a new Customer object
+				anewCustomer->arrgas();    // flip the Customer
+				delete anewCustomer;     // delete the object
+		
+		system("PAUSE");
+		return 0;
+}
 
 10. (Modify) a. Modify the class written for Exercise 9a to include the grade of gas. Assume there
 are three grades of gas: 87 octane, 93 octane, and 97 octane.
