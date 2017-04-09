@@ -57,7 +57,65 @@ int main()
 
 2. (Program) Write a suitable destructor method for Program 12.6.
 
+#include "stdafx.h" 
+#include <iostream>
+#include <string>
+#include "string.h"
+#define _CRT_SECURE_NO_WARNINGS 
+#pragma warning(disable : 4996)
+using namespace std;
+// class declaration section
+class Book
+{
+private:
+	char *title;   // a pointer to a book title
+public:
+	Book(char* = '\0');
+	Book(Book& oldbook);   // constructor
+	~Book() { cout << "object destroyed" << endl; };
+	void showtitle(void);  // display the title
+	void operator =(Book& oldbook);
+};
+// class implementation section
+Book::Book(char* strng)
+{
+	title = new char[strlen(strng) + 1];  // allocate memory
+	strcpy(title, strng);               // store the string
+}
 
+Book::Book(Book& oldbook)
+{
+	title = new char[strlen(oldbook.title) + 1];  // allocate new memory
+	strcpy(title, oldbook.title);               // copy the title
+}
+
+void Book::operator =(Book& oldbook)
+{
+	if (oldbook.title != NULL)  // check that it exists
+		delete(title);           // release existing memory
+	title = new char[strlen(oldbook.title) + 1];  // allocate new memory
+	strcpy(title, oldbook.title);                 // copy the title
+}
+void Book::showtitle(void)
+{
+	cout << title << endl;
+	return;
+}
+int main()
+{
+
+	Book book1("Windows Primer");      // create 1st title
+	Book book2("A Brief History of Western Civilization");  // 2nd title
+
+	book1.showtitle();  // display book1's title
+	book2.showtitle();  // display book2's title
+
+	book2.~Book();
+	book1.~Book();
+
+	system("PAUSE");
+	return 0;
+}
 
 3. (Program) a. Construct a class named Car containing these four data members: a doubleprecision
 variable named engineSize, a character variable named bodyStyle, an integer
