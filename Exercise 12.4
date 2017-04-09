@@ -1,7 +1,63 @@
 1. (Program) Include the copy constructor and assignment operator explained in this section in
 Program 12.6, and run the program to verify their operation.
 
+#include "stdafx.h" 
+#include <iostream>
+#include <string>
+#include "string.h"
+#define _CRT_SECURE_NO_WARNINGS 
+#pragma warning(disable : 4996)
+using namespace std;
+// class declaration section
+class Book
+{
+private:
+	char *title;   // a pointer to a book title
+public:
+	Book(char* = '\0');
+	Book(Book& oldbook);   // constructor
+	void showtitle(void);  // display the title
+	void operator =(Book& oldbook);
+};
+// class implementation section
+Book::Book(char* strng)
+{
+	title = new char[strlen(strng) + 1];  // allocate memory
+	strcpy(title, strng);               // store the string
+}
+
+Book::Book(Book& oldbook)
+{
+	title = new char[strlen(oldbook.title) + 1];  // allocate new memory
+
+strcpy(title, oldbook.title);               // copy the title
+}
+
+void Book::operator =(Book& oldbook)
+{
+	if (oldbook.title != NULL)  // check that it exists
+		delete(title);           // release existing memory
+	title = new char[strlen(oldbook.title) + 1];  // allocate new memory
+	strcpy(title, oldbook.title);                 // copy the title
+}
+void Book::showtitle(void)
+{
+	cout << title << endl;
+	return;
+}
+int main()
+{
+	Book book1("Windows Primer");      // create 1st title
+	Book book2("A Brief History of Western Civilization");  // 2nd title
+	book1.showtitle();  // display book1's title
+	book2.showtitle();  // display book2's title
+	system("PAUSE");
+	return 0;
+}
+
 2. (Program) Write a suitable destructor method for Program 12.6.
+
+
 
 3. (Program) a. Construct a class named Car containing these four data members: a doubleprecision
 variable named engineSize, a character variable named bodyStyle, an integer
@@ -12,16 +68,26 @@ function that prints the engine size, body style, color code, and vehicle ID cod
 operator that performs a memberwise assignment between two Car objects and handles
 the pointer member correctly.
 
+
+
 b. Include the class written for Exercise 3a in a working C++ program that creates two Car
 objects; the second object should be assigned the values of the first object.
 
+
+
 4. (Modify) Modify Program 12.6 to include the assignment statement bƒ=ƒa, and then run the
 modified program to assess any error messages that occur.
+
+
 
 5. (Modify) Using Program 12.6 as a start, write a program that creates five Book objects. The
 program should allow the user to enter the five book titles interactively and then display the
 titles entered.
 
+
+
 6. (Modify) Modify the program written in Exercise 5 so that the program sorts the entered book
 titles in alphabetical order before it displays them. (Hint: You have to define a sort routine for
 the titles; refer back to Section 7.7.)
+
+
