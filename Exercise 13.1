@@ -21,26 +21,66 @@ that can be used to create the following objects:
 a. An object (known as a student record) containing a student ID number, the number of
 credits completed, and a cumulative grade point average
 
+class Students
+{
+private:
+	int ID_number;
+	double credits;
+	double GPA;
 
+public:
+	
+};
 
 b. An object (known as a student record) capable of holding a student’s name, date of birth,
 number of credits completed, and cumulative grade point average
 
+class Students
+{
+private:
+	string name;
+	int date_of_birth;
+	double credits;
+	double GPA;
 
+public:	
+};
 
 c. A mailing list containing a title field, last name field, first name field, two street address
 fields, a city field, a state field, and a zip code field
 
-
+class Mail
+{
+private:
+ string title;
+ string last;
+ string first;
+ string address,address2;
+ string city,state,zip;
+public:
+};
 
 d. A stock object containing the stock’s name, the purchase price, and the date of purchase
 
-
+class Stock
+{
+private:
+ string name;
+ double price;
+ int date;
+public:
+};
 
 e. An inventory object containing an integer part number, a string part description, an integer
 number of parts in inventory, and an integer reorder value
 
-
+class Inventory
+{
+int partN;
+string partD;
+int numberP;
+int reorderV;
+};
 
 5. (Practice) For each class declared in Exercise 4, add a suitable constructor and accessor
 method. Test each method to initialize and display the following data:
