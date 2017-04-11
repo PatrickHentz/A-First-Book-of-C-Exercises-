@@ -335,4 +335,50 @@ int main()
 titles in alphabetical order before it displays them. (Hint: You have to define a sort routine for
 the titles; refer back to Section 7.7.)
 
+#include "stdafx.h" 
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#pragma warning(disable : 4996)
+using namespace std;
+// class declaration section
+class Book
+{
+private:
+	char *title;   // a pointer to a book title
+public:
+	Book(char * = '\0');   // constructor
+	void showtitle(void);  // display the title
+};
+// class implementation section
+Book::Book(char *strng)
+{
+	title = new char[strlen(strng) + 1];  // allocate memory
+	strcpy(title, strng);                // store the string
+}
 
+void Book::showtitle(void)
+{
+	vector<string> stringVec = { " ", " ", " ", " ", " " };
+	for (int i = 0; i < 5; i++){
+		cin >> stringVec[i];
+	}
+	sort(stringVec.begin(), stringVec.end());
+
+	for (string &s : stringVec){
+		cout << s << " ";
+	}
+	//cout << title << endl;
+	return;
+}
+
+int main()
+{
+	Book books(" ");      // create 1st title
+
+	books.showtitle();  // display book1's title
+
+	system("PAUSE");
+	return 0;
+}
