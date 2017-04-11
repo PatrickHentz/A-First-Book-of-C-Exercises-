@@ -287,7 +287,49 @@ int main()
 program should allow the user to enter the five book titles interactively and then display the
 titles entered.
 
+#include "stdafx.h" 
+#include <iostream>
+#include <string>
+#pragma warning(disable : 4996)
+using namespace std;
+// class declaration section
+class Book
+{
+private:
+	char *title;   // a pointer to a book title
+public:
+	Book(char * = '\0');   // constructor
+	void showtitle(void);  // display the title
+};
+// class implementation section
+Book::Book(char *strng)
+{
+	title = new char[strlen(strng) + 1];  // allocate memory
+	strcpy(title, strng);                // store the string
+}
+void Book::showtitle(void)
+{
+	cin >> title;
+	cout << title << endl;
+	return;
+}
+int main()
+{
+	Book book1(" ");      // create 1st title
+	Book book2(" ");      // 2nd title
+	Book book3(" ");
+	Book book4(" ");
+	Book book5(" ");
+	
+	book1.showtitle();  // display book1's title
+	book2.showtitle();  // display book2's title
+	book3.showtitle();
+	book4.showtitle();
+	book5.showtitle();
 
+	system("PAUSE");
+	return 0;
+}
 
 6. (Modify) Modify the program written in Exercise 5 so that the program sorts the entered book
 titles in alphabetical order before it displays them. (Hint: You have to define a sort routine for
