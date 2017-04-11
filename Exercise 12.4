@@ -243,7 +243,45 @@ int main()
 4. (Modify) Modify Program 12.6 to include the assignment statement b = a, and then run the
 modified program to assess any error messages that occur.
 
+#include "stdafx.h" 
+#include <iostream>
+#include <string>
+#pragma warning(disable : 4996)
+using namespace std;
+// class declaration section
+class Book
+{
+private:
+	char *title;   // a pointer to a book title
+public:
+	Book(char * = '\0');   // constructor
+	void showtitle(void);  // display the title
+};
+// class implementation section
+Book::Book(char *strng)
+{
+	title = new char[strlen(strng) + 1];  // allocate memory
+	strcpy(title, strng);                // store the string
+}
+void Book::showtitle(void)
+{
+	cout << title << endl;
+	return;
+}
+int main()
+{
+	Book a("Land Before Time"),b("Land After Time"),book1("Windows Primer");      // create 1st title
+	Book book2("A Brief History of Western Civilization");  // 2nd title
 
+	b = a;
+	b.showtitle();
+	a.showtitle();
+	book1.showtitle();  // display book1's title
+	book2.showtitle();  // display book2's title
+
+	system("PAUSE");
+	return 0;
+}
 
 5. (Modify) Using Program 12.6 as a start, write a program that creates five Book objects. The
 program should allow the user to enter the five book titles interactively and then display the
