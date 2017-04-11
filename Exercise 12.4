@@ -72,9 +72,8 @@ int main()
 #include "stdafx.h" 
 #include <iostream>
 #include <string>
-#include "string.h"
-#define _CRT_SECURE_NO_WARNINGS 
 #pragma warning(disable : 4996)
+
 using namespace std;
 // class declaration section
 class Book
@@ -84,22 +83,30 @@ private:
 public:
 	Book(char* = '\0');
 	Book(Book& oldbook);   // constructor
-	~Book() { cout << "object destroyed" << endl; };
 	void showtitle(void);  // display the title
 	void operator =(Book& oldbook);
+	~Book();
 };
+
 // class implementation section
+
 Book::Book(char* strng)
+
 {
 	title = new char[strlen(strng) + 1];  // allocate memory
 	strcpy(title, strng);               // store the string
 }
 
+
+
 Book::Book(Book& oldbook)
+
 {
 	title = new char[strlen(oldbook.title) + 1];  // allocate new memory
 	strcpy(title, oldbook.title);               // copy the title
 }
+
+
 
 void Book::operator =(Book& oldbook)
 {
@@ -113,17 +120,24 @@ void Book::showtitle(void)
 	cout << title << endl;
 	return;
 }
+
+Book:: ~Book(void)
+{
+	cout << "Freeing memory from allocation!" << endl;
+	delete title;
+}
+
 int main()
 {
-
 	Book book1("Windows Primer");      // create 1st title
 	Book book2("A Brief History of Western Civilization");  // 2nd title
 
+	book2 = book1;
+
 	book1.showtitle();  // display book1's title
 	book2.showtitle();  // display book2's title
-
+	
 	book2.~Book();
-	book1.~Book();
 
 	system("PAUSE");
 	return 0;
