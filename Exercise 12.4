@@ -152,12 +152,93 @@ function that prints the engine size, body style, color code, and vehicle ID cod
 operator that performs a memberwise assignment between two Car objects and handles
 the pointer member correctly.
 
-
+Done!!
 
 b. Include the class written for Exercise 3a in a working C++ program that creates two Car
 objects; the second object should be assigned the values of the first object.
 
+#include "stdafx.h" 
+#include <iostream>
+#include <string>
+#pragma warning(disable : 4996)
 
+using namespace std;
+// class declaration section
+class Car
+{
+private:
+	double engineSize;
+	char bodyStyle;
+	int colorCode;
+	char *vinPtr;   // a pointer to a Car vinPtr
+public:
+	Car(double = 0, char = 'X', int = 0, char* = '\0');
+	Car(Car& oldCar);   // constructor
+	void showvinPtr(void);  // display the vinPtr
+	void operator =(Car& oldCar);
+	~Car();
+};
+
+// class implementation section
+
+Car::Car(double ee, char bb, int cc, char* strng)
+
+{
+	engineSize = ee;
+	bodyStyle = bb;
+	colorCode = cc;
+	vinPtr = new char[strlen(strng) + 1];  // allocate memory
+	strcpy(vinPtr, strng);               // store the string
+}
+
+
+
+Car::Car(Car& oldCar)
+
+{
+	engineSize = oldCar.engineSize;
+	bodyStyle = oldCar.bodyStyle;
+	colorCode = oldCar.colorCode;
+	vinPtr = new char[strlen(oldCar.vinPtr) + 1];  // allocate new memory
+	strcpy(vinPtr, oldCar.vinPtr);               // copy the vinPtr
+}
+
+
+
+void Car::operator =(Car& oldCar)
+{
+	if (oldCar.vinPtr != NULL)  // check that it exists
+		delete(vinPtr);           // release existing memory
+	vinPtr = new char[strlen(oldCar.vinPtr) + 1];  // allocate new memory
+	strcpy(vinPtr, oldCar.vinPtr);                 // copy the vinPtr
+}
+void Car::showvinPtr(void)
+{
+	cout << "The car's engine size is " << engineSize << endl;
+	cout << "The body style is " << bodyStyle << endl;
+	cout << "The color code is " << colorCode << endl;
+	cout << "The Car vechicle ID code is " << vinPtr << endl;
+	return;
+}
+
+Car:: ~Car(void)
+{
+	cout << "Freeing memory from allocation!" << endl;
+	delete vinPtr;
+}
+
+int main()
+{
+	Car Car1(52.23,'A',5,"Ford Focus");      // create 1st vinPtr
+
+	Car Car2 = Car1;
+
+	Car1.showvinPtr();  // display Car1's vinPtr
+	Car2.showvinPtr();  // display Car2's vinPtr
+
+	system("PAUSE");
+	return 0;
+}
 
 4. (Modify) Modify Program 12.6 to include the assignment statement b = a, and then run the
 modified program to assess any error messages that occur.
