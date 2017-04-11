@@ -88,7 +88,48 @@ a. ID Number: 4672
 Number of Credits Completed: 68
 Grade Point Average: 3.01
 
+#include "stdafx.h" 
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#pragma warning(disable : 4996)
+using namespace std;
+// class declaration section
+class Students
+{
+private:
+	int ID_number;
+	double credits;
+	double GPA;
 
+public:	
+	Students(int = 4672, double = 68, double = 3.01);   // constructor
+	void display();
+};
+
+// class implementation section
+Students::Students(int ii, double cc, double gg)
+{
+	ID_number = ii;
+	credits = cc;
+	GPA = gg;
+}
+void Students::display()
+{
+	cout << ID_number << endl;
+	cout << credits << endl;
+	cout << GPA << endl;
+}
+int main()
+{
+	Students student_record;
+
+	student_record.display();
+
+	system("PAUSE");
+	return 0;
+}
 
 b. Name: Rhona Karp
 Date of Birth: 8/4/60
