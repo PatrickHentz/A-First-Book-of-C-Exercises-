@@ -67,7 +67,7 @@ class Stock
 private:
  string name;
  double price;
- int date;
+ string date;
 public:
 };
 
@@ -192,13 +192,112 @@ City: Indianapolis
 State: IN
 Zip Code: 07030
 
+#include "stdafx.h" 
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#pragma warning(disable : 4996)
+using namespace std;
+// class declaration section
+class Students
+{
+private:
+	string title;
 
+	string last;
+
+	string first;
+
+	string address, address2;
+
+	string city, state, zip;
+
+public:	
+	Students(string = "Dr. ", string = " Kingsley ", string = " Kay ", string = "Apt. 2B", string = "614 Freeman Street", string = "Indianpolis", string = "IN", string = "07030");   // constructor
+	void display();
+};
+
+// class implementation section
+Students::Students(string tt, string ll, string ff, string ad1, string ad2, string cc, string ss, string zz)
+{
+	title = tt;
+	last = ll;
+	first = ff;
+	address = ad1;
+	address2 = ad2;
+	city = cc;
+	state = ss;
+	zip = zz;
+}
+void Students::display()
+{
+	cout << title << first << last <<endl;
+	cout << address << endl;
+	cout << address2 << endl;
+	cout << city << endl;
+	cout << state << endl;
+	cout << zip << endl;
+	
+}
+int main()
+{
+	Students student_record;
+
+	student_record.display();
+
+	system("PAUSE");
+	return 0;
+}
 
 d. Stock: IBM
 Purchase Price: 134.5
 Date Purchased: 10/1/2010
 
+#include "stdafx.h" 
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#pragma warning(disable : 4996)
+using namespace std;
+// class declaration section
+class Students
+{
+private:
+	string name;
+	double price;
+	string date;
 
+public:	
+	Students(string = "IBM", double = 134.5, string = "10/1/2010");   // constructor
+	void display();
+};
+
+// class implementation section
+Students::Students(string ii, double pp , string dd)
+{
+	name = ii;
+	price = pp;
+	date = dd;
+	
+}
+void Students::display()
+{
+	cout << name << endl;
+	cout << price << endl;
+	cout << date << endl;
+	
+}
+int main()
+{
+	Students student_record;
+
+	student_record.display();
+
+	system("PAUSE");
+	return 0;
+}
 
 e. Part Number: 16879
 Description: Battery
