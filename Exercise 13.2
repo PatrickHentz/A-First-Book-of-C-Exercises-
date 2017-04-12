@@ -1,6 +1,38 @@
 1. (Practice) Enter and run Program 13.1.
 
+#include "stdafx.h" 
+#include <iostream>
+#include <list>
+#include <algorithm>
+#include <string>
+using namespace std;
+int main()
+{
+	list<string> names, addnames;
+	string n;
+	// add names to the original list
+	names.push_front("Dolan, Edith");
+	names.push_back("Lanfrank, John");
+	// create a new list
+	addnames.push_front("Acme, Sam");
+	addnames.push_front("Mening, Stephen");
+	addnames.push_front("Zemann, Frank");
+	names.sort();
+	addnames.sort();
+	// merge the second list into the first
+	names.merge(addnames);
+	cout << "The final list size is : " << names.size() << endl;
+	cout << "This list contains the names : \n";
+	while (!names.empty())
+	{
+		cout << names.front() << endl;
+		names.pop_front();  // remove the object
+	}
+	system("PAUSE");
+	return 0;
+}
 
+//Done!!
 
 2. (Practice) Enter and run Program 13.2.
 
@@ -8,7 +40,7 @@
 
 3. (Modify) Modify Program 13.2 to prompt the user for a name. Have the program search the
 existing list for the entered name. If the name is in the list, display the corresponding phone
-number; otherwise, display this message: Theƒnameƒisƒnotƒinƒtheƒcurrentƒphone list.
+number; otherwise, display this message: The name is not in the current phone list.
 
 
 
