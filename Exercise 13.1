@@ -117,8 +117,7 @@ Students::Students(int ii, double cc, double gg)
 }
 void Students::display()
 {
-	cout << ID_number << endl;
-	cout << credits << endl;
+	cout << ID_number << endl;	cout << credits << endl;
 	cout << GPA << endl;
 }
 int main()
@@ -136,8 +135,53 @@ Date of Birth: 8/4/60
 Number of Credits Completed: 96
 Grade Point Average: 3.89
 
+#include "stdafx.h" 
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#pragma warning(disable : 4996)
+using namespace std;
+// class declaration section
+class Students
+{
+private:
+	int day,month,year;
+	double credits;
+	double GPA;
+	string name;
 
+public:	
+	Students(int = 8,int = 4, int = 60, double = 96, double = 3.89, string = "Rhona Karp");   // constructor
+	void display();
+};
 
+// class implementation section
+Students::Students(int dd,int mm, int yy, double cc, double gg, string ss)
+{
+	day = dd;
+	month = mm;
+	year = yy;
+	credits = cc;
+	GPA = gg;
+	name = ss;
+}
+void Students::display()
+{
+	cout << name << endl;
+	cout << day << '/' << month << '/'<< year << endl;
+	cout << credits << endl;
+	cout << GPA << endl;
+}
+int main()
+{
+	Students student_record;
+
+	student_record.display();
+
+	system("PAUSE");
+	return 0;
+}
 
 c. Title: Dr.
 Last Name: Kingsley
