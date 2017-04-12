@@ -512,7 +512,54 @@ Each object should contain a field for an integer inventory number, a double-pre
 screw length, a double-precision diameter, the kind of head (Phillips or standard slot), the
 material (steel, brass, other), and the cost.
 
+#include "stdafx.h" 
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#pragma warning(disable : 4996)
+using namespace std;
+// class declaration section
+class Current
+{
+private:
+	int num;
+	double screw_len;
+	double diameter;
+	string head;
+	string material;
 
+public:	
+	Current(int = 7088, double = 5, double = 2, string = "Phillips", string = "steel" );   // constructor
+	void display();
+};
+
+// class implementation section
+Current::Current(int nn, double sl, double dd, string hh, string mm)
+{
+	num = nn;
+	screw_len = sl;
+	diameter = dd;
+	head = hh;
+	material = mm;
+	
+}
+void Current::display()
+{
+	cout << num << endl;
+	cout << screw_len << endl;
+	cout << diameter << endl;
+	cout << head << endl;
+	cout << material << endl;
+}
+int main()
+{
+	Current business;
+	business.display();
+
+	system("PAUSE");
+	return 0;
+}
 
 9. (Program) Write a C++ program that defines a class capable of creating objects for storing the
 name of a stock, its estimated earnings per share, and its estimated price-to-earnings ratio.
