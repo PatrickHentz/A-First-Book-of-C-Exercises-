@@ -456,7 +456,56 @@ int main()
 7. (Program) Define a class capable of creating objects that can store a business’s name, description
 of its product or services, address, number of employees, and annual revenue.
 
+#include "stdafx.h" 
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#pragma warning(disable : 4996)
+using namespace std;
+// class declaration section
+class Current
+{
+private:
+	string business_name;
+	string description_product;
+	string address;
+	int number;
+	int annual;
 
+public:	
+	Current(string = "NASA", string = "Rocket",string = "1000 Rocket St", int = 10000, int = 1000000);   // constructor
+	void display();
+};
+
+// class implementation section
+Current::Current(string bb, string dd, string aa, int nn, int an)
+{
+	business_name = bb;
+	description_product = dd;
+	address = aa;
+	number = nn;
+	annual = an;
+	
+}
+void Current::display()
+{
+	cout << business_name << endl;
+	cout << description_product << endl;
+	cout << address << endl;
+	cout << number << endl;
+	cout << annual << endl;
+
+}
+int main()
+{
+	Current business;
+
+	business.display();
+
+	system("PAUSE");
+	return 0;
+}
 
 8. (Practice) Define a class capable of creating objects for different screw types held in inventory.
 Each object should contain a field for an integer inventory number, a double-precision
