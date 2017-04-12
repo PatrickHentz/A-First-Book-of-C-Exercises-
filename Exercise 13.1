@@ -356,7 +356,51 @@ int main()
 year. Store the data entered in a suitably defined object and display the date in an appropriate
 manner.
 
+#include "stdafx.h" 
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#pragma warning(disable : 4996)
+using namespace std;
+// class declaration section
+class Current
+{
+private:
+	int month;
+	int day;
+	int year;
 
+public:	
+	Current(int = 0, int = 0, int = 0000);   // constructor
+	void display();
+};
+
+// class implementation section
+Current::Current(int dd, int mm, int yy)
+{
+	
+	
+}
+void Current::display()
+{
+	cout << "Enter date:" << endl;
+	cin >> day;
+	cin >> month;
+	cin >> year;
+
+	cout << day <<'/'<< month << '/' << year << endl;
+	
+}
+int main()
+{
+	Current student_record;
+
+	student_record.display();
+
+	system("PAUSE");
+	return 0;
+}
 
 b. Modify the program written in Exercise 6a to use an object that accepts the current time in
 hours, minutes, and seconds.
