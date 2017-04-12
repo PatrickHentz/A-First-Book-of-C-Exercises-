@@ -200,7 +200,7 @@ Zip Code: 07030
 #pragma warning(disable : 4996)
 using namespace std;
 // class declaration section
-class Students
+class Mail
 {
 private:
 	string title;
@@ -214,12 +214,12 @@ private:
 	string city, state, zip;
 
 public:	
-	Students(string = "Dr. ", string = " Kingsley ", string = " Kay ", string = "Apt. 2B", string = "614 Freeman Street", string = "Indianpolis", string = "IN", string = "07030");   // constructor
+	Mail(string = "Dr. ", string = " Kingsley ", string = " Kay ", string = "Apt. 2B", string = "614 Freeman Street", string = "Indianpolis", string = "IN", string = "07030");   // constructor
 	void display();
 };
 
 // class implementation section
-Students::Students(string tt, string ll, string ff, string ad1, string ad2, string cc, string ss, string zz)
+Mail::Mail(string tt, string ll, string ff, string ad1, string ad2, string cc, string ss, string zz)
 {
 	title = tt;
 	last = ll;
@@ -230,7 +230,7 @@ Students::Students(string tt, string ll, string ff, string ad1, string ad2, stri
 	state = ss;
 	zip = zz;
 }
-void Students::display()
+void Mail::display()
 {
 	cout << title << first << last <<endl;
 	cout << address << endl;
@@ -242,7 +242,7 @@ void Students::display()
 }
 int main()
 {
-	Students student_record;
+	Mail student_record;
 
 	student_record.display();
 
@@ -304,7 +304,53 @@ Description: Battery
 Number in Stock: 10
 Reorder Number: 3
 
+#include "stdafx.h" 
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#pragma warning(disable : 4996)
+using namespace std;
+// class declaration section
+class Inventory
+{
+private:
+	int partN;
+	string partD;
+	int numberP;
+	int reorderV;
 
+public:	
+	Inventory(int = 16879, string = "Batery", int = 10, int = 3);   // constructor
+	void display();
+};
+
+// class implementation section
+Inventory::Inventory(int pp, string pd, int nn, int rr)
+{
+	partN = pp;
+	partD = pd;
+	numberP = nn;
+	reorderV = rr;
+	
+}
+void Inventory::display()
+{
+	cout << partN << endl;
+	cout << partD << endl;
+	cout << numberP << endl;
+	cout << reorderV << endl;
+	
+}
+int main()
+{
+	Inventory student_record;
+
+	student_record.display();
+
+	system("PAUSE");
+	return 0;
+}
 
 6. (Program) a. Write a C++ program that prompts a user to input the current month, day, and
 year. Store the data entered in a suitably defined object and display the date in an appropriate
