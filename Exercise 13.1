@@ -405,7 +405,53 @@ int main()
 b. Modify the program written in Exercise 6a to use an object that accepts the current time in
 hours, minutes, and seconds.
 
+#include "stdafx.h" 
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#pragma warning(disable : 4996)
+using namespace std;
+// class declaration section
+class Current
+{
+private:
+	int hours;
+	int minutes;
+	int seconds;
 
+public:	
+	Current(int = 0, int = 0, int = 0);   // constructor
+	void display();
+};
+
+// class implementation section
+Current::Current(int hh, int mm, int ss)
+{
+	hours = hh;
+	minutes = mm;
+	seconds = ss;
+	
+}
+void Current::display()
+{
+	cout << "Enter time:" << endl;
+	cin >> hours;
+	cin >> minutes;
+	cin >> seconds;
+
+	cout << hours <<':'<< minutes << ':' << seconds << endl;
+	
+}
+int main()
+{
+	Current time;
+
+	time.display();
+
+	system("PAUSE");
+	return 0;
+}
 
 7. (Program) Define a class capable of creating objects that can store a business’s name, description
 of its product or services, address, number of employees, and annual revenue.
