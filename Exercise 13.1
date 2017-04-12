@@ -569,5 +569,51 @@ stock price based on the entered earnings and price-per-earnings values. For exa
 enters the data XYZ 1.56 12, the anticipated price for a share of XYZ stock is (1.56)*(12)
 = $18.72.
 
+#include "stdafx.h" 
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#pragma warning(disable : 4996)
+using namespace std;
+// class declaration section
+class Stock
+{
+private:
+	string stock;
+	double earnings;
+	double pri_earn_ratio;
 
+public:	
+	Stock(string = "XYZ", double = 1.56, double = 12 );   // constructor
+	void display();
+};
+
+// class implementation section
+Stock::Stock(string ss, double ee, double per)
+{
+	stock = ss;
+	earnings = ee;
+	pri_earn_ratio = per;
+}
+void Stock::display()
+{
+	for (int i = 0; i < 5; i++){
+		cin >> stock;
+		cin >> earnings;
+		cin >> pri_earn_ratio;
+
+		cout << earnings * pri_earn_ratio;
+	}
+
+	
+}
+int main()
+{
+	Stock business;
+	business.display();
+
+	system("PAUSE");
+	return 0;
+}
 
