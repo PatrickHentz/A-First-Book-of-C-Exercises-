@@ -151,7 +151,57 @@ int main()
 4. (Practice) Write a C++ program containing a linked list of 10 integer numbers. Have the program
 display the numbers in the list.
 
+#include "stdafx.h" 
+#include <iostream>
+#include <list>
+#include <string>
+using namespace std;
+// class declaration section
+class NameTele
+{
+private:
+	int num;
+	// class implementation section
+public:
+	NameTele(int nn)   // constructor
+	{
+		num = nn;
+	}
+	// inline method definitions
+	int getNum(){ return num; }
 
+};
+
+int main()
+{
+	list<NameTele> numbers;  // instantiate and initialize the list
+	// using objects in the array
+	numbers.push_front(NameTele(201));
+	numbers.push_back(NameTele(120));
+	numbers.push_back(NameTele(4581));
+	numbers.push_back(NameTele(7070));
+	numbers.push_back(NameTele(9912));
+	numbers.push_front(NameTele(12343));
+	numbers.push_back(NameTele(123));
+	numbers.push_back(NameTele(4521));
+	numbers.push_back(NameTele(770));
+	numbers.push_back(NameTele(992));
+
+	// retrieve all list objects
+	// use accessor methods to extract the name and pay rate
+	cout << "The size of the list is " << numbers.size() << endl;
+	cout << "\n     Numbers         ";
+	cout << "\n------------------    \n";
+
+	while (!numbers.empty())
+	{
+		cout << numbers.front().getNum() << endl;
+		numbers.pop_front();  // remove the object
+	}
+	
+	system("PAUSE");
+	return 0;
+}
 
 5. (Practice) Using the linked list of objects shown in Figure 13.3, write the sequence of steps
 for deleting the object for John Lanfrank from the list.
