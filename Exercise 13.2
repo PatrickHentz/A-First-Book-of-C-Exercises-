@@ -87,7 +87,66 @@ int main()
 existing list for the entered name. If the name is in the list, display the corresponding phone
 number; otherwise, display this message: The name is not in the current phone list.
 
+#include "stdafx.h" 
+#include <iostream>
+#include <list>
+#include <string>
+using namespace std;
+// class declaration section
+class NameTele
+{
+private:
+	string name;
+	string phoneNum;
+	// class implementation section
+public:
+	NameTele(string nn, string phone)   // constructor
+	{
+		name = nn;
+		phoneNum = phone;
+	}
+	// inline method definitions
+	string getName(){ return name; }
+	string getPhone(){ return phoneNum; }
+};
 
+int main()
+{
+	string name;
+	list<NameTele> employee;  // instantiate and initialize the list
+	// using objects in the array
+	employee.push_front(NameTele("Acme,Sam", "(555) 898–2392"));
+	employee.push_back(NameTele("Dolan,Edith", "(555) 682–3104"));
+	employee.push_back(NameTele("Lanfrank,John", "(555) 718–4581"));
+	employee.push_back(NameTele("Mening,Stephen", "(555) 382–7070"));
+	employee.push_back(NameTele("Zemann,Harold", "(555) 219–9912"));
+	// retrieve all list objects
+	// use accessor methods to extract the name and pay rate
+	cout << "The size of the list is " << employee.size() << endl;
+	//cout << "\n     Name              Telephone";
+	//cout << "\n--------------       --------------\n";
+
+	/*while (!employee.empty())
+	{
+		cout << employee.front().getName()
+			<< "\t     " << employee.front().getPhone() << endl;
+		employee.pop_front();  // remove the object
+	}*/
+	cin >> name;
+	while (!employee.empty()){
+		if (employee.front().getName() == name){
+			cout << employee.front().getPhone() << endl;
+		}
+		else if (employee.front().getName() != name){
+			cout << "This name is not in the current phone list" << endl;
+		}
+		employee.pop_front();
+	}
+	
+	
+	system("PAUSE");
+	return 0;
+}
 
 4. (Practice) Write a C++ program containing a linked list of 10 integer numbers. Have the program
 display the numbers in the list.
