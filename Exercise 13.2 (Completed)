@@ -334,3 +334,8 @@ int main()
    }
    cout << endl;
 }
+
+------------------------------------
+The list x initially has a size of 4,
+and contains the objects : 1 2 3 4
+-------------------------------------
