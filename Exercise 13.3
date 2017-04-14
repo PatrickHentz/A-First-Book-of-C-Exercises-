@@ -1,3 +1,4 @@
+
 1. (Review) State whether a stack is appropriate for each of the following tasks, and indicate why
 or why not:
 a. A word-processing program must remember a line of up to 80 characters. Pressing the
@@ -27,7 +28,40 @@ No, because a line for a bus stop works like in a FIFO fashion.
 
 2. (Practice) Enter and run Program 13.3.
 
+//Done!!
+
+#include <iostream>
+#include <deque>
+#include <string>
+#include <cctype>
+using namespace std;
+int main()
+{
+  string name;
+  deque<string> stack;
+  cout << “Enter as many names as you want, one per line” << endl;
+  cout << “To stop enter a single x” << endl;
+  while(true)
+  {
+    cout << “Enter a name (or x to stop): “;
+    getline(cin, name);
+    if (tolower(name.at(0)) == 'x') break;
+    stack.push_front(name);
+  }
+  cout << “\nThe names in the stack are:\n”;
+  // pop names from the stack
+  while(!stack.empty())
+  {
+    name = stack.front();  // retrieve the name
+    stack.pop_front();     // pop name from the stack
+    cout << name << endl;
+  }
+  return 0;
+}
+
 3. (Modify) Modify Program 13.3 to implement a stack of integers rather than a stack of strings.
+
+
 
 4. (Modify) Modify Program 13.3 to instantiate three stacks of digits named digits1, digits2,
 and digits3. Initialize digits1 to contain the digits 9, 8, 5, and 2, which is the number 2589
@@ -39,6 +73,8 @@ to 0. If the sum of the two popped objects and carry doesn’t exceed 10, the su
 should be pushed onto digits3 and carry should be set to 0; otherwise, carry should be set
 to 1, and the units digit of the sum should be pushed onto the digits3 stack.
 
+
+
 5. (Program) Write a C++ program that allows a user to enter a maximum of 100 integers in a
 stack object. Then have the program do the following:
 a. Reverse the stack’s contents into a second stack of integers.
@@ -46,6 +82,10 @@ b. Using two additional stacks, reverse the contents in the original stack. For 
 original stack contains the integers 1, 2, 3, and 4, it should contain the integers 4, 3, 2, and 1
 at the end of the program.
 
+
+
 6. (Program) Write a C++ program that allows a user to enter a maximum of 50 characters in a
 stack object. Then have the program sort the stack contents in increasing order. For example,
 if the stack’s contents are initially D, E, A, and B, its final contents are A, B, D, and E.
+
+
