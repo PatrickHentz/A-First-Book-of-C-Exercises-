@@ -61,7 +61,36 @@ int main()
 
 3. (Modify) Modify Program 13.3 to implement a stack of integers rather than a stack of strings.
 
-
+#include "stdafx.h" 
+#include <iostream>
+#include <string>
+#include <deque>
+#include <cctype>
+using namespace std;
+int main()
+{
+	int num;
+	deque<int> stack;
+	cout << "Enter as many names as you want, one per line" << endl;
+	cout << "To stop enter a single x" << endl;
+	while (true)
+	{
+		cout << "Enter a name(or x to stop) : ";
+		cin >> num;
+		if (num == 100) break;
+		stack.push_front(num);
+	}
+	cout << "\nThe names in the stack are : \n";
+	// pop names from the stack
+	while (!stack.empty())
+	{
+		num = stack.front();  // retrieve the name
+		stack.pop_front();     // pop name from the stack
+		cout << num << endl;
+	}
+	system("PAUSE");
+	return 0;
+}
 
 4. (Modify) Modify Program 13.3 to instantiate three stacks of digits named digits1, digits2,
 and digits3. Initialize digits1 to contain the digits 9, 8, 5, and 2, which is the number 2589
