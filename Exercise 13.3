@@ -102,6 +102,61 @@ to 0. If the sum of the two popped objects and carry doesn’t exceed 10, the su
 should be pushed onto digits3 and carry should be set to 0; otherwise, carry should be set
 to 1, and the units digit of the sum should be pushed onto the digits3 stack.
 
+#include "stdafx.h" 
+#include <iostream>
+#include <deque>
+#include <string>
+#include <cctype>
+#include <stack>
+using namespace std;
+
+int add(int a, int b);
+
+int main()
+{
+	int a, b, c;
+	stack<int> digits1, digits2, digits3;
+	stack<char> operand;
+	digits1.push(9);
+	operand.push('+');
+	digits1.push(8);
+	operand.push('+');
+	digits1.push(5);
+	operand.push('+');
+	digits1.push(2);
+
+	digits2.push(3);
+	digits2.push(1);
+	digits2.push(5);
+	digits2.push(7);
+
+	while (!digits1.empty()){
+
+		if (operand.top() == '+'){
+			a = digits1.top();
+			digits1.pop();
+			b = digits2.top();
+			//cout << a << '+' << b << endl;
+			c = add(a, b);
+			if (c > 10){
+				int carry = 1;
+			digits3.push(c + carry);
+		}
+			else if(c < 10){
+				digits3.push(c);
+			}
+		cout << digits3.top() << endl;
+	}
+}
+	system("PAUSE");
+	return 0;
+}
+	
+int add(int a, int b){
+	int x;
+	x = a + b;
+	return x;
+}
 
 
 5. (Program) Write a C++ program that allows a user to enter a maximum of 100 integers in a
