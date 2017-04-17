@@ -22,7 +22,38 @@ Done!!
 
 3. (Modify) Modify Program 13.4 to use a queue of integers rather than a queue of strings.
 
+#include "stdafx.h" 
+#include <iostream>
+#include <deque>
+#include <string>
+#include <cctype>
+using namespace std;
+int main()
+{
+	int name;
+	deque<int> queue;
+	cout << "Enter as many names as you want, one per line" << endl;
+	cout << " To stop enter a single x" << endl;
 
+	// push names onto the queue
+	while (true)
+	{
+		cout << "Enter a name(or x to stop) : ";
+		cin >> name;
+		if (name == 20) break;
+		queue.push_front(name);
+	}
+	cout << "\nThe names in the queue are : \n";
+	// pop names from the queue
+	while (!queue.empty())
+	{
+		name = queue.back();  // retrieve the name
+		queue.pop_back();     // pop a name from the queue
+		cout << name << endl;
+	}
+	system("PAUSE");
+	return 0;
+}
 
 4. (Program) Write a C++ program that allows a user to enter a maximum of 20 characters in a
 queue. Then have the program sort the queue contents in increasing order. For example, if the
