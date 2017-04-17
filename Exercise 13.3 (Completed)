@@ -304,4 +304,146 @@ void print(struct sNode* top)
 stack object. Then have the program sort the stack contents in increasing order. For example,
 if the stack’s contents are initially D, E, A, and B, its final contents are A, B, D, and E.
 
+#include "stdafx.h" 
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
 
+// Stack is represented using linked list
+typedef struct stack
+{
+	char data;
+	struct stack *next;
+};
+
+// Utility function to initialize stack
+void initStack(struct stack **s)
+{
+	*s = NULL;
+}
+
+// Utility function to chcek if stack is empty
+char isEmpty(struct stack *s)
+{
+	if (s == NULL)
+		return 1;
+	return 0;
+}
+
+// Utility function to push an item to stack
+void push(struct stack **s, char x)
+{
+	struct stack *p = (struct stack *)malloc(sizeof(*p));
+
+	if (p == NULL)
+	{
+		fprintf(stderr, "Memory allocation failed.\n");
+		return;
+	}
+
+	p->data = x;
+	p->next = *s;
+	*s = p;
+}
+
+// Utility function to remove an item from stack
+char pop(struct stack **s)
+{
+	char x;
+	struct stack *temp;
+
+	x = (*s)->data;
+	temp = *s;
+	(*s) = (*s)->next;
+	free(temp);
+
+	return x;
+}
+
+// Function to find top item
+char top(struct stack *s)
+{
+	return (s->data);
+}
+
+// Recursive function to insert an item x in sorted way
+void sortedInsert(struct stack **s, char x)
+{
+	// Base case: Either stack is empty or newly inserted
+	// item is greater than top (more than all existing)
+	if (isEmpty(*s) || x < top(*s))
+	{
+		push(s, x);
+		return;
+	}
+
+	// If top is greater, remove the top item and recur
+	char temp = pop(s);
+	sortedInsert(s, x);
+
+	// Put back the top item removed earlier
+	push(s, temp);
+}
+
+// Function to sort stack
+void sortStack(struct stack **s)
+{
+	// If stack is not empty
+	if (!isEmpty(*s))
+	{
+		// Remove the top item
+		char x = pop(s);
+
+		// Sort remaining stack
+		sortStack(s);
+
+		// Push the top item back in sorted stack
+		sortedInsert(s, x);
+	}
+}
+
+// Utility function to prchar contents of stack
+void printStack(struct stack *s)
+{
+	while (s)
+	{
+		printf("%c ", s->data);
+		s = s->next;
+	}
+	printf("\n");
+}
+
+// Driver Program
+int main(void)
+{
+	struct stack *top;
+
+	initStack(&top);
+	
+	int MAX;
+	char letter;
+	std::cout << "Enter MAX number of elements" << std::endl;
+	std::cin >> MAX;
+
+	for (int i = 0; i < MAX; i++){
+
+		if (MAX > 50){
+			std::cout << "Not possible" << std:: endl;
+			break;
+		}
+
+		std::cin >> letter;
+		push(&top, letter);
+	}
+
+	printf("Stack elements before sorting:\n");
+	printStack(top);
+	sortStack(&top);
+	printf("\n\n");
+
+	printf("Stack elements after sorting:\n");
+	printStack(top);
+
+	system("PAUSE");
+	return 0;
+}
