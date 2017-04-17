@@ -166,7 +166,139 @@ b. Using two additional stacks, reverse the contents in the original stack. For 
 original stack contains the integers 1, 2, 3, and 4, it should contain the integers 4, 3, 2, and 1
 at the end of the program.
 
+#include "stdafx.h" 
+#include<stdio.h>
+#include<stdlib.h>
+#include <iostream>
+#define bool int
 
+using namespace std;
+/* structure of a stack node */
+struct sNode
+{
+	char data;
+	struct sNode *next;
+};
+
+/* Function Prototypes */
+void push(struct sNode** top_ref, int new_data);
+int pop(struct sNode** top_ref);
+bool isEmpty(struct sNode* top);
+void print(struct sNode* top);
+
+// Below is a recursive function that inserts an element
+// at the bottom of a stack.
+void insertAtBottom(struct sNode** top_ref, int item)
+{
+	if (isEmpty(*top_ref))
+		push(top_ref, item);
+	else
+	{
+		int temp = pop(top_ref);
+		insertAtBottom(top_ref, item);
+
+	
+		push(top_ref, temp);
+	}
+}
+
+// Below is the function that reverses the given stack using
+// insertAtBottom()
+void reverse(struct sNode** top_ref)
+{
+	if (!isEmpty(*top_ref))
+	{
+	
+		int temp = pop(top_ref);
+		reverse(top_ref);
+
+		insertAtBottom(top_ref, temp);
+	}
+}
+
+/* Driveer program to test above functions */
+int main()
+{
+	int j = 0;
+	struct sNode *s = NULL;
+	int MAX;
+	cout << "Enter MAX number of elements" << endl;
+	cin >> MAX;
+	for (int i = 0; i < MAX; i++){
+		if (MAX > 100){
+			cout << "Not possible" << endl;
+			break;
+		}
+		cin >> i;
+		push(&s, i);
+	
+}
+
+	printf("\n Original Stack ");
+	print(s);
+	reverse(&s);
+	printf("\n Reversed Stack ");
+	print(s);
+	return 0;
+}
+
+/* Function to check if the stack is empty */
+bool isEmpty(struct sNode* top)
+{
+	return (top == NULL) ? 1 : 0;
+}
+
+/* Function to push an item to stack*/
+void push(struct sNode** top_ref, int new_data)
+{
+	
+	struct sNode* new_node =
+		(struct sNode*) malloc(sizeof(struct sNode));
+
+	if (new_node == NULL)
+	{
+		printf("Stack overflow \n");
+		exit(0);
+	}
+
+	new_node->data = new_data;
+
+	new_node->next = (*top_ref);
+
+	(*top_ref) = new_node;
+}
+
+/* Function to pop an item from stack*/
+int pop(struct sNode** top_ref)
+{
+	char res;
+	struct sNode *top;
+
+	if (*top_ref == NULL)
+	{
+		printf("Stack overflow \n");
+		exit(0);
+	}
+	else
+	{
+		top = *top_ref;
+		res = top->data;
+		*top_ref = top->next;
+		free(top);
+		return res;
+	}
+}
+
+void print(struct sNode* top)
+{
+	printf("\n");
+	while (top != NULL)
+	{
+		printf(" %d ", top->data);
+		top = top->next;
+	}
+	system("PAUSE");
+}
 
 6. (Program) Write a C++ program that allows a user to enter a maximum of 50 characters in a
 stack object. Then have the program sort the stack contents in increasing order. For example,
