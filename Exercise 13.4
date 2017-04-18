@@ -59,7 +59,70 @@ int main()
 queue. Then have the program sort the queue contents in increasing order. For example, if the
 queue’s contents are initially D, E, A, and B, its final contents are A, B, D, and E.
 
+#include "stdafx.h" 
+#include < iostream >
+#include < deque >
+#include < queue >
+#include < stack >
+#include < map >
+#include < string >
 
+class CMyInts
+{
+public:
+	bool operator () (const char &lhs, const char &rhs)
+	{
+		if (lhs < rhs)
+			return false;
+		return true;
+	}
+};
+
+void main()
+{
+	/*std::cout << "\n\nPriority Queue of Integer Values";
+	std::priority_queue < char > myInts;
+	myInts.push('A');
+	myInts.push('B');
+	myInts.push('G');
+	myInts.push('C');
+	while (myInts.size())
+	{
+		std::cout << "\n" << myInts.top();
+		myInts.pop();
+	}
+
+	std::cout << "\n\n";*/
+
+	std::cout << "\n\nPriority Queue of Integer Values - Sort Ascending" << std::endl;
+	std::priority_queue < char, std::vector < char >, CMyInts> myIntsAsc;
+	
+	int MAX;
+	char letter;
+	std::cout << "Enter MAX number of elements" << std::endl;
+	std::cin >> MAX;
+
+	for (int i = 0; i < MAX; i++){
+		if (MAX > 20){
+	    	std::cout << "Not possible" << std::endl;
+			break;
+		}
+		std::cin >> letter;
+		myIntsAsc.push(letter);
+	}
+	
+	while (myIntsAsc.size())
+	{
+		std::cout << "\n" << myIntsAsc.top();
+		myIntsAsc.pop();
+	}
+
+	std::cout << "\n\n";
+
+	system("PAUSE");
+
+	return;
+}
 
 5. (Program) Write a queue program that accepts an object consisting of an integer ID number
 and a double-precision hourly pay rate.
