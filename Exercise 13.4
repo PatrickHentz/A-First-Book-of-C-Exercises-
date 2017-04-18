@@ -187,7 +187,47 @@ int main()
 to the queue, removing a name from the queue, or listing the queue’s contents without removing
 any objects from it.
 
+#include "stdafx.h" 
+#include <iostream>
+#include <deque>
+#include <string>
+#include <cctype>
+using namespace std;
+int main()
+{
+	string name;
+	deque<string> queue;
+	cout << "Enter as many names as you want, one per line" << endl;
+	cout << "Menu" << endl;
+	cout << "Add a name by entering a string name" << endl;
+	cout << "Remove a name enter a single r" << endl;
+	cout << "List the queue's contents with/without removing any objects" << endl;
+	cout << "Enter a single x to exit" << endl;
 
+
+	// push names onto the queue
+	while (true)
+	{
+		cout << "Enter a name(or x to stop) : ";
+		getline(cin, name);
+		if (tolower(name.at(0)) == 'x'){ break; }
+		queue.push_front(name);
+		if (tolower(name.at(0)) == 'r'){
+			queue.pop_front();
+		}
+		
+	}
+	cout << "\nThe names in the queue are : \n";
+	// pop names from the queue
+	while (!queue.empty())
+	{
+		name = queue.back();  // retrieve the name
+		queue.pop_back();     // pop a name from the queue
+		cout << name << endl;
+	}
+	system("PAUSE");
+	return 0;
+}
 
 7. (Program) A group of people have arrived at a bus stop and are lined up in this order:
 1. Chaplin 
