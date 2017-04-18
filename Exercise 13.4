@@ -127,7 +127,61 @@ void main()
 5. (Program) Write a queue program that accepts an object consisting of an integer ID number
 and a double-precision hourly pay rate.
 
+#include "stdafx.h" 
+#include <iostream>
+#include <deque>
+#include <string>
+#include <cctype>
+#include <list>
 
+using namespace std;
+
+class IDnumhpr
+{
+private:
+	int IDnum;
+	double hpr;
+
+public:
+	IDnumhpr(int ii, double hh){
+		IDnum = ii;
+		hpr = hh;
+	}
+	int getIDnum(){ return IDnum; }
+	double gethpr(){ return hpr; }
+};
+
+int main()
+{
+	int num;
+	double num2;
+	deque<IDnumhpr> queue;
+	cout << "Enter as many names as you want, one per line" << endl;
+	cout << " To stop enter a single x" << endl;
+
+	// push names onto the queue
+
+	while (true)
+	{
+		cout << "Enter a name(or x to stop) : ";
+		cin >> num;
+		cin >> num2;
+		if (num == 1000 && num2 == 1000) break;
+		queue.push_front(IDnumhpr(num,num2));
+
+	}
+	cout << "\nThe names in the queue are : \n";
+	// pop names from the queue
+	while (!queue.empty())
+	{
+		cout << queue.back().getIDnum()<< endl;
+		cout << queue.back().gethpr() << endl;
+		queue.pop_back();     // pop a name from the queue
+	
+	}
+	system("PAUSE");
+	return 0;
+}
 
 6. (Modify) Add a menu method to Program 13.4 that gives the user a choice of adding a name
 to the queue, removing a name from the queue, or listing the queue’s contents without removing
