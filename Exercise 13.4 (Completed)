@@ -247,4 +247,57 @@ int main()
 Read the names from an input file into a queue and display the order in which passengers
 board the bus.
 
+#include "stdafx.h" 
+#include <iostream>
+#include <queue>
+#include <string>
+#include <cstdlib>
+#include <fstream>
+#include <iomanip>
+using namespace std;
 
+int main()
+{
+	string filename = "bus.dat";
+	string name;
+	ofstream outFile;
+	ifstream inFile;
+	inFile.open(filename.c_str());
+	outFile.open(filename.c_str());
+
+	if (outFile.fail())
+	{
+		std::cout << "The file was not successfully opened" << endl;
+		exit(1);
+	}
+
+	outFile << "Chaplin" << endl;
+	outFile << "West" << endl;
+	outFile << "Taylor" << endl;
+	outFile << "Laurel" << endl;
+	outFile << "Smith" << endl;
+	outFile << "Grisby" << endl;
+	outFile << "Oliver" << endl;
+	outFile << "Hardy" << endl;
+	outFile << "Burton" << endl;
+	outFile << "Garland" << endl;
+	outFile << "Wayne" << endl;
+	outFile << "Stewart";
+	
+	outFile.close();
+
+	while (inFile.good()){
+		inFile >> name;
+
+		queue<string> q;
+		q.push(name);
+		cout << q.front() << endl;
+		q.pop();
+		
+	}
+
+	inFile.close();
+
+	system("PAUSE");
+	return 0;
+}
