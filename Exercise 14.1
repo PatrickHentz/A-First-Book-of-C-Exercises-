@@ -45,7 +45,34 @@ text.at(10) = i
 
 3. (Practice) Enter and run Program 14.5.
 
-
+//Done!!
+#include "stdafx.h" 
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+	string str = "Counting the number of vowels";
+	int i, numChars;
+	int vowelCount = 0;
+	cout << "The string : " << str << endl;
+	numChars = int(str.length());
+	for (i = 0; i < numChars; i++)
+	{
+		switch (str.at(i))   // here's where a character is retrieved
+		{
+		case 'a':
+		case 'e':
+		case 'i':
+		case 'o':
+		case 'u':
+			vowelCount++;
+		}
+	}
+	cout << "has " << vowelCount << " vowels." << endl;
+	system("PAUSE");
+	return 0;
+}
 
 4. (Modify) Modify Program 14.5 to count and display the numbers of each vowel contained in
 the string.
