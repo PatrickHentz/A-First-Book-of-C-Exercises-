@@ -124,6 +124,36 @@ int main()
 
 5. (Modify) Modify Program 14.5 to display the number of vowels in a user-entered string.
 
+#include "stdafx.h" 
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+	string str;
+	int i, numChars;
+	int vowelCount = 0;
+	cout << "Enter your String " << endl;
+	cin >> str;
+	cout << "The string : " << str << endl;
+	numChars = int(str.length());
+	for (i = 0; i < numChars; i++)
+	{
+		switch (str.at(i))   // here's where a character is retrieved
+		{
+		case 'a':
+		case 'e':
+		case 'i':
+		case 'o':
+		case 'u':
+			vowelCount++;
+		}
+	}
+	cout << "has " << vowelCount << " vowels." << endl;
+
+	system("PAUSE");
+	return 0;
+}
 
 
 6. (Program) Using the at() method, write a C++ program that reads in a string by using
