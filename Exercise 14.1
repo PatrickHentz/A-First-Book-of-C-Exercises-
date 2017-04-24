@@ -77,7 +77,50 @@ int main()
 4. (Modify) Modify Program 14.5 to count and display the numbers of each vowel contained in
 the string.
 
-
+#include "stdafx.h" 
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+	string str = "Counting the number of vowels";
+	int i, numChars;
+	int vowelCount5 = 0;
+	int vowelCount1 = 0;
+	int vowelCount2 = 0;
+	int vowelCount3 = 0;
+	int vowelCount4 = 0;
+	cout << "The string : " << str << endl;
+	numChars = int(str.length());
+	for (i = 0; i < numChars; i++)
+	{
+		switch (str.at(i))   // here's where a character is retrieved
+		{
+		case 'a':
+		   vowelCount1++;
+		   break;
+		case 'e':
+		    vowelCount2++;
+			break;
+		case 'i':
+		    vowelCount3++;
+			break;
+		case 'o':
+		    vowelCount4++;
+			break;
+		case 'u':
+			vowelCount5++;
+			break;
+		}
+	}
+	cout << "has " << vowelCount1 << " A vowels" << endl;
+		cout << vowelCount2 << " E vowels" << endl;
+		cout << vowelCount3 << " I vowels" << endl;
+		cout << vowelCount4 << " O vowels" << endl;
+		cout << vowelCount5 << " U vowels" << endl;
+	system("PAUSE");
+	return 0;
+}
 
 5. (Modify) Modify Program 14.5 to display the number of vowels in a user-entered string.
 
