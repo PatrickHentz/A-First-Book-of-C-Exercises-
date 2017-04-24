@@ -162,7 +162,21 @@ string in reverse order. (Hint: After the string has been entered and saved, ret
 characters, starting from the end of the string. The last character is located at the position
 message.length() - 1.)
 
+#include "stdafx.h" 
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+	string message;
+	getline(cin, message);
+	for (int i = message.length()-1; i < message.length(); --i){
+		cout << message.at(i)<< endl;
+	}
 
+	system("PAUSE");
+	return 0;
+}
 
 7. (Program) Write a C++ program that accepts both a string and a single character from the
 user. The program should determine how many times the character is contained in the string.
