@@ -37,7 +37,26 @@ int main()
 
 2. (Practice) Enter and run Program 14.9.
 
+//Done!!
+#include "stdafx.h" 
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+	int i;
+	string str;
+	cout << "Type in any sequence of characters : ";
+	getline(cin, str);
+	// cycle through all elements of the string
+	for (i = 0; i < int(str.length()); i++)
+		str[i] = toupper(str[i]);
+	cout << "The characters just entered, in uppercase, are: "
+		<< str << endl;
 
+	system("PAUSE");
+	return 0;
+}
 
 3. (Program) Write a C++ program that counts the number of words in a string. A word is
 encountered whenever a transition from a blank space to a nonblank character is encountered.
