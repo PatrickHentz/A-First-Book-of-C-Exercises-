@@ -184,7 +184,31 @@ user. The program should determine how many times the character is contained in 
 in a loop that starts the index value at 0 and then changes the index value to 1 past the index
 of where the char was last found.)
 
+#include "stdafx.h" 
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+	int i, number = 0;
+	string str;
+	char letter;
+	cin >> str;
+	cin >> letter;
+	int numChars = int(str.length());
 
+	cout << "The original string is  " << str << endl;
+	for (i = 0; i < numChars; i++){
+	
+		if (str.at(i) == letter){
+			number++;
+		}
+}
+	
+	cout << "The number of letters is " << number << endl;
+	system("PAUSE");
+	return 0;
+}
 
 8. (Practice) Enter and run Program 14.6.
 
