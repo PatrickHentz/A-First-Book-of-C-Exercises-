@@ -162,12 +162,31 @@ int main()
 string passed as an argument. Digits, spaces, punctuation, tabs, and newline characters
 shouldn’t be included in the returned count.
 
+#include "stdafx.h" 
+#include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
 
+
+void countlets(string str) {
+	int count = 0;
+	for (int i = 0; i < str.length();i++)
+		if (str.at(i) <= 'z' && str.at(i) >= 'a'){
+			count++;
+		}
+	cout << count << endl;
+}
 
 b. Include the countlets() function written for Exercise 6a in an executable C++ program,
 and use the program to test the function.
 
-
+int main()
+{	
+	countlets("cool it worked");
+	system("PAUSE");
+	return 0;
+}
 
 7. (Program) Write a program that accepts a string from the console and displays the hexadecimal
 equivalent of each character in the string.
