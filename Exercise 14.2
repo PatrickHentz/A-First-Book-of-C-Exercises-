@@ -244,7 +244,29 @@ What value will be stored in the integer variable value?
 function should return the string with each occurrence of the first character replaced by the
 second character.
 
+#include "stdafx.h" 
+#include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
 
+void replace(string str, char one, char two){
+	for (int i = 0; i < str.length(); i++){
+		if (str.at(i) == one){
+			str.at(i) = two;
+		}
+	}
+	cout << str << endl;
+}
+
+int main()
+{	
+	
+	replace("Patrick", 'P', 'k');
+
+	system("PAUSE");
+	return 0;
+}
 
 b. Test the function written for Exercise 10a by writing a program that accepts a string from
 the user, calls the function written for Exercise 10a to replace all occurrences of the letter e
