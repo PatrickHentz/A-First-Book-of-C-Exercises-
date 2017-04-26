@@ -212,7 +212,26 @@ int main()
 8. (Program) Write a C++ program that accepts a string from the keyboard and displays the
 string one word per line.
 
+#include "stdafx.h" 
+#include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
 
+
+int main()
+{	
+	string str;
+	getline(cin, str);
+	for (int i = 0; i < str.length(); i++){
+		if (str.at(i) == ' '){
+			str.at(i) = '\n';
+		}
+	}
+	cout << str << endl;
+	system("PAUSE");
+	return 0;
+}
 
 9. (Debug) In response to the following code, suppose a user enters the data 12e4:
 cout << “Enter an integer: “;
