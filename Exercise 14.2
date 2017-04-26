@@ -94,7 +94,44 @@ The character is a digit.
 The character is a space.
 If the character is none of these, display its value in integer format.
 
+#include "stdafx.h" 
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+	int i,j;
+	string str;
+	
+	// cycle through all elements of the string
+	for (i = 0; i < 10; i++){
+		j = rand() % 129;
+		str = (char)(j);
 
+		if (j >= 65 && j <= 90){
+			cout << "The character is an uppercase letter. " << endl;
+			cout << str << endl;
+		}
+		else if (j >= 97 && j <= 122){
+			cout << "The character is a lowercase letter. " << endl;
+			cout << str << endl;
+		}
+		else if (j >= 48 && j <= 57){
+			cout << "The character is a digit. " << endl;
+			cout << str << endl;
+		}
+		else if (j == 32){
+		cout << "The character is a space" << endl;
+		cout << str << endl;
+	    }
+		else {
+			cout << "The character is none of these" << endl;
+			cout << j << endl;
+		}
+	}
+	system("PAUSE");
+	return 0;
+}
 
 5. (Practice) a. Write a function named reverse() that returns a string in reverse order without
 using the string class’s length() method.
