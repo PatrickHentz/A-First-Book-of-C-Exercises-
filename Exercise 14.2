@@ -62,7 +62,28 @@ int main()
 encountered whenever a transition from a blank space to a nonblank character is encountered.
 The string contains only words separated by blank spaces.
 
+#include "stdafx.h" 
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+	int i;
+	string str;
+	int words = 0;
+	cout << "Type in any sequence of characters : ";
+	getline(cin, str);
+	// cycle through all elements of the string
+	for (i = 0; i < int(str.length()); i++){
+		if (str.at(i) == ' '){
+			words++;
+		}
+	}
+	cout << "The number of words are " << words << endl;
 
+	system("PAUSE");
+	return 0;
+}
 
 4. (Practice) Generate 10 random numbers in the range 0 to 129. (If necessary, review Section 6.8
 for how to do this.) If the number represents a printable character, print the character with a
