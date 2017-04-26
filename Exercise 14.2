@@ -136,11 +136,21 @@ int main()
 5. (Practice) a. Write a function named reverse() that returns a string in reverse order without
 using the string class’s length() method.
 
-
+void reverse(string str) {
+	reverse(str.begin(), str.end());
+	cout << str << endl;
+}
 
 b. Write a simple main() function to test the reverse() function written for Exercise 5a.
 
+int main()
+{	
 
+    reverse("Awesome");
+	
+	system("PAUSE");
+	return 0;
+}
 
 6. (Practice) a. Write a function named countlets() that returns the number of letters in a
 string passed as an argument. Digits, spaces, punctuation, tabs, and newline characters
