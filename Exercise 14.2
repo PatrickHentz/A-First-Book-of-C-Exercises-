@@ -272,7 +272,32 @@ b. Test the function written for Exercise 10a by writing a program that accepts 
 the user, calls the function written for Exercise 10a to replace all occurrences of the letter e
 with the letter x from the user-entered string, and then displays the changed string.
 
+#include "stdafx.h" 
+#include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
 
+void replace( char one, char two){
+	string str;
+	cout << "Enter your string " << endl;
+	getline(cin, str);
+	for (int i = 0; i < str.length(); i++){
+		if (str.at(i) == one){
+			str.at(i) = two;
+		}
+	}
+	cout << str << endl;
+}
+
+int main()
+{	
+	
+	replace( 'e', 'x');
+
+	system("PAUSE");
+	return 0;
+}
 
 11. (Useful utility) Modify the function written for Exercise 10a to search for all occurrences
 of a user-entered sequence of characters, and then replace this sequence, when it’s found in
