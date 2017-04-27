@@ -306,7 +306,34 @@ Figure 4-4 illustrates the output of Program 4-2 and the user specifies that 4-
 is to be replaced by 3-, the resulting string is Figure 3-4 illustrates the output of
 Program 3-2. (All occurrences of the searched-for sequence have been changed.)
 
+#include "stdafx.h" 
+#include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
 
+void replace(){
+	string str;
+	string one, two;
+	cout << "Enter your string " << endl;
+	getline(cin, str);
+	getline(cin, one);
+	getline(cin, two);
+
+	while (str.find(one) != std::string::npos){
+	str.replace(str.find(one), one.length(), two);	
+    }
+	cout << str << endl;
+}
+
+int main()
+{	
+	
+	replace();
+
+	system("PAUSE");
+	return 0;
+}
 
 12. (Program) a. Write a C++ program that stops reading a line of text when a period is entered and
 displays the sentence with correct spacing and capitalization. For this program, correct spacing
