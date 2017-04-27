@@ -341,9 +341,79 @@ means only one space should be used between words, and all letters should be low
 the first letter. For example, if the user enters the text i am       going   to     Go  TO
   THe moVies., the displayed sentence should be I am going to go to the movies.
 
+#include "stdafx.h" 
+#include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
 
+
+void removeSpaces(string &str)
+{
+	int n = str.length();
+	int i = 0, j = -1;
+
+	bool spaceFound = false;
+
+	while (++j < n && str[j] == ' ');
+
+	while (j < n)
+	{
+		if (str[j] != ' ')
+		{
+			if ((str[j] == '.' || str[j] == ',' ||
+				str[j] == '?') && i - 1 >= 0 &&
+				str[i - 1] == ' ')
+				str[i - 1] = str[j++];
+
+			else
+		
+				str[i++] = str[j++];
+
+			spaceFound = false;
+		}
+		else if (str[j++] == ' ')
+		{
+
+			if (!spaceFound)
+			{
+				str[i++] = ' ';
+				spaceFound = true;
+			}
+		}
+	}
+
+	if (i <= 1)
+		str.erase(str.begin() + i, str.end());
+	else
+		str.erase(str.begin() + i - 1, str.end());
+}
+
+int main()
+{	
+	string str = "i am     going   to     Go  TO  THe moVies. ";
+	removeSpaces(str);
+
+	for(int i = 0; i < str.length(); i++){
+		if (str[i] == str[0]){
+			str[i] = toupper(str[i]);
+		}
+		
+		if (str[i] != str[0]){
+			str[i] = tolower(str[i]);
+		}
+		if (str[i] == '.'){
+			break;
+		}
+	}
+
+	cout << str << endl;
+
+	system("PAUSE");
+	return 0;
+}
 
 b. Determine what characters, if any, aren’t displayed correctly by the program you created for
 Exercise 12a.
 
-
+None, program works properly!!
