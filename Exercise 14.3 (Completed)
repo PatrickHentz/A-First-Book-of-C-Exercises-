@@ -138,4 +138,35 @@ int main()
 6. (Modify) Modify Program 14.14 so that it continues to divide two numbers until the user
 enters the number 999 (as a numerator or denominator) to terminate program execution.
 
-
+#include "stdafx.h" 
+#include <iostream>
+using namespace std;
+int main()
+{
+	int numerator, denominator;
+	bool needDenominator = true;
+	cout << "Enter a numerator(whole number only) : ";
+	cin >> numerator;
+	cout << "Enter a denominator(whole number only) : ";
+	while (needDenominator)
+	{
+		cin >> denominator;
+		try
+		{
+			if (denominator == 0)
+				throw denominator;  // an integer value is thrown
+		}
+		catch (int e)
+		{
+			cout << "A denominator value of " << e << " is invalid." << endl;
+			cout << "Please reenter the denominator(whole number only) : ";
+			continue;  // send control back to the while statement
+		}
+		cout << numerator << '/' << denominator
+			<< " = " << double(numerator) / double(denominator) << endl;
+		if (numerator == 999 || denominator == 999){
+			needDenominator = false; }
+	}
+	system("PAUSE");
+	return 0;
+}
