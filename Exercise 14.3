@@ -101,8 +101,39 @@ enter a denominator until a non-zero number is entered. (Hint: The prompt to ent
 denominator should be made in the catch block immediately after the message informing the
 user an invalid denominator has been entered.)
 
+//Done Error program 14.14 try-catch method is already in a while loop that performs the required actions.
 
-
+#include "stdafx.h" 
+#include <iostream>
+using namespace std;
+int main()
+{
+	int numerator, denominator;
+	bool needDenominator = true;
+	cout << "Enter a numerator(whole number only) : ";
+	cin >> numerator;
+	cout << "Enter a denominator(whole number only) : ";
+	while (needDenominator)
+	{
+		cin >> denominator;
+		try
+		{
+			if (denominator == 0)
+				throw "***Invalid input - A zero denominator value is not permitted***";  // an integer value is thrown
+		}
+		catch (char e[])
+		{
+			cout << "A denominator value of " << e << " is invalid." << endl;
+			cout << "Please reenter the denominator(whole number only) : ";
+			continue;  // send control back to the while statement
+		}
+		cout << numerator << '/' << denominator
+			<< " = " << double(numerator) / double(denominator) << endl;
+		needDenominator = false;
+	}
+	system("PAUSE");
+	return 0;
+}
 
 6. (Modify) Modify Program 14.14 so that it continues to divide two numbers until the user
 enters the number 999 (as a numerator or denominator) to terminate program execution.
