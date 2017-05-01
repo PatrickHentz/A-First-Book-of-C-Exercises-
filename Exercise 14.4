@@ -15,7 +15,43 @@ The data currently in the file is deleted and overwritten.
 4. (Modify) Modify Program 14.15 to use an identifier of your choice, in place of the letter e, for
 the catch block’s exception parameter name.
 
+//Done!!
 
+#include "stdafx.h" 
+#include <iostream>
+#include <fstream>
+#include <cstdlib>   // needed for exit()
+#include <string>
+using namespace std;
+int main()
+{
+	string filename = "prices.dat";  // put the filename up front
+	string descrip;
+	double price;
+	ifstream inFile;
+	try  // tries to open the file, read it, and display file's data
+	{
+		inFile.open(filename.c_str());
+		if (inFile.fail()) throw filename; // exception being checked
+		// read and display the file's contents
+		inFile >> descrip >> price;
+		while (inFile.good()) // check next character
+		{
+			cout << descrip << ' ' << price << endl;
+			inFile >> descrip >> price;
+		}
+		inFile.close();
+		return 0;
+	}
+	catch (string awesome)
+	{
+		cout << "\nThe file " << awesome << " was not successfully opened."
+			<< "\n Please check that the file currently exists."
+			<< endl;
+		exit(1);
+	}
+	
+}
 
 5. (Practice) Enter and run Program 14.16.
 
